@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="3" ignored="6" total="9" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="171868" started-at="2017-03-10T15:46:01Z" finished-at="2017-03-10T15:48:52Z">
+    <groups>
+    </groups>
+    <test name="ValidateX1_DVRDCT_CSGResidential_2" duration-ms="119356" started-at="2017-03-10T15:46:01Z" finished-at="2017-03-10T15:48:00Z">
+      <class name="com.comcast.bulkOM.X1_DVRDCT">
+        <test-method status="PASS" signature="setupData(org.testng.ITestContext)[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@1ec1f0c]" name="setupData" is-config="true" duration-ms="24052" started-at="2017-03-10T21:16:01Z" finished-at="2017-03-10T21:16:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1df90b0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupData -->
+        <test-method status="PASS" signature="prerequisite()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@1ec1f0c]" name="prerequisite" is-config="true" duration-ms="17756" started-at="2017-03-10T21:16:25Z" depends-on-methods="com.comcast.utils.ComcastTest.setupData" finished-at="2017-03-10T21:16:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prerequisite -->
+        <test-method status="PASS" signature="getTestName(java.lang.reflect.Method)[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@1ec1f0c]" name="getTestName" is-config="true" duration-ms="30" started-at="2017-03-10T21:16:42Z" finished-at="2017-03-10T21:16:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.comcast.bulkOM.X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_2() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTestName -->
+        <test-method status="FAIL" signature="ValidateX1_DVRDCT_CSGResidential_2()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@1ec1f0c]" name="ValidateX1_DVRDCT_CSGResidential_2" duration-ms="73358" started-at="2017-03-10T21:16:42Z" finished-at="2017-03-10T21:17:56Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Log in is not successful.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Log in is not successful.
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.comcast.reporting.Report.updateTestLog(Report.java:222)
+	at com.comcast.utils.SeleniumReport.reportFailEvent(SeleniumReport.java:114)
+	at com.comcast.bom.pages.BomLoginPage.LoginToBom(BomLoginPage.java:119)
+	at com.comcast.bulkOM.X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_2(X1_DVRDCT.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateX1_DVRDCT_CSGResidential_2 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@1ec1f0c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-03-10T21:17:56Z" finished-at="2017-03-10T21:17:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ValidateX1_DVRDCT_CSGResidential_2 status=FAILURE method=X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_2()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@1ec1f0c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="Cleanup()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@1ec1f0c]" name="Cleanup" is-config="true" duration-ms="0" started-at="2017-03-10T21:17:56Z" finished-at="2017-03-10T21:17:56Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Exception Ocured :null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Exception Ocured :null
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.comcast.reporting.Report.updateTestLog(Report.java:222)
+	at com.comcast.utils.SeleniumReport.reportFailEvent(SeleniumReport.java:114)
+	at com.comcast.bom.data.Mongoconnect.BulkomDBCleanup(Mongoconnect.java:590)
+	at com.comcast.bulkOM.X1_DVRDCT.Cleanup(X1_DVRDCT.java:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:144)
+	at org.testng.TestRunner.afterRun(TestRunner.java:983)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Cleanup -->
+        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@1ec1f0c]" name="tearDown" is-config="true" duration-ms="0" started-at="2017-03-10T21:18:00Z" depends-on-methods="com.comcast.bulkOM.X1_DVRDCT.Cleanup" finished-at="2017-03-10T21:18:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.comcast.bulkOM.X1_DVRDCT -->
+    </test> <!-- ValidateX1_DVRDCT_CSGResidential_2 -->
+    <test name="ValidateX1_DVRDCT_CSGResidential_3" duration-ms="143659" started-at="2017-03-10T15:46:01Z" finished-at="2017-03-10T15:48:24Z">
+      <class name="com.comcast.bulkOM.X1_DVRDCT">
+        <test-method status="PASS" signature="setupData(org.testng.ITestContext)[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@bfbc86]" name="setupData" is-config="true" duration-ms="24052" started-at="2017-03-10T21:16:01Z" finished-at="2017-03-10T21:16:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@131a74c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupData -->
+        <test-method status="PASS" signature="prerequisite()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@bfbc86]" name="prerequisite" is-config="true" duration-ms="16841" started-at="2017-03-10T21:16:25Z" depends-on-methods="com.comcast.utils.ComcastTest.setupData" finished-at="2017-03-10T21:16:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prerequisite -->
+        <test-method status="PASS" signature="getTestName(java.lang.reflect.Method)[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@bfbc86]" name="getTestName" is-config="true" duration-ms="32" started-at="2017-03-10T21:16:42Z" finished-at="2017-03-10T21:16:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.comcast.bulkOM.X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_3() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTestName -->
+        <test-method status="FAIL" signature="ValidateX1_DVRDCT_CSGResidential_3()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@bfbc86]" name="ValidateX1_DVRDCT_CSGResidential_3" duration-ms="94480" started-at="2017-03-10T21:16:42Z" finished-at="2017-03-10T21:18:16Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Upload file is not selected.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Upload file is not selected.
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.comcast.reporting.Report.updateTestLog(Report.java:222)
+	at com.comcast.utils.SeleniumReport.reportFailEvent(SeleniumReport.java:114)
+	at com.comcast.bom.pages.BomHomePage.HandleAlertForSubmitSwap(BomHomePage.java:197)
+	at com.comcast.bom.pages.BomHomePage.enterAccountForX1(BomHomePage.java:180)
+	at com.comcast.bulkOM.X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_3(X1_DVRDCT.java:129)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateX1_DVRDCT_CSGResidential_3 -->
+        <test-method status="PASS" signature="Cleanup()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@bfbc86]" name="Cleanup" is-config="true" duration-ms="7724" started-at="2017-03-10T21:18:16Z" finished-at="2017-03-10T21:18:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Cleanup -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@bfbc86]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-03-10T21:18:16Z" finished-at="2017-03-10T21:18:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ValidateX1_DVRDCT_CSGResidential_3 status=FAILURE method=X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_3()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@bfbc86] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@bfbc86]" name="tearDown" is-config="true" duration-ms="0" started-at="2017-03-10T21:18:24Z" depends-on-methods="com.comcast.bulkOM.X1_DVRDCT.Cleanup" finished-at="2017-03-10T21:18:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.comcast.bulkOM.X1_DVRDCT -->
+    </test> <!-- ValidateX1_DVRDCT_CSGResidential_3 -->
+    <test name="ValidateX1_DVRDCT_CSGResidential_1" duration-ms="171868" started-at="2017-03-10T15:46:01Z" finished-at="2017-03-10T15:48:52Z">
+      <class name="com.comcast.bulkOM.X1_DVRDCT">
+        <test-method status="PASS" signature="setupData(org.testng.ITestContext)[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@13ad2d6]" name="setupData" is-config="true" duration-ms="24542" started-at="2017-03-10T21:16:01Z" finished-at="2017-03-10T21:16:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@9f73a2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupData -->
+        <test-method status="PASS" signature="prerequisite()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@13ad2d6]" name="prerequisite" is-config="true" duration-ms="16351" started-at="2017-03-10T21:16:25Z" depends-on-methods="com.comcast.utils.ComcastTest.setupData" finished-at="2017-03-10T21:16:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prerequisite -->
+        <test-method status="PASS" signature="getTestName(java.lang.reflect.Method)[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@13ad2d6]" name="getTestName" is-config="true" duration-ms="1" started-at="2017-03-10T21:16:42Z" finished-at="2017-03-10T21:16:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.comcast.bulkOM.X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_1() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTestName -->
+        <test-method status="FAIL" signature="ValidateX1_DVRDCT_CSGResidential_1()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@13ad2d6]" name="ValidateX1_DVRDCT_CSGResidential_1" duration-ms="122996" started-at="2017-03-10T21:16:42Z" finished-at="2017-03-10T21:18:45Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[true]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: true
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.comcast.reporting.Report.updateTestLog(Report.java:222)
+	at com.comcast.utils.SeleniumReport.reportFailEvent(SeleniumReport.java:114)
+	at com.comcast.bom.data.Mongoconnect.postsubmission_CheckEligibility_X1(Mongoconnect.java:187)
+	at com.comcast.bulkOM.X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_1(X1_DVRDCT.java:81)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateX1_DVRDCT_CSGResidential_1 -->
+        <test-method status="PASS" signature="Cleanup()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@13ad2d6]" name="Cleanup" is-config="true" duration-ms="7448" started-at="2017-03-10T21:18:45Z" finished-at="2017-03-10T21:18:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Cleanup -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@13ad2d6]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-03-10T21:18:45Z" finished-at="2017-03-10T21:18:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ValidateX1_DVRDCT_CSGResidential_1 status=FAILURE method=X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_1()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@13ad2d6] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.comcast.bulkOM.X1_DVRDCT@13ad2d6]" name="tearDown" is-config="true" duration-ms="0" started-at="2017-03-10T21:18:52Z" depends-on-methods="com.comcast.bulkOM.X1_DVRDCT.Cleanup" finished-at="2017-03-10T21:18:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.comcast.bulkOM.X1_DVRDCT -->
+    </test> <!-- ValidateX1_DVRDCT_CSGResidential_1 -->
+  </suite> <!-- Suite -->
+</testng-results>

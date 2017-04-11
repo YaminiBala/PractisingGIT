@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.comcast.bulkOM.X1_DVRDCT">
+        <methods>
+          <include name="ValidateX1_DVRDCT_CSGResidential_3"/>
+          <include name="afterMethod"/>
+          <include name="ValidateX1_DVRDCT_CSGResidential_4"/>
+          <include name="ValidateX1_DVRDCT_CSGResidential_5"/>
+          <include name="ValidateX1_DVRDCT_CSGResidential_1"/>
+          <include name="ValidateX1_DVRDCT_CSGResidential_2"/>
+          <include name="tearDown"/>
+          <include name="Cleanup"/>
+          <include name="setupData"/>
+          <include name="getTestName"/>
+          <include name="prerequisite"/>
+        </methods>
+      </class> <!-- com.comcast.bulkOM.X1_DVRDCT -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

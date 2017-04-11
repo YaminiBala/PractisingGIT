@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:oct="http://oct.cable.comcast.com/OCTServices/">
+<soapenv:Header>
+<oct:UserCredentials>
+<oct:userName>ldrona001c</oct:userName>
+<oct:password>Anji88**</oct:password>
+</oct:UserCredentials>
+</soapenv:Header>
+<soapenv:Body>
+<oct:AccountCancelDisconnect>
+<oct:accountNumber>&AccountNumber</oct:accountNumber>
+<oct:DisconnectDetail>
+<oct:DiscoType></oct:DiscoType>
+<oct:ScheduleDate></oct:ScheduleDate>
+</oct:DisconnectDetail> </oct:AccountCancelDisconnect>
+</soapenv:Body>
+</soapenv:Envelope>

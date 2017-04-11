@@ -1,0 +1,202 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000, pid=3708, tid=6592
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_45-b15) (build 1.8.0_45-b15)
+# Java VM: Java HotSpot(TM) Client VM (25.45-b02 mixed mode windows-x86 )
+# Problematic frame:
+# C  0x00000000
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x006fd800):  JavaThread "main" [_thread_in_Java, id=6592, stack(0x00bd0000,0x00c20000)]
+
+siginfo: ExceptionCode=0xc0000005, ExceptionInformation=0x00000008 0x00000000
+
+Registers:
+EAX=0x006fd800, EBX=0x14036a40, ECX=0x03f0fcb0, EDX=0x70100002
+ESP=0x00c1f6a0, EBP=0x00c1f6d4, ESI=0x00c1f6a4, EDI=0x00c1f6dc
+EIP=0x00000000, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x00c1f6a0)
+0x00c1f6a0:   01d44114 03f0c620 03f0fcb0 03f0fe60
+0x00c1f6b0:   03f0fe60 00c1f6b4 14035ec7 00c1f6dc
+0x00c1f6c0:   140360f0 00000000 14035f88 00c1f6a4
+0x00c1f6d0:   00c1f6dc 00c1f700 01d44114 03f0fcb0
+0x00c1f6e0:   00c1f6e0 140304d5 00c1f750 14035660
+0x00c1f6f0:   00000000 14030798 00c1f6dc 00c1f750
+0x00c1f700:   00c1f764 01d40417 00000000 00000000
+0x00c1f710:   00000000 00000000 00000000 00000000 
+
+Instructions: (pc=0x00000000)
+0xffffffe0:   
+
+
+Register to memory mapping:
+
+EAX=0x006fd800 is a thread
+EBX={method} {0x14036a44} 'getValue' '(Ljava/lang/String;)Ljava/lang/String;' in 'com/comcast/utils/DataTable'
+ECX=
+[error occurred during error reporting (printing register info), id 0xc0000005]
+
+Stack: [0x00bd0000,0x00c20000],  sp=0x00c1f6a0,  free space=317k
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x142c5c00 JavaThread "Service Thread" daemon [_thread_blocked, id=4192, stack(0x14950000,0x149a0000)]
+  0x142c2800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=9376, stack(0x148f0000,0x14940000)]
+  0x142bf000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=10292, stack(0x149d0000,0x14a20000)]
+  0x142b9000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=212, stack(0x14710000,0x14760000)]
+  0x142b5400 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=10928, stack(0x14840000,0x14890000)]
+  0x142a8c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=10868, stack(0x03da0000,0x03df0000)]
+  0x142a6000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7836, stack(0x00fa0000,0x00ff0000)]
+  0x14278000 JavaThread "Finalizer" daemon [_thread_blocked, id=6480, stack(0x144a0000,0x144f0000)]
+  0x14271c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=12068, stack(0x00b50000,0x00ba0000)]
+=>0x006fd800 JavaThread "main" [_thread_in_Java, id=6592, stack(0x00bd0000,0x00c20000)]
+
+Other Threads:
+  0x1426d800 VMThread [stack: 0x010a0000,0x010f0000] [id=11812]
+  0x142ea400 WatcherThread [stack: 0x14ac0000,0x14b10000] [id=5508]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 1150K [0x03e00000, 0x04350000, 0x09350000)
+  eden space 4416K,  26% used [0x03e00000, 0x03f1f9b8, 0x04250000)
+  from space 512K,   0% used [0x04250000, 0x04250000, 0x042d0000)
+  to   space 512K,   0% used [0x042d0000, 0x042d0000, 0x04350000)
+ tenured generation   total 10944K, used 0K [0x09350000, 0x09e00000, 0x13e00000)
+   the space 10944K,   0% used [0x09350000, 0x09350000, 0x09350200, 0x09e00000)
+ Metaspace       used 1818K, capacity 2276K, committed 2368K, reserved 4480K
+
+Card table byte_map: [0x00ef0000,0x00f80000] byte_map_base: 0x00ed1000
+
+Polling page: 0x00180000
+
+CodeCache: size=32768Kb used=704Kb max_used=704Kb free=32063Kb
+ bounds [0x01d40000, 0x01df8000, 0x03d40000]
+ total_blobs=160 nmethods=29 adapters=72
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.302 Thread 0x142c2800   25  s          java.lang.StringBuffer::append (13 bytes)
+Event: 0.302 Thread 0x142c2800 nmethod 25 0x01deb088 code [0x01deb190, 0x01deb3dc]
+Event: 0.302 Thread 0x142c2800   26             java.io.WinNTFileSystem::normalize (231 bytes)
+Event: 0.304 Thread 0x142c2800 nmethod 26 0x01deb588 code [0x01deb820, 0x01decf1c]
+Event: 0.304 Thread 0x142c2800   27             sun.net.www.ParseUtil::encodePath (336 bytes)
+Event: 0.305 Thread 0x142c2800 nmethod 27 0x01deeac8 code [0x01deec70, 0x01def348]
+Event: 0.305 Thread 0x142c2800   28             java.lang.String::startsWith (72 bytes)
+Event: 0.306 Thread 0x142c2800 nmethod 28 0x01defa48 code [0x01defb50, 0x01defc90]
+Event: 0.322 Thread 0x142c2800   29             java.lang.Character::toLowerCase (9 bytes)
+Event: 0.322 Thread 0x142c2800 nmethod 29 0x01df0088 code [0x01df0190, 0x01df0238]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (3 events):
+Event: 0.045 Thread 0x006fd800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x03e0c6f8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vyV.G÷Þ¦?
+Event: 0.045 Thread 0x006fd800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x03e0c978) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jni.cpp, l–}6ÿý™Ô?
+Event: 0.322 Thread 0x006fd800 Exception <a 'java/lang/NullPointerException'> (0x03f0fcb0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u45\3627\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+
+Events (10 events):
+Event: 110.551 Executing VM operation: ChangeSingleStep
+Event: 110.551 Executing VM operation: ChangeSingleStep done
+Event: 110.551 Executing VM operation: ChangeSingleStep
+Event: 110.551 Executing VM operation: ChangeSingleStep done
+Event: 117.376 Executing VM operation: EnterInterpOnlyMode
+Event: 117.376 Executing VM operation: EnterInterpOnlyMode done
+Event: 117.376 Executing VM operation: GetCurrentLocation
+Event: 117.376 Executing VM operation: GetCurrentLocation done
+Event: 117.376 Executing VM operation: ChangeSingleStep
+Event: 117.376 Executing VM operation: ChangeSingleStep done
+
+
+Dynamic libraries:
+0x01100000 - 0x01133000 	C:\Program Files\Java\jre1.8.0_45\bin\javaw.exe
+0x77550000 - 0x77692000 	C:\Windows\SYSTEM32\ntdll.dll
+0x768f0000 - 0x769c5000 	C:\Windows\system32\kernel32.dll
+0x75700000 - 0x7574b000 	C:\Windows\system32\KERNELBASE.dll
+0x76e60000 - 0x76f01000 	C:\Windows\system32\ADVAPI32.dll
+0x76790000 - 0x7683c000 	C:\Windows\system32\msvcrt.dll
+0x765d0000 - 0x765e9000 	C:\Windows\SYSTEM32\sechost.dll
+0x76840000 - 0x768e2000 	C:\Windows\system32\RPCRT4.dll
+0x766c0000 - 0x76789000 	C:\Windows\system32\USER32.dll
+0x76e10000 - 0x76e5e000 	C:\Windows\system32\GDI32.dll
+0x77770000 - 0x7777a000 	C:\Windows\system32\LPK.dll
+0x776c0000 - 0x7775d000 	C:\Windows\system32\USP10.dll
+0x743d0000 - 0x7456e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d\COMCTL32.dll
+0x76570000 - 0x765c7000 	C:\Windows\system32\SHLWAPI.dll
+0x77780000 - 0x7779f000 	C:\Windows\system32\IMM32.DLL
+0x765f0000 - 0x766bc000 	C:\Windows\system32\MSCTF.dll
+0x75470000 - 0x754bf000 	C:\PROGRA~1\BMCSOF~1\BBCA\Tuner\lib\mrbhook.dll
+0x525c0000 - 0x5267f000 	C:\Program Files\Java\jre1.8.0_45\bin\msvcr100.dll
+0x6d0e0000 - 0x6d4a0000 	C:\Program Files\Java\jre1.8.0_45\bin\client\jvm.dll
+0x72840000 - 0x72847000 	C:\Windows\system32\WSOCK32.dll
+0x76bc0000 - 0x76bf5000 	C:\Windows\system32\WS2_32.dll
+0x77760000 - 0x77766000 	C:\Windows\system32\NSI.dll
+0x73970000 - 0x739a2000 	C:\Windows\system32\WINMM.dll
+0x74970000 - 0x74979000 	C:\Windows\system32\VERSION.dll
+0x776a0000 - 0x776a5000 	C:\Windows\system32\PSAPI.DLL
+0x72560000 - 0x7256c000 	C:\Program Files\Java\jre1.8.0_45\bin\verify.dll
+0x532a0000 - 0x532c1000 	C:\Program Files\Java\jre1.8.0_45\bin\java.dll
+0x53400000 - 0x53429000 	C:\Program Files\Java\jre1.8.0_45\bin\jdwp.dll
+0x692c0000 - 0x692c7000 	C:\Program Files\Java\jre1.8.0_45\bin\npt.dll
+0x53610000 - 0x53623000 	C:\Program Files\Java\jre1.8.0_45\bin\zip.dll
+0x75840000 - 0x7648b000 	C:\Windows\system32\SHELL32.dll
+0x769d0000 - 0x76b2d000 	C:\Windows\system32\ole32.dll
+0x75520000 - 0x7552b000 	C:\Windows\system32\profapi.dll
+0x65f20000 - 0x65f28000 	C:\Program Files\Java\jre1.8.0_45\bin\dt_socket.dll
+0x73280000 - 0x73290000 	C:\Windows\system32\NLAapi.dll
+0x725d0000 - 0x725e0000 	C:\Windows\system32\napinsp.dll
+0x725b0000 - 0x725c2000 	C:\Windows\system32\pnrpnsp.dll
+0x74ea0000 - 0x74edc000 	C:\Windows\System32\mswsock.dll
+0x74d60000 - 0x74da4000 	C:\Windows\system32\DNSAPI.dll
+0x725a0000 - 0x725a8000 	C:\Windows\System32\winrnr.dll
+0x72d40000 - 0x72d5c000 	C:\Windows\system32\IPHLPAPI.DLL
+0x72d20000 - 0x72d27000 	C:\Windows\system32\WINNSI.DLL
+0x73050000 - 0x73088000 	C:\Windows\System32\fwpuclnt.dll
+0x72590000 - 0x72596000 	C:\Windows\system32\rasadhlp.dll
+0x74a00000 - 0x74a05000 	C:\Windows\System32\wshtcpip.dll
+0x723d0000 - 0x724bb000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:58929 -Dfile.encoding=UTF-8 
+java_command: com.comcast.einstein.data.Ms
+java_class_path (initial): D:\workspace\com.comcast.bom\target\classes;D:\workspace\com.comcast.bom\ExternalLibraries\junit-4.10.jar;D:\workspace\com.comcast.bom\ExternalLibraries\selenium-java-2.39.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\selenium-api-2.39.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\selenium-remote-driver-2.39.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\selenium-chrome-driver-2.39.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\maven-com4j-plugin-1.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\json.jar;D:\workspace\com.comcast.bom\ExternalLibraries\hamcrest-core-1.3.jar;D:\workspace\com.comcast.bom\ExternalLibraries\hamcrest-library-1.3.jar;D:\workspace\com.comcast.bom\ExternalLibraries\poi-3.10.1.jar;C:\apache-maven-3.3.9\repository\org\mongodb\mongo-java-driver\3.2.2\mongo-java-driver-3.2.2.jar;D:\workspace\com.comcast.bom\ExternalLibraries\rest-assured-2.4.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\rest-assured-common-2.4.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\json-path-2.4.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\xml-path-2.4.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\pdfbox-war-1.8.8-sources.jar;D:\workspace\com.comcast.bom\ExternalLibraries\fontbox-1.8.8.jar;D:\workspace\com.comcast.bom\ExternalLibraries\jempbox-1.8.8.jar;D:\workspace\com.comcast.bom\ExternalLibraries\pdfbox-1.8.8.jar;D:\workspace\com.comcast.bom\ExternalLibraries\guava-15.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\Framework_Utilities.jar;D:\workspace\com.comcast.bom\ExternalLibraries\Framework_Reporting.jar;D:\workspace\com.comcast.bom\ExternalLibraries\com.mercury.qualitycenter.otaclient-9.2.jar;D:\workspace\com.comcast.bom\ExternalLibraries\selenium-server-standalone-2.45.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\phantomjsdriver-1.2.0.jar;D:\workspace\com.comcast.bom\ExternalLibraries\com4j.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_91
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Java\jre1.8.0_45\bin;C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Apache Software Foundation\Tomcat 8.0;C:\Program Files\MongoDB\Server\3.2\bin;C:\apache-maven-3.3.9\bin;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files\Java\jdk1.8.0_74;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\
+USERNAME=494656
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 (6.1.7601.23392)
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, tsc
+
+Memory: 4k page, physical 3370648k(620420k free), swap 10999420k(6273756k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.45-b02) for windows-x86 JRE (1.8.0_45-b15), built on Apr 30 2015 12:31:00 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Fri Jun 10 12:52:25 2016
+elapsed time: 117 seconds (0d 0h 1m 57s)
+
