@@ -1,0 +1,1598 @@
+*************************************************TEST LOGS********************************************************
+->  Selected Environment is :: DTDEV
+ 
+ 
+ 
+ 
+ 
+*****************************************************************************************************************
+OPERATION is::sik:OrderSoap/SubmitOrder
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<cct:serviceFault xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:cct="http://xml.comcast.com/types" ><cct:messages><cct:message><cct:code>Order-SubmitOrder-401</cct:code><cct:text>Location Service failure: FTA information for account number 9999600050800 not found in Location Service</cct:text></cct:message></cct:messages></cct:serviceFault>
+ 
+ 
+SEND_DATA::
+ 
+<sik:SubmitOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:sik="http://comcastonline.com/" ><sik:Request><sik:ShipmentPriority>Standard</sik:ShipmentPriority><sik:CustomerInformation><sik:AccountNumber>9999600050800</sik:AccountNumber><sik:ContactInformation><sik:Phone>8454564646</sik:Phone></sik:ContactInformation></sik:CustomerInformation><sik:ShippingAddress></sik:ShippingAddress><sik:IsAlternateAddress>0</sik:IsAlternateAddress><sik:Products><sik:Product xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sik:KitProduct" ><sik:ProductCode>Y!6</sik:ProductCode><sik:Outlet>2</sik:Outlet></sik:Product></sik:Products><sik:E911_acceptance>0</sik:E911_acceptance><sik:ReferenceInfo><sik:AgentID>R67</sik:AgentID><sik:WorkOrderID>9</sik:WorkOrderID></sik:ReferenceInfo><sik:DuplicateOverride>false</sik:DuplicateOverride></sik:Request></sik:SubmitOrder>
+ 
+ 
+OPERATION is::op:oneStopSik/processOneStopSIK
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<oneStopSIK><comtracMessage><reqType>reschedule</reqType><request>&lt;Reschedule&gt;
+               &lt;comcorp&gt;99996&lt;/comcorp&gt;
+               &lt;house&gt;508&lt;/house&gt;
+               &lt;cust&gt;02&lt;/cust&gt;
+               &lt;opr&gt;R67&lt;/opr&gt;
+               &lt;custlevelpin/&gt;
+               &lt;lockacct_pid&gt;18022&lt;/lockacct_pid&gt;
+               &lt;c_fname&gt;S&lt;/c_fname&gt;
+               &lt;c_init/&gt;
+               &lt;c_lname&gt;S&lt;/c_lname&gt;
+               &lt;c_rareacd&gt;845&lt;/c_rareacd&gt;
+               &lt;c_rphon&gt;4522116&lt;/c_rphon&gt;
+               &lt;c_rphonarea/&gt;
+               &lt;jobtype&gt;WIP&lt;/jobtype&gt;
+               &lt;wpcnt&gt;9&lt;/wpcnt&gt;
+               &lt;chgwipdata&gt;Y&lt;/chgwipdata&gt;
+               &lt;chgschedule&gt;Y&lt;/chgschedule&gt;
+               &lt;c_rareacd&gt;845&lt;/c_rareacd&gt;
+               &lt;c_rphon&gt;4564646&lt;/c_rphon&gt;
+               &lt;c_rphonarea/&gt;
+               &lt;c_bphone&gt;4564646&lt;/c_bphone&gt;
+               &lt;c_ssn/&gt;
+               &lt;wipinfogroup&gt;
+                  &lt;disc_reason/&gt;
+                  &lt;c_badr&gt;&lt;/c_badr&gt;
+                  &lt;c_tty&gt;N&lt;/c_tty&gt;
+                  &lt;c_tdd&gt;N&lt;/c_tdd&gt;
+                  &lt;cba_bil1/&gt;
+                  &lt;cba_bil2/&gt;
+                  &lt;cba_bil3/&gt;
+                  &lt;cba_bil4/&gt;
+                  &lt;SanitizedAddressGroup/&gt;
+                  &lt;cem_email1&gt;VENKATESHWARULU_MUTTHAM@CABLE.COMCAST.COM&lt;/cem_email1&gt;
+                  &lt;cem_email2/&gt;
+                  &lt;cmnt_commt/&gt;
+                  &lt;w_wchrsn&gt;M&lt;/w_wchrsn&gt;
+                  &lt;w_cmpg&gt;J&lt;/w_cmpg&gt;
+                  &lt;w_salrn&gt;1&lt;/w_salrn&gt;
+                  &lt;w_slsrep&gt;1&lt;/w_slsrep&gt;
+                  &lt;h_dwell&gt;1&lt;/h_dwell&gt;
+                  &lt;h_ovug/&gt;
+                  &lt;h_fibernode/&gt;
+                  &lt;h_network_id/&gt;
+                  &lt;optimization_option&gt;0&lt;/optimization_option&gt;
+                  &lt;c_ctype/&gt;
+                  &lt;voipdatagroup&gt;
+                     &lt;cvpd_third_party_ver_status&gt;N&lt;/cvpd_third_party_ver_status&gt;
+                     &lt;cvpd_third_party_ver_comp_date/&gt;
+                     &lt;cvpd_signal_access_code/&gt;
+                     &lt;cvpd_ilec/&gt;
+                     &lt;ilec_listing_changed&gt;1&lt;/ilec_listing_changed&gt;
+                     &lt;cvpd_effective_date&gt;2012-11-27&lt;/cvpd_effective_date&gt;
+                     &lt;cvpd_action_date&gt;2012-11-26&lt;/cvpd_action_date&gt;
+                     &lt;cvpd_bill_presentment/&gt;
+                     &lt;cvpd_calling_plan/&gt;
+                     &lt;cvpd_opr/&gt;
+                     &lt;cvpd_cpni&gt;N&lt;/cvpd_cpni&gt;
+                     &lt;cvpd_third_party_acct_num/&gt;
+                    &lt;cvpd_POTS_access_number&gt;&lt;/cvpd_POTS_access_number&gt;
+                     &lt;cvpd_internal_dialing/&gt;
+                  &lt;/voipdatagroup&gt;
+                  &lt;business_contact_group/&gt;
+                  &lt;wirelessdatagroup/&gt;
+                  &lt;outletgroup&gt;
+                     &lt;outlet&gt;
+                        &lt;wo_outlet&gt;1&lt;/wo_outlet&gt;
+                        &lt;pt_pkg&gt;H3&lt;/pt_pkg&gt;
+                        &lt;wo_boxloc&gt;Z&lt;/wo_boxloc&gt;
+                        &lt;ratecodegroup&gt;
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;41&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount/&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                        &lt;/ratecodegroup&gt;
+                        &lt;lobgroup&gt;
+                           &lt;lob&gt;
+                              &lt;w_lob&gt;0&lt;/w_lob&gt;
+                              &lt;taskcodegroup&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;135&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                              &lt;/taskcodegroup&gt;
+                           &lt;/lob&gt;
+                        &lt;/lobgroup&gt;
+                        &lt;voiptngroup/&gt;
+                        &lt;wirelesstn/&gt;
+                        &lt;wo_pts/&gt;
+                        &lt;dss_username/&gt;
+                        &lt;dss_password/&gt;
+                     &lt;/outlet&gt;
+                     &lt;outlet&gt;
+                        &lt;wo_outlet&gt;2&lt;/wo_outlet&gt;
+                        &lt;pt_pkg&gt;H3&lt;/pt_pkg&gt;
+                        &lt;wo_boxloc&gt;Z&lt;/wo_boxloc&gt;
+                        &lt;ratecodegroup&gt;
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;!2&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;4495&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                           
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;&#39;&#39;1&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;2995&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;&#39;&#39;4&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;700&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+			&lt;ratecode&gt;
+                           &lt;wor_ratecd&gt;Y!6&lt;/wor_ratecd&gt;
+                           &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                           &lt;amount/&gt;
+                           &lt;outlet_discount_amount/&gt;
+                           &lt;depositgroup/&gt;
+                        &lt;/ratecode&gt;
+                        
+                        &lt;/ratecodegroup&gt;
+                        &lt;lobgroup&gt;
+                           &lt;lob&gt;
+                              &lt;w_lob&gt;0&lt;/w_lob&gt;
+                              &lt;taskcodegroup&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;177&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;180&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                              &lt;/taskcodegroup&gt;
+                           &lt;/lob&gt;
+                        &lt;/lobgroup&gt;
+                        &lt;voiptngroup&gt;
+                           &lt;voiptn&gt;
+                              &lt;telephone_number&gt;3023214634&lt;/telephone_number&gt;
+                              &lt;old_number/&gt;
+                              &lt;ctns_action&gt;I&lt;/ctns_action&gt;
+                              &lt;ctns_disc_rsn/&gt;
+                              &lt;wtns_referral_message_type/&gt;
+                              &lt;wtns_referral_telephone/&gt;
+                              &lt;change_ported_to_native&gt;0&lt;/change_ported_to_native&gt;
+                              &lt;ctns_ported_number&gt;0&lt;/ctns_ported_number&gt;
+                              &lt;ctns_lpic&gt;0386&lt;/ctns_lpic&gt;
+                              &lt;hvptn_lpic_chgrsn/&gt;
+                              &lt;ctns_pic&gt;0386&lt;/ctns_pic&gt;
+                              &lt;hvptn_pic_chgrsn/&gt;
+                              &lt;ctns_ploc&gt;0&lt;/ctns_ploc&gt;
+                              &lt;ctns_block_code&gt;D&lt;/ctns_block_code&gt;
+                              &lt;ctns_pic_freeze&gt;1&lt;/ctns_pic_freeze&gt;
+                              &lt;ctns_lpic_freeze&gt;1&lt;/ctns_lpic_freeze&gt;
+                              &lt;ctns_ploc_freeze&gt;0&lt;/ctns_ploc_freeze&gt;
+                              &lt;ctns_cnam_indicator&gt;A&lt;/ctns_cnam_indicator&gt;
+                              &lt;hvptn_cnam_ind_chgrsn/&gt;
+                              &lt;jurisdictional_indicator&gt;B&lt;/jurisdictional_indicator&gt;
+                              &lt;transaction_code&gt;C&lt;/transaction_code&gt;
+                              &lt;ctns_action_date/&gt;
+                              &lt;ctns_cic_carrier&gt;00000&lt;/ctns_cic_carrier&gt;
+                              &lt;ctns_foc_date/&gt;
+                              &lt;ctns_foc_info/&gt;
+                              &lt;ctns_clli_code&gt;K1J2H3G4F5D6S7A&lt;/ctns_clli_code&gt;
+                              &lt;ctns_tn_primary_rank&gt;Y&lt;/ctns_tn_primary_rank&gt;
+                              &lt;ctns_port_id&gt;0&lt;/ctns_port_id&gt;
+                              &lt;tnringgroup/&gt;
+                              &lt;tndirectorygroup&gt;
+                                 &lt;tndirectory&gt;
+                                    &lt;wdir_action&gt;I&lt;/wdir_action&gt;
+                                    &lt;wdir_dir_chgrsn/&gt;
+                                    &lt;cdir_listing_type&gt;LML&lt;/cdir_listing_type&gt;
+                                    &lt;cdir_listing_number&gt;1&lt;/cdir_listing_number&gt;
+                                    &lt;cdir_listing_indicator&gt;PL&lt;/cdir_listing_indicator&gt;
+                                    &lt;trans_type&gt;C&lt;/trans_type&gt;
+                                    &lt;cdir_linage/&gt;
+                                    &lt;cdir_special_name/&gt;
+                                    &lt;cdir_title/&gt;
+                                    &lt;cdir_first_name&gt;Cdv&lt;/cdir_first_name&gt;
+                                    &lt;cdir_last_name&gt;Swivel&lt;/cdir_last_name&gt;
+                                    &lt;cdir_middle_name/&gt;
+                                    &lt;cdir_pre_dir/&gt;
+                                    &lt;cdir_street_num&gt;115&lt;/cdir_street_num&gt;
+                                    &lt;cdir_fract/&gt;
+                                    &lt;cdir_street_name&gt;Ddp52249res St&lt;/cdir_street_name&gt;
+                                    &lt;cdir_state&gt;DE&lt;/cdir_state&gt;
+                                    &lt;cdir_zip&gt;19962&lt;/cdir_zip&gt;
+                                    &lt;cdir_zip4/&gt;
+                                    &lt;cdir_community&gt;Magnolia&lt;/cdir_community&gt;
+                                    &lt;cdir_apt_number/&gt;
+                                    &lt;cdir_building_number/&gt;
+                                    &lt;cdir_service_type&gt;R&lt;/cdir_service_type&gt;
+                                    &lt;cdir_no_solicitation&gt;0&lt;/cdir_no_solicitation&gt;
+                                    &lt;cdir_advanced_to_dir/&gt;
+                                    &lt;cdir_effective_date/&gt;
+                                    &lt;cdir_omit_address&gt;0&lt;/cdir_omit_address&gt;
+                                    &lt;cdir_ld1/&gt;
+                                    &lt;cdir_lv1/&gt;
+                                    &lt;cdir_ld2/&gt;
+                                    &lt;cdir_lv2/&gt;
+                                    &lt;cdir_ld3/&gt;
+                                    &lt;cdir_lv3/&gt;
+                                    &lt;cdir_ali_code/&gt;
+                                    &lt;cdir_ban/&gt;
+                                 &lt;/tndirectory&gt;
+                              &lt;/tndirectorygroup&gt;
+                              &lt;tnsvcgroup&gt;
+                                 &lt;tnsvc&gt;
+                                    &lt;ctnsv_rcode&gt;!2&lt;/ctnsv_rcode&gt;
+                                    &lt;ctnsv_cnt&gt;1&lt;/ctnsv_cnt&gt;
+                                 &lt;/tnsvc&gt;
+                              &lt;/tnsvcgroup&gt;
+                              &lt;tnfeaturegroup&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;207&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;202&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup&gt;
+                                       &lt;tnfeaturesetting&gt;
+                                          &lt;ctnfs_setting_number&gt;5&lt;/ctnfs_setting_number&gt;
+                                          &lt;ctnfs_setting_value&gt;5&lt;/ctnfs_setting_value&gt;
+                                       &lt;/tnfeaturesetting&gt;
+                                    &lt;/tnfeaturesettinggroup&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;201&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;4&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;5&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;3&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;6&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;204&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;203&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;7&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;0&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;401&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;403&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;402&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;2&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;1&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;8&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                              &lt;/tnfeaturegroup&gt;
+                           &lt;/voiptn&gt;
+                        &lt;/voiptngroup&gt;
+                        &lt;wirelesstn/&gt;
+                        &lt;wo_pts/&gt;
+                        &lt;dss_username/&gt;
+                        &lt;dss_password/&gt;
+                     &lt;/outlet&gt;
+                     &lt;outlet&gt;
+                       &lt;wo_outlet&gt;3&lt;/wo_outlet&gt;
+                        &lt;pt_pkg&gt;H3&lt;/pt_pkg&gt;
+                        &lt;wo_boxloc&gt;Z&lt;/wo_boxloc&gt;
+                        &lt;ratecodegroup&gt;
+                                                     &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;#T&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;500&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                          
+                        &lt;/ratecodegroup&gt;
+                        &lt;lobgroup&gt;
+                           &lt;lob&gt;
+                              &lt;w_lob&gt;0&lt;/w_lob&gt;
+                              &lt;taskcodegroup&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;177&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;180&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;321&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                
+                              &lt;/taskcodegroup&gt;
+                           &lt;/lob&gt;
+                        &lt;/lobgroup&gt;
+                        &lt;voiptngroup/&gt;
+                        &lt;wirelesstn/&gt;
+                        &lt;wo_pts/&gt;
+                        &lt;dss_username/&gt;
+                        &lt;dss_password/&gt;
+                     &lt;/outlet&gt;
+                  &lt;/outletgroup&gt;
+               &lt;/wipinfogroup&gt;
+               &lt;scheduleactiongroup&gt;
+                  &lt;schedulegroup&gt;
+                     &lt;w_lob&gt;0&lt;/w_lob&gt;
+                     &lt;scheduleaction&gt;0&lt;/scheduleaction&gt;
+                     &lt;w_wbdate&gt;2012-11-28&lt;/w_wbdate&gt;
+                     &lt;woc_commt/&gt;
+                     &lt;noschedule&gt;
+                        &lt;w_wordrsn&gt;3&lt;/w_wordrsn&gt;
+                        &lt;cmnt_comnt/&gt;
+                        &lt;w_self_install&gt;N&lt;/w_self_install&gt;
+                     &lt;/noschedule&gt;
+                     &lt;notruck&gt;
+                        &lt;w_widate&gt;2012-11-26&lt;/w_widate&gt;
+                        &lt;w_wordtime&gt;15:41&lt;/w_wordtime&gt;
+                        &lt;h_tag/&gt;
+                        &lt;h_drop/&gt;
+                       &lt;w_tech&gt;999&lt;/w_tech&gt;
+                        &lt;w_notrkreason/&gt;
+                        &lt;notruckoutletgroup&gt;
+                           &lt;notruckoutlet&gt;
+                              &lt;w_notruckoutlet&gt;1&lt;/w_notruckoutlet&gt;
+                              &lt;binv_bnumb/&gt;
+                              &lt;hb_retrnrsn/&gt;
+                              &lt;binv_addleq/&gt;
+                              &lt;binv_loc&gt;Z&lt;/binv_loc&gt;
+                              &lt;binv_brgratg/&gt;
+                              &lt;binv_brgpin/&gt;
+                              &lt;binv_brgppv/&gt;
+                              &lt;binv_brgemg/&gt;
+                              &lt;binv_ippvpin/&gt;
+                              &lt;cust_voiptn_group/&gt;
+                              &lt;wip_voiptn_group/&gt;
+                              &lt;fixcodegroup&gt;
+                                 &lt;wo_fixcode/&gt;
+                                 &lt;wo_fixpoints/&gt;
+                              &lt;/fixcodegroup&gt;
+                           &lt;/notruckoutlet&gt;
+                           &lt;notruckoutlet&gt;
+                              &lt;w_notruckoutlet&gt;2&lt;/w_notruckoutlet&gt;
+                              &lt;binv_bnumb/&gt;
+                              &lt;hb_retrnrsn/&gt;
+                              &lt;binv_addleq/&gt;
+                              &lt;binv_loc&gt;Z&lt;/binv_loc&gt;
+                              &lt;binv_brgratg/&gt;
+                              &lt;binv_brgpin/&gt;
+                              &lt;binv_brgppv/&gt;
+                              &lt;binv_brgemg/&gt;
+                              &lt;binv_ippvpin/&gt;
+                              &lt;cust_voiptn_group/&gt;
+                              &lt;wip_voiptn_group/&gt;
+                              &lt;fixcodegroup&gt;
+                                 &lt;wo_fixcode/&gt;
+                                 &lt;wo_fixpoints/&gt;
+                              &lt;/fixcodegroup&gt;
+                           &lt;/notruckoutlet&gt;
+                           &lt;notruckoutlet&gt;
+                              &lt;w_notruckoutlet&gt;3&lt;/w_notruckoutlet&gt;
+                              &lt;binv_bnumb/&gt;
+                              &lt;hb_retrnrsn/&gt;
+                              &lt;binv_addleq/&gt;
+                              &lt;binv_loc&gt;Z&lt;/binv_loc&gt;
+                              &lt;binv_brgratg/&gt;
+                              &lt;binv_brgpin/&gt;
+                              &lt;binv_brgppv/&gt;
+                              &lt;binv_brgemg/&gt;
+                              &lt;binv_ippvpin/&gt;
+                              &lt;cust_voiptn_group/&gt;
+                              &lt;wip_voiptn_group/&gt;
+                              &lt;fixcodegroup&gt;
+                                 &lt;wo_fixcode/&gt;
+                                 &lt;wo_fixpoints/&gt;
+                              &lt;/fixcodegroup&gt;
+                           &lt;/notruckoutlet&gt;
+                        &lt;/notruckoutletgroup&gt;
+                     &lt;/notruck&gt;
+                     &lt;schedule&gt;
+                        &lt;w_schdat/&gt;
+                        &lt;w_qtaslot/&gt;
+                        &lt;w_wtimcd/&gt;
+                        &lt;w_wproty/&gt;
+                        &lt;w_quota_lob&gt;7&lt;/w_quota_lob&gt;
+                     &lt;/schedule&gt;
+                  &lt;/schedulegroup&gt;
+               &lt;/scheduleactiongroup&gt;
+               &lt;w_wspcl/&gt;
+               &lt;w_wrem&gt;D&lt;/w_wrem&gt;
+               &lt;w_wdiscnt/&gt;
+               &lt;w_wform/&gt;
+               &lt;w_wmsg/&gt;
+               &lt;w_wpro/&gt;
+               &lt;w_wmode/&gt;
+               &lt;w_wlanguage/&gt;
+               &lt;w_wcod&gt;I&lt;/w_wcod&gt;
+               &lt;w_annivday/&gt;
+               &lt;cte_taxcode&gt;NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN&lt;/cte_taxcode&gt;
+               &lt;w_wordrsn&gt;4&lt;/w_wordrsn&gt;
+               &lt;cmnt_comnt/&gt;
+               &lt;cdwf_dflash/&gt;
+               &lt;keyingroup&gt;
+                  &lt;skip_provision&gt;0&lt;/skip_provision&gt;
+               &lt;/keyingroup&gt;
+               &lt;c_tax_override_name/&gt;
+               &lt;customer_type&gt;R&lt;/customer_type&gt;
+            &lt;/Reschedule&gt;</request><ErrCode>0</ErrCode><msgLogId>14740327762248</msgLogId><reqDS>vision:Reschedule</reqDS><sendtime>2012-11-26T05:11:49-05:00</sendtime><receivetime>2012-11-26T05:11:51-05:00</receivetime><isWireless>0</isWireless><cbdTrackingId>99996508174022012-11-26-05.06.22.301411C01</cbdTrackingId><corp>99996</corp><MsgLogId>70729521453421</MsgLogId></comtracMessage><sourceType>COMTRAC</sourceType><msgTrackId>4DE0024EF7FDBAE3CEAE4977B6C34F23</msgTrackId><trackingId>99996508174022012-11-26-05.06.22.301411C01</trackingId><msgLogId>70729521453421</msgLogId></oneStopSIK>
+ 
+ 
+SEND_DATA::
+ 
+No Data
+ 
+ 
+OPERATION is::SelfInstallKit:SIKFlow/sikFlow
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<SIKFlowDS><CWDOCID>10632452066</CWDOCID><LASTUPDATEDATE>2015-06-23T03:30:22-04:00</LASTUPDATEDATE><ACCOUNTNUMBER>9999600050800</ACCOUNTNUMBER><BILLINGORDERID>9</BILLINGORDERID><ORDTYPE>RSH</ORDTYPE><INPUTCHANNEL>CUSTOMER</INPUTCHANNEL><ACTIVE>true</ACTIVE><PRODUCTTYPE>SIK</PRODUCTTYPE><MSGTRACKID>4D63A3D451A09AB67D4710C1F730CEA8</MSGTRACKID><TRACKID>49C054D3F98BC5E525B5E936B09832C6</TRACKID></SIKFlowDS>
+ 
+ 
+SEND_DATA::
+ 
+No Data
+ 
+ 
+OPERATION is::sik:OrderSoap/SubmitOrder
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<cct:serviceFault xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:cct="http://xml.comcast.com/types" ><cct:messages><cct:message><cct:code>Order-SubmitOrder-401</cct:code><cct:text>Location Service failure: FTA information for account number 9999600050800 not found in Location Service</cct:text></cct:message></cct:messages></cct:serviceFault>
+ 
+ 
+SEND_DATA::
+ 
+<sik:SubmitOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:sik="http://comcastonline.com/" ><sik:Request><sik:ShipmentPriority>Standard</sik:ShipmentPriority><sik:CustomerInformation><sik:AccountNumber>9999600050800</sik:AccountNumber><sik:ContactInformation><sik:Phone>8454564646</sik:Phone></sik:ContactInformation></sik:CustomerInformation><sik:ShippingAddress></sik:ShippingAddress><sik:IsAlternateAddress>0</sik:IsAlternateAddress><sik:Products><sik:Product xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sik:KitProduct" ><sik:ProductCode>Y!6</sik:ProductCode><sik:Outlet>2</sik:Outlet></sik:Product></sik:Products><sik:E911_acceptance>0</sik:E911_acceptance><sik:ReferenceInfo><sik:AgentID>R67</sik:AgentID><sik:WorkOrderID>9</sik:WorkOrderID></sik:ReferenceInfo><sik:DuplicateOverride>false</sik:DuplicateOverride></sik:Request></sik:SubmitOrder>
+ 
+ 
+OPERATION is::sik:OrderSoap/SubmitOrder
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<cct:serviceFault xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:cct="http://xml.comcast.com/types" ><cct:messages><cct:message><cct:code>Order-SubmitOrder-401</cct:code><cct:text>Location Service failure: FTA information for account number 9999600050800 not found in Location Service</cct:text></cct:message></cct:messages></cct:serviceFault>
+ 
+ 
+SEND_DATA::
+ 
+<sik:SubmitOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:sik="http://comcastonline.com/" ><sik:Request><sik:ShipmentPriority>Standard</sik:ShipmentPriority><sik:CustomerInformation><sik:AccountNumber>9999600050800</sik:AccountNumber><sik:ContactInformation><sik:Phone>8454564646</sik:Phone></sik:ContactInformation></sik:CustomerInformation><sik:ShippingAddress></sik:ShippingAddress><sik:IsAlternateAddress>0</sik:IsAlternateAddress><sik:Products><sik:Product xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sik:KitProduct" ><sik:ProductCode>Y!6</sik:ProductCode><sik:Outlet>2</sik:Outlet></sik:Product></sik:Products><sik:E911_acceptance>0</sik:E911_acceptance><sik:ReferenceInfo><sik:AgentID>R67</sik:AgentID><sik:WorkOrderID>9</sik:WorkOrderID></sik:ReferenceInfo><sik:DuplicateOverride>false</sik:DuplicateOverride></sik:Request></sik:SubmitOrder>
+ 
+ 
+OPERATION is::HTTPConnectorClientDDP:HttpConnectorServiceClientDDP/getHouseInfo
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<getHouseInfoResponse><getHouseInfoReturn>&lt;GetHouseInfo_response&gt;&lt;errorcode&gt;100&lt;/errorcode&gt;&lt;errordescription&gt;[dp104.dev::main] Unable to call &#39;GetHouseInfo&#39;.. - [house.dev::GetHouseInfo] No Records Found. - &lt;/errordescription&gt;&lt;/GetHouseInfo_response&gt;</getHouseInfoReturn></getHouseInfoResponse>
+ 
+ 
+SEND_DATA::
+ 
+<getHouseInfo><request>&lt;GetHouseInfo&gt;&lt;comcorp&gt;99996&lt;/comcorp&gt;&lt;house&gt;508&lt;/house&gt;&lt;/GetHouseInfo&gt;</request></getHouseInfo>
+ 
+ 
+OPERATION is::HTTPConnectorClientDDP:HttpConnectorServiceClientDDP/getWipInfo
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<getWipInfoResponse><getWipInfoReturn>&lt;GetWipInfo_response&gt;&lt;errorcode&gt;100&lt;/errorcode&gt;&lt;errordescription&gt;[dp104::main] Unable to call &#39;GetWIPInfo&#39;.. - [wipinf.dev::ExecuteWIPInfo] No records found in WipOrdComms,WipOutlet,WipMaster. - &lt;/errordescription&gt;&lt;/GetWipInfo_response&gt;</getWipInfoReturn></getWipInfoResponse>
+ 
+ 
+SEND_DATA::
+ 
+<getWipInfo><request>&lt;GetWipInfo&gt;&lt;comcorp&gt;99996&lt;/comcorp&gt;&lt;house&gt;000508&lt;/house&gt;&lt;cust&gt;00&lt;/cust&gt;&lt;opr&gt;R67&lt;/opr&gt;&lt;wpcnt&gt;9&lt;/wpcnt&gt;&lt;/GetWipInfo&gt;</request></getWipInfo>
+ 
+ 
+OPERATION is::HTTPConnectorClientDDP:HttpConnectorServiceClientDDP/getCustomerInfo
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<HTTPConnectorClientDDP:getCustomerInfoResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:HTTPConnectorClientDDP="http://ws.service.httpconnector.ddp.core.comcast.com" ><HTTPConnectorClientDDP:getCustomerInfoReturn>&lt;GetCustomerInfo_response&gt;&lt;errorcode&gt;100&lt;/errorcode&gt;&lt;errordescription&gt;[dp104.dev::main] Unable to call &#39;GetCustInfo&#39;.. - [custinf.dev::GetCustmaster] No Records Found - &lt;/errordescription&gt;&lt;/GetCustomerInfo_response&gt;</HTTPConnectorClientDDP:getCustomerInfoReturn></HTTPConnectorClientDDP:getCustomerInfoResponse>
+ 
+ 
+SEND_DATA::
+ 
+<getCustomerInfo><request>&lt;GetCustomerInfo&gt;&lt;comcorp&gt;99996&lt;/comcorp&gt;&lt;house&gt;000508&lt;/house&gt;&lt;cust&gt;00&lt;/cust&gt;&lt;opr&gt;R67&lt;/opr&gt;&lt;/GetCustomerInfo&gt;</request></getCustomerInfo>
+ 
+ 
+OPERATION is::cmb:commonOrderService/orderUpdate
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+No Data
+ 
+ 
+SEND_DATA::
+ 
+<cod:comRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cod:comRequest"   xmlns:cod="http://www.comcast.com/ordercare/cod"  xmlns:cmb="http://www.comcast.com/ordercare/cmb" ><vom>OP</vom><instance>OP-DT-DEV</instance><id>282A5FFA3870763293E77736F2877389</id><requestTime>2015-06-23T03:30:26-04:00</requestTime><header type="opCommExt:header" id="282A5FFA3870763293E77736F2877389"><value name="guid">282A5FFA3870763293E77736F2877389</value><value name="accountNumber">9999600050800</value><value name="corpId">99996</value><value name="billingOrderId">9</value><value name="ordType">RSH</value><value name="ordSource">OP</value><value name="ordStatus">INI</value><value name="selfInstall">1</value><value name="inputChannel">CUSTOMER_SERVICE</value><value name="customerType">RES</value><value name="billingSystem">DDP</value><value name="active">1</value><value name="salesChannel">COMTRAC</value><value name="otherInfo">R67</value><value name="otherDetails">R67</value><value name="productType">SIK</value></header><customer type="cod:customer" id="282A5FFA3870763293E77736F2877389"><value name="guid">282A5FFA3870763293E77736F2877389</value><value name="firstName"></value><value name="lastName"></value><value name="contactNumber">8454564646</value></customer><address type="cod:address" id="282A5FFA3870763293E77736F2877389"><value name="guid">282A5FFA3870763293E77736F2877389</value></address><shipping type="cod:shipping" id="282A5FFA3870763293E77736F2877389"><value name="guid">282A5FFA3870763293E77736F2877389</value><value name="firstName"></value><value name="lastName"></value><value name="contactNumber">8454564646</value><value name="shipmentType">STD</value><value name="submitDate">2015-06-23T07:30:26.00Z</value></shipping><note><note>Order Validated</note><description>SIKSwivel: Order Validated Successfully</description><append>1</append></note></cod:comRequest>
+ 
+ 
+OPERATION is::ls:LocationServicePort/queryLocation
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<m:queryLocationResponse xmlns:m="http://xml.comcast.com/location/services"><m:queryLocationReturn xmlns:m="http://xml.comcast.com/location/services"><typ:locationReference xmlns:typ="http://xml.comcast.com/location/types"></typ:locationReference><typ:marketReference xsi:nil="true" xmlns:typ="http://xml.comcast.com/location/types"></typ:marketReference><typ:location xsi:nil="true" xmlns:typ="http://xml.comcast.com/location/types"></typ:location></m:queryLocationReturn></m:queryLocationResponse>
+ 
+ 
+SEND_DATA::
+ 
+<ls:queryLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:ls="http://xml.comcast.com/location/services"  xmlns:lt="http://xml.comcast.com/location/types" ><ls:QueryLocation><lt:legacyIDSearch><lt:legacyID>9999600050800</lt:legacyID><lt:legacyIDSource>DDPAccountNumber</lt:legacyIDSource><lt:getLocationOnSingleAddressFound>1</lt:getLocationOnSingleAddressFound></lt:legacyIDSearch></ls:QueryLocation></ls:queryLocation>
+ 
+ 
+OPERATION is::SelfInstallKit:SIKFlow/sikFlow
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+No Data
+ 
+ 
+SEND_DATA::
+ 
+<SIKFlowDS><CWDOCID>10632452066</CWDOCID><LASTUPDATEDATE>2015-06-23T03:30:22-04:00</LASTUPDATEDATE><ACCOUNTNUMBER>9999600050800</ACCOUNTNUMBER><BILLINGORDERID>9</BILLINGORDERID><ORDTYPE>RSH</ORDTYPE><INPUTCHANNEL>CUSTOMER</INPUTCHANNEL><ACTIVE>true</ACTIVE><PRODUCTTYPE>SIK</PRODUCTTYPE><MSGTRACKID>4D63A3D451A09AB67D4710C1F730CEA8</MSGTRACKID><TRACKID>49C054D3F98BC5E525B5E936B09832C6</TRACKID></SIKFlowDS>
+ 
+ 
+OPERATION is::cmb:commonOrderService/orderUpdate
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+No Data
+ 
+ 
+SEND_DATA::
+ 
+<cod:comRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cod:comRequest"   xmlns:cod="http://www.comcast.com/ordercare/cod"  xmlns:cmb="http://www.comcast.com/ordercare/cmb" ><vom>OP</vom><instance>OP-DT-DEV</instance><id>282A5FFA3870763293E77736F2877389</id><requestTime>2015-06-23T03:31:21-04:00</requestTime><header type="opCommExt:header" id="282A5FFA3870763293E77736F2877389"><value name="productType">SIK</value><value name="customerType">RES</value><value name="errorText"> Location Service failure: FTA information for account number 9999600050800 not found in Location Service</value><value name="errorCode">SIK_SWI_001</value><value name="ordStatus">ERR</value><value name="ordType">RSH</value><value name="billingOrderId">9</value><value name="corpId">99996</value><value name="accountNumber">9999600050800</value><value name="guid">282A5FFA3870763293E77736F2877389</value></header><wlRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cwd:wlRequest"  xmlns:cwd="http://www.comcast.com/ordercare/cwd" ><vom>OP</vom><id>282A5FFA3870763293E77736F2877389</id><request>N</request><vomOrderId></vomOrderId><vomOrderKey></vomOrderKey><needNotification>1</needNotification><worklist type="cwd:worklist" id="282A5FFA3870763293E77736F2877389"><value name="customerType">RES</value><value name="ordStatus">ERR</value><value name="errorCode">SIK_SWI_001</value><value name="details">SubmitOrder call failed with errorOrder-SubmitOrder-401 after the retries with the error: Location Service failure: FTA information for account number 9999600050800 not found in Location Service</value><value name="otherNumber">Y!6</value><value name="otherInfo">Digital STB KIT</value></worklist></wlRequest></cod:comRequest>
+ 
+ 
+OPERATION is::ofs:OfferMgmtServicePort/confirmServiceRequest
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<m:confirmServiceRequestResponse xmlns:m="http://xml.comcast.com/offermgmt/services"><m:confirmServiceRequestReturn xmlns:m="http://xml.comcast.com/offermgmt/services">true</m:confirmServiceRequestReturn></m:confirmServiceRequestResponse>
+ 
+ 
+SEND_DATA::
+ 
+<ofs:confirmServiceRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:ofs="http://xml.comcast.com/offermgmt/services"  xmlns:oft="http://xml.comcast.com/offermgmt/types" ><ofs:request><oft:accountReference>9999600050800</oft:accountReference><oft:shoppingAction>RESCHEDULE</oft:shoppingAction></ofs:request></ofs:confirmServiceRequest>
+ 
+ 
+OPERATION is::op:oneStopSik/processOneStopSIK
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+No Data
+ 
+ 
+SEND_DATA::
+ 
+<oneStopSIK><comtracMessage><reqType>reschedule</reqType><request>&lt;Reschedule&gt;
+               &lt;comcorp&gt;99996&lt;/comcorp&gt;
+               &lt;house&gt;508&lt;/house&gt;
+               &lt;cust&gt;02&lt;/cust&gt;
+               &lt;opr&gt;R67&lt;/opr&gt;
+               &lt;custlevelpin/&gt;
+               &lt;lockacct_pid&gt;18022&lt;/lockacct_pid&gt;
+               &lt;c_fname&gt;S&lt;/c_fname&gt;
+               &lt;c_init/&gt;
+               &lt;c_lname&gt;S&lt;/c_lname&gt;
+               &lt;c_rareacd&gt;845&lt;/c_rareacd&gt;
+               &lt;c_rphon&gt;4522116&lt;/c_rphon&gt;
+               &lt;c_rphonarea/&gt;
+               &lt;jobtype&gt;WIP&lt;/jobtype&gt;
+               &lt;wpcnt&gt;9&lt;/wpcnt&gt;
+               &lt;chgwipdata&gt;Y&lt;/chgwipdata&gt;
+               &lt;chgschedule&gt;Y&lt;/chgschedule&gt;
+               &lt;c_rareacd&gt;845&lt;/c_rareacd&gt;
+               &lt;c_rphon&gt;4564646&lt;/c_rphon&gt;
+               &lt;c_rphonarea/&gt;
+               &lt;c_bphone&gt;4564646&lt;/c_bphone&gt;
+               &lt;c_ssn/&gt;
+               &lt;wipinfogroup&gt;
+                  &lt;disc_reason/&gt;
+                  &lt;c_badr&gt;&lt;/c_badr&gt;
+                  &lt;c_tty&gt;N&lt;/c_tty&gt;
+                  &lt;c_tdd&gt;N&lt;/c_tdd&gt;
+                  &lt;cba_bil1/&gt;
+                  &lt;cba_bil2/&gt;
+                  &lt;cba_bil3/&gt;
+                  &lt;cba_bil4/&gt;
+                  &lt;SanitizedAddressGroup/&gt;
+                  &lt;cem_email1&gt;VENKATESHWARULU_MUTTHAM@CABLE.COMCAST.COM&lt;/cem_email1&gt;
+                  &lt;cem_email2/&gt;
+                  &lt;cmnt_commt/&gt;
+                  &lt;w_wchrsn&gt;M&lt;/w_wchrsn&gt;
+                  &lt;w_cmpg&gt;J&lt;/w_cmpg&gt;
+                  &lt;w_salrn&gt;1&lt;/w_salrn&gt;
+                  &lt;w_slsrep&gt;1&lt;/w_slsrep&gt;
+                  &lt;h_dwell&gt;1&lt;/h_dwell&gt;
+                  &lt;h_ovug/&gt;
+                  &lt;h_fibernode/&gt;
+                  &lt;h_network_id/&gt;
+                  &lt;optimization_option&gt;0&lt;/optimization_option&gt;
+                  &lt;c_ctype/&gt;
+                  &lt;voipdatagroup&gt;
+                     &lt;cvpd_third_party_ver_status&gt;N&lt;/cvpd_third_party_ver_status&gt;
+                     &lt;cvpd_third_party_ver_comp_date/&gt;
+                     &lt;cvpd_signal_access_code/&gt;
+                     &lt;cvpd_ilec/&gt;
+                     &lt;ilec_listing_changed&gt;1&lt;/ilec_listing_changed&gt;
+                     &lt;cvpd_effective_date&gt;2012-11-27&lt;/cvpd_effective_date&gt;
+                     &lt;cvpd_action_date&gt;2012-11-26&lt;/cvpd_action_date&gt;
+                     &lt;cvpd_bill_presentment/&gt;
+                     &lt;cvpd_calling_plan/&gt;
+                     &lt;cvpd_opr/&gt;
+                     &lt;cvpd_cpni&gt;N&lt;/cvpd_cpni&gt;
+                     &lt;cvpd_third_party_acct_num/&gt;
+                    &lt;cvpd_POTS_access_number&gt;&lt;/cvpd_POTS_access_number&gt;
+                     &lt;cvpd_internal_dialing/&gt;
+                  &lt;/voipdatagroup&gt;
+                  &lt;business_contact_group/&gt;
+                  &lt;wirelessdatagroup/&gt;
+                  &lt;outletgroup&gt;
+                     &lt;outlet&gt;
+                        &lt;wo_outlet&gt;1&lt;/wo_outlet&gt;
+                        &lt;pt_pkg&gt;H3&lt;/pt_pkg&gt;
+                        &lt;wo_boxloc&gt;Z&lt;/wo_boxloc&gt;
+                        &lt;ratecodegroup&gt;
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;41&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount/&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                        &lt;/ratecodegroup&gt;
+                        &lt;lobgroup&gt;
+                           &lt;lob&gt;
+                              &lt;w_lob&gt;0&lt;/w_lob&gt;
+                              &lt;taskcodegroup&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;135&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                              &lt;/taskcodegroup&gt;
+                           &lt;/lob&gt;
+                        &lt;/lobgroup&gt;
+                        &lt;voiptngroup/&gt;
+                        &lt;wirelesstn/&gt;
+                        &lt;wo_pts/&gt;
+                        &lt;dss_username/&gt;
+                        &lt;dss_password/&gt;
+                     &lt;/outlet&gt;
+                     &lt;outlet&gt;
+                        &lt;wo_outlet&gt;2&lt;/wo_outlet&gt;
+                        &lt;pt_pkg&gt;H3&lt;/pt_pkg&gt;
+                        &lt;wo_boxloc&gt;Z&lt;/wo_boxloc&gt;
+                        &lt;ratecodegroup&gt;
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;!2&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;4495&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                           
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;&#39;&#39;1&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;2995&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;&#39;&#39;4&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;700&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+			&lt;ratecode&gt;
+                           &lt;wor_ratecd&gt;Y!6&lt;/wor_ratecd&gt;
+                           &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                           &lt;amount/&gt;
+                           &lt;outlet_discount_amount/&gt;
+                           &lt;depositgroup/&gt;
+                        &lt;/ratecode&gt;
+                        
+                        &lt;/ratecodegroup&gt;
+                        &lt;lobgroup&gt;
+                           &lt;lob&gt;
+                              &lt;w_lob&gt;0&lt;/w_lob&gt;
+                              &lt;taskcodegroup&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;177&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;180&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                              &lt;/taskcodegroup&gt;
+                           &lt;/lob&gt;
+                        &lt;/lobgroup&gt;
+                        &lt;voiptngroup&gt;
+                           &lt;voiptn&gt;
+                              &lt;telephone_number&gt;3023214634&lt;/telephone_number&gt;
+                              &lt;old_number/&gt;
+                              &lt;ctns_action&gt;I&lt;/ctns_action&gt;
+                              &lt;ctns_disc_rsn/&gt;
+                              &lt;wtns_referral_message_type/&gt;
+                              &lt;wtns_referral_telephone/&gt;
+                              &lt;change_ported_to_native&gt;0&lt;/change_ported_to_native&gt;
+                              &lt;ctns_ported_number&gt;0&lt;/ctns_ported_number&gt;
+                              &lt;ctns_lpic&gt;0386&lt;/ctns_lpic&gt;
+                              &lt;hvptn_lpic_chgrsn/&gt;
+                              &lt;ctns_pic&gt;0386&lt;/ctns_pic&gt;
+                              &lt;hvptn_pic_chgrsn/&gt;
+                              &lt;ctns_ploc&gt;0&lt;/ctns_ploc&gt;
+                              &lt;ctns_block_code&gt;D&lt;/ctns_block_code&gt;
+                              &lt;ctns_pic_freeze&gt;1&lt;/ctns_pic_freeze&gt;
+                              &lt;ctns_lpic_freeze&gt;1&lt;/ctns_lpic_freeze&gt;
+                              &lt;ctns_ploc_freeze&gt;0&lt;/ctns_ploc_freeze&gt;
+                              &lt;ctns_cnam_indicator&gt;A&lt;/ctns_cnam_indicator&gt;
+                              &lt;hvptn_cnam_ind_chgrsn/&gt;
+                              &lt;jurisdictional_indicator&gt;B&lt;/jurisdictional_indicator&gt;
+                              &lt;transaction_code&gt;C&lt;/transaction_code&gt;
+                              &lt;ctns_action_date/&gt;
+                              &lt;ctns_cic_carrier&gt;00000&lt;/ctns_cic_carrier&gt;
+                              &lt;ctns_foc_date/&gt;
+                              &lt;ctns_foc_info/&gt;
+                              &lt;ctns_clli_code&gt;K1J2H3G4F5D6S7A&lt;/ctns_clli_code&gt;
+                              &lt;ctns_tn_primary_rank&gt;Y&lt;/ctns_tn_primary_rank&gt;
+                              &lt;ctns_port_id&gt;0&lt;/ctns_port_id&gt;
+                              &lt;tnringgroup/&gt;
+                              &lt;tndirectorygroup&gt;
+                                 &lt;tndirectory&gt;
+                                    &lt;wdir_action&gt;I&lt;/wdir_action&gt;
+                                    &lt;wdir_dir_chgrsn/&gt;
+                                    &lt;cdir_listing_type&gt;LML&lt;/cdir_listing_type&gt;
+                                    &lt;cdir_listing_number&gt;1&lt;/cdir_listing_number&gt;
+                                    &lt;cdir_listing_indicator&gt;PL&lt;/cdir_listing_indicator&gt;
+                                    &lt;trans_type&gt;C&lt;/trans_type&gt;
+                                    &lt;cdir_linage/&gt;
+                                    &lt;cdir_special_name/&gt;
+                                    &lt;cdir_title/&gt;
+                                    &lt;cdir_first_name&gt;Cdv&lt;/cdir_first_name&gt;
+                                    &lt;cdir_last_name&gt;Swivel&lt;/cdir_last_name&gt;
+                                    &lt;cdir_middle_name/&gt;
+                                    &lt;cdir_pre_dir/&gt;
+                                    &lt;cdir_street_num&gt;115&lt;/cdir_street_num&gt;
+                                    &lt;cdir_fract/&gt;
+                                    &lt;cdir_street_name&gt;Ddp52249res St&lt;/cdir_street_name&gt;
+                                    &lt;cdir_state&gt;DE&lt;/cdir_state&gt;
+                                    &lt;cdir_zip&gt;19962&lt;/cdir_zip&gt;
+                                    &lt;cdir_zip4/&gt;
+                                    &lt;cdir_community&gt;Magnolia&lt;/cdir_community&gt;
+                                    &lt;cdir_apt_number/&gt;
+                                    &lt;cdir_building_number/&gt;
+                                    &lt;cdir_service_type&gt;R&lt;/cdir_service_type&gt;
+                                    &lt;cdir_no_solicitation&gt;0&lt;/cdir_no_solicitation&gt;
+                                    &lt;cdir_advanced_to_dir/&gt;
+                                    &lt;cdir_effective_date/&gt;
+                                    &lt;cdir_omit_address&gt;0&lt;/cdir_omit_address&gt;
+                                    &lt;cdir_ld1/&gt;
+                                    &lt;cdir_lv1/&gt;
+                                    &lt;cdir_ld2/&gt;
+                                    &lt;cdir_lv2/&gt;
+                                    &lt;cdir_ld3/&gt;
+                                    &lt;cdir_lv3/&gt;
+                                    &lt;cdir_ali_code/&gt;
+                                    &lt;cdir_ban/&gt;
+                                 &lt;/tndirectory&gt;
+                              &lt;/tndirectorygroup&gt;
+                              &lt;tnsvcgroup&gt;
+                                 &lt;tnsvc&gt;
+                                    &lt;ctnsv_rcode&gt;!2&lt;/ctnsv_rcode&gt;
+                                    &lt;ctnsv_cnt&gt;1&lt;/ctnsv_cnt&gt;
+                                 &lt;/tnsvc&gt;
+                              &lt;/tnsvcgroup&gt;
+                              &lt;tnfeaturegroup&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;207&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;202&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup&gt;
+                                       &lt;tnfeaturesetting&gt;
+                                          &lt;ctnfs_setting_number&gt;5&lt;/ctnfs_setting_number&gt;
+                                          &lt;ctnfs_setting_value&gt;5&lt;/ctnfs_setting_value&gt;
+                                       &lt;/tnfeaturesetting&gt;
+                                    &lt;/tnfeaturesettinggroup&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;201&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;4&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;5&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;3&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;6&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;204&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;203&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;7&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;0&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;401&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;403&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;402&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;2&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;1&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;8&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                              &lt;/tnfeaturegroup&gt;
+                           &lt;/voiptn&gt;
+                        &lt;/voiptngroup&gt;
+                        &lt;wirelesstn/&gt;
+                        &lt;wo_pts/&gt;
+                        &lt;dss_username/&gt;
+                        &lt;dss_password/&gt;
+                     &lt;/outlet&gt;
+                     &lt;outlet&gt;
+                       &lt;wo_outlet&gt;3&lt;/wo_outlet&gt;
+                        &lt;pt_pkg&gt;H3&lt;/pt_pkg&gt;
+                        &lt;wo_boxloc&gt;Z&lt;/wo_boxloc&gt;
+                        &lt;ratecodegroup&gt;
+                                                     &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;#T&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;500&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                          
+                        &lt;/ratecodegroup&gt;
+                        &lt;lobgroup&gt;
+                           &lt;lob&gt;
+                              &lt;w_lob&gt;0&lt;/w_lob&gt;
+                              &lt;taskcodegroup&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;177&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;180&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;321&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                
+                              &lt;/taskcodegroup&gt;
+                           &lt;/lob&gt;
+                        &lt;/lobgroup&gt;
+                        &lt;voiptngroup/&gt;
+                        &lt;wirelesstn/&gt;
+                        &lt;wo_pts/&gt;
+                        &lt;dss_username/&gt;
+                        &lt;dss_password/&gt;
+                     &lt;/outlet&gt;
+                  &lt;/outletgroup&gt;
+               &lt;/wipinfogroup&gt;
+               &lt;scheduleactiongroup&gt;
+                  &lt;schedulegroup&gt;
+                     &lt;w_lob&gt;0&lt;/w_lob&gt;
+                     &lt;scheduleaction&gt;0&lt;/scheduleaction&gt;
+                     &lt;w_wbdate&gt;2012-11-28&lt;/w_wbdate&gt;
+                     &lt;woc_commt/&gt;
+                     &lt;noschedule&gt;
+                        &lt;w_wordrsn&gt;3&lt;/w_wordrsn&gt;
+                        &lt;cmnt_comnt/&gt;
+                        &lt;w_self_install&gt;N&lt;/w_self_install&gt;
+                     &lt;/noschedule&gt;
+                     &lt;notruck&gt;
+                        &lt;w_widate&gt;2012-11-26&lt;/w_widate&gt;
+                        &lt;w_wordtime&gt;15:41&lt;/w_wordtime&gt;
+                        &lt;h_tag/&gt;
+                        &lt;h_drop/&gt;
+                       &lt;w_tech&gt;999&lt;/w_tech&gt;
+                        &lt;w_notrkreason/&gt;
+                        &lt;notruckoutletgroup&gt;
+                           &lt;notruckoutlet&gt;
+                              &lt;w_notruckoutlet&gt;1&lt;/w_notruckoutlet&gt;
+                              &lt;binv_bnumb/&gt;
+                              &lt;hb_retrnrsn/&gt;
+                              &lt;binv_addleq/&gt;
+                              &lt;binv_loc&gt;Z&lt;/binv_loc&gt;
+                              &lt;binv_brgratg/&gt;
+                              &lt;binv_brgpin/&gt;
+                              &lt;binv_brgppv/&gt;
+                              &lt;binv_brgemg/&gt;
+                              &lt;binv_ippvpin/&gt;
+                              &lt;cust_voiptn_group/&gt;
+                              &lt;wip_voiptn_group/&gt;
+                              &lt;fixcodegroup&gt;
+                                 &lt;wo_fixcode/&gt;
+                                 &lt;wo_fixpoints/&gt;
+                              &lt;/fixcodegroup&gt;
+                           &lt;/notruckoutlet&gt;
+                           &lt;notruckoutlet&gt;
+                              &lt;w_notruckoutlet&gt;2&lt;/w_notruckoutlet&gt;
+                              &lt;binv_bnumb/&gt;
+                              &lt;hb_retrnrsn/&gt;
+                              &lt;binv_addleq/&gt;
+                              &lt;binv_loc&gt;Z&lt;/binv_loc&gt;
+                              &lt;binv_brgratg/&gt;
+                              &lt;binv_brgpin/&gt;
+                              &lt;binv_brgppv/&gt;
+                              &lt;binv_brgemg/&gt;
+                              &lt;binv_ippvpin/&gt;
+                              &lt;cust_voiptn_group/&gt;
+                              &lt;wip_voiptn_group/&gt;
+                              &lt;fixcodegroup&gt;
+                                 &lt;wo_fixcode/&gt;
+                                 &lt;wo_fixpoints/&gt;
+                              &lt;/fixcodegroup&gt;
+                           &lt;/notruckoutlet&gt;
+                           &lt;notruckoutlet&gt;
+                              &lt;w_notruckoutlet&gt;3&lt;/w_notruckoutlet&gt;
+                              &lt;binv_bnumb/&gt;
+                              &lt;hb_retrnrsn/&gt;
+                              &lt;binv_addleq/&gt;
+                              &lt;binv_loc&gt;Z&lt;/binv_loc&gt;
+                              &lt;binv_brgratg/&gt;
+                              &lt;binv_brgpin/&gt;
+                              &lt;binv_brgppv/&gt;
+                              &lt;binv_brgemg/&gt;
+                              &lt;binv_ippvpin/&gt;
+                              &lt;cust_voiptn_group/&gt;
+                              &lt;wip_voiptn_group/&gt;
+                              &lt;fixcodegroup&gt;
+                                 &lt;wo_fixcode/&gt;
+                                 &lt;wo_fixpoints/&gt;
+                              &lt;/fixcodegroup&gt;
+                           &lt;/notruckoutlet&gt;
+                        &lt;/notruckoutletgroup&gt;
+                     &lt;/notruck&gt;
+                     &lt;schedule&gt;
+                        &lt;w_schdat/&gt;
+                        &lt;w_qtaslot/&gt;
+                        &lt;w_wtimcd/&gt;
+                        &lt;w_wproty/&gt;
+                        &lt;w_quota_lob&gt;7&lt;/w_quota_lob&gt;
+                     &lt;/schedule&gt;
+                  &lt;/schedulegroup&gt;
+               &lt;/scheduleactiongroup&gt;
+               &lt;w_wspcl/&gt;
+               &lt;w_wrem&gt;D&lt;/w_wrem&gt;
+               &lt;w_wdiscnt/&gt;
+               &lt;w_wform/&gt;
+               &lt;w_wmsg/&gt;
+               &lt;w_wpro/&gt;
+               &lt;w_wmode/&gt;
+               &lt;w_wlanguage/&gt;
+               &lt;w_wcod&gt;I&lt;/w_wcod&gt;
+               &lt;w_annivday/&gt;
+               &lt;cte_taxcode&gt;NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN&lt;/cte_taxcode&gt;
+               &lt;w_wordrsn&gt;4&lt;/w_wordrsn&gt;
+               &lt;cmnt_comnt/&gt;
+               &lt;cdwf_dflash/&gt;
+               &lt;keyingroup&gt;
+                  &lt;skip_provision&gt;0&lt;/skip_provision&gt;
+               &lt;/keyingroup&gt;
+               &lt;c_tax_override_name/&gt;
+               &lt;customer_type&gt;R&lt;/customer_type&gt;
+            &lt;/Reschedule&gt;</request><ErrCode>0</ErrCode><msgLogId>14740327762248</msgLogId><reqDS>vision:Reschedule</reqDS><sendtime>2012-11-26T05:11:49-05:00</sendtime><receivetime>2012-11-26T05:11:51-05:00</receivetime><isWireless>0</isWireless><cbdTrackingId>99996508174022012-11-26-05.06.22.301411C01</cbdTrackingId><corp>99996</corp><MsgLogId>70729521453421</MsgLogId></comtracMessage><sourceType>COMTRAC</sourceType><msgTrackId>4DE0024EF7FDBAE3CEAE4977B6C34F23</msgTrackId><trackingId>99996508174022012-11-26-05.06.22.301411C01</trackingId><msgLogId>70729521453421</msgLogId></oneStopSIK>
+ 
+ 
+OPERATION is::op:orderProcessorServicePort/comtracRequest
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<msgInfo><reqType>reschedule</reqType><request>&lt;Reschedule&gt;
+               &lt;comcorp&gt;99996&lt;/comcorp&gt;
+               &lt;house&gt;508&lt;/house&gt;
+               &lt;cust&gt;02&lt;/cust&gt;
+               &lt;opr&gt;R67&lt;/opr&gt;
+               &lt;custlevelpin/&gt;
+               &lt;lockacct_pid&gt;18022&lt;/lockacct_pid&gt;
+               &lt;c_fname&gt;S&lt;/c_fname&gt;
+               &lt;c_init/&gt;
+               &lt;c_lname&gt;S&lt;/c_lname&gt;
+               &lt;c_rareacd&gt;845&lt;/c_rareacd&gt;
+               &lt;c_rphon&gt;4522116&lt;/c_rphon&gt;
+               &lt;c_rphonarea/&gt;
+               &lt;jobtype&gt;WIP&lt;/jobtype&gt;
+               &lt;wpcnt&gt;9&lt;/wpcnt&gt;
+               &lt;chgwipdata&gt;Y&lt;/chgwipdata&gt;
+               &lt;chgschedule&gt;Y&lt;/chgschedule&gt;
+               &lt;c_rareacd&gt;845&lt;/c_rareacd&gt;
+               &lt;c_rphon&gt;4564646&lt;/c_rphon&gt;
+               &lt;c_rphonarea/&gt;
+               &lt;c_bphone&gt;4564646&lt;/c_bphone&gt;
+               &lt;c_ssn/&gt;
+               &lt;wipinfogroup&gt;
+                  &lt;disc_reason/&gt;
+                  &lt;c_badr&gt;&lt;/c_badr&gt;
+                  &lt;c_tty&gt;N&lt;/c_tty&gt;
+                  &lt;c_tdd&gt;N&lt;/c_tdd&gt;
+                  &lt;cba_bil1/&gt;
+                  &lt;cba_bil2/&gt;
+                  &lt;cba_bil3/&gt;
+                  &lt;cba_bil4/&gt;
+                  &lt;SanitizedAddressGroup/&gt;
+                  &lt;cem_email1&gt;VENKATESHWARULU_MUTTHAM@CABLE.COMCAST.COM&lt;/cem_email1&gt;
+                  &lt;cem_email2/&gt;
+                  &lt;cmnt_commt/&gt;
+                  &lt;w_wchrsn&gt;M&lt;/w_wchrsn&gt;
+                  &lt;w_cmpg&gt;J&lt;/w_cmpg&gt;
+                  &lt;w_salrn&gt;1&lt;/w_salrn&gt;
+                  &lt;w_slsrep&gt;1&lt;/w_slsrep&gt;
+                  &lt;h_dwell&gt;1&lt;/h_dwell&gt;
+                  &lt;h_ovug/&gt;
+                  &lt;h_fibernode/&gt;
+                  &lt;h_network_id/&gt;
+                  &lt;optimization_option&gt;0&lt;/optimization_option&gt;
+                  &lt;c_ctype/&gt;
+                  &lt;voipdatagroup&gt;
+                     &lt;cvpd_third_party_ver_status&gt;N&lt;/cvpd_third_party_ver_status&gt;
+                     &lt;cvpd_third_party_ver_comp_date/&gt;
+                     &lt;cvpd_signal_access_code/&gt;
+                     &lt;cvpd_ilec/&gt;
+                     &lt;ilec_listing_changed&gt;1&lt;/ilec_listing_changed&gt;
+                     &lt;cvpd_effective_date&gt;2012-11-27&lt;/cvpd_effective_date&gt;
+                     &lt;cvpd_action_date&gt;2012-11-26&lt;/cvpd_action_date&gt;
+                     &lt;cvpd_bill_presentment/&gt;
+                     &lt;cvpd_calling_plan/&gt;
+                     &lt;cvpd_opr/&gt;
+                     &lt;cvpd_cpni&gt;N&lt;/cvpd_cpni&gt;
+                     &lt;cvpd_third_party_acct_num/&gt;
+                    &lt;cvpd_POTS_access_number&gt;&lt;/cvpd_POTS_access_number&gt;
+                     &lt;cvpd_internal_dialing/&gt;
+                  &lt;/voipdatagroup&gt;
+                  &lt;business_contact_group/&gt;
+                  &lt;wirelessdatagroup/&gt;
+                  &lt;outletgroup&gt;
+                     &lt;outlet&gt;
+                        &lt;wo_outlet&gt;1&lt;/wo_outlet&gt;
+                        &lt;pt_pkg&gt;H3&lt;/pt_pkg&gt;
+                        &lt;wo_boxloc&gt;Z&lt;/wo_boxloc&gt;
+                        &lt;ratecodegroup&gt;
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;41&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount/&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                        &lt;/ratecodegroup&gt;
+                        &lt;lobgroup&gt;
+                           &lt;lob&gt;
+                              &lt;w_lob&gt;0&lt;/w_lob&gt;
+                              &lt;taskcodegroup&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;135&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                              &lt;/taskcodegroup&gt;
+                           &lt;/lob&gt;
+                        &lt;/lobgroup&gt;
+                        &lt;voiptngroup/&gt;
+                        &lt;wirelesstn/&gt;
+                        &lt;wo_pts/&gt;
+                        &lt;dss_username/&gt;
+                        &lt;dss_password/&gt;
+                     &lt;/outlet&gt;
+                     &lt;outlet&gt;
+                        &lt;wo_outlet&gt;2&lt;/wo_outlet&gt;
+                        &lt;pt_pkg&gt;H3&lt;/pt_pkg&gt;
+                        &lt;wo_boxloc&gt;Z&lt;/wo_boxloc&gt;
+                        &lt;ratecodegroup&gt;
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;!2&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;4495&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                           
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;&#39;&#39;1&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;2995&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                           &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;&#39;&#39;4&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;700&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+			&lt;ratecode&gt;
+                           &lt;wor_ratecd&gt;Y!6&lt;/wor_ratecd&gt;
+                           &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                           &lt;amount/&gt;
+                           &lt;outlet_discount_amount/&gt;
+                           &lt;depositgroup/&gt;
+                        &lt;/ratecode&gt;
+                        
+                        &lt;/ratecodegroup&gt;
+                        &lt;lobgroup&gt;
+                           &lt;lob&gt;
+                              &lt;w_lob&gt;0&lt;/w_lob&gt;
+                              &lt;taskcodegroup&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;177&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;180&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                              &lt;/taskcodegroup&gt;
+                           &lt;/lob&gt;
+                        &lt;/lobgroup&gt;
+                        &lt;voiptngroup&gt;
+                           &lt;voiptn&gt;
+                              &lt;telephone_number&gt;3023214634&lt;/telephone_number&gt;
+                              &lt;old_number/&gt;
+                              &lt;ctns_action&gt;I&lt;/ctns_action&gt;
+                              &lt;ctns_disc_rsn/&gt;
+                              &lt;wtns_referral_message_type/&gt;
+                              &lt;wtns_referral_telephone/&gt;
+                              &lt;change_ported_to_native&gt;0&lt;/change_ported_to_native&gt;
+                              &lt;ctns_ported_number&gt;0&lt;/ctns_ported_number&gt;
+                              &lt;ctns_lpic&gt;0386&lt;/ctns_lpic&gt;
+                              &lt;hvptn_lpic_chgrsn/&gt;
+                              &lt;ctns_pic&gt;0386&lt;/ctns_pic&gt;
+                              &lt;hvptn_pic_chgrsn/&gt;
+                              &lt;ctns_ploc&gt;0&lt;/ctns_ploc&gt;
+                              &lt;ctns_block_code&gt;D&lt;/ctns_block_code&gt;
+                              &lt;ctns_pic_freeze&gt;1&lt;/ctns_pic_freeze&gt;
+                              &lt;ctns_lpic_freeze&gt;1&lt;/ctns_lpic_freeze&gt;
+                              &lt;ctns_ploc_freeze&gt;0&lt;/ctns_ploc_freeze&gt;
+                              &lt;ctns_cnam_indicator&gt;A&lt;/ctns_cnam_indicator&gt;
+                              &lt;hvptn_cnam_ind_chgrsn/&gt;
+                              &lt;jurisdictional_indicator&gt;B&lt;/jurisdictional_indicator&gt;
+                              &lt;transaction_code&gt;C&lt;/transaction_code&gt;
+                              &lt;ctns_action_date/&gt;
+                              &lt;ctns_cic_carrier&gt;00000&lt;/ctns_cic_carrier&gt;
+                              &lt;ctns_foc_date/&gt;
+                              &lt;ctns_foc_info/&gt;
+                              &lt;ctns_clli_code&gt;K1J2H3G4F5D6S7A&lt;/ctns_clli_code&gt;
+                              &lt;ctns_tn_primary_rank&gt;Y&lt;/ctns_tn_primary_rank&gt;
+                              &lt;ctns_port_id&gt;0&lt;/ctns_port_id&gt;
+                              &lt;tnringgroup/&gt;
+                              &lt;tndirectorygroup&gt;
+                                 &lt;tndirectory&gt;
+                                    &lt;wdir_action&gt;I&lt;/wdir_action&gt;
+                                    &lt;wdir_dir_chgrsn/&gt;
+                                    &lt;cdir_listing_type&gt;LML&lt;/cdir_listing_type&gt;
+                                    &lt;cdir_listing_number&gt;1&lt;/cdir_listing_number&gt;
+                                    &lt;cdir_listing_indicator&gt;PL&lt;/cdir_listing_indicator&gt;
+                                    &lt;trans_type&gt;C&lt;/trans_type&gt;
+                                    &lt;cdir_linage/&gt;
+                                    &lt;cdir_special_name/&gt;
+                                    &lt;cdir_title/&gt;
+                                    &lt;cdir_first_name&gt;Cdv&lt;/cdir_first_name&gt;
+                                    &lt;cdir_last_name&gt;Swivel&lt;/cdir_last_name&gt;
+                                    &lt;cdir_middle_name/&gt;
+                                    &lt;cdir_pre_dir/&gt;
+                                    &lt;cdir_street_num&gt;115&lt;/cdir_street_num&gt;
+                                    &lt;cdir_fract/&gt;
+                                    &lt;cdir_street_name&gt;Ddp52249res St&lt;/cdir_street_name&gt;
+                                    &lt;cdir_state&gt;DE&lt;/cdir_state&gt;
+                                    &lt;cdir_zip&gt;19962&lt;/cdir_zip&gt;
+                                    &lt;cdir_zip4/&gt;
+                                    &lt;cdir_community&gt;Magnolia&lt;/cdir_community&gt;
+                                    &lt;cdir_apt_number/&gt;
+                                    &lt;cdir_building_number/&gt;
+                                    &lt;cdir_service_type&gt;R&lt;/cdir_service_type&gt;
+                                    &lt;cdir_no_solicitation&gt;0&lt;/cdir_no_solicitation&gt;
+                                    &lt;cdir_advanced_to_dir/&gt;
+                                    &lt;cdir_effective_date/&gt;
+                                    &lt;cdir_omit_address&gt;0&lt;/cdir_omit_address&gt;
+                                    &lt;cdir_ld1/&gt;
+                                    &lt;cdir_lv1/&gt;
+                                    &lt;cdir_ld2/&gt;
+                                    &lt;cdir_lv2/&gt;
+                                    &lt;cdir_ld3/&gt;
+                                    &lt;cdir_lv3/&gt;
+                                    &lt;cdir_ali_code/&gt;
+                                    &lt;cdir_ban/&gt;
+                                 &lt;/tndirectory&gt;
+                              &lt;/tndirectorygroup&gt;
+                              &lt;tnsvcgroup&gt;
+                                 &lt;tnsvc&gt;
+                                    &lt;ctnsv_rcode&gt;!2&lt;/ctnsv_rcode&gt;
+                                    &lt;ctnsv_cnt&gt;1&lt;/ctnsv_cnt&gt;
+                                 &lt;/tnsvc&gt;
+                              &lt;/tnsvcgroup&gt;
+                              &lt;tnfeaturegroup&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;207&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;202&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup&gt;
+                                       &lt;tnfeaturesetting&gt;
+                                          &lt;ctnfs_setting_number&gt;5&lt;/ctnfs_setting_number&gt;
+                                          &lt;ctnfs_setting_value&gt;5&lt;/ctnfs_setting_value&gt;
+                                       &lt;/tnfeaturesetting&gt;
+                                    &lt;/tnfeaturesettinggroup&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;201&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;4&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;5&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;3&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;6&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;204&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;203&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;7&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;0&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;401&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;403&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;402&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;2&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;1&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                                 &lt;tnfeature&gt;
+                                    &lt;ctnf_feature_number&gt;8&lt;/ctnf_feature_number&gt;
+                                    &lt;res_bus_type&gt;R&lt;/res_bus_type&gt;
+                                    &lt;tnfeaturesettinggroup/&gt;
+                                 &lt;/tnfeature&gt;
+                              &lt;/tnfeaturegroup&gt;
+                           &lt;/voiptn&gt;
+                        &lt;/voiptngroup&gt;
+                        &lt;wirelesstn/&gt;
+                        &lt;wo_pts/&gt;
+                        &lt;dss_username/&gt;
+                        &lt;dss_password/&gt;
+                     &lt;/outlet&gt;
+                     &lt;outlet&gt;
+                       &lt;wo_outlet&gt;3&lt;/wo_outlet&gt;
+                        &lt;pt_pkg&gt;H3&lt;/pt_pkg&gt;
+                        &lt;wo_boxloc&gt;Z&lt;/wo_boxloc&gt;
+                        &lt;ratecodegroup&gt;
+                                                     &lt;ratecode&gt;
+                              &lt;wor_ratecd&gt;#T&lt;/wor_ratecd&gt;
+                              &lt;wor_cnt&gt;1&lt;/wor_cnt&gt;
+                              &lt;amount&gt;500&lt;/amount&gt;
+                              &lt;outlet_discount_amount/&gt;
+                              &lt;depositgroup/&gt;
+                           &lt;/ratecode&gt;
+                          
+                        &lt;/ratecodegroup&gt;
+                        &lt;lobgroup&gt;
+                           &lt;lob&gt;
+                              &lt;w_lob&gt;0&lt;/w_lob&gt;
+                              &lt;taskcodegroup&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;177&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;180&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                 &lt;taskcode&gt;
+                                    &lt;wo_taskcode&gt;321&lt;/wo_taskcode&gt;
+                                    &lt;wo_taskcount&gt;0&lt;/wo_taskcount&gt;
+                                 &lt;/taskcode&gt;
+                                
+                              &lt;/taskcodegroup&gt;
+                           &lt;/lob&gt;
+                        &lt;/lobgroup&gt;
+                        &lt;voiptngroup/&gt;
+                        &lt;wirelesstn/&gt;
+                        &lt;wo_pts/&gt;
+                        &lt;dss_username/&gt;
+                        &lt;dss_password/&gt;
+                     &lt;/outlet&gt;
+                  &lt;/outletgroup&gt;
+               &lt;/wipinfogroup&gt;
+               &lt;scheduleactiongroup&gt;
+                  &lt;schedulegroup&gt;
+                     &lt;w_lob&gt;0&lt;/w_lob&gt;
+                     &lt;scheduleaction&gt;0&lt;/scheduleaction&gt;
+                     &lt;w_wbdate&gt;2012-11-28&lt;/w_wbdate&gt;
+                     &lt;woc_commt/&gt;
+                     &lt;noschedule&gt;
+                        &lt;w_wordrsn&gt;3&lt;/w_wordrsn&gt;
+                        &lt;cmnt_comnt/&gt;
+                        &lt;w_self_install&gt;N&lt;/w_self_install&gt;
+                     &lt;/noschedule&gt;
+                     &lt;notruck&gt;
+                        &lt;w_widate&gt;2012-11-26&lt;/w_widate&gt;
+                        &lt;w_wordtime&gt;15:41&lt;/w_wordtime&gt;
+                        &lt;h_tag/&gt;
+                        &lt;h_drop/&gt;
+                       &lt;w_tech&gt;999&lt;/w_tech&gt;
+                        &lt;w_notrkreason/&gt;
+                        &lt;notruckoutletgroup&gt;
+                           &lt;notruckoutlet&gt;
+                              &lt;w_notruckoutlet&gt;1&lt;/w_notruckoutlet&gt;
+                              &lt;binv_bnumb/&gt;
+                              &lt;hb_retrnrsn/&gt;
+                              &lt;binv_addleq/&gt;
+                              &lt;binv_loc&gt;Z&lt;/binv_loc&gt;
+                              &lt;binv_brgratg/&gt;
+                              &lt;binv_brgpin/&gt;
+                              &lt;binv_brgppv/&gt;
+                              &lt;binv_brgemg/&gt;
+                              &lt;binv_ippvpin/&gt;
+                              &lt;cust_voiptn_group/&gt;
+                              &lt;wip_voiptn_group/&gt;
+                              &lt;fixcodegroup&gt;
+                                 &lt;wo_fixcode/&gt;
+                                 &lt;wo_fixpoints/&gt;
+                              &lt;/fixcodegroup&gt;
+                           &lt;/notruckoutlet&gt;
+                           &lt;notruckoutlet&gt;
+                              &lt;w_notruckoutlet&gt;2&lt;/w_notruckoutlet&gt;
+                              &lt;binv_bnumb/&gt;
+                              &lt;hb_retrnrsn/&gt;
+                              &lt;binv_addleq/&gt;
+                              &lt;binv_loc&gt;Z&lt;/binv_loc&gt;
+                              &lt;binv_brgratg/&gt;
+                              &lt;binv_brgpin/&gt;
+                              &lt;binv_brgppv/&gt;
+                              &lt;binv_brgemg/&gt;
+                              &lt;binv_ippvpin/&gt;
+                              &lt;cust_voiptn_group/&gt;
+                              &lt;wip_voiptn_group/&gt;
+                              &lt;fixcodegroup&gt;
+                                 &lt;wo_fixcode/&gt;
+                                 &lt;wo_fixpoints/&gt;
+                              &lt;/fixcodegroup&gt;
+                           &lt;/notruckoutlet&gt;
+                           &lt;notruckoutlet&gt;
+                              &lt;w_notruckoutlet&gt;3&lt;/w_notruckoutlet&gt;
+                              &lt;binv_bnumb/&gt;
+                              &lt;hb_retrnrsn/&gt;
+                              &lt;binv_addleq/&gt;
+                              &lt;binv_loc&gt;Z&lt;/binv_loc&gt;
+                              &lt;binv_brgratg/&gt;
+                              &lt;binv_brgpin/&gt;
+                              &lt;binv_brgppv/&gt;
+                              &lt;binv_brgemg/&gt;
+                              &lt;binv_ippvpin/&gt;
+                              &lt;cust_voiptn_group/&gt;
+                              &lt;wip_voiptn_group/&gt;
+                              &lt;fixcodegroup&gt;
+                                 &lt;wo_fixcode/&gt;
+                                 &lt;wo_fixpoints/&gt;
+                              &lt;/fixcodegroup&gt;
+                           &lt;/notruckoutlet&gt;
+                        &lt;/notruckoutletgroup&gt;
+                     &lt;/notruck&gt;
+                     &lt;schedule&gt;
+                        &lt;w_schdat/&gt;
+                        &lt;w_qtaslot/&gt;
+                        &lt;w_wtimcd/&gt;
+                        &lt;w_wproty/&gt;
+                        &lt;w_quota_lob&gt;7&lt;/w_quota_lob&gt;
+                     &lt;/schedule&gt;
+                  &lt;/schedulegroup&gt;
+               &lt;/scheduleactiongroup&gt;
+               &lt;w_wspcl/&gt;
+               &lt;w_wrem&gt;D&lt;/w_wrem&gt;
+               &lt;w_wdiscnt/&gt;
+               &lt;w_wform/&gt;
+               &lt;w_wmsg/&gt;
+               &lt;w_wpro/&gt;
+               &lt;w_wmode/&gt;
+               &lt;w_wlanguage/&gt;
+               &lt;w_wcod&gt;I&lt;/w_wcod&gt;
+               &lt;w_annivday/&gt;
+               &lt;cte_taxcode&gt;NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN&lt;/cte_taxcode&gt;
+               &lt;w_wordrsn&gt;4&lt;/w_wordrsn&gt;
+               &lt;cmnt_comnt/&gt;
+               &lt;cdwf_dflash/&gt;
+               &lt;keyingroup&gt;
+                  &lt;skip_provision&gt;0&lt;/skip_provision&gt;
+               &lt;/keyingroup&gt;
+               &lt;c_tax_override_name/&gt;
+               &lt;customer_type&gt;R&lt;/customer_type&gt;
+            &lt;/Reschedule&gt;</request><ErrCode>0</ErrCode><msgLogId>14740327762248</msgLogId><reqDS>vision:Reschedule</reqDS><sendtime>2012-11-26T05:11:49-05:00</sendtime><receivetime>2012-11-26T05:11:51-05:00</receivetime><isWireless>0</isWireless><cbdTrackingId>99996508174022012-11-26-05.06.22.301411C01</cbdTrackingId><corp>99996</corp></msgInfo>
+ 
+ 
+SEND_DATA::
+ 
+<msgInfoResponse><status>success</status></msgInfoResponse>
+ 
+ 

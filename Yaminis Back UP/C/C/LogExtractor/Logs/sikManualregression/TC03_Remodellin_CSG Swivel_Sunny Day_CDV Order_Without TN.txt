@@ -1,0 +1,669 @@
+*************************************************TEST LOGS********************************************************
+->  Selected Environment is :: DTDEV
+ 
+ 
+ 
+ 
+ 
+*****************************************************************************************************************
+OPERATION is::op:oneStopSik/processOneStopSIK
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<oneStopSIK><csgeniMessage><head><Client>ComcastSIK</Client><Region>QAYA</Region><Source>SIKCOMCAST</Source><Destination>CCS01</Destination><Origin>L43J1-SIK - ORDER DETAIL UPDATED</Origin><Version>2.22</Version><RoundTrip>MDU6MDAwMDAwMzc6MjAxMzAzMjE6MDIzNjI3MDA6ODA0NTAwMDA6TDQzSg==</RoundTrip><UserId>PD2 0A09</UserId></head><body><OrderDetailUpdated><Customer><CustomerId>1106506280418</CustomerId><Name><First>INSIwGHTInstall</First><Last>TESTER11</Last></Name><Phone><Home>1191258964</Home><Business>9923456789</Business></Phone><Email><Address>abssc@gmail.com</Address></Email></Customer><Location><LocationId>85226000000041</LocationId><Address><Line1>255 CSG42q594RES ST</Line1><City>HARTFORD</City><State>CT</State><PostalCode>061190000</PostalCode></Address><LineOfBusiness><Type>C</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness><LineOfBusiness><Type>I</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness><LineOfBusiness><Type>T</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness></Location><Order><OrderId>1000600977585</OrderId><BusinessUnit>80451000</BusinessUnit><Class>S</Class><Status>S</Status><Requestor>TESTER,INSIGHTInstall</Requestor><Reason Index="1"><Code>NT</Code></Reason><Reason Index="2"></Reason><Reason Index="3"></Reason><Reason Index="4"></Reason><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><DueDate>2013-03-21</DueDate><CompletionDate>2013-03-21</CompletionDate><CompletionTime>03:36:27</CompletionTime><Billing><BeginDate>2013-03-21</BeginDate><EndDate>2013-03-21</EndDate></Billing><LineOfBusiness><Type>C</Type><Action>C</Action></LineOfBusiness><LineOfBusiness><Type>T</Type></LineOfBusiness><LineOfBusiness><Type>I</Type><Action>C</Action></LineOfBusiness><LineOfBusiness><Type>Y</Type></LineOfBusiness><LineOfBusiness><Type>Z</Type></LineOfBusiness><Audit><Creation><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>PD2</Operator><Terminal>11ZD</Terminal></Creation><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>PD2</Operator></LastUpdate></Audit></Order><AccountList><Count>1</Count><Account><AccountId>8045100010224861</AccountId><Name><Salutation>U</Salutation><First>modified</First><Last>name</Last></Name><Phone></Phone></Account></AccountList><ItemList><Count>6</Count><Item><ServiceIdentifier>000001</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000001</BillingIdentifier><ParentServiceIdentifier>000001</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>OI014</Code><BillCode>OI014</BillCode><LineOfBusiness><Type>N</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000002</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000002</BillingIdentifier><ParentServiceIdentifier>000002</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>TT062</Code><BillCode>TT062</BillCode><LineOfBusiness><Type>C</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000003</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000003</BillingIdentifier><ParentServiceIdentifier>000003</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>SI084</Code><BillCode>SI084</BillCode><LineOfBusiness><Type>I</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000004</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000004</BillingIdentifier><ParentServiceIdentifier>000004</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>ST067</Code><BillCode>ST067</BillCode><LineOfBusiness><Type>C</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000005</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000005</BillingIdentifier><ParentServiceIdentifier>000005</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>SS011</Code><BillCode>SS011</BillCode><LineOfBusiness><Type>C</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000005</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000005</BillingIdentifier><ParentServiceIdentifier>000005</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>HT056</Code><BillCode>HT056</BillCode><LineOfBusiness><Type>C</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000006</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000006</BillingIdentifier><ParentServiceIdentifier>000006</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>VI007</Code><BillCode>VI007</BillCode><LineOfBusiness><Type>I</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item></ItemList><Before><Customer><CustomerId>1101502621480</CustomerId><Name><First>INSIGHTInstall</First><Last>TESTER</Last></Name><Phone><Home>8098656677</Home></Phone><Email><Address>abc@CABLE.COMCAST.COM</Address></Email></Customer><Location><LocationId>06119000049769</LocationId><Address><Line1>255 CSG42594RES ST</Line1><City>HARTFORD</City><State>CT</State><PostalCode>061190000</PostalCode></Address><LineOfBusiness><Type>C</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness><LineOfBusiness><Type>I</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness><LineOfBusiness><Type>T</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness></Location></Before></OrderDetailUpdated></body></csgeniMessage><sourceType>CSGENI</sourceType><accountNumber>8045100010224861</accountNumber><msgTrackId>E60798F16EAE02584E24AD41333F3B35</msgTrackId><trackingId>00A0D74C25B6F126503569FEC5F9FFD8</trackingId><msgLogId>70729521453375</msgLogId></oneStopSIK>
+ 
+ 
+SEND_DATA::
+ 
+No Data
+ 
+ 
+OPERATION is::ls:LocationServicePort/queryLocation
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<m:queryLocationResponse xmlns:m="http://xml.comcast.com/location/services"><m:queryLocationReturn xmlns:m="http://xml.comcast.com/location/services"><typ:locationReference xsi:nil="true" xmlns:typ="http://xml.comcast.com/location/types"></typ:locationReference><typ:marketReference xsi:nil="true" xmlns:typ="http://xml.comcast.com/location/types"></typ:marketReference><typ:location xmlns:typ="http://xml.comcast.com/location/types"><typ:locationID xmlns:typ="http://xml.comcast.com/location/types">203835836</typ:locationID><typ:locationStatus xmlns:typ="http://xml.comcast.com/location/types">Complete</typ:locationStatus><typ:latitude xmlns:typ="http://xml.comcast.com/location/types">33.302504</typ:latitude><typ:longitude xmlns:typ="http://xml.comcast.com/location/types">-111.968869</typ:longitude><typ:locationPostalAddress xmlns:typ="http://xml.comcast.com/location/types"><typ:houseNumberPrefix xsi:nil="true"></typ:houseNumberPrefix><typ:houseNumber>7400</typ:houseNumber><typ:houseNumberSuffix xsi:nil="true"></typ:houseNumberSuffix><typ:streetPreDirection>W</typ:streetPreDirection><typ:streetName>BOSTON</typ:streetName><typ:streetSuffix>ST</typ:streetSuffix><typ:streetPostDirection xsi:nil="true"></typ:streetPostDirection><typ:unitTypes><typ:unitTypesType><typ:unitSequence>1</typ:unitSequence><typ:unitType>APT</typ:unitType><typ:unitValue>5</typ:unitValue></typ:unitTypesType></typ:unitTypes><typ:city>CHANDLER</typ:city><typ:state>AZ</typ:state><typ:zipCode><typ:zip5>85226</typ:zip5><typ:zip4>3220</typ:zip4></typ:zipCode><typ:country>USA</typ:country><typ:dwellingCode>NORMAL</typ:dwellingCode></typ:locationPostalAddress><typ:locationAlternateAddress xmlns:typ="http://xml.comcast.com/location/types"><typ:alternatePostalAddressType><typ:AlternateAddressNumber>0</typ:AlternateAddressNumber><typ:AlternateAddressType>USR_OVERRIDE</typ:AlternateAddressType><typ:PostalAddress><typ:houseNumberPrefix xsi:nil="true"></typ:houseNumberPrefix><typ:houseNumber>7400</typ:houseNumber><typ:houseNumberSuffix xsi:nil="true"></typ:houseNumberSuffix><typ:streetPreDirection>W</typ:streetPreDirection><typ:streetName>BOSTON</typ:streetName><typ:streetSuffix>ST</typ:streetSuffix><typ:streetPostDirection xsi:nil="true"></typ:streetPostDirection><typ:unitTypes><typ:unitTypesType><typ:unitSequence>1</typ:unitSequence><typ:unitType>APT</typ:unitType><typ:unitValue>5</typ:unitValue></typ:unitTypesType></typ:unitTypes><typ:city>CHANDLER</typ:city><typ:state>AZ</typ:state><typ:zipCode><typ:zip5>85226</typ:zip5><typ:zip4>3220</typ:zip4></typ:zipCode><typ:country xsi:nil="true"></typ:country><typ:dwellingCode xsi:nil="true"></typ:dwellingCode></typ:PostalAddress></typ:alternatePostalAddressType></typ:locationAlternateAddress><typ:locationMarketReference xmlns:typ="http://xml.comcast.com/location/types"><typ:marketID>9826</typ:marketID><typ:marketName>RICHMOND</typ:marketName><typ:marketCapabilities><typ:capabilityName><typ:string>Voice</typ:string><typ:string>HighSpeedInternet</typ:string><typ:string>Video</typ:string><typ:string>Wireless</typ:string><typ:string>HomeSecurity</typ:string></typ:capabilityName></typ:marketCapabilities><typ:legacyMarketID><typ:legacyMarketIDSource>CSG</typ:legacyMarketIDSource><typ:CSGMarketID><typ:CSGSystem>8919</typ:CSGSystem><typ:Principle>1000</typ:Principle><typ:Agent>0010</typ:Agent></typ:CSGMarketID><typ:DSTMarketID xsi:nil="true"></typ:DSTMarketID></typ:legacyMarketID><typ:parentMarketID>9825</typ:parentMarketID><typ:legacyMarketType>SPA</typ:legacyMarketType></typ:locationMarketReference><typ:locationDetails xmlns:typ="http://xml.comcast.com/location/types"><typ:StructureUse xsi:nil="true"></typ:StructureUse><typ:StructureType xsi:nil="true"></typ:StructureType><typ:LocationGeography><typ:MinorCivilDivision>FAIRFIELD</typ:MinorCivilDivision><typ:PlaceName xsi:nil="true"></typ:PlaceName><typ:FIPSCode>5108731200</typ:FIPSCode><typ:VertexCode>470871260</typ:VertexCode><typ:CountyName>HENRICO</typ:CountyName><typ:CensusTract>200903</typ:CensusTract><typ:CensusBlock>2015</typ:CensusBlock></typ:LocationGeography><typ:LocationTelephony><typ:LATA>248</typ:LATA><typ:LATAName>RICHMOND VIRGINIA</typ:LATAName><typ:ILECName xsi:nil="true"></typ:ILECName><typ:PSAPAgency xsi:nil="true"></typ:PSAPAgency><typ:PSAPId xsi:nil="true"></typ:PSAPId><typ:RateCenterName>FUCERCDP01</typ:RateCenterName><typ:TNOrderPool>FUCERCDP01</typ:TNOrderPool></typ:LocationTelephony><typ:LocationNetworkConnectivity><typ:fiberNodeName>CERC01</typ:fiberNodeName><typ:headendID>WC</typ:headendID><typ:dropLocation>Unknown</typ:dropLocation><typ:headendType>ScientificAtlanta</typ:headendType><typ:headendNetworkAddress>174.26.10.26</typ:headendNetworkAddress></typ:LocationNetworkConnectivity><typ:AddressGroupID></typ:AddressGroupID><typ:E911Availability><typ:MSAGMatched>false</typ:MSAGMatched><typ:RateCenterCertification>NotCertified</typ:RateCenterCertification><typ:MsagData></typ:MsagData></typ:E911Availability><typ:GeocodingPrecision><typ:MatchMethod>NonMatch</typ:MatchMethod><typ:GeocodingPointLocation>NoCoordinatesAvailable</typ:GeocodingPointLocation></typ:GeocodingPrecision><typ:LegacyLocationIDs><typ:legacyLocationIDType><typ:LegacyLocationID>85226000000041</typ:LegacyLocationID><typ:LegacyLocationIDSource>CSGHouseKey</typ:LegacyLocationIDSource></typ:legacyLocationIDType></typ:LegacyLocationIDs><typ:LocationLegacyDetails><typ:CSGLegacyDetails><typ:locationLegacyDetailsCSGType><typ:houseKey>85226000000041</typ:houseKey><typ:locationType>AA</typ:locationType><typ:dwellingCodeDescr>SINGLE FAMILY</typ:dwellingCodeDescr><typ:customerType>RESIDENTIAL</typ:customerType><typ:locationStatus>S1</typ:locationStatus><typ:houseMisc xsi:nil="true"></typ:houseMisc><typ:locationCountyID>0</typ:locationCountyID><typ:salesArea xsi:nil="true"></typ:salesArea><typ:serviceArea xsi:nil="true"></typ:serviceArea><typ:technicianArea>1A</typ:technicianArea><typ:mapCode xsi:nil="true"></typ:mapCode><typ:demographicCode xsi:nil="true"></typ:demographicCode><typ:timeZone xsi:nil="true"></typ:timeZone><typ:unincorporatedFlag xsi:nil="true"></typ:unincorporatedFlag><typ:dropType xsi:nil="true"></typ:dropType><typ:dropSite>F</typ:dropSite><typ:hookupType>A</typ:hookupType><typ:rightOfEntryPermission>N</typ:rightOfEntryPermission><typ:poleOwner xsi:nil="true"></typ:poleOwner><typ:poleNumber>CERC01</typ:poleNumber><typ:amplifier xsi:nil="true"></typ:amplifier><typ:powerSupply xsi:nil="true"></typ:powerSupply><typ:pedestal xsi:nil="true"></typ:pedestal><typ:ground xsi:nil="true"></typ:ground><typ:hub xsi:nil="true"></typ:hub><typ:cell xsi:nil="true"></typ:cell><typ:dropLength xsi:nil="true"></typ:dropLength><typ:lineOfBusiness><typ:locationLegacyDetailsCSGLineOfBusinessType><typ:lobType>HighSpeedInternet</typ:lobType><typ:lobServiceStatus>S</typ:lobServiceStatus><typ:projectServiceDate xsi:nil="true"></typ:projectServiceDate><typ:installedOutlets xsi:nil="true"></typ:installedOutlets><typ:node>CERC01</typ:node><typ:headend>WC</typ:headend><typ:router>CERC01</typ:router><typ:networkInterfaceUnit xsi:nil="true"></typ:networkInterfaceUnit><typ:lobSwitch xsi:nil="true"></typ:lobSwitch><typ:tapStatus xsi:nil="true"></typ:tapStatus><typ:disableLOBServiceability>false</typ:disableLOBServiceability></typ:locationLegacyDetailsCSGLineOfBusinessType><typ:locationLegacyDetailsCSGLineOfBusinessType><typ:lobType>Video</typ:lobType><typ:lobServiceStatus>S</typ:lobServiceStatus><typ:projectServiceDate xsi:nil="true"></typ:projectServiceDate><typ:installedOutlets xsi:nil="true"></typ:installedOutlets><typ:node>CERC01</typ:node><typ:headend>WC</typ:headend><typ:router xsi:nil="true"></typ:router><typ:networkInterfaceUnit xsi:nil="true"></typ:networkInterfaceUnit><typ:lobSwitch xsi:nil="true"></typ:lobSwitch><typ:tapStatus xsi:nil="true"></typ:tapStatus><typ:disableLOBServiceability>false</typ:disableLOBServiceability></typ:locationLegacyDetailsCSGLineOfBusinessType><typ:locationLegacyDetailsCSGLineOfBusinessType><typ:lobType>Voice</typ:lobType><typ:lobServiceStatus>S</typ:lobServiceStatus><typ:projectServiceDate xsi:nil="true"></typ:projectServiceDate><typ:installedOutlets xsi:nil="true"></typ:installedOutlets><typ:node>CERC01</typ:node><typ:headend>WC</typ:headend><typ:router xsi:nil="true"></typ:router><typ:networkInterfaceUnit xsi:nil="true"></typ:networkInterfaceUnit><typ:lobSwitch xsi:nil="true"></typ:lobSwitch><typ:tapStatus xsi:nil="true"></typ:tapStatus><typ:disableLOBServiceability>false</typ:disableLOBServiceability></typ:locationLegacyDetailsCSGLineOfBusinessType></typ:lineOfBusiness><typ:bridgerAddress><typ:bridgerBidirectional>99</typ:bridgerBidirectional><typ:bridgerGateControl>9999</typ:bridgerGateControl><typ:bridgerPrivate>99</typ:bridgerPrivate></typ:bridgerAddress><typ:houseComments><typ:houseComment><typ:locationLegacyDetailsCSGHouseCommentType><typ:index>1</typ:index><typ:value>TESTLOAD</typ:value></typ:locationLegacyDetailsCSGHouseCommentType></typ:houseComment></typ:houseComments><typ:lineTag><typ:lineTag></typ:lineTag></typ:lineTag><typ:addressLine2Override xsi:nil="true"></typ:addressLine2Override><typ:houseUsageCode>DEF</typ:houseUsageCode><typ:lastCallDate xsi:nil="true"></typ:lastCallDate><typ:lastCallStatus xsi:nil="true"></typ:lastCallStatus><typ:suppressCSGAddrStandardization>true</typ:suppressCSGAddrStandardization></typ:locationLegacyDetailsCSGType></typ:CSGLegacyDetails><typ:DSTLegacyDetails xsi:nil="true"></typ:DSTLegacyDetails></typ:LocationLegacyDetails><typ:LocationTimezone><typ:Name>Mountain Standard Time</typ:Name><typ:UTCOffset>-7</typ:UTCOffset><typ:DST>N</typ:DST></typ:LocationTimezone></typ:locationDetails><typ:locationCapabilities xmlns:typ="http://xml.comcast.com/location/types"><typ:capability><typ:capabilityType><typ:product>Wireless:4G</typ:product></typ:capabilityType><typ:capabilityType><typ:product>HighSpeedInternet</typ:product></typ:capabilityType><typ:capabilityType><typ:product>DigitalVideo</typ:product></typ:capabilityType><typ:capabilityType><typ:product>AnalogVideo</typ:product></typ:capabilityType><typ:capabilityType><typ:product>Wireless:Dual</typ:product></typ:capabilityType><typ:capabilityType><typ:product>Wireless:3G</typ:product></typ:capabilityType><typ:capabilityType><typ:product>HomeSecurity:XHS</typ:product></typ:capabilityType><typ:capabilityType><typ:product>DigitalVoice</typ:product></typ:capabilityType></typ:capability></typ:locationCapabilities><typ:locationCapabilityExceptions xmlns:typ="http://xml.comcast.com/location/types"><typ:capability></typ:capability></typ:locationCapabilityExceptions><typ:HomeSecurity xmlns:typ="http://xml.comcast.com/location/types"><typ:SecurityContact><typ:policeNumber>4807824130</typ:policeNumber><typ:fireNumber>6022531191</typ:fireNumber><typ:medicalNumber>6022531191</typ:medicalNumber><typ:guardNumber xsi:nil="true"></typ:guardNumber></typ:SecurityContact></typ:HomeSecurity></typ:location></m:queryLocationReturn></m:queryLocationResponse>
+ 
+ 
+SEND_DATA::
+ 
+<ls:queryLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:ls="http://xml.comcast.com/location/services"  xmlns:lt="http://xml.comcast.com/location/types" ><ls:QueryLocation><lt:legacyIDSearch><lt:legacyID>85226000000041</lt:legacyID><lt:legacyIDSource>CSGHouseKey</lt:legacyIDSource><lt:getLocationOnSingleAddressFound>1</lt:getLocationOnSingleAddressFound></lt:legacyIDSearch></ls:QueryLocation></ls:queryLocation>
+ 
+ 
+OPERATION is::sik:OrderSoap/SubmitOrder
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<SubmitOrderResponse xmlns="http://comcastonline.com/"><SubmitOrderResult xmlns="http://comcastonline.com/"><Details></Details><OrderID>47697</OrderID></SubmitOrderResult></SubmitOrderResponse>
+ 
+ 
+SEND_DATA::
+ 
+<sik:SubmitOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:sik="http://comcastonline.com/" ><sik:Request><sik:ExternalOrderData OrderType="INSTALL"></sik:ExternalOrderData><sik:ShipmentPriority>Standard</sik:ShipmentPriority><sik:CustomerInformation><sik:AccountNumber>8045100010224861</sik:AccountNumber><sik:ContactInformation><sik:FirstName>INSIwGHTInstall</sik:FirstName><sik:LastName>TESTER11</sik:LastName><sik:Phone>1191258964</sik:Phone><sik:Email>abssc@gmail.com</sik:Email></sik:ContactInformation></sik:CustomerInformation><sik:ShippingAddress><sik:Address1>7400 W BOSTON ST</sik:Address1><sik:Address2>APT 5</sik:Address2><sik:City>CHANDLER</sik:City><sik:State>AZ</sik:State><sik:Zip>85226-3220</sik:Zip></sik:ShippingAddress><sik:IsAlternateAddress>0</sik:IsAlternateAddress><sik:Products><sik:Product xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sik:KitProduct" ><sik:ProductCode>TT062</sik:ProductCode><sik:Outlet>A</sik:Outlet></sik:Product><sik:Product xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sik:KitProduct" ><sik:ProductCode>ST067</sik:ProductCode><sik:Outlet>B</sik:Outlet><sik:TelephoneNumbers></sik:TelephoneNumbers></sik:Product></sik:Products><sik:DNCSIPAddress>174.26.10.26</sik:DNCSIPAddress><sik:HeadEndVendor>ScientificAtlanta</sik:HeadEndVendor><sik:E911_acceptance>1</sik:E911_acceptance><sik:ReferenceInfo><sik:AgentID>PD2</sik:AgentID><sik:WorkOrderID>1000600977585</sik:WorkOrderID></sik:ReferenceInfo><sik:DuplicateOverride>false</sik:DuplicateOverride></sik:Request></sik:SubmitOrder>
+ 
+ 
+OPERATION is::cmb:commonOrderService/orderUpdate
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+No Data
+ 
+ 
+SEND_DATA::
+ 
+<cod:comRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cod:comRequest"   xmlns:cod="http://www.comcast.com/ordercare/cod"  xmlns:cmb="http://www.comcast.com/ordercare/cmb" ><vom>OP</vom><instance>OP-DT-DEV</instance><id>2ABFE0DBF60A88E5289B9E39EB720664</id><requestTime>2015-06-23T03:13:18-04:00</requestTime><header type="opCommExt:header" id="2ABFE0DBF60A88E5289B9E39EB720664"><value name="guid">2ABFE0DBF60A88E5289B9E39EB720664</value><value name="accountNumber">8045100010224861</value><value name="corpId">804510</value><value name="billingOrderId">1000600977585</value><value name="ordType">NEW</value><value name="ordSource">OP</value><value name="ordStatus">COM</value><value name="selfInstall">1</value><value name="inputChannel">CUSTOMER_SERVICE</value><value name="customerType">RES</value><value name="billingSystem">CSG</value><value name="active">1</value><value name="salesChannel">COMTRAC</value><value name="otherInfo">PD2</value><value name="otherDetails">PD2</value><value name="productType">SIK</value></header><customer type="cod:customer" id="2ABFE0DBF60A88E5289B9E39EB720664"><value name="guid">2ABFE0DBF60A88E5289B9E39EB720664</value><value name="firstName">INSIwGHTInstall</value><value name="lastName">TESTER11</value><value name="contactNumber">1191258964</value></customer><address type="cod:address" id="2ABFE0DBF60A88E5289B9E39EB720664"><value name="street1">7400 W BOSTON ST</value><value name="street2">APT 5</value><value name="city">CHANDLER</value><value name="state">AZ</value><value name="zip">85226</value><value name="zip4">3220</value><value name="guid">2ABFE0DBF60A88E5289B9E39EB720664</value></address><shipping type="cod:shipping" id="2ABFE0DBF60A88E5289B9E39EB720664"><value name="address">7400 W BOSTON ST APT 5</value><value name="guid">2ABFE0DBF60A88E5289B9E39EB720664</value><value name="firstName">INSIwGHTInstall</value><value name="lastName">TESTER11</value><value name="contactNumber">1191258964</value><value name="shipmentType">STD</value><value name="shipOrderId">47697</value><value name="submitDate">2015-06-23T07:13:17.00Z</value></shipping><note><note>Order Submitted</note><description>SIKSwivel: SubmitSuccess</description><append>1</append></note></cod:comRequest>
+ 
+ 
+OPERATION is::SelfInstallKit:SIKFlow/sikFlow
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+No Data
+ 
+ 
+SEND_DATA::
+ 
+<SIKFlowDS><CWDOCID>10632447933</CWDOCID><LASTUPDATEDATE>2015-06-23T03:12:11-04:00</LASTUPDATEDATE><ACCOUNTNUMBER>8045100010224861</ACCOUNTNUMBER><BILLINGORDERID>1000600977585</BILLINGORDERID><ORDTYPE>NEW</ORDTYPE><INPUTCHANNEL>CUSTOMER</INPUTCHANNEL><ACTIVE>true</ACTIVE><PRODUCTTYPE>SIK</PRODUCTTYPE><MSGTRACKID>6002A074165E1C0D50E883B016624B80</MSGTRACKID><TRACKID>AAE55EC34747E67215C9CBD6B2825393</TRACKID></SIKFlowDS>
+ 
+ 
+OPERATION is::cmb:commonOrderService/orderUpdate
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+No Data
+ 
+ 
+SEND_DATA::
+ 
+<cod:comRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cod:comRequest"   xmlns:cod="http://www.comcast.com/ordercare/cod"  xmlns:cmb="http://www.comcast.com/ordercare/cmb" ><vom>OP</vom><instance>OP-DT-DEV</instance><id>2ABFE0DBF60A88E5289B9E39EB720664</id><requestTime>2015-06-23T03:12:13-04:00</requestTime><header type="opCommExt:header" id="2ABFE0DBF60A88E5289B9E39EB720664"><value name="guid">2ABFE0DBF60A88E5289B9E39EB720664</value><value name="accountNumber">8045100010224861</value><value name="corpId">804510</value><value name="billingOrderId">1000600977585</value><value name="ordType">NEW</value><value name="ordSource">OP</value><value name="ordStatus">INI</value><value name="selfInstall">1</value><value name="inputChannel">CUSTOMER_SERVICE</value><value name="customerType">RES</value><value name="billingSystem">CSG</value><value name="active">1</value><value name="salesChannel">COMTRAC</value><value name="otherInfo">PD2</value><value name="otherDetails">PD2</value><value name="productType">SIK</value></header><customer type="cod:customer" id="2ABFE0DBF60A88E5289B9E39EB720664"><value name="guid">2ABFE0DBF60A88E5289B9E39EB720664</value><value name="firstName">INSIwGHTInstall</value><value name="lastName">TESTER11</value><value name="contactNumber">1191258964</value></customer><address type="cod:address" id="2ABFE0DBF60A88E5289B9E39EB720664"><value name="street1">7400 W BOSTON ST</value><value name="street2">APT 5</value><value name="city">CHANDLER</value><value name="state">AZ</value><value name="zip">85226</value><value name="zip4">3220</value><value name="guid">2ABFE0DBF60A88E5289B9E39EB720664</value></address><shipping type="cod:shipping" id="2ABFE0DBF60A88E5289B9E39EB720664"><value name="address">7400 W BOSTON ST APT 5</value><value name="guid">2ABFE0DBF60A88E5289B9E39EB720664</value><value name="firstName">INSIwGHTInstall</value><value name="lastName">TESTER11</value><value name="contactNumber">1191258964</value><value name="shipmentType">STD</value><value name="submitDate">2015-06-23T07:12:14.00Z</value></shipping><note><note>Order Validated</note><description>SIKSwivel: Order Validated Successfully</description><append>1</append></note></cod:comRequest>
+ 
+ 
+OPERATION is::ContractServices:ContractServicePort/queryContract
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<m:queryContractResponse xmlns:m="http://xml.comcast.com/contract/services"><m:queryContractReturn xmlns:m="http://xml.comcast.com/contract/services"><typ:contract xmlns:typ="http://xml.comcast.com/contract/types"><typ:acceptedTerm xmlns:typ="http://xml.comcast.com/contract/types"><typ:acceptedTerm><typ:termVersion><typ:termId>5828</typ:termId><typ:version>6.0</typ:version><typ:termCode>E911_T1</typ:termCode></typ:termVersion><typ:termAspectValue xsi:nil="true"></typ:termAspectValue><typ:response>ACCEPTED</typ:response><typ:finalTermText xsi:nil="true"></typ:finalTermText><typ:id xsi:nil="true"></typ:id><typ:responseLastUpdatedDtm xsi:nil="true"></typ:responseLastUpdatedDtm></typ:acceptedTerm></typ:acceptedTerm><typ:contractStatus xmlns:typ="http://xml.comcast.com/contract/types"><typ:status>ACTIVE</typ:status><typ:effectiveDate>2014-05-01T11:09:41.741-04:00</typ:effectiveDate></typ:contractStatus><typ:accountNumber xmlns:typ="http://xml.comcast.com/contract/types">8045100010224861</typ:accountNumber><typ:date xmlns:typ="http://xml.comcast.com/contract/types">2010-03-30T11:13:19.000-04:00</typ:date><typ:id xmlns:typ="http://xml.comcast.com/contract/types">208042</typ:id><typ:referenceNumber xmlns:typ="http://xml.comcast.com/contract/types">OP</typ:referenceNumber><typ:referenceType xmlns:typ="http://xml.comcast.com/contract/types">E911_T1</typ:referenceType><typ:customerID xsi:nil="true" xmlns:typ="http://xml.comcast.com/contract/types"></typ:customerID><typ:contractAttributes xmlns:typ="http://xml.comcast.com/contract/types"></typ:contractAttributes></typ:contract></m:queryContractReturn></m:queryContractResponse>
+ 
+ 
+SEND_DATA::
+ 
+<ContractServices:queryContract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:ContractServices="http://xml.comcast.com/contract/services"  xmlns:ContractTypes="http://xml.comcast.com/contract/types" ><ContractServices:contract><ContractTypes:accountNumber>8045100010224861</ContractTypes:accountNumber></ContractServices:contract><ContractServices:resultSpec><ContractTypes:maxRows>100</ContractTypes:maxRows></ContractServices:resultSpec></ContractServices:queryContract>
+ 
+ 
+OPERATION is::SelfInstallKit:SIKFlow/sikFlow
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<SIKFlowDS><CWDOCID>10632447933</CWDOCID><LASTUPDATEDATE>2015-06-23T03:12:11-04:00</LASTUPDATEDATE><ACCOUNTNUMBER>8045100010224861</ACCOUNTNUMBER><BILLINGORDERID>1000600977585</BILLINGORDERID><ORDTYPE>NEW</ORDTYPE><INPUTCHANNEL>CUSTOMER</INPUTCHANNEL><ACTIVE>true</ACTIVE><PRODUCTTYPE>SIK</PRODUCTTYPE><MSGTRACKID>6002A074165E1C0D50E883B016624B80</MSGTRACKID><TRACKID>AAE55EC34747E67215C9CBD6B2825393</TRACKID></SIKFlowDS>
+ 
+ 
+SEND_DATA::
+ 
+No Data
+ 
+ 
+OPERATION is::op:oneStopSik/processOneStopSIK
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+No Data
+ 
+ 
+SEND_DATA::
+ 
+<oneStopSIK><csgeniMessage><head><Client>ComcastSIK</Client><Region>QAYA</Region><Source>SIKCOMCAST</Source><Destination>CCS01</Destination><Origin>L43J1-SIK - ORDER DETAIL UPDATED</Origin><Version>2.22</Version><RoundTrip>MDU6MDAwMDAwMzc6MjAxMzAzMjE6MDIzNjI3MDA6ODA0NTAwMDA6TDQzSg==</RoundTrip><UserId>PD2 0A09</UserId></head><body><OrderDetailUpdated><Customer><CustomerId>1106506280418</CustomerId><Name><First>INSIwGHTInstall</First><Last>TESTER11</Last></Name><Phone><Home>1191258964</Home><Business>9923456789</Business></Phone><Email><Address>abssc@gmail.com</Address></Email></Customer><Location><LocationId>85226000000041</LocationId><Address><Line1>255 CSG42q594RES ST</Line1><City>HARTFORD</City><State>CT</State><PostalCode>061190000</PostalCode></Address><LineOfBusiness><Type>C</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness><LineOfBusiness><Type>I</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness><LineOfBusiness><Type>T</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness></Location><Order><OrderId>1000600977585</OrderId><BusinessUnit>80451000</BusinessUnit><Class>S</Class><Status>S</Status><Requestor>TESTER,INSIGHTInstall</Requestor><Reason Index="1"><Code>NT</Code></Reason><Reason Index="2"></Reason><Reason Index="3"></Reason><Reason Index="4"></Reason><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><DueDate>2013-03-21</DueDate><CompletionDate>2013-03-21</CompletionDate><CompletionTime>03:36:27</CompletionTime><Billing><BeginDate>2013-03-21</BeginDate><EndDate>2013-03-21</EndDate></Billing><LineOfBusiness><Type>C</Type><Action>C</Action></LineOfBusiness><LineOfBusiness><Type>T</Type></LineOfBusiness><LineOfBusiness><Type>I</Type><Action>C</Action></LineOfBusiness><LineOfBusiness><Type>Y</Type></LineOfBusiness><LineOfBusiness><Type>Z</Type></LineOfBusiness><Audit><Creation><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>PD2</Operator><Terminal>11ZD</Terminal></Creation><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>PD2</Operator></LastUpdate></Audit></Order><AccountList><Count>1</Count><Account><AccountId>8045100010224861</AccountId><Name><Salutation>U</Salutation><First>modified</First><Last>name</Last></Name><Phone></Phone></Account></AccountList><ItemList><Count>6</Count><Item><ServiceIdentifier>000001</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000001</BillingIdentifier><ParentServiceIdentifier>000001</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>OI014</Code><BillCode>OI014</BillCode><LineOfBusiness><Type>N</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000002</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000002</BillingIdentifier><ParentServiceIdentifier>000002</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>TT062</Code><BillCode>TT062</BillCode><LineOfBusiness><Type>C</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000003</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000003</BillingIdentifier><ParentServiceIdentifier>000003</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>SI084</Code><BillCode>SI084</BillCode><LineOfBusiness><Type>I</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000004</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000004</BillingIdentifier><ParentServiceIdentifier>000004</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>ST067</Code><BillCode>ST067</BillCode><LineOfBusiness><Type>C</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000005</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000005</BillingIdentifier><ParentServiceIdentifier>000005</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>SS011</Code><BillCode>SS011</BillCode><LineOfBusiness><Type>C</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000005</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000005</BillingIdentifier><ParentServiceIdentifier>000005</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>HT056</Code><BillCode>HT056</BillCode><LineOfBusiness><Type>C</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item><Item><ServiceIdentifier>000006</ServiceIdentifier><AccountId>8045100010224861</AccountId><BillingIdentifier>000006</BillingIdentifier><ParentServiceIdentifier>000006</ParentServiceIdentifier><Type>S</Type><Status>C</Status><Code>VI007</Code><BillCode>VI007</BillCode><LineOfBusiness><Type>I</Type></LineOfBusiness><BeforeQuantity>00000</BeforeQuantity><Quantity>00001</Quantity><ActivationDate>0001-01-01</ActivationDate><Billing><DiscountBeginDate>0001-01-01</DiscountBeginDate><DiscountEndDate>0001-01-01</DiscountEndDate></Billing><SalesRepresentative>23231</SalesRepresentative><Campaign>SIK</Campaign><RequestedActivity><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6</Operator></RequestedActivity><Audit><LastUpdate><Date>2013-03-21</Date><Time>03:36:27</Time><Operator>IF6 0A07</Operator></LastUpdate></Audit></Item></ItemList><Before><Customer><CustomerId>1101502621480</CustomerId><Name><First>INSIGHTInstall</First><Last>TESTER</Last></Name><Phone><Home>8098656677</Home></Phone><Email><Address>abc@CABLE.COMCAST.COM</Address></Email></Customer><Location><LocationId>06119000049769</LocationId><Address><Line1>255 CSG42594RES ST</Line1><City>HARTFORD</City><State>CT</State><PostalCode>061190000</PostalCode></Address><LineOfBusiness><Type>C</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness><LineOfBusiness><Type>I</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness><LineOfBusiness><Type>T</Type><ServiceStatus>S</ServiceStatus></LineOfBusiness></Location></Before></OrderDetailUpdated></body></csgeniMessage><sourceType>CSGENI</sourceType><accountNumber>8045100010224861</accountNumber><msgTrackId>E60798F16EAE02584E24AD41333F3B35</msgTrackId><trackingId>00A0D74C25B6F126503569FEC5F9FFD8</trackingId><msgLogId>70729521453375</msgLogId></oneStopSIK>
+ 
+ 
+OPERATION is::op:CSGENIMessageServicePort/processCSGENIMessage
+________________________________________
+ 
+RECEIVE_DATA::
+ 
+<msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  - - 
+- <head>
+  <Client>ComcastSIK</Client> 
+  <Region>QAYA</Region> 
+  <Source>SIKCOMCAST</Source> 
+  <Destination>CCS01</Destination> 
+  <Origin>L43J1-SIK - ORDER DETAIL UPDATED</Origin> 
+  <Version>2.22</Version> 
+  <RoundTrip>MDU6MDAwMDAwMzc6MjAxMzAzMjE6MDIzNjI3MDA6ODA0NTAwMDA6TDQzSg==</RoundTrip> 
+  <UserId>PD2 0A09</UserId> 
+  </head>
+  - - 
+- <body>
+  - - 
+- <OrderDetailUpdated>
+  - - 
+- <Customer>
+  <CustomerId>1106506280418</CustomerId> 
+  - - 
+- <Name>
+  <First>INSIwGHTInstall</First> 
+  <Last>TESTER11</Last> 
+  </Name>
+  - - 
+- <Phone>
+  <Home>1191258964</Home> 
+  <Business>9923456789</Business> 
+  </Phone>
+  - - 
+- <Email>
+  <Address>abssc@gmail.com</Address> 
+  </Email>
+  </Customer>
+  - - 
+- <Location>
+  <LocationId>85226000000041</LocationId> 
+  - - 
+- <Address>
+  <Line1>255 CSG42q594RES ST</Line1> 
+  <Line2></Line2> 
+  <City>HARTFORD</City> 
+  <State>CT</State> 
+  <PostalCode>061190000</PostalCode> 
+  </Address>
+  - - 
+- <LineOfBusiness>
+  <Type>C</Type> 
+  <ServiceStatus>S</ServiceStatus> 
+  </LineOfBusiness>
+  - - 
+- <LineOfBusiness>
+  <Type>I</Type> 
+  <ServiceStatus>S</ServiceStatus> 
+  </LineOfBusiness>
+  - - 
+- <LineOfBusiness>
+  <Type>T</Type> 
+  <ServiceStatus>S</ServiceStatus> 
+  </LineOfBusiness>
+  </Location>
+  - - 
+- <Order>
+  <OrderId>1000600977585</OrderId> 
+  <BusinessUnit>80451000</BusinessUnit> 
+  <Class>S</Class> 
+  <Status>S</Status> 
+  <Requestor>TESTER,INSIGHTInstall</Requestor> 
+  <Method></Method> 
+  - - 
+- <Reason Index="1">
+  <Code>NT</Code> 
+  </Reason>
+  - - 
+- <Reason Index="2">
+  <Code></Code> 
+  </Reason>
+  - - - 
+- <Reason Index="3">
+  <Code></Code> 
+  </Reason>
+  - - - - 
+- <Reason Index="4">
+  <Code></Code> 
+  </Reason>
+  <SalesRepresentative>23231</SalesRepresentative> 
+  <Campaign>SIK</Campaign> 
+  <DueDate>2013-03-21</DueDate> 
+  <CompletionDate>2013-03-21</CompletionDate> 
+  <CompletionTime>03:36:27</CompletionTime> 
+  - - - - 
+- <Billing>
+  <BeginDate>2013-03-21</BeginDate> 
+  <EndDate>2013-03-21</EndDate> 
+  </Billing>
+  - - - - 
+- <LineOfBusiness>
+  <Type>C</Type> 
+  <Action>C</Action> 
+  </LineOfBusiness>
+  - - - - 
+- <LineOfBusiness>
+  <Type>T</Type> 
+  <Action></Action> 
+  </LineOfBusiness>
+  - - - - 
+- <LineOfBusiness>
+  <Type>I</Type> 
+  <Action>C</Action> 
+  </LineOfBusiness>
+  - - - - 
+- <LineOfBusiness>
+  <Type>Y</Type> 
+  <Action></Action> 
+  </LineOfBusiness>
+  - - - - 
+- <LineOfBusiness>
+  <Type>Z</Type> 
+  <Action></Action> 
+  </LineOfBusiness>
+  - - - - 
+- <Audit>
+  - - - - 
+- <Creation>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>PD2</Operator> 
+  <Terminal>11ZD</Terminal> 
+  </Creation>
+  - - - - 
+- <LastUpdate>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>PD2</Operator> 
+  </LastUpdate>
+  </Audit>
+  </Order>
+  - - - - 
+- <AccountList>
+  <Count>1</Count> 
+  - - - - 
+- <Account>
+  <AccountId>8045100010224861</AccountId> 
+  <Classification></Classification> 
+  <ConnectStatus></ConnectStatus> 
+  - - - - 
+- <Name>
+  <Salutation>U</Salutation> 
+  <First>modified</First> 
+  <Last>name</Last> 
+  </Name>
+  - - - - 
+- <Phone>
+  <Home></Home> 
+  <Business></Business> 
+  </Phone>
+  - - - - 
+- <ResponsibleParty>
+  <Name></Name> 
+  </ResponsibleParty>
+  </Account>
+  </AccountList>
+  - - - - 
+- <ItemList>
+  <Count>6</Count> 
+  - - - - 
+- <Item>
+  <ServiceIdentifier>000001</ServiceIdentifier> 
+  <AccountId>8045100010224861</AccountId> 
+  <BillingIdentifier>000001</BillingIdentifier> 
+  <ParentServiceIdentifier>000001</ParentServiceIdentifier> 
+  <TelephoneNumberId></TelephoneNumberId> 
+  <Type>S</Type> 
+  <Status>C</Status> 
+  <Code>OI014</Code> 
+  <BillCode>OI014</BillCode> 
+  <ClassCode></ClassCode> 
+  - - - - 
+- <LineOfBusiness>
+  <Type>N</Type> 
+  </LineOfBusiness>
+  <Outlet></Outlet> 
+  <Port></Port> 
+  <BeforeQuantity>00000</BeforeQuantity> 
+  <Quantity>00001</Quantity> 
+  <ActivationDate>0001-01-01</ActivationDate> 
+  - - - - 
+- <Billing>
+  <Discount></Discount> 
+  <DiscountBeginDate>0001-01-01</DiscountBeginDate> 
+  <DiscountEndDate>0001-01-01</DiscountEndDate> 
+  </Billing>
+  <SalesRepresentative>23231</SalesRepresentative> 
+  <Campaign>SIK</Campaign> 
+  - - - - 
+- <RequestedActivity>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6</Operator> 
+  </RequestedActivity>
+  - - - - 
+- <Audit>
+  - - - - 
+- <LastUpdate>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6 0A07</Operator> 
+  </LastUpdate>
+  </Audit>
+  </Item>
+  - - - - 
+- <Item>
+  <ServiceIdentifier>000002</ServiceIdentifier> 
+  <AccountId>8045100010224861</AccountId> 
+  <BillingIdentifier>000002</BillingIdentifier> 
+  <ParentServiceIdentifier>000002</ParentServiceIdentifier> 
+  <TelephoneNumberId></TelephoneNumberId> 
+  <Type>S</Type> 
+  <Status>C</Status> 
+  <Code>TT062</Code> 
+  <BillCode>TT062</BillCode> 
+  <ClassCode></ClassCode> 
+  - - - - 
+- <LineOfBusiness>
+  <Type>C</Type> 
+  </LineOfBusiness>
+  <Outlet></Outlet> 
+  <Port></Port> 
+  <BeforeQuantity>00000</BeforeQuantity> 
+  <Quantity>00001</Quantity> 
+  <ActivationDate>0001-01-01</ActivationDate> 
+  - - - - 
+- <Billing>
+  <Discount></Discount> 
+  <DiscountBeginDate>0001-01-01</DiscountBeginDate> 
+  <DiscountEndDate>0001-01-01</DiscountEndDate> 
+  </Billing>
+  <SalesRepresentative>23231</SalesRepresentative> 
+  <Campaign>SIK</Campaign> 
+  - - - - 
+- <RequestedActivity>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6</Operator> 
+  </RequestedActivity>
+  - - - - 
+- <Audit>
+  - - - - 
+- <LastUpdate>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6 0A07</Operator> 
+  </LastUpdate>
+  </Audit>
+  </Item>
+  - - - - 
+- <Item>
+  <ServiceIdentifier>000003</ServiceIdentifier> 
+  <AccountId>8045100010224861</AccountId> 
+  <BillingIdentifier>000003</BillingIdentifier> 
+  <ParentServiceIdentifier>000003</ParentServiceIdentifier> 
+  <TelephoneNumberId></TelephoneNumberId> 
+  <Type>S</Type> 
+  <Status>C</Status> 
+  <Code>SI084</Code> 
+  <BillCode>SI084</BillCode> 
+  <ClassCode></ClassCode> 
+  - - - - 
+- <LineOfBusiness>
+  <Type>I</Type> 
+  </LineOfBusiness>
+  <Outlet></Outlet> 
+  <Port></Port> 
+  <BeforeQuantity>00000</BeforeQuantity> 
+  <Quantity>00001</Quantity> 
+  <ActivationDate>0001-01-01</ActivationDate> 
+  - - - - 
+- <Billing>
+  <Discount></Discount> 
+  <DiscountBeginDate>0001-01-01</DiscountBeginDate> 
+  <DiscountEndDate>0001-01-01</DiscountEndDate> 
+  </Billing>
+  <SalesRepresentative>23231</SalesRepresentative> 
+  <Campaign>SIK</Campaign> 
+  - - - - 
+- <RequestedActivity>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6</Operator> 
+  </RequestedActivity>
+  - - - - 
+- <Audit>
+  - - - - 
+- <LastUpdate>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6 0A07</Operator> 
+  </LastUpdate>
+  </Audit>
+  </Item>
+  - - - - 
+- <Item>
+  <ServiceIdentifier>000004</ServiceIdentifier> 
+  <AccountId>8045100010224861</AccountId> 
+  <BillingIdentifier>000004</BillingIdentifier> 
+  <ParentServiceIdentifier>000004</ParentServiceIdentifier> 
+  <TelephoneNumberId></TelephoneNumberId> 
+  <Type>S</Type> 
+  <Status>C</Status> 
+  <Code>ST067</Code> 
+  <BillCode>ST067</BillCode> 
+  <ClassCode></ClassCode> 
+  - - - - 
+- <LineOfBusiness>
+  <Type>C</Type> 
+  </LineOfBusiness>
+  <Outlet></Outlet> 
+  <Port></Port> 
+  <BeforeQuantity>00000</BeforeQuantity> 
+  <Quantity>00001</Quantity> 
+  <ActivationDate>0001-01-01</ActivationDate> 
+  - - - - 
+- <Billing>
+  <Discount></Discount> 
+  <DiscountBeginDate>0001-01-01</DiscountBeginDate> 
+  <DiscountEndDate>0001-01-01</DiscountEndDate> 
+  </Billing>
+  <SalesRepresentative>23231</SalesRepresentative> 
+  <Campaign>SIK</Campaign> 
+  - - - - 
+- <RequestedActivity>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6</Operator> 
+  </RequestedActivity>
+  - - - - 
+- <Audit>
+  - - - - 
+- <LastUpdate>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6 0A07</Operator> 
+  </LastUpdate>
+  </Audit>
+  </Item>
+  - - - - 
+- <Item>
+  <ServiceIdentifier>000005</ServiceIdentifier> 
+  <AccountId>8045100010224861</AccountId> 
+  <BillingIdentifier>000005</BillingIdentifier> 
+  <ParentServiceIdentifier>000005</ParentServiceIdentifier> 
+  <TelephoneNumberId></TelephoneNumberId> 
+  <Type>S</Type> 
+  <Status>C</Status> 
+  <Code>SS011</Code> 
+  <BillCode>SS011</BillCode> 
+  <ClassCode></ClassCode> 
+  - - - - 
+- <LineOfBusiness>
+  <Type>C</Type> 
+  </LineOfBusiness>
+  <Outlet></Outlet> 
+  <Port></Port> 
+  <BeforeQuantity>00000</BeforeQuantity> 
+  <Quantity>00001</Quantity> 
+  <ActivationDate>0001-01-01</ActivationDate> 
+  - - - - 
+- <Billing>
+  <Discount></Discount> 
+  <DiscountBeginDate>0001-01-01</DiscountBeginDate> 
+  <DiscountEndDate>0001-01-01</DiscountEndDate> 
+  </Billing>
+  <SalesRepresentative>23231</SalesRepresentative> 
+  <Campaign>SIK</Campaign> 
+  - - - - 
+- <RequestedActivity>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6</Operator> 
+  </RequestedActivity>
+  - - - - 
+- <Audit>
+  - - - - 
+- <LastUpdate>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6 0A07</Operator> 
+  </LastUpdate>
+  </Audit>
+  </Item>
+  - - - - 
+- <Item>
+  <ServiceIdentifier>000005</ServiceIdentifier> 
+  <AccountId>8045100010224861</AccountId> 
+  <BillingIdentifier>000005</BillingIdentifier> 
+  <ParentServiceIdentifier>000005</ParentServiceIdentifier> 
+  <TelephoneNumberId></TelephoneNumberId> 
+  <Type>S</Type> 
+  <Status>C</Status> 
+  <Code>HT056</Code> 
+  <BillCode>HT056</BillCode> 
+  <ClassCode></ClassCode> 
+  - - - - 
+- <LineOfBusiness>
+  <Type>C</Type> 
+  </LineOfBusiness>
+  <Outlet></Outlet> 
+  <Port></Port> 
+  <BeforeQuantity>00000</BeforeQuantity> 
+  <Quantity>00001</Quantity> 
+  <ActivationDate>0001-01-01</ActivationDate> 
+  - - - - 
+- <Billing>
+  <Discount></Discount> 
+  <DiscountBeginDate>0001-01-01</DiscountBeginDate> 
+  <DiscountEndDate>0001-01-01</DiscountEndDate> 
+  </Billing>
+  <SalesRepresentative>23231</SalesRepresentative> 
+  <Campaign>SIK</Campaign> 
+  - - 
+- <RequestedActivity>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6</Operator> 
+  </RequestedActivity>
+  - - 
+- <Audit>
+  - - 
+- <LastUpdate>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6 0A07</Operator> 
+  </LastUpdate>
+  </Audit>
+  </Item>
+  - - 
+- <Item>
+  <ServiceIdentifier>000006</ServiceIdentifier> 
+  <AccountId>8045100010224861</AccountId> 
+  <BillingIdentifier>000006</BillingIdentifier> 
+  <ParentServiceIdentifier>000006</ParentServiceIdentifier> 
+  <TelephoneNumberId></TelephoneNumberId> 
+  <Type>S</Type> 
+  <Status>C</Status> 
+  <Code>VI007</Code> 
+  <BillCode>VI007</BillCode> 
+  <ClassCode></ClassCode> 
+  - - - - 
+- <LineOfBusiness>
+  <Type>I</Type> 
+  </LineOfBusiness>
+  <Outlet></Outlet> 
+  <Port></Port> 
+  <BeforeQuantity>00000</BeforeQuantity> 
+  <Quantity>00001</Quantity> 
+  <ActivationDate>0001-01-01</ActivationDate> 
+  - - - - 
+- <Billing>
+  <Discount></Discount> 
+  <DiscountBeginDate>0001-01-01</DiscountBeginDate> 
+  <DiscountEndDate>0001-01-01</DiscountEndDate> 
+  </Billing>
+  <SalesRepresentative>23231</SalesRepresentative> 
+  <Campaign>SIK</Campaign> 
+  - - - - 
+- <RequestedActivity>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6</Operator> 
+  </RequestedActivity>
+  - - - - 
+- <Audit>
+  - - - - 
+- <LastUpdate>
+  <Date>2013-03-21</Date> 
+  <Time>03:36:27</Time> 
+  <Operator>IF6 0A07</Operator> 
+  </LastUpdate>
+  </Audit>
+  </Item>
+  </ItemList>
+  - - - - 
+- <Before>
+  - - - - 
+- <Customer>
+  <CustomerId>1101502621480</CustomerId> 
+  - - - - 
+- <Name>
+  <First>INSIGHTInstall</First> 
+  <Last>TESTER</Last> 
+  </Name>
+  - - - - 
+- <Phone>
+  <Home>8098656677</Home> 
+  <Business></Business> 
+  </Phone>
+  - - - - 
+- <Email>
+  <Address>abc@CABLE.COMCAST.COM</Address> 
+  </Email>
+  </Customer>
+  - - - - 
+- <Location>
+  <LocationId>06119000049769</LocationId> 
+  - - - - 
+- <Address>
+  <Line1>255 CSG42594RES ST</Line1> 
+  <Line2></Line2> 
+  <City>HARTFORD</City> 
+  <State>CT</State> 
+  <PostalCode>061190000</PostalCode> 
+  </Address>
+  - - - - 
+- <LineOfBusiness>
+  <Type>C</Type> 
+  <ServiceStatus>S</ServiceStatus> 
+  </LineOfBusiness>
+  - - - - 
+- <LineOfBusiness>
+  <Type>I</Type> 
+  <ServiceStatus>S</ServiceStatus> 
+  </LineOfBusiness>
+  - - - - 
+- <LineOfBusiness>
+  <Type>T</Type> 
+  <ServiceStatus>S</ServiceStatus> 
+  </LineOfBusiness>
+  </Location>
+  </Before>
+  </OrderDetailUpdated>
+  </body>
+  </msg>
+ 
+ 
+SEND_DATA::
+ 
+<msg><head><Client>ComcastSIK</Client><Region>QAYA</Region><Source>SIKCOMCAST</Source><Destination>CCS01</Destination><Origin>L43J1-SIK - ORDER DETAIL UPDATED</Origin><Version>2.22</Version><RoundTrip>MDU6MDAwMDAwMzc6MjAxMzAzMjE6MDIzNjI3MDA6ODA0NTAwMDA6TDQzSg==</RoundTrip><UserId>PD2 0A09</UserId></head><body><OrderDetailUpdatedResponse><Response><ReturnCode>0000</ReturnCode><Message>Success</Message></Response></OrderDetailUpdatedResponse></body></msg>
+ 
+ 

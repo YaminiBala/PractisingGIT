@@ -1,0 +1,388 @@
+<html>
+	<script type='text/vbscript'>
+		on error resume next
+		window.moveTo -1000, -1000
+	</script>
+	<head>
+		<title>OM LogExtractor </title>
+		<HTA:APPLICATION
+        APPLICATIONNAME="LogExtrator"
+        ID="oHTA"
+        VERSION="1.0"
+        BORDER="thin"
+        MAXIMIZEBUTTON="no"
+        ICON="LogExtrator.ico"
+        NAVIGABLE="yes"/>
+		<script type='text/JScript'>
+         
+		 function ChangeLocationpath() 
+		 {
+		  
+          txtRes.value="You Can edit now Location Path";
+		  txtLocation.contentEditable=true;
+         }
+		 
+		 function disableLocationPath()
+		 {
+              
+			   txtRes.value=selectApp.value;
+		       txtLocation.contentEditable=false;
+		 }
+		 
+        function SelectElement()
+        {
+		     ReadExcel();
+             selectEnv.options.add(sEnvName);
+        }
+		
+		
+		
+		</script>
+
+		<script type='text/vbscript'>
+		
+           Function RefreshEnvData()		   
+                  ReDim Preserve sEnvName(10)	    
+                  Set objExcel = CreateObject("Excel.Application")
+                  Set objWorkbook = objExcel.Workbooks.Open _
+                  ("C:\LogExtractor\Config\dBConfigData.xlsx")
+                  Set objDriverSheet = objWorkbook.Worksheets(selectApp.value)
+                  intRow = 2
+			      columncount = objDriverSheet.usedrange.columns.count
+                  rowcount = objDriverSheet.usedrange.rows.count
+                  For i=2 To rowcount
+                      sEnvName(i)=objDriverSheet.cells(i,"A")
+                  Next
+                  For Each objOption in selectEnv.Options
+                      objOption.RemoveNode
+                  Next 
+			      For i=2 To rowcount
+                      Set objOption = Document.createElement("OPTION")
+                      objOption.Text = sEnvName(i)
+                      objOption.Value = sEnvName(i)
+                      selectEnv.Add(objOption)			
+                  Next
+			      objExcel.Quit
+				  txtRes.Value = "The Environment Selected is ::"&selectEnv.Value
+			End Function
+			
+			
+		  Function FetchBlobData(sHost,sPort,sServiceName,sUserName,sPassword,sSmsgID,sTable,dBColumnName)
+		  
+				   Dim oCon, oRS, sConStr ,sData,oRS1,strStringReturnedCR,intSegmentLengthCR,intStartCR,intCLOBLengthCR
+				   intSegmentLengthCR=200
+				   strStringReturnedCR=""
+				   sConStr = "Provider=OraOLEDB.Oracle; " &_
+	                      "Data Source=(DESCRIPTION=" &_
+	                      "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" &_
+	                      "(HOST="&sHost&") (PORT="&sPort&")))" &_
+	                      "(CONNECT_DATA=(SERVICE_NAME="&sServiceName&"))); User Id="&sUserName&"; Password="&sPassword&";"	
+                            
+							Set oCon = CreateObject("ADODB.Connection")
+							oCon.ConnectionTimeout = 120	' 2 Mins
+							oCon.CommandTimeout = 120	' 2 Mins
+							oCon.ConnectionString = sConStr
+                            oCon.Open
+							If oCon.State = 1 Then
+	                            txtRes.Value = "Connection Opened.. Executing Query"
+							    Set oRS = oCon.Execute("select DBMS_LOB.getlength("&dBColumnName&") as CLOBLength , OPERATION FROM "&sTable&" where MSGID = '"&sSmsgID&"'")
+							    
+	                            If Err.Number<>0 then 
+                                   sTemp = "Description of error is " & Err.Description 
+                                   txtRes.Value= sTemp	
+                                   oCon.close								   
+                                   Exit Function
+                                Else							   
+                                   intCLOBLengthCR=oRS.Fields("CLOBLength")
+								   intStartCR=1
+								       If intCLOBLengthCR > "0" then
+                                           Do While Clng(intStartCR) <= Clng(intCLOBLengthCR)
+								   	       Set oRS1 = oCon.Execute("select utl_raw.cast_to_varchar2(dbms_lob.substr("&dBColumnName&"," & intSegmentLengthCR & ", " & intStartCR & ")) as CLOBSegment FROM "&sTable&" where MSGID = '"&sSmsgID&"'")                                   
+                                           strStringReturnedCR=strStringReturnedCR & oRS1.Fields("CLOBSegment")
+									
+                                           If strStringReturnedCR = "" Then 
+                                            strStringReturnedCR = "No Data" 										   
+                                           End If                                                                                                 
+                                           oRS1.close
+                                           intStartCR=intStartCR + intSegmentLengthCR
+                                           Loop
+										Else
+										   strStringReturnedCR = "No Data" 
+									    End If   
+                                End If   
+                            Else
+	                        txtRes.Value= "Connection Failed: " & Err.Description
+                            End If
+							oCon.close
+						FetchBlobData= strStringReturnedCR
+			End Function
+    
+    Function TimeStampCapture()
+	  Dim WshShell
+	  Dim strSafeDate, strSafeTime, strDateTime, strLogFilePath, strLogFileName
+	  Set WshShell = CreateObject("WScript.Shell")
+	  strLogFilePath = WshShell.ExpandEnvironmentStrings(txtLocation.Value)
+	  strSafeDate = DatePart("yyyy",Date) & Right("0" & DatePart("m",Date), 2) & Right("0" & DatePart("d",Date), 2)
+	  strSafeTime = Right("0" & Hour(Now), 2) & Right("0" & Minute(Now), 2) & Right("0" & Second(Now), 2)
+	  strDateTime = strSafeDate & "-" & strSafeTime
+	  strLogFileName = strLogFilePath & "/" & strDateTime & ".txt"
+      TimeStampCapture = strLogFileName
+    End Function	
+ 
+   Function createLogFolder(strLogFileName,strenv)
+   
+                  Set objFSO = CreateObject("Scripting.FileSystemObject")
+                  If objFSO.FolderExists(txtLocation.Value) Then
+                        Set objFolder = objFSO.GetFolder(txtLocation.Value)
+						txtRes.Value = "The Base Folder already Exists..!!"
+                  Else
+                        Set objFolder = objFSO.CreateFolder(txtLocation.Value)
+                  End If
+				  
+                  Set objFile = objFSO.CreateTextFile(strLogFileName,True)
+                  objFile.Write "*************************************************TEST LOGS********************************************************" & vbCrLf
+				  objFile.Write "->  Selected Environment is :: "&strenv & vbCrLf
+				  objFile.Write " " & vbCrLf                                                                                                             
+				  objFile.Write " " & vbCrLf  
+                  objFile.Write " " & vbCrLf     				  
+				  objFile.Write " " & vbCrLf                                     
+				  objFile.Write " " & vbCrLf            
+				  objFile.Write "*****************************************************************************************************************" & vbCrLf
+                  objFile.Close
+                  createLogFolder = "SUCCESS"
+    End Function
+	
+	Function AddToLogs(strToAdd,pathToOpen)
+	
+	         dim filesys, filetxt 
+             Const ForReading = 1, ForWriting = 2, ForAppending = 8 
+             Set filesys = CreateObject("Scripting.FileSystemObject") 
+             Set filetxt = filesys.OpenTextFile(pathToOpen, ForAppending, True) 
+             filetxt.WriteLine(strToAdd) 
+             filetxt.Close 
+	     AddToLogs="SUCCESS"
+	End Function
+			
+			Function SelectedEnvData()	
+			
+                  ReDim Preserve sEnvName(10)
+                  Dim sHost,sUserName,sPassword,sPort,sServiceName,sTable,sSmsgID,sEmsgID,sMsgID				  
+                  Set objExcel = CreateObject("Excel.Application")
+                  Set objWorkbook = objExcel.Workbooks.Open _
+                  ("C:\LogExtractor\Config\dBConfigData.xlsx")
+                  Set objDriverSheet = objWorkbook.Worksheets(selectApp.value)
+                  intRow = 2
+			      columncount = objDriverSheet.usedrange.columns.count
+                  rowcount = objDriverSheet.usedrange.rows.count
+				  If selectEnv.value = "" Then
+					   Alert "Please select the Environment"
+					   Exit Function
+				  End If
+				  If txtSmsgID.value = "" Then
+					   Alert "Enter Atleast Start MessageID!!!"
+					   Exit Function
+				  End If
+				 
+                  For i=2 To rowcount
+                      sEnvName(i)=objDriverSheet.cells(i,"A")		  
+					  If selectEnv.value = sEnvName(i) Then
+					     sHost= objDriverSheet.cells(i,"B")
+						 sUserName= objDriverSheet.cells(i,"C")
+						 sPassword= objDriverSheet.cells(i,"D")
+						 sPort= objDriverSheet.cells(i,"E")
+						 sServiceName= objDriverSheet.cells(i,"F")
+						 sTable= objDriverSheet.cells(i,"G")
+						
+						 Exit For
+					  End If
+                  Next
+			      objExcel.Quit
+				  
+				  sSmsgID=txtSmsgID.value
+				  sEmsgID=txtEmsgID.value
+				
+				  Dim oConnection, oRSet, sConString
+				  sConString = "Provider=OraOLEDB.Oracle; " &_
+	                      "Data Source=(DESCRIPTION=" &_
+	                      "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" &_
+	                      "(HOST="&sHost&") (PORT="&sPort&")))" &_
+	                      "(CONNECT_DATA=(SERVICE_NAME="&sServiceName&"))); User Id="&sUserName&"; Password="&sPassword&";"	
+				 
+				 If sEmsgID= "" Then
+                    sMsgID=sSmsgID
+					
+				    txtRes.Value = "WAIT...Logs are getting Generated..!"
+				    VarTxtpath = TimeStampCapture()
+				    VarIsSuccess= createLogFolder(VarTxtpath,selectEnv.value)
+				    VarReceiveData= FetchBlobData(sHost,sPort,sServiceName,sUserName,sPassword,sMsgID,sTable,"RECEIVE_DATA")
+				    VarIsSuccess=AddToLogs("________________________________RECEIVE_DATA________________________________",VarTxtpath)
+				    VarIsSuccess=AddToLogs(VarReceiveData,VarTxtpath)
+				    VarSendData= FetchBlobData(sHost,sPort,sServiceName,sUserName,sPassword,sMsgID,sTable,"SEND_DATA")
+                    VarIsSuccess=AddToLogs("________________________________SEND_DATA___________________________________",VarTxtpath)
+                    VarIsSuccess=AddToLogs(VarSendData,VarTxtpath)				  
+				    txtRes.Value = "Logs got generated in "&txtLocation.Value&"!"
+				 Else 
+				  
+                            Set oConnection = CreateObject("ADODB.Connection")
+							oConnection.ConnectionTimeout = 120	' 2 Mins
+							oConnection.CommandTimeout = 120	' 2 Mins
+							oConnection.ConnectionString = sConString
+                            oConnection.Open
+							If oConnection.State = 1 Then
+							
+							    VarTxtpath = TimeStampCapture()
+				                VarIsSuccess= createLogFolder(VarTxtpath,selectEnv.value)
+	                            txtRes.Value = "Connection Opened.. Executing Query"
+							    Set oRSet = oConnection.Execute("select MSGID,OPERATION from "&sTable&" where to_char(CREATION_TIME, 'yyyy-mm-dd hh24:mi:ss') >=  '"&sSmsgID&"' and to_char(CREATION_TIME, 'yyyy-mm-dd hh24:mi:ss') < = '"&sEmsgID&"'")									
+                                If Not (oRSet.EOF ) Then
+                                oRSet.MoveFirst 
+                 				Do Until oRSet.EOF = True
+								   VarOperation=oRSet.Fields("OPERATION") 
+								   sMsgID=oRSet.Fields("MSGID")
+				                   txtRes.Value = "WAIT...Logs are getting Generated..!"
+								   VarIsSuccess=AddToLogs("OPERATION is::"&VarOperation,VarTxtpath)
+								   VarIsSuccess=AddToLogs("________________________________________",VarTxtpath)
+								   VarIsSuccess=AddToLogs(" ",VarTxtpath)
+				                   VarReceiveData= FetchBlobData(sHost,sPort,sServiceName,sUserName,sPassword,sMsgID,sTable,"RECEIVE_DATA")
+				                   VarIsSuccess=AddToLogs("RECEIVE_DATA::",VarTxtpath)
+								   VarIsSuccess=AddToLogs(" ",VarTxtpath)
+				                   VarIsSuccess=AddToLogs(VarReceiveData,VarTxtpath)
+								   VarIsSuccess=AddToLogs(" ",VarTxtpath)
+								   VarIsSuccess=AddToLogs(" ",VarTxtpath)
+				                   VarSendData= FetchBlobData(sHost,sPort,sServiceName,sUserName,sPassword,sMsgID,sTable,"SEND_DATA")
+                                   VarIsSuccess=AddToLogs("SEND_DATA::",VarTxtpath)
+								   VarIsSuccess=AddToLogs(" ",VarTxtpath)
+                                   VarIsSuccess=AddToLogs(VarSendData,VarTxtpath)
+								   VarIsSuccess=AddToLogs(" ",VarTxtpath)
+								   VarIsSuccess=AddToLogs(" ",VarTxtpath)
+				                   txtRes.Value = "Logs got generated in "&txtLocation.Value&"!"
+								   oRSet.MoveNext
+								 Loop
+								 oConnection.close
+								 Else
+								   Alert "No Records Found for Log creation.!"
+								 End If
+							 Else
+	                              txtRes.Value= "Connection Failed: " & Err.Description
+                             End If						 
+						 
+				 End If	 
+				
+				     
+			  
+			End Function
+			
+			
+			
+		
+		    Sub doOnLoads()
+				window.ResizeTo 330,620
+				window.moveTo 500, 100
+				txtRes.Value = "Your Notification Area..!"			
+            End Sub
+						 			 			
+		</script>
+		<style>
+			body { overflow: hidden; margin: 0px; }
+			td {  font: menu; font-family: menu; }
+			textarea { height: 100%; width: 100%; }
+		</style>
+	</head>
+	<body onload='doOnLoads' bgcolor=White>
+	<table width=100% height=100% cellspacing=0 cellpadding=0>
+		<tr><td style="padding: 5px;">
+			<table>
+			    <tr>
+				  <td><h3><font face="Comic Sans MS" size="4">OM Log Extractor</font></h3></td>
+				  <td><h4><img src="C:/LogExtractor/Img/icon2.jpg" height="40" width="40"><img src="C:/LogExtractor/Img/icon1.png" height="40" width="40"><img src="C:/LogExtractor/Img/icon9.jpg" height="40" width="40"></marquee></h4></td>
+				  			  
+				</tr>
+			  
+			    <tr>
+				    <td>Select App::</td>
+			        <td>
+					<select name ="selectApp">
+                         <option value="OP">OP</option>
+                         <option value="BFC">BFC</option> 
+                         <option value="DTA">DTA</option>
+                         <option value="Common">Common</option>  
+                         <option value="SYMLITE">SYMLITE</option> 						 
+                    </select>
+					
+					</td>
+					
+			    </tr>
+				
+				<tr>
+			        
+					<td>Select Env::</td>
+					<td>
+					<select name ="selectEnv">
+                        						 
+                    </select>
+					&nbsp;<input id=btnRefresh type=image src="C:/LogExtractor/Img/Refresh.png" height="20" width="20" onclick='RefreshEnvData()' >
+					</td>				
+			    </tr>
+				<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+		    </table>
+				
+			
+            <table>
+			
+			    <tr>
+					<font face="Comic Sans MS" size="2"><marquee bgcolor="yellow" behavior="alternate">Configure the C:\LogExtractor\Config..File.!</marquee></font>
+					
+				</tr>
+				<tr>
+					<td><b>Log Extraction Criteria::</b></td>
+					
+				</tr>
+				<tr>
+					<td>START TIME [EST]:</td>
+					<td><input id=txtSmsgID type=text value="2015-06-23 23:59:59" ></td>
+					
+				</tr>
+				<tr>
+					<td>END TIME [EST]:</td>
+					<td><input id=txtEmsgID type=text value="2015-06-23 23:59:59"></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td><td><b>OR</b></td><td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>Tracking ID:</td>
+					<td><input id=txtTrackID type=text></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td><b>Location to store Logs::</b><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input id=btnSearch  type=image src="C:/LogExtractor/Img/App-edit-icon.png" height="40" width="40"  alt="click here to edit default location!" onclick='ChangeLocationpath()'></td>
+				</tr>
+				
+				<tr>
+					<th colspan="2"><input id=txtLocation value="C:/LogExtractor/Logs" readonly type=text size="40" align="left"></th>
+				</tr>
+				<tr>
+                    <td>&nbsp;</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input id=btnSearch type=image src="C:/LogExtractor/Img/LogEx7.png" height="40" width="40" onclick='SelectedEnvData()' ></td>
+					
+				</tr>
+				<tr>
+				    <td>&nbsp;</td>
+				</tr>				
+				
+			</table>
+		</td></tr>
+		<tr height=20%><td>
+			<table cellspacing=0 width=100% height=100%>
+				<tr><td id=tdRes><b>&nbsp;&nbsp;RESULT:</b></td></tr>
+				<tr height=100%><td><textarea id=txtRes readonly></textarea></td></tr>
+			</table>
+		</td></tr>
+	</table>
+	</body>
+</html>
