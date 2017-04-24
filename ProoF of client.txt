@@ -1,0 +1,58 @@
+10.25.130.162
+
+find /app/platform/OM_QA/XHOM/XHOM_SanitySuites -type f -exec chmod 777 {} \;
+
+
+find /app/platform/OM_QA/XHOM/XHOM_SanitySuites/Secure/XHOM_SanitySuite_Secure -type d -exec chmod 777 {} \;
+
+yum update && yum upgrade
+
+10.52.157.142
+
+/usr/bin/Xvfb :2 -ac -screen 0 1280x1024x24 &
+export DISPLAY=:1
+export GRADLE_HOME="/tacvdi-vol00/xhomuser1/workspace/BomAutoTestnew/gradle-2.3" 
+
+7
+java -jar cd/ExternalLibraries/selenium-server-standalone-2.45.0.jar &
+
+cd /tacvdi-vol00/xhomuser1/BomAutoTestnew
+
+gradle test --tests "com.comcast.bulkOM.X1_DVRDCT"
+
+https://docs.docker.com/engine/installation/linux/centos/#install-from-a-package
+
+https://www.liquidweb.com/kb/how-to-install-docker-on-centos-7/
+
+ docker run -i -t centos /bin/bash
+
+docker pull centos
+
+/opt/jdk1.8.0_91/bin
+
+export PATH=/opt/jdk1.8.0_91/bin:$PATH
+
+export JAVA_HOME=/app/platform/java/jdk1.8.0_40/jre/bin/java
+
+ps aux | grep firefox
+sudo yum -y install firefox Xvfb libXfont Xorg
+/usr/bin/Xvfb :21 -ac -screen 0 1280x1024x24 &
+java -jar /opt/selenium-server-standalone.jar &
+
+java -jar /tacvdi-vol00/xhomuser1/workspace/BomAutoTestnew/ExternalLibraries/selenium-server-standalone-2.45.0.jar &
+
+lsof -i -n -P | grep 4444
+
+export GRADLE_HOME="/tacvdi-vol00/xhomuser1/workspace/BomAutoTestnew/gradle-2.3" 
+PATH="$PATH:$GRADLE_HOME/bin" 
+
+gradle -version
+
+
+export M2_HOME=/tacvdi-vol00/xhomuser1/apache-maven-3.3.9 
+export M2=$M2_HOME/bin 
+export PATH=$M2:$PATH?
+
+sudo yum-config-manager \
+    --add-repo \
+    /etc/yum/vars/dockerurl/docker-ee.repo
