@@ -1,0 +1,411 @@
+# Copyright (c) 1993-1999 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+127.0.0.1       localhost
+10.253.98.24  app04.iq1.dt.ccp.cable.comcast.com
+10.253.98.27  app01.iq2.dt.ccp.cable.comcast.com
+10.253.98.30  app04.iq2.dt.ccp.cable.comcast.com
+10.253.98.21  app01.iq1.dt.ccp.cable.comcast.com
+10.253.98.26  app06.iq1.dt.ccp.cable.comcast.com
+10.253.98.32  app06.iq2.dt.ccp.cable.comcast.com
+69.252.106.21 
+10.253.98.53       ccpxqa-dt-a31-dqi.dt.ccp.cable.comcast.com
+10.253.98.55       ccpxqa-dt-a33-dqi.dt.ccp.cable.comcast.com
+10.253.98.54       ccpxqa-dt-a32-dqi.dt.ccp.cable.comcast.com
+		ccpdss-dt-v003-i.dt.ccp.cable.comcast.com:9007
+
+192.168.212.85  
+
+
+		ccpapp-dt-v003-i.dt.ccp.cable.comcast.com
+
+69.252.106.150  ccpssc-po-v003-p.po.ccp.cable.comcast.com
+
+10.252.228.56
+
+
+172.20.244.237 ccpdss-br-c001-p.ccp.cable.comcast.com
+
+
+10.253.103.227	ccpapp-dt-b115-q.ccp.cable.comcast.com
+
+
+ 
+172.20.244.237  br.ds.ccp.xcal.tv
+
+
+10.253.109.210  ccpdss-dt-v001-q.dt.ccp.cable.comcast.com
+
+10.253.109.211
+
+10.253.109.145  ccpdss-dt-v102-q.dt.ccp.cable.comcast.com
+
+
+172.20.149.19   ccpdss-po-v003-p.po.ccp.cable.comcast.com
+
+
+69.252.105.34  ccpssc-po-v003-p.po.ccp.cable.comcast.com
+
+69.252.105.32 ccpdss-po-v001-p.po.ccp.cable.comcast.com
+
+172.20.149.26   ccpdss-po-v001-p.po.ccp.cable.comcast.com
+
+10.253.109.211  ccpdss-dt-v002-q.dt.ccp.cable.comcast.com
+
+
+10.252.180.213  ccpssc-dt-v002-q.dt.ccp.cable.comcast.com
+
+10.252.180.211  ccpssc-dt-v001-q.dt.ccp.cable.comcast.com
+
+
+10.252.180.209 ccpapp-dt-v001-q.dt.ccp.cable.comcast.com
+
+10.252.180.212 ccpapp-dt-v002-q.dt.ccp.cable.comcast.com
+
+10.252.180.146 ccpapp-dt-v102-q.dt.ccp.cable.comcast.com
+
+
+10.253.109.82   ccpdss-dt-v003-i.dt.ccp.cable.comcast.com
+10.252.180.209	ccpweb-dt-v001-q.dt.ccp.cable.comcast.com
+10.253.104.30   ccpx-scan.dt.ccp.cable.comcast.com
+
+10.252.180.84 ccpapp-dt-v003-i.dt.ccp.cable.comcast.com
+
+
+10.253.99.93	 webportal-qaa.comcast.net
+
+10.253.98.103 	webportal-qab.comcast.net
+
+10.253.97.106 	webportal-devintc.comcast.net
+
+10.253.98.129  	webportal-qab1.ccp.ula.comcast.net
+
+
+10.253.109.148 ccpmer-dt-v001-qi.dt.ccp.cable.comcast.com
+
+
+10.253.109.140	ccpmer-dt-v001-i.dt.ccp.cable.comcast.com
+
+10.253.109.141  ccpmer-dt-v001-f.dt.ccp.cable.comcast.com
+
+
+10.253.109.142 ccpmer-dt-v001-p.dt.ccp.cable.comcast.com
+
+10.253.109.150 ccpmer-rw-dt-v001-qi.dt.ccp.cable.comcast.com
+
+
+10.253.109.149	ccpmer-be-dt-v001-qi.dt.ccp.cable.comcast.com
+
+172.20.244.237	br.ds.ccp.xcal.tv
+
+172.20.149.19 	ccpdss-po-v003-p.po.ccp.cable.comcast.com
+
+
+10.253.84.69 	nexus.ula.comcast.net:8081
+
+
+10.252.228.56  
+
+10.253.109.151 ccpmer-leg-dt-v001-qi.dt.ccp.cable.comcast.com
+
+
+10.253.109.81 ccpdss-dt-v002-i.dt.ccp.cable.comcast.com
+
+
+ccpdss-dt-v002-i.dt.ccp.cable.comcast.com
+
+
+10.253.109.87 ccpdss-dt-v102-i.dt.ccp.cable.comcast.com
+
+69.252.105.65 xre.poc1.xcal.tv/shell
+
+
+10.252.180.54 ccpapp-dt-v010-d.dt.ccp.cable.comcast.com
+
+10.253.109.94 ccpccm-dt-v001-qi.dt.ccp.cable.comcast.com
+
+172.20.150.242                       ccpdss-po-c006-p.po.ccp.cable.comcast.com
+172.20.150.243                       ccpdss-po-c007-p.po.ccp.cable.comcast.com
+172.20.150.244                       ccpdss-po-c008-p.po.ccp.cable.comcast.com
+172.20.150.245                       ccpdss-po-c009-p.po.ccp.cable.comcast.com
+172.20.150.246                       ccpdss-po-c010-p.po.ccp.cable.comcast.com
+172.20.150.247                       ccpdss-po-c011-p.po.ccp.cable.comcast.com
+172.20.150.248                       ccpdss-po-c012-p.po.ccp.cable.comcast.com
+172.20.150.249                       ccpdss-po-c013-p.po.ccp.cable.comcast.com
+172.20.150.250                       ccpdss-po-c014-p.po.ccp.cable.comcast.com
+172.20.150.251                       ccpdss-po-c015-p.po.ccp.cable.comcast.com
+172.20.150.252                       ccpdss-po-c016-p.po.ccp.cable.comcast.com
+172.20.150.253                       ccpdss-po-c017-p.po.ccp.cable.comcast.com
+172.20.150.256                       ccpdss-po-c020-p.po.ccp.cable.comcast.com
+172.20.150.257                       ccpdss-po-c021-p.po.ccp.cable.comcast.com
+69.252.106.150                       ccpssc-po-c001-p.po.ccp.cable.comcast.com
+69.252.106.151                       ccpssc-po-c002-p.po.ccp.cable.comcast.com
+
+
+10.252.180.52		ccpapp-dt-v007-d.dt.ccp.cable.comcast.com
+
+10.253.109.78 ccpmer-dt-v104-i.dt.ccp.cable.comcast.com
+
+
+10.253.109.27	ccpdss-dt-v007-d.dt.ccp.cable.comcast.com
+
+
+10.253.109.96 ccpdss-dt-v103-i.dt.ccp.cable.comcast.com
+
+10.253.109.31 ccpplg-dt-v003-i.dt.ccp.cable.comcast.com
+
+
+10.252.180.86 ccpssc-dt-v003-i.dt.ccp.cable.comcast.com
+10.252.180.206	ccpapp-dt-v201-q.dt.ccp.cable.comcast.com
+
+
+#Pointed to POC1
+172.20.149.18 ccpdss-po-g003-p.gslb.po.ccp.cable.comcast.com
+
+
+# Pointed to POC0
+#172.20.149.19 ccpdss-po-g003-p.gslb.po.ccp.cable.comcast.com
+
+
+
+172.20.149.33 ccpdss-po-v101-p.po.ccp.cable.comcast.com
+
+10.253.109.143 ccpmer-dt-v001-d.dt.ccp.cable.comcast.com
+
+
+172.20.149.18 ccpdss-po-v103-p.po.ccp.cable.comcast.com
+
+# for QAB0 you will need to define the GSLB in your /etc/hosts file as:
+10.253.109.211  ccpdss-dt-g002-q.gslb.dt.ccp.cable.comcast.com
+# ccpdss-dt-v002-q.dt.ccp.cable.comcast.com is (10.253.109.211)
+
+
+# for QAB1 you will need to define the GSLB in your /etc/hosts file as:
+10.253.109.145  ccpdss-dt-g002-q.gslb.dt.ccp.cable.comcast.com
+# ccpdss-dt-v102-q.dt.ccp.cable.comcast.com is (10.253.109.145)
+
+
+
+10.21.39.4 ccpsharepoint
+
+
+# Grandslam
+24.40.50.126       pacdcawd33.cable.comcast.com
+watch.slingbox.com
+
+64.95.64.195       cats.com
+
+10.252.167.21	cats.cable.comcast.com
+
+10.252.180.25 mpxconsole.dev.dt.ccp.cable.comcast.com
+
+
+
+
+10.252.180.206	ccpapp-dt-v201-q.dt.ccp.cable.comcast.com
+10.252.42.62               ccplic-ar-a1-p.ccp.cable.comcast.com
+69.252.124.252           alpha.xcal.tv
+18.9.21.51                   comcast.mit.edu
+69.252.105.74             xre.poc2.xcal.tv
+18.7.21.139                 repo.mit.edu
+69.252.105.74            university.xfinity
+ 10.252.42.62              ccplic-ar-a1-p.ccp.cable.comcast.com  
+10.252.180.90            ccpapp-dt-v005-i.dt.ccp.cable.comcast.com
+10.252.180.80            ccpapp-dt-v001-i.dt.ccp.cable.comcast.com
+10.253.98.170            ccpvid-dt-c02-q.ccp.cable.comcast.com
+69.252.111.59	           ccpcsb-br-v104-s.br.ccp.cable.comcast.com
+69.252.105.84		ccpcsb-po-v203-p.po.ccp.cable.comcast.com
+67.199.28.223           fiddler2 
+10.253.98.170		ccpvid-dt-c02-q.dt.ccp.cable.comcast.com
+65.55.101.189		services.silverlight.microsoft.com
+18.7.21.139		repo.mit.edu
+
+38.99.15.35        slingbox
+
+10.253.109.83	ccpdss-dt-v004-i.dt.ccp.cable.comcast.com
+
+10.253.109.141	ccpmer-dt-v001-f.dt.ccp.cable.comcast.com
+
+10.253.109.145	ccpdss-dt-v102-q.dt.ccp.cable.comcast.com
+
+10.252.180.19	identity.auth.dev.dt.ccp.cable.comcast.com
+
+10.252.180.20	access.auth.dev.dt.ccp.cable.comcast.com
+
+10.252.180.28	data.console.dev.dt.ccp.cable.comcast.com
+
+10.253.105.66	ccpdss-dt-d008-i.dt.ccp.cable.comcast.com
+
+10.253.105.70	ccpdss-dt-d012-i.dt.ccp.cable.comcast.com
+
+10.253.106.101	ccpmer-dt-a001-qi.dt.ccp.cable.comcast.com
+
+10.253.105.72	ccpdss-dt-d014-i.dt.ccp.cable.comcast.com
+
+10.253.105.73	ccpdss-dt-d015-i.dt.ccp.cable.comcast.com
+
+10.253.106.107	ccpmer-dt-a007-qi.dt.ccp.cable.comcast.com
+
+10.253.106.108	ccpmer-dt-a008-qi.dt.ccp.cable.comcast.com
+
+10.253.106.109	ccpmer-dt-a009-qi.dt.ccp.cable.comcast.com
+
+10.253.106.110	ccpmer-dt-a010-qi.dt.ccp.cable.comcast.com
+
+10.253.106.103	ccpmer-dt-a003-qi.dt.ccp.cable.comcast.com
+
+10.253.106.104	ccpmer-dt-a004-qi.dt.ccp.cable.comcast.com
+
+10.253.106.105	ccpmer-dt-a005-qi.dt.ccp.cable.comcast.com
+
+10.253.106.106	ccpmer-dt-a006-qi.dt.ccp.cable.comcast.com
+
+10.253.105.66	ccpdss-dt-d008-i.dt.ccp.cable.comcast.com
+
+10.253.105.67	ccpdss-dt-d009-i.dt.ccp.cable.comcast.com
+
+10.253.104.30	ccpx-scan.dt.ccp.cable.comcast.com
+
+10.253.109.51	splunk.dt.ccp.cable.comcast.com
+
+172.24.141.249	splunk.ccp.cable.comcast.com
+
+24.40.45.70 almpc.cable.comcast.com
+24.40.76.124 tqmtools.cable.comcast.com
+74.125.236.206	youtube.com
+
+24.40.8.23	workgroups.teamcomcast.com
+#24.40.43.19	community.teamcomcast.com
+24.40.43.19	community.teamcomcast.comm
+24.40.38.212	pcpc-wc-1p.cable.comcast.com
+24.40.38.213	pcpc-wc-2p.cable.comcast.com
+76.96.69.135	tkts.io.comcast.net
+172.28.143.98	tkts.sys.comcast.net
+24.40.78.142	intake.cable.comcast.com
+24.40.45.73	oem-cc.cable.comcast.com
+172.28.178.226	wiki.io.comcast.net
+10.252.113.240	tppadm-dt-b1s.ula.comcast.net
+10.252.253.79	tools-svn.cable.comcast.com
+24.40.56.169	cas-wcdc.cable.comcast.com
+10.252.113.232	tppapi-dt-b1s.ula.comcast.net
+24.40.43.184	servicecatalog
+24.40.43.184	servicecatalog.cable.comcast.com
+
+10.252.174.26	ossjms-dt-a1s.downingtown.pa.ula.comcast.net
+10.252.174.27	ossjms-dt-a2s.downingtown.pa.ula.comcast.net
+10.252.174.28	ossjms-dt-b1s.downingtown.pa.ula.comcast.net
+10.252.174.29	ossjms-dt-b2s.downingtown.pa.ula.comcast.net
+
+10.253.90.165	npsbpm-dt-a1s.downingtown.pa.ula.comcast.net
+10.253.90.166	npsbpm-dt-a1s.downingtown.pa.ula.comcast.net
+10.253.90.167	npsapi-dt-a1s.downingtown.pa.ula.comcast.net
+10.253.90.168	npsapi-dt-a1s.downingtown.pa.ula.comcast.net
+10.253.90.169	npsui-dt-a1s.downingtown.pa.ula.comcast.net
+10.253.90.170	npsui-dt-a1s.downingtown.pa.ula.comcast.net
+
+10.253.90.51	npsdb-dt-b2s.downingtown.pa.ula.comcast.net
+10.253.90.52	npsdb-dt-b2s.downingtown.pa.ula.comcast.net
+10.252.112.13	para-dt-s02.cable.comcast.com
+
+10.253.88.141	opapp-dt-a1s.ula.comcast.net
+10.253.88.142	opapp-dt-a2s.ula.comcast.net
+
+10.253.88.159	opdb-dt-a1s.ula.comcast.net
+10.253.88.160	opdb-dt-a12.ula.comcast.net
+10.253.88.161	opdb-vip-a1s.ula.comcast.net
+
+
+10.253.113.232	tppapi-dt-b1s.ula.comcast.net
+10.253.113.233	tppapi-dt-b2s.ula.comcast.net
+10.253.92.51	tppbus-dt-b1s.ula.comcast.net
+10.253.92.59	tppbus-dt-b2s.ula.comcast.net
+10.253.92.60	tppbus-dt-b3s.ula.comcast.net
+10.253.92.61	tppbus-dt-b4s.ula.comcast.net
+
+10.253.92.57	tppdb-dt-b1s.ula.comcast.net
+10.253.92.58	tppdb-dt-b2s.ula.comcast.net
+10.253.92.103	tppdb-dt-b3s.ula.comcast.net
+10.253.92.104	tppdb-dt-b4s.ula.comcast.net
+
+24.40.33.15	evc.io.comcast.net
+172.28.137.85	gseweb-ch2-sa.cable.comcast.com
+10.252.119.205	npacservice-stgc.comcast.net
+172.27.4.138	pdssdb-wc-ap-sc.sys.comcast.net
+10.253.95.94	orderpath-stg.g.comcast.net
+24.40.43.145	iowareporting
+172.20.126.136	nsg.io.comcast.net
+10.253.88.142	opapp-dt-vip.ula.comcast.net
+10.253.95.94	orderpath-stg.g.comcast.net
+24.40.45.45		iwa-test.cable.comcast.com
+172.28.143.98	tkts.sys.comcast.net
+10.253.92.99	tppdb-dt-csgrd.ula.comcast.net
+10.252.112.222	wyapm-perf.io.comcast.net
+10.22.83.57	cafeui-stg.cable.comcast.com
+172.28.88.139	splunksearch.io.comcast.net
+172.24.230.227	cafedb-wc-p02v1.cable.comcast.com
+172.28.146.48	gsdb-ch2-s02v3
+10.251.85.203	CAFEDB-DT-1q.cable.comcast.com
+
+172.28.137.225	bsd-cps-svc.sys.comcast.net
+
+#Cafe Staging VM DB
+172.28.146.40	gsdb-ch2-s02a.cable.comcast.com
+172.28.146.43	gsdb-ch2-s02b.cable.comcast.com
+172.28.146.46	gsdb-ch2-s02c.cable.comcast.com
+172.28.146.49	gsdb-ch2-s02d.cable.comcast.com
+172.28.146.48	gsdb-ch2-s02v3
+
+#Cafe Staging VM UI
+10.22.83.57	cafeui-stg.cable.comcast.com
+24.40.45.45	iwa-test.cable.comcast.com
+10.251.87.128	sso-login-test.cable.comcast.com
+
+#Cafe QA VM 
+10.251.85.157	cafeui-dt-1q.cable.comcast.com
+
+#App dynamics Cafe
+69.27.44.151	comcast-aps-lower.saas.appdynamics.com
+#mob app comcast
+24.40.45.191	mylearning-stg.teamcomcast.com
+
+#clarity
+172.28.137.91	clarity.cable.comcast.com
+10.22.29.44	chart.io.comcast.net
+172.28.85.164	cchclu05
+
+24.40.45.54	sams-midtier
+24.40.43.118	sams
+10.251.175.234	cafespw-dt-1q.cable.comcast.com
+10.147.125.19	einhuds-po-1p.cable.comcast.com
+23.202.214.75	codebig.comcast.com
+24.40.78.158	paraem-wc-1p.cable.comcast.com
+172.28.179.84	tims.sys.comcast.net
+10.251.35.226	cafespw-qc-a1s.cable.comcast.com
+172.28.137.159	almapp.comcast.net
+10.52.174.11	tacvdi-g-conn01.cable.comcast.com
+
+10.52.107.10	TACGWC-OMPROC05.cable.comcast.com
+10.52.107.15  TACGWC-OMPROC01.cable.comcast.com 
+10.52.106.250  TACGWC-OMPROC02.cable.comcast.com 
+10.52.107.23  TACGWC-OMPROC03.cable.comcast.com
+10.52.107.14 TACGWC-OMPROC04.cable.comcast.com
+10.52.107.11   TACGWC-OMPROC06.cable.comcast.com
+10.255.159.180 tqmom-dt-a1d.cable.comcast.com
+10.251.175.218  tqmom-dt-b1d.cable.comcast.com 
+
+

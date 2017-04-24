@@ -1,0 +1,141 @@
+git config --global http.proxy http[s]://yaminisubramani22@gmail.com:BALAselvi$019@10.36.1.101:8080
+
+git remote add demo_app 'git@github.com:YaminiBala/PractisingGIT.git'
+
+require 'minitest/autorun'
+require 'cucumber'
+require 'capybara/cucumber'
+
+require 'selenium-webdriver'
+require 'rspec/expectations'
+require 'minitest'
+module MiniTestAssertions
+  def self.extended(base)
+    base.extend(MiniTest::Assertions)
+    base.assertions = 0
+  end
+
+  attr_accessor :assertions
+end
+World(MiniTestAssertions)
+#require 'test/unit/ui/console/testrunner'
+
+
+https://corlewsolutions.com/articles/article-19-install-ruby-on-windows-7-32-bit-or-64-bit
+
+https://en.wikipedia.org/wiki/RubyGems
+
+https://en.wikipedia.org/wiki/RubyGems
+
+https://en.wikipedia.org/wiki/Rake_(software)
+
+gradle -Dtest.single=com.comcast.einstein.xCalibur.X1_DVRDCT test 
+
+gradle test --tests *com.comcast.einstein.xCalibur.X1_DVRDCT.X1_DVRDCT_CSGResidential
+gradle -Dtest.single=com.comcast.einstein.xCalibur.X1_DVRDCT test
+
+gradle Test -DTest.single=com.comcast.einstein.xCalibur.X1_DVRDCT.X1_DVRDCT_CSGResidential  test
+gradle Test -DTest.single=X1_DVRDCT_CSGResidential test
+
+gradle -DX1_DVRDCT.single=S* X1_DVRDCT
+gradle test --tests "com.comcast.einstein.xCalibur.X1_DVRDCT"
+gradle test --tests "com.comcast.bulkOM.X1_DVRDCT"
+gradle -v
+
+ldrona001c
+QW5qaTg4Kio=
+
+gradle test --tests "com.comcast.bulkOM.X1_DVRDCT.ValidateX1_DVRDCT_CSGResidential_1"
+gradle test --tests "com.comcast.bulkOM.X1_DVRDCT" --debug-jvm
+
+
+cp -r /tacvdi-vol00/xhomuser1/Helloworld/BomAutoTestnew/jdk1.8.0_91 /tacvdi-vol00/xhomuser1/Helloworld
+
+Jenkins:
+
+java -jar jenkins.war
+
+147282
+229168
+
+10.52.157.142
+
+com.comcast.einstein.xCalibur
+mvn -Dtest=com.comcast.einstein.xCalibur# test
+X1_DVRDCT
+gradle clean build –refresh -dependencies
+mvn -Dtest=com.comcast.bulkOM.X1_DVRDCT#ValidateX1_DVRDCT_CSGResidential_1 test
+
+
+mvn -Dtest=com.comcast.einstein.xCalibur#X1_DVRDCT test
+X1_DVRDCT
+
+mvn -Dtest=com.comcast.bulkOM.X1_DVRDCT#ValidateX1_DVRDCT_CSGResidential test
+ 
+sudo user:
+xhomuser1 / xhompass!
+ocgcd-po-a1p.sys.comcast.net:8153/go/pipelines
+
+ocgoagt-po-a1p.sys.comcast.net
+
+java -jar /tacvdi-vol00/xhomuser1/workspace/BomAutoTestnew/ExternalLibraries/selenium-server-standalone-2.45.0.jar
+ -Dwebdriver.chrome.bin="/usr/bin/google-chrome" -Dwebdriver.chrome.driver="/tacvdi-vol00/xhomuser1/workspace/BomAutoTestnew/BrowserSpecificDrivers/chromedriver
+
+
+/tacvdi-vol00/xhomuser1/workspace/BomAutoTestnew/ExternalLibraries/selenium-server-standalone-2.45.0.jar
+
+10.52.107.10 TACGWC-OMPROC05.cable.comcast.com
+
+10.52.107.15  TACGWC-OMPROC01.cable.comcast.com 
+
+10.52.106.250  TACGWC-OMPROC02.cable.comcast.com 
+
+ 10.52.107.23  TACGWC-OMPROC03.cable.comcast.com
+
+10.52.107.14 TACGWC-OMPROC04.cable.comcast.com
+
+10.52.107.11   TACGWC-OMPROC06.cable.comcast.com
+
+ 10.255.159.180 tqmom-dt-a1d.cable.comcast.com
+
+10.251.175.218 tqmom-dt-b1d.cable.comcast.com​
+
+
+# JAVA
+
+ENV JAVA_VERSION 8u31
+ENV BUILD_VERSION b13
+
+RUN wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/$JAVA_VERSION-$BUILD_VERSION/jdk-$JAVA_VERSION-linux-x64.rpm" -O /tmp/jdk-8-linux-x64.rpm
+
+RUN yum -y install /tmp/jdk-8-linux-x64.rpm
+
+gradle test -p /home/BomAutoTestnew --tests "com.comcast.bulkOM.X1_DVRDCT"
+
+ENV DISPLAY :99 ADD run.sh /run.sh RUN chmod a+x /run.sh CMD /run.sh 
+
+
+Xvfb :99 -screen 0 640x480x8 -nolisten tcp & google-chrome &
+
+
+cp /tacvdi-vol00/xhomuser1/workspace/BomAutoTestnew/BrowserSpecificDrivers/chromedriver 
+/tacvdi-vol00/xhomuser1/Helloworld/chromedriver
+
+https://linuxmeerkat.wordpress.com/2014/10/17/running-a-gui-application-in-a-docker-container/
+
+ocgoagt-po-a1p.sys.comcast.net
+
+cd D:\DevKit
+ruby dk.rb init
+
+ENV DISPLAY :99 
+ADD xvfb /Xvfb :99 -screen 0 640x480x8 -nolisten tcp & 
+ RUN chmod a+x /xvfb
+CMD /xvfb
+
+
+
+
+
+
+
