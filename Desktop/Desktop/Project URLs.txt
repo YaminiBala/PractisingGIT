@@ -1,0 +1,632 @@
+https://aims.cognizant.com/  - Aiims URL
+
+goCD:
+https://github.comcast.com/aps-sef-eom/bom-service/tree/develop/parasoft-tests
+
+ocgcd-po-a1p.sys.comcast.net:8153/go/pipelines
+
+ 
+/app/platform/parasoft/soatest/9.9	 
+  
+	licence	 
+  
+	exampleconfiguration.properties file	 
+
+
+ocgoagt-po-a1p.sys.comcast.net
+
+ 
+ps -aef | grep activemq	 
+  
+	kill -9 {$pid}	 
+
+!omcomteam / Automation1
+
+ 
+Transaction_Type,ToSiteID,StatusDesc,Reference_Number,Receive_Date_Time,Model,Forecast Group,IsmSerial,Company,BillingTranDate,Billing Status Desc Prior to Receipt,Current Billing Status Desc,BillingSerial,BillingCompany,Address5,Address4,Address3,Address2,Address1,Resi/Comm,Outlet,Customer,Last Customer,House Status,Equip Type
+TRC,VGEN03,Received,1Z18424E9062054631,2014-10-09 09:26:06.763000000,DCH3200,MOT STND,MAYO4BCBB533,VGEN03,2013-12-13 16:23:38,HOUSE,HOUSE,M1EOPIOC5C99,05628,80112,CO,ENGLEWOOD,CO,7514 S WILLOW CIR,RES,1,8210100200381348,,Active, 	 
+  
+	http://24.40.50.88/comcast/LocationPref.htm?c0cb38483adc	 
+  
+	cqap7g	 
+  
+	comcast3	 
+8999335
+
+
+Apurva:
+079 6170 4148
+
+ 
+Xh-listener will post the message to XHSQueue	 
+  
+	Xh-listener will have ActiveMQ listener and it will pick messages from XHSQueue and post to the respective microservice	 
+
+common VDI::
+
+ 
+https://tacvdi-g-conn01.cable.comcast.com/portal/webclient/index.html#/launchitems 	 
+
+8567922077
+
+Cloud Foundry:
+
+https://api.u1.app.cloud.comcast.net
+
+B, Yamini (Contractor) 1:20 PM
+Hi Apurva
+I have one doubt in CVR 
+Padhya, Apurva (Contractor) 1:21 PM
+hi Yamini
+B, Yamini (Contractor) 1:21 PM
+For XH-secure or 350 , by default cvr count is going as 1
+cvreligibleis 1
+Exctly -when we process with tracking code "10400138" , by default cvr count is 1 for demi services
+Is it so?
+Padhya, Apurva (Contractor) 1:23 PM
+the count depends on the services you have in the request
+it is not fixed for any scenario
+B, Yamini (Contractor) 1:25 PM
+but req does not contain cvr product number which is 10400463 , it has only 10096 and 10400138 by the time Iam getting cvr count is 1. Is it correct?
+Padhya, Apurva (Contractor) 1:25 PM
+what is the getAccount response
+?
+B, Yamini (Contractor) 1:26 PM
+Install flow so account not found
+Padhya, Apurva (Contractor) 1:26 PM
+pls ping the account details
+B, Yamini (Contractor) 1:27 PM
+ok
+9999658765789 -QA1
+B, Yamini (Contractor) 1:39 PM
+Hi
+Padhya, Apurva (Contractor) 1:39 PM
+Hi
+B, Yamini (Contractor) 1:39 PM
+expected behaviour?
+Padhya, Apurva (Contractor) 1:40 PM
+checkgin Yamini
+some alerts in production
+checking that right now
+B, Yamini (Contractor) 1:41 PM
+or we should not get cvr count as 1 for xh-secure when we are not sending cvr product number?
+ok
+B, Yamini (Contractor) 2:19 PM
+hI
+Padhya, Apurva (Contractor) 2:25 PM
+Hi
+we are checking Yamini
+B, Yamini (Contractor) 2:26 PM
+ok..
+Padhya, Apurva (Contractor) 2:28 PM
+Yamini, that is because 10400138 is configured in UI in XHS-Product Numbers for CVR
+meaning if this product is configured and we get in request, it will consider it as CVR product
+and hence sending the count as 1
+B, Yamini (Contractor) 2:31 PM
+ok. Is this expected bahaviour?
+Padhya, Apurva (Contractor) 2:31 PM
+yes
+if you remove 10400138  from that UI config , it will not send the cvr count as 1
+B, Yamini (Contractor) 2:33 PM
+ok. I will be sending mail please reply on top of it
+Padhya, Apurva (Contractor) 2:33 PM
+sure
+B, Yamini (Contractor) 3:21 PM
+Any updates for ,y mail?
+Padhya, Apurva (Contractor) 3:21 PM
+i have replied, right
+B, Yamini (Contractor) 3:21 PM
+on top of it . i sent one more
+Padhya, Apurva (Contractor) 3:22 PM
+was there any question in it ?
+B, Yamini (Contractor) 3:22 PM
+We configured  “10400138”  in UI for 150 service. If we remove we won’t get CVR for 150 by default.
+Padhya, Apurva (Contractor) 3:23 PM
+yes correct,
+that is what I mentioned in my mail too
+that is fine, right
+B, Yamini (Contractor) 3:24 PM
+can u reply on top of it?
+Padhya, Apurva (Contractor) 3:26 PM
+but there is no need ,right
+why to have unnecessary mails
+what i have written in my previous mail, is what you have asked in your mail
+B, Yamini (Contractor) 3:39 PM
+According to your logic for 150 we should get 2 cvr count , but we are getting one .
+because we configured both 10300029 and 10400138 
+Padhya, Apurva (Contractor) 3:40 PM
+no not necesarry
+pls share that account
+because for previous account i think you used 10096
+right
+1 is expected
+by default, we always send 1
+you can check one thing
+apart from default, keep one CVR product in request
+that time it should give count = 2
+B, Yamini (Contractor) 3:44 PM
+no. first I processed 10096 and 10400138 by the time count came as 1 since we conf tracking code . if this is logic, for 150 cvr count should come as 2 rgt bec we conf both 10300029 and 10400138.
+Padhya, Apurva (Contractor) 3:45 PM
+no, even in case of configuring both  10300029 and 10400138, we we should get 1 as a default, because that is not part of incrementing logic
+apart from these 2 , if you have any specific CVR rate code, then it should give count as 2
+you can try that
+have 10300029 and 10400138 .. and one CVR product
+that should give you 2
+B, Yamini (Contractor) 3:46 PM
+ok
+
+
+Welcome@123
+Nilusri@7
+W`provpassword!
+1WWelcome@123Welcome@123mzU1kxQjHRT1gj5Om=Hu
+ 
+pgouda001c 
+Freedom123	 
+cqap7g
+340764
+mzU1kxQjHRT1gj5Om=Hu
+9n777srb
+comcast8
+Nilusri@7
+Order-GetOrderForModification-604
+
+mzU1kxQjHRT1gj5Om=Hu
+ 
+https://aims.cognizant.com/General/Util_Tracker.asp	 
+  
+8720101010078987	 
+  
+	97007000015353	 
+
+
+
+  
+password: comcast6 
+username: ete96	 
+RMA_LABEL_KIT
+LOCATION ID: 80112000034690 ACC NO:8210100200338207 NAME ATA,RESI1 ADDRESS: 1101508892986 7514 S WILLOW CIR ENGLEWOOD CO 80112 234-323-4555 SERIAL NO: MA0001DDC9C5 M12097345691
+
+
+Account:8210100200337969
+1st Serial num :MA0952AAC8C8
+2nd Serial num: M12093161891
+Address 105 DRCSG96788BUS RD CENTENNIAL, CO 80112-1112
+Location:80112111203085
+
+ 
+DDP DVR:	 
+  
+	ACC NO: 9999627803201 NAME: NAME DDPDVRA ADDRESS: 110 DRDDP99092RES R DOVER DE19901	 
+  
+	SERIAL NO:	 
+  
+	MA0007087574 M14008A01D29	 
+
+9992058078701
+
+DTAOM:  VT577
+
+
+475255-Arjith.c
+MAC ADD:
+D4:3D:7E:AA:4D:C2
+10.226.197.228
+390261
+
+new proxy:
+10.36.1.101, port 8080 
+
+bOUNCING SERVER
+_symnag-dt-1d.downingtown.pa.ula.comcast.net:8083/sm_nonProd/
+639478
+deployment:
+
+ 
+http://10.251.31.89:8080/jenkins/	 
+
+-t git add path 
+git commit -m "variablr" path
+git pull
+pit push
+
+yamini details::
+
+10.226.197.225
+
+CSG DEVICE DETAILS:
+
+ 
+8210100200337597	 
+  
+	MA0001CCC8C5 M12097333391	 
+
+DDP:
+
+9999627971401:60:MA98JPJBRP74 M1405HLP1CP9
+
+Cl0ud@789https://almcomcast.saas.hpe.com/qcbin
+
+tax:
+
+www.cleartax.in
+https://incometaxindiaefiling.gov.in 
+
+Winscp::
+ybalas001c
+Comcast@1
+24.40.76.214
+Winscp KT
+
+https://cada.comcast.net/
+
+mzU1kxQjHRT1gj5Om=Hu
+
+|Read Timeout from DDP
+
+uhc 18002001121
+
+TACGWC-OMPROC01.cable.comcast.com
+
+Nilusri@7kumaresan:;
+ qa4 db password;:
+Nilusri@7
+ 
+qa4opw1nt3r	 
+rasheed bagwan
+Mithun's number
+856-638-4551
+provpassword!
+ 
+10.52.106.124	 
+
+
+4asd_jkl
+
+Balasubramani, Yamini (Contractor) 12:00 PM 
+ Hi 
+
+Xmaim9am$
+ hi 
+
+
+provpassword!
+
+Subramanian, Kumaresan (Contractor) 12:02 PM 
+ HIi 
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:02 PM 
+ reg-nightly process 
+
+
+ autogen nightly process didnt pick up account nmber 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 12:04 PM 
+ is it in dev4 or QA1 
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:04 PM 
+ dev4 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 12:10 PM 
+ yesterday u discussed with japan right ,what he said about ?  
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:11 PM 
+ yeah
+He told autogen process has some scheduled time
+in that time it starts execution
+actually it was yesr  11.00 us timing
+He told that once it starts execution , he makes a call with esp.
+so tmmrr u can see the  
+
+
+ caals validate that and close manually 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 12:12 PM 
+ so did saw any call 
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:12 PM 
+ no i didnt 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 12:13 PM 
+ 11 -  AM or PM and IST or EST 
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:13 PM 
+ 11-AM 5/11/2015 US 
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:32 PM 
+ Can u reply for the mail WBACK changes 
+
+
+ what changes u have made? 
+
+
+ I have to raise the defect and close it seems 
+
+
+ hi 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 12:33 PM 
+ ok, i will replay on this mail 
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:34 PM 
+ ok 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 12:41 PM 
+ yamini 
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:41 PM 
+ yes 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 12:42 PM 
+ the exisitng tasks will have the tasks with the older operation name... no its updated to new operation 
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:42 PM 
+ can u pls send this in a mail 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 12:42 PM 
+ so we updated it in UI 
+
+
+ sure, pramid said for 
+
+
+ it was not a defect and there were no config changes... 
+
+
+ 
+
+we will not have a defect for this 
+ 
+
+
+
+
+Balasubramani, Yamini (Contractor) 12:50 PM 
+ can u pls reply in a mail? 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 12:50 PM 
+ yeah sending 
+
+
+
+
+Balasubramani, Yamini (Contractor) 4:58 PM 
+ Hi 
+
+
+ How do we need to validate the req 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 4:58 PM 
+ yes 
+
+
+
+
+Balasubramani, Yamini (Contractor) 4:58 PM 
+ Change reason to BYUSR when user closes task. 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 5:00 PM 
+ u mean want to close a task with  reason to BYUSR 
+
+
+
+
+Balasubramani, Yamini (Contractor) 5:01 PM 
+ yes 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 5:01 PM 
+ is it in sym or op or scms 
+
+
+
+
+Balasubramani, Yamini (Contractor) 5:02 PM 
+ rma 
+
+
+
+
+Balasubramani, Yamini (Contractor) 5:05 PM 
+ Hi 
+
+
+ I confused U? 
+
+
+ In Rma , it was the rquirement. 
+
+
+
+
+Balasubramani, Yamini (Contractor) 5:46 PM 
+ Hi 
+
+
+ u there? 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 5:46 PM 
+ Yeah sry, i am  in webx meeting 
+
+
+
+
+Balasubramani, Yamini (Contractor) 5:46 PM 
+ ok 0k 
+
+
+ I ll wait 
+
+
+
+
+Subramanian, Kumaresan (Contractor) 5:47 PM 
+ one session is going on 
+
+
+ will ping u once it finished 
+
+
+
+
+Balasubramani, Yamini (Contractor) 5:48 PM 
+ Dont listen the session . come back we ll do work 
+
+
+  
+
+
+
+
+Subramanian, Kumaresan (Contractor) 5:49 PM 
+ ok, but 2 others also sitting with me for this 
+
+
+
+
+Balasubramani, Yamini (Contractor) 5:50 PM 
+ oh 0 ok sorry 
+
+
+
+
+Balasubramani, Yamini (Contractor) 6:21 PM 
+ Hi 
+
+ 
+we	TACGWC-OMPROC01.cable.comcast.com	10.52.107.15	   
+2	TACGWC-OMPROC02.cable.comcast.com	10.52.106.250	   
+3	TACGWC-OMPROC03.cable.comcast.com	10.52.107.23	   
+4	TACGWC-OMPROC04.cable.comcast.com	10.52.107.14	   
+ 	TACGWC-OMPROC05.cable.comcast.com	10.52.107.10	   
+6	TACGWC-OMPROC06.cable.comcast.com	10.52.107.11	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

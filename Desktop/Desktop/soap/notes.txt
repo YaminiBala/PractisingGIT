@@ -1,0 +1,325 @@
+63294933041871FrFreedom123
+FreedomF10.243.115.76
+Order-GetOrderForModification-604
+\\pc177252
+Nilusri@7
+qa4opw1nt3r
+10.243.115.76
+
+mzU1kxQjHRT1gj5Om=Hu
+
+
+ 
+bchoud002c 
+Design!123	 
+
+
+
+
+3 days disconnect letter:
+ 
+/opt/home/DTA/abinitio/vantage/SymComm/bhs/dtdev/test	 
+  
+/opt/home/DTA/abinitio/vantage/SymComm/bhs/dtdevdummy/test	 
+
+
+
+http://businesstoday.intoday.in/categorylist/17/1/info-tech.html
+
+sikksiksik
+9999329115401
+9999328397301
+8210100200052774
+
+
+
+
+
+process--proc--communicator--event(base objest)--mutant(based communicator)
+350 + ThermostatDataProvider + SecureEV|350 + SecureEV|350 + ThermostatDataProvider + ThermostatDataProvider
+
+
+
+283301
+Venkat_Rayapureddy@cable.comcast.com
+
+provpassword!
+Piyush_Gupta@cable.comcast.com
+
+4599e007-b05b-4aee-a8f2-2be9e16f5d09
+
+
+Comcast/UCCtest1 
+200000426-pn 
+SF003 
+SR002-pc
+C00100012- central num
+
+/opt/instance/bhs/ucc
+http://10.252.168.55:7201/cwf/dtaApp 
+pgupta002c 
+Freedom$79 
+and acc No : 9999627297001
+
+https://cognizant20.cognizant.com/MyLearning/Pages/LearningCreditsSummary.aspx
+
+891-8885700778- comcast helpline
+
+http://10.252.113.185:8101/cwf
+location id:55127000067145
+Nilusri@7
+ 
+8720101010096190	 
+
+
+
+9n777srb
+
+mzU1kxQjHRT1gj5Om=Hu
+\
+\\172.24.2.21\CDVTestTeam$
+http://10.255.159.87:8401/cwf
+
+work:
+
+\\ctsinblrnetapp2\Comcast_CET\OM Func Testing\Daily Utilization Tracker 
+
+Requirement:
+
+
+COMMON--VIPIN:
+ 
+9999329115201	   
+9999329115301	 
+CSG 
+ 
+8210100200052766	   
+8210100200052774	   
+
+
+8901650507770007899-jasper
+8901640100735449527 -numerix	 
+Nilusri@7
+provpassword!
+
+/opt/instance/bhs/ucc
+
+/opt/home/icontrol/bhs/stg_import
+
+
+
+Security validation error
+
+\(404\)|Read timed out|unknown protocol|HS-JS-400200|Security validation error
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+11 worklisting:
+
+1. clean the account no in both sot tools and db
+
+
+2. make the locarion service down
+
+http://10.252.168.55:7201/cwf/dtaApp
+
+us neme:pgupta002c
+pass:yust*7RE
+
+COG->DTA CON_>CREDENTIALS
+
+3.BOunce the server
+
+4.. fire the getoffer xml
+
+check the calls in UI
+* GETOFFER
+*queryservicessummary
+* querydevicessummary
+
+4.fire the submit xml
+
+calls
+
+*submit
+*submitenqueue
+*submitdequeue
+*oms enqueue
+*submitorder
+
+querylocation should not fire
+
+5.common ui
+http://10.252.168.55:7401/cwf
+
+upadmin
+upadmin
+
+
+
+
+-------------------------------------------------------------------------
+
+
+End to End ordering
+
+1. clean the account no in both sot tools and db
+66288525248834-
+2. fire the getoffer xml
+
+3.check the calls in UI
+* GETOFFER
+*queryservicessummary
+* querydevicessummary
+
+4.fire the submit xml
+
+calls
+
+*submit
+*submitenqueue
+*submitdequeue
+*oms enqueue
+*submitorder
+*querylocation
+
+5. execute the order status query
+--has to sikorderid
+
+6. enter that id i8n post shipment url(SELECT QA)
+
+--ii will ask to enter serial no, unit id.
+
+serial no:PA+10DIGITSNO
+UNIT ID:16 DIGIT NO
+
+calls need to be triggered
+*postshippingnotification
+*additem
+*modifyitem
+*updateorder
+
+
+
+
+7.execute the following queries
+--order status
+device status
+third query
+
+8.activate the device where change account no, srial no,device which we got from db.
+
+calls:
+
+* addDevice
+* submitorder
+* UpdateOrderProvisionigstatus.
+
+
+9.check the device status in DB
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+CWDEVOP	http://10.253.90.218:7901/cwf/services/RTPTestInterface	10.252.115.36	CWDEVOP	CWDEVOP	1521	PSYMDEV1	 
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bouncing the server
+
+http://symnag-dt-1d.downingtown.pa.ula.comcast.net:8083/sm_nonProd/
+
+op dev
+
+stop instances
+
+start instances
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ddp biller:
+operator id:cqap7g
+psswd:comcast7
+100 DRDDP97967RES RD
+100 DRDDP96864RES RD DOVER DE
+
+99996
+100
+DRDDP95362RES R
+apt
+apt
+
+ADDRESS:96994
+
+PACKAGE:FF DTA SERVICE
+
+RATE CODE:
+#B,BR,DP1,R5,M7,FC
+
+
+SOAP UI CHANGE:
+inventory ser-additem-ddp dch
+account no,unit address,serial no,component address, A to F, 0 TO 9.
+
+
+customer data--->change box data
+
+
+------------------------------
+ .
+
+  3 days disconnect letter:
+
+30, 2 , 30
+
+/opt/home/DTA/abinitio/vantage/SymComm/bhs/dtdevdummy/test
+
+
+
+/app/sym-vision/script/transfer.sh
+
+/opt/home/DTA/abinitio/vantage/SymComm/bhs/dtdevdummy/test
+
+/opt/home/DTA/abinitio/vantage/bhs/dtdev/script/transfer.sh
+
+HS9LETTER_DANTOMHS_  ,  yyyyMMdd_hhmmss  ,  .extract
+
+
+
+
+
+HS9LETTER_DANTOMHS_   ,   yyyyMMdd_hhmmss
+
+,.extract.fin
+
+
+
+---------------------------------------------------
+
+
+
+biller url:
+8210100200190293
+8919100010063825 
+11/11/2014 01:53:10 
+TC11_US219535-CSG Swivel_queryLocation No Response
+
+Order-GetOrderDetails-213
+
+
+
+-------------------------------------------------------------------

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="C:/Program Files/Parasoft/SOAtest/9.6/eclipse/plugins/com.parasoft.xtest.libs.web_9.6.0.20130917/root/com.parasoft.api.jar"/>
+	<classpathentry kind="lib" path="C:/OP_Regression/UsedJars/jFTP.jar"/>
+	<classpathentry kind="lib" path="C:/OP_Regression/UsedJars/jsch-0.1.51.jar"/>
+	<classpathentry kind="lib" path="C:/OP_Regression/UsedJars/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/OP_Regression/UsedJars/mysql-connector-java-5.1.13-bin.jar"/>
+	<classpathentry kind="lib" path="C:/OP_Regression/UsedJars/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="C:/OCR_fix_tst/UsedJars/SaaSALMConnectURL.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

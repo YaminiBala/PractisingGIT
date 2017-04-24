@@ -1,0 +1,2878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="SIK QA ENV" resourceRoot="" soapui-version="3.6.1" abortOnError="false" runType="SEQUENTIAL" activeEnvironment="Default" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="OrderSoap" type="wsdl" bindingName="{http://comcastonline.com/}OrderSoap" soapVersion="1_1" anonymous="optional" definition="http://toolsqa.comcastonline.com/sikoms/11.04/Order.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://toolsqa.comcastonline.com/sikoms/11.04/Order.asmx?wsdl"><con:part><con:url>http://toolsqa.comcastonline.com/sikoms/11.04/Order.asmx?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://comcastonline.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://comcastonline.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>SIKOMS: Order Management</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://comcastonline.com/">
+      <s:element name="ModifyOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:ModifyOrderRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ModifyOrderRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SubmitOrderRequest">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SubmitOrderRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="XSS" nillable="true" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RequestedDeliveryDate" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalOrderData" type="tns:ExternalOrderData"/>
+          <s:element minOccurs="0" maxOccurs="1" default="Standard" name="ShipmentPriority" type="tns:ShipmentPriority"/>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerInformation" nillable="true" type="tns:CustomerInformation"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ShippingAddress" type="tns:Address"/>
+          <s:element minOccurs="0" maxOccurs="1" default="false" name="IsAlternateAddress" type="s:boolean"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Products" nillable="true" type="tns:ArrayOfProduct"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DNCSIPAddress" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="HeadEndVendor" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" default="false" name="E911_acceptance" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceInfo" type="tns:ReferenceInfo"/>
+          <s:element minOccurs="0" maxOccurs="1" default="false" name="ServiceBlackoutCheckOverride" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" default="false" name="DuplicateOverride" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MoverOldAddress" type="tns:Address"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MoverOldBillingCorp" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerDevices" type="tns:ArrayOfCustomerDevice"/>
+        </s:sequence>
+        <s:anyAttribute/>
+      </s:complexType>
+      <s:complexType name="ExternalOrderData">
+        <s:anyAttribute/>
+      </s:complexType>
+      <s:simpleType name="ShipmentPriority">
+        <s:restriction base="s:string">
+          <s:enumeration value="Standard"/>
+          <s:enumeration value="Overnight"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="CustomerInformation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AccountNumber" nillable="true" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FTA" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ContactInformation" nillable="true" type="tns:Contact"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Contact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Prefix" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Suffix" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Product" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Ownership" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MultipleComponentProduct">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Product">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Components" type="tns:ArrayOfComponent"/>
+              <s:element minOccurs="0" maxOccurs="1" name="ProductGroup" type="tns:ProductGroupSelection"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfComponent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Component" nillable="true" type="tns:Component"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Component">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ComponentType" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Outlet" type="tns:Outlet"/>
+          <s:element minOccurs="0" maxOccurs="1" name="TelephoneNumbers" type="tns:ArrayOfString"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Outlet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TelephoneNumber" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductGroupSelection">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductGroupCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KitProduct">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Product">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Outlet" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="TelephoneNumbers" type="tns:ArrayOfString"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SingleComponentProduct">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Product">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Outlet" type="tns:Outlet"/>
+              <s:element minOccurs="0" maxOccurs="1" name="TelephoneNumbers" type="tns:ArrayOfString"/>
+              <s:element minOccurs="0" maxOccurs="1" name="ProductGroup" type="tns:ProductGroupSelection"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ReferenceInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OriginatingAffiliateId" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceOrderId" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SalesPerson" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="WorkOrderID" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomerDevice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomerDevice" nillable="true" type="tns:CustomerDevice"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerDevice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ManufacturerCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ModelCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CMACAddress" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MTAMACAddress" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceType" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="HealthStatus" type="tns:DeviceHealth"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeviceHealth">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="HealthValue" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="IsOK" type="s:boolean"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ModifyOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyOrderResult" type="tns:ModifyOrderResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ModifyOrderResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract"/>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ResponseAbstract" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Details" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="requestHeader" type="tns:requestHeader"/>
+      <s:complexType name="requestHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="sourceSystemId" nillable="true" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="sourceSystemUserId" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="sourceServerId" nillable="true" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="trackingId" nillable="true" type="s:string"/>
+        </s:sequence>
+        <s:anyAttribute/>
+      </s:complexType>
+      <s:element name="responseHeader" type="tns:responseHeader"/>
+      <s:complexType name="responseHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="trackingId" type="s:string"/>
+        </s:sequence>
+        <s:anyAttribute/>
+      </s:complexType>
+      <s:element name="GetCustomerAvailability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetCustomerAvailabilityRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCustomerAvailabilityRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FTA" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Flags" type="tns:ArrayOfGetCustomerAvailabilityRequestFlags"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ForceFulfillmentCodes" type="tns:ArrayOfString1"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MoverOldAddress" type="tns:Address"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MoverOldBillingCorp" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGetCustomerAvailabilityRequestFlags">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GetCustomerAvailabilityRequestFlags" type="tns:GetCustomerAvailabilityRequestFlags"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="GetCustomerAvailabilityRequestFlags">
+        <s:restriction base="s:string">
+          <s:enumeration value="BypassAddressLookup"/>
+          <s:enumeration value="BypassFTALookup"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfString1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCustomerAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerAvailabilityResult" type="tns:GetCustomerAvailabilityResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCustomerAvailabilityResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LinesOfBusiness" type="tns:ArrayOfLineOfBusiness"/>
+              <s:element minOccurs="1" maxOccurs="1" name="PriorityShippingAvailable" type="s:boolean"/>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerInformation" type="tns:CustomerInformation"/>
+              <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress" type="tns:Address"/>
+              <s:element minOccurs="0" maxOccurs="1" name="DNCSIPAddress" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="HeadEndVendor" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="MoverOldBillingCorp" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="ProductGroups" type="tns:ArrayOfProductGroup"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfLineOfBusiness">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LineOfBusiness" nillable="true" type="tns:LineOfBusiness"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LineOfBusiness">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LobID" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AvailableProducts" type="tns:ArrayOfAvailableProduct"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAvailableProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AvailableProduct" nillable="true" type="tns:AvailableProduct"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AvailableProduct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCodeDependencies" type="tns:ArrayOfString2"/>
+          <s:element minOccurs="0" maxOccurs="1" name="LineOfBusinessDependencies" type="tns:ArrayOfString3"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="PopupReminder" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OwnershipOptions" type="tns:OwnershipOptionGroup"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AvailableProductComponent" type="tns:ArrayOfAvailableProductComponent"/>
+          <s:element minOccurs="0" maxOccurs="1" name="BillingProductCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductGroupCode" type="tns:ArrayOfString1"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerOwnedMappedKitCodes" type="tns:ArrayOfMappedKitCodes"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NotCustomerOwnedMappedKitCodes" type="tns:ArrayOfMappedKitCodes"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductCode" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString3">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LinesOfBusiness" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OwnershipOptionGroup">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:unsignedInt"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OwnershipOptions" type="tns:ArrayOfOwnershipOption"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOwnershipOption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OwnershipOption" nillable="true" type="tns:OwnershipOption"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OwnershipOption">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:unsignedInt"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerOwned" type="s:boolean"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAvailableProductComponent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AvailableProductComponent" nillable="true" type="tns:AvailableProductComponent"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AvailableProductComponent">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ReqOutlet" type="s:boolean"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ReqLocation" type="s:boolean"/>
+          <s:element minOccurs="1" maxOccurs="1" name="MaxTelephoneNumbers" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="MaxQty" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="BlackoutHours" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="E911Required" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ComponentType" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="EPCProductNumber" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMappedKitCodes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MappedKitCodes" nillable="true" type="tns:MappedKitCodes"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MappedKitCodes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Device" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="KitCodes" type="tns:ArrayOfString1"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProductGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductGroup" nillable="true" type="tns:ProductGroup"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductGroup">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="DisplayOnOrderForm" type="s:boolean"/>
+          <s:element minOccurs="1" maxOccurs="1" name="ImpliedE911" type="s:boolean"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OrderSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:OrderSearchRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderSearchRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" nillable="true" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" nillable="true" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Customer" type="tns:Contact"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="tns:Address"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FulfillmentCodes" type="tns:ArrayOfString1"/>
+          <s:element minOccurs="1" maxOccurs="1" name="AffiliateID" nillable="true" type="s:unsignedInt"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MACAddress" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="UnitID" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCodes" type="tns:ArrayOfString1"/>
+          <s:element minOccurs="1" maxOccurs="1" name="FulfillmentCenterID" nillable="true" type="s:unsignedInt"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CorpSysPrins" type="tns:ArrayOfString1"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SortExpression" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="WorkOrderID" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SortDirection" nillable="true" type="tns:SortDirection"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ListSearch" type="tns:ListSearchType"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="SortDirection">
+        <s:restriction base="s:string">
+          <s:enumeration value="Ascending"/>
+          <s:enumeration value="Descending"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ListSearchType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ListSearchItemsType" type="tns:ListSearchItemsTypeEnum"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ListSearchItems" type="tns:ArrayOfString1"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ListSearchItemsTypeEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="AccountSearch"/>
+          <s:enumeration value="OrderIDSearch"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="OrderSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderSearchResult" type="tns:OrderSearchResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OrderSearchResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OrdersFound" type="tns:ArrayOfOrderFound"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderFound">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderFound" nillable="true" type="tns:OrderFound"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderFound">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:unsignedInt"/>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderDate" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Customer" type="tns:Contact"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ShippingAddress" type="tns:Address"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPopupMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductCode" nillable="true" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPopupMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPopupMessageResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Unsubscribe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:UnsubscribeRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UnsubscribeRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="NotificationType" type="tns:NotificationType"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="NotificationType">
+        <s:restriction base="s:string">
+          <s:enumeration value="All"/>
+          <s:enumeration value="OrderSubmissionNotification"/>
+          <s:enumeration value="OrderModificationNotification"/>
+          <s:enumeration value="OrderCancellationNotification"/>
+          <s:enumeration value="OrderTransmissionNotification"/>
+          <s:enumeration value="ShipmentNotification"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="UnsubscribeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnsubscribeResult" type="tns:UnsubscribeResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UnsubscribeResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract"/>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CancelOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:CancelRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CancelRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:unsignedInt"/>
+        </s:sequence>
+        <s:anyAttribute/>
+      </s:complexType>
+      <s:element name="CancelOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelOrderResult" type="tns:CancelResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CancelResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract"/>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Subscribe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:SubscribeRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SubscribeRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="NotificationType" type="tns:NotificationType"/>
+          <s:element minOccurs="1" maxOccurs="1" name="SelfSubmittedOrders" type="s:boolean"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubscribeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubscribeResult" type="tns:SubscribeResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SubscribeResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract"/>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetDeviceOrderHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AccountNumber" nillable="true" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeviceOrderHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Devices" type="tns:ArrayOfDeviceOrderHistory"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDeviceOrderHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DeviceOrderHistory" nillable="true" type="tns:DeviceOrderHistory"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeviceOrderHistory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DeviceId" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceName" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="BlackoutQty" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="BlackoutEndDate" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Orders" type="tns:ArrayOfDeviceOrder"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDeviceOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DeviceOrder" nillable="true" type="tns:DeviceOrder"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeviceOrder">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderId" type="s:int"/>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderDate" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="BlackoutEndDate" type="s:dateTime"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCompleteDeviceOrderHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AccountNumber" nillable="true" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompleteDeviceOrderHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Devices" type="tns:ArrayOfDeviceOrderHistory"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Request" nillable="true" type="tns:SubmitOrderRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitOrderResult" type="tns:SubmitOrderResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SubmitOrderResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:int"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="DuplicateOrderInfo" type="tns:DuplicateOrderInfo"/>
+      <s:complexType name="DuplicateOrderInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Duplicates" type="tns:ArrayOfDuplicateOrder"/>
+        </s:sequence>
+        <s:anyAttribute/>
+      </s:complexType>
+      <s:complexType name="ArrayOfDuplicateOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DuplicateOrder" nillable="true" type="tns:DuplicateOrder"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DuplicateOrder">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EscalateDNCS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="onlineOrdersFulfillmentDetailsID" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EscalateDNCSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EscalateDNCSResult" type="tns:EscalateDNCSResult"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EscalateDNCSResult">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract"/>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdateOrderProvisioningStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:UpdateOrderProvisioningStatusRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateOrderProvisioningStatusRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:unsignedInt"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:ProvisioningStatus"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Details" type="s:string"/>
+        </s:sequence>
+        <s:anyAttribute/>
+      </s:complexType>
+      <s:simpleType name="ProvisioningStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Provisioned"/>
+          <s:enumeration value="ProvisioningError"/>
+          <s:enumeration value="Activated"/>
+          <s:enumeration value="ActivationError"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="UpdateOrderProvisioningStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrderProvisioningStatusResult" type="tns:UpdateOrderProvisioningStatusResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateOrderProvisioningStatusResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract"/>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetOrderDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:GetOrderDetailsRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetOrderDetailsRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:unsignedInt"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOrderDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderDetailsResult" type="tns:GetOrderDetailsResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetOrderDetailsResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OrderDetails" type="tns:OrderInformation"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="OrderInformation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:unsignedInt"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Affiliate" type="tns:Affiliate"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AffiliateSalesPerson" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountExecutive" type="tns:CAE"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ShippingAddress" type="tns:Address"/>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderDate" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="RequestedDeliveryDate" nillable="true" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdated" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="tns:Status"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Shipments" type="tns:ArrayOfOrderShipment"/>
+          <s:element minOccurs="0" maxOccurs="1" name="UnshippedFinishedGoods" type="tns:ArrayOfFinishedGoodOrdered"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalOrderData" type="tns:HashArray"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerInformation" type="tns:CustomerInformation"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Affiliate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:unsignedInt"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CAE">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Contact">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Status">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:unsignedInt"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderShipment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderShipment" nillable="true" type="tns:OrderShipment"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderShipment">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Carrier" type="tns:ShipmentCarrier"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Method" type="tns:ShipmentMethod"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveredDate" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Packages" type="tns:ArrayOfPackage"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FinishedGoods" type="tns:ArrayOfFinishedGoodOrdered"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ShipmentCarrier">
+        <s:restriction base="s:string">
+          <s:enumeration value="NotSpecified"/>
+          <s:enumeration value="UPS"/>
+          <s:enumeration value="USPS"/>
+          <s:enumeration value="FedEx"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="ShipmentMethod">
+        <s:restriction base="s:string">
+          <s:enumeration value="Standard"/>
+          <s:enumeration value="LessThanTruckLoad"/>
+          <s:enumeration value="Overnight"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfPackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Package" nillable="true" type="tns:Package"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Package">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Cost" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="TrackingNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnTrackingNumber" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:decimal"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFinishedGoodOrdered">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FinishedGoodOrdered" nillable="true" type="tns:FinishedGoodOrdered"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FinishedGoodOrdered">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FulfillmentCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnAddress" type="tns:Address"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCenterAddress" type="tns:Address"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceDetails" type="tns:ArrayOfDeviceDetail"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FulfillmentCenter" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Ownership" type="tns:OwnershipOption"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ShipmentPriority" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDeviceDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DeviceDetail" nillable="true" type="tns:DeviceDetail"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeviceDetail">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:FinishedGoodDetail">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="FulfillmentDate" nillable="true" type="s:dateTime"/>
+              <s:element minOccurs="1" maxOccurs="1" name="ProvisionedDate" nillable="true" type="s:dateTime"/>
+              <s:element minOccurs="0" maxOccurs="1" name="Status" type="tns:Status"/>
+              <s:element minOccurs="0" maxOccurs="1" name="ProvisionedBy" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="ActivatedBy" type="s:string"/>
+              <s:element minOccurs="1" maxOccurs="1" name="DNCSDownloaded" nillable="true" type="s:boolean"/>
+              <s:element minOccurs="1" maxOccurs="1" name="ATDownloaded" nillable="true" type="s:boolean"/>
+              <s:element minOccurs="0" maxOccurs="1" name="DNCSIPAddress" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="KitCode" type="s:string"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="FinishedGoodDetail">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Device">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="FDID" type="s:int"/>
+              <s:element minOccurs="0" maxOccurs="1" name="Outlet" type="tns:Outlet"/>
+              <s:element minOccurs="0" maxOccurs="1" name="PhoneNumbers" type="tns:ArrayOfString1"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Device">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Make" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber2" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MACAddress" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CMACAddress" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="EMACAddress" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MTAMACAddress" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MasterSubsidiaryLock" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="USBMACAddress" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="UnitID" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="UnitID2" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Condition" type="tns:EquipmentCondition"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceType" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="IsMTADevice" type="s:boolean"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MACAddress2" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Make2" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Model2" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RFMACAddress" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EquipmentCondition">
+        <s:restriction base="s:string">
+          <s:enumeration value="New"/>
+          <s:enumeration value="Used"/>
+          <s:enumeration value="Unknown"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="HashArray">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Values" type="tns:ArrayOfHashValue"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHashValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HashValue" nillable="true" type="tns:HashValue"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HashValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Peek">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="o" type="tns:OrderInformation"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PeekResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="GetOrderForModification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:GetOrderForModificationRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetOrderForModificationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OrderID" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOrderForModificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderForModificationResult" type="tns:GetOrderForModificationResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetOrderForModificationResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Priority" type="tns:ShipmentPriority"/>
+              <s:element minOccurs="0" maxOccurs="1" name="RequestedDeliveryDate" type="s:dateTime"/>
+              <s:element minOccurs="1" maxOccurs="1" name="AlternateAddress" type="s:boolean"/>
+              <s:element minOccurs="1" maxOccurs="1" name="PassedE911" type="s:boolean"/>
+              <s:element minOccurs="0" maxOccurs="1" name="ShippingAddress" type="tns:Address"/>
+              <s:element minOccurs="0" maxOccurs="1" name="Products" type="tns:ArrayOfProductInfo"/>
+              <s:element minOccurs="0" maxOccurs="1" name="HeadEndVendor" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerInformation" type="tns:CustomerInformation"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductInfo" nillable="true" type="tns:ProductInfo"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductCode" nillable="true" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Ownership" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductComponentInfo" type="tns:ArrayOfProductComponentInfo"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProductComponentInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductComponentInfo" nillable="true" type="tns:ProductComponentInfo"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductComponentInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ComponentType" nillable="true" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Outlet" type="tns:Outlet"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumbers" type="tns:ArrayOfString4"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString4">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProductForGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetProductForGroupRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetProductForGroupRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FTA" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductGroupCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerDevices" type="tns:ArrayOfCustomerDevice"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProductForGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductForGroupResult" type="tns:GetProductForGroupResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetProductForGroupResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="SelectedProduct" type="tns:AvailableProduct"/>
+              <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string"/>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerDevices" type="tns:ArrayOfCustomerDevice"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetMarketAvailability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetMarketAvailabilityRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetMarketAvailabilityRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CorpSysprin" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FTA" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="HeadEndVendor" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMarketAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMarketAvailabilityResult" type="tns:GetMarketAvailabilityResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetMarketAvailabilityResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LinesOfBusiness" type="tns:ArrayOfLineOfBusiness"/>
+              <s:element minOccurs="1" maxOccurs="1" name="PriorityShippingAvailable" type="s:boolean"/>
+              <s:element minOccurs="1" maxOccurs="1" name="IsFullSIKMarket" type="s:boolean"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Echo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Request" nillable="true" type="tns:EchoRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EchoRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StringToEcho" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EchoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EchoResult" type="tns:EchoResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EchoResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EchoString" type="s:string"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ResubmitPIMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="onlineOrdersFulfillmentDetailsID" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResubmitPIMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResubmitPIMSResult" type="tns:ResubmitPIMSResult"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResubmitPIMSResult">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ResponseAbstract"/>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="string" nillable="true" type="s:string"/>
+      <s:element name="ArrayOfDeviceOrderHistory" nillable="true" type="tns:ArrayOfDeviceOrderHistory"/>
+      <s:element name="EscalateDNCSResult" nillable="true" type="tns:EscalateDNCSResult"/>
+      <s:element name="ResubmitPIMSResult" nillable="true" type="tns:ResubmitPIMSResult"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ModifyOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyOrder"/>
+  </wsdl:message>
+  <wsdl:message name="ModifyOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyOrderResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ModifyOrderrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ModifyOrderresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerAvailabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerAvailability"/>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerAvailabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerAvailabilityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerAvailabilityrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetCustomerAvailabilityresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="OrderSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderSearch"/>
+  </wsdl:message>
+  <wsdl:message name="OrderSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderSearchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="OrderSearchrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="OrderSearchresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetPopupMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPopupMessage"/>
+  </wsdl:message>
+  <wsdl:message name="GetPopupMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPopupMessageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetPopupMessagerequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetPopupMessageresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="UnsubscribeSoapIn">
+    <wsdl:part name="parameters" element="tns:Unsubscribe"/>
+  </wsdl:message>
+  <wsdl:message name="UnsubscribeSoapOut">
+    <wsdl:part name="parameters" element="tns:UnsubscribeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UnsubscriberequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="UnsubscriberesponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="CancelOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelOrder"/>
+  </wsdl:message>
+  <wsdl:message name="CancelOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelOrderResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CancelOrderrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="CancelOrderresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="SubscribeSoapIn">
+    <wsdl:part name="parameters" element="tns:Subscribe"/>
+  </wsdl:message>
+  <wsdl:message name="SubscribeSoapOut">
+    <wsdl:part name="parameters" element="tns:SubscribeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SubscriberequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="SubscriberesponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetDeviceOrderHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeviceOrderHistory"/>
+  </wsdl:message>
+  <wsdl:message name="GetDeviceOrderHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeviceOrderHistoryResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetDeviceOrderHistoryrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetDeviceOrderHistoryresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompleteDeviceOrderHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompleteDeviceOrderHistory"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompleteDeviceOrderHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompleteDeviceOrderHistoryResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompleteDeviceOrderHistoryrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompleteDeviceOrderHistoryresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="SubmitOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitOrder"/>
+  </wsdl:message>
+  <wsdl:message name="SubmitOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitOrderResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SubmitOrderDuplicateOrderInfo">
+    <wsdl:part name="DuplicateOrderInfo" element="tns:DuplicateOrderInfo"/>
+  </wsdl:message>
+  <wsdl:message name="SubmitOrderrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="SubmitOrderresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="EscalateDNCSSoapIn">
+    <wsdl:part name="parameters" element="tns:EscalateDNCS"/>
+  </wsdl:message>
+  <wsdl:message name="EscalateDNCSSoapOut">
+    <wsdl:part name="parameters" element="tns:EscalateDNCSResponse"/>
+  </wsdl:message>
+  <wsdl:message name="EscalateDNCSrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="EscalateDNCSresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderProvisioningStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrderProvisioningStatus"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderProvisioningStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderProvisioningStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderProvisioningStatusrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderProvisioningStatusresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderDetails"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="PeekSoapIn">
+    <wsdl:part name="parameters" element="tns:Peek"/>
+  </wsdl:message>
+  <wsdl:message name="PeekSoapOut">
+    <wsdl:part name="parameters" element="tns:PeekResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderForModificationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderForModification"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderForModificationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderForModificationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderForModificationrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetOrderForModificationresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductForGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductForGroup"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductForGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductForGroupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductForGrouprequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductForGroupresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetMarketAvailabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetMarketAvailability"/>
+  </wsdl:message>
+  <wsdl:message name="GetMarketAvailabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetMarketAvailabilityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetMarketAvailabilityrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetMarketAvailabilityresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="EchoSoapIn">
+    <wsdl:part name="parameters" element="tns:Echo"/>
+  </wsdl:message>
+  <wsdl:message name="EchoSoapOut">
+    <wsdl:part name="parameters" element="tns:EchoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="EchorequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="EchoresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ResubmitPIMSSoapIn">
+    <wsdl:part name="parameters" element="tns:ResubmitPIMS"/>
+  </wsdl:message>
+  <wsdl:message name="ResubmitPIMSSoapOut">
+    <wsdl:part name="parameters" element="tns:ResubmitPIMSResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ResubmitPIMSrequestHeader">
+    <wsdl:part name="requestHeader" element="tns:requestHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ResubmitPIMSresponseHeader">
+    <wsdl:part name="responseHeader" element="tns:responseHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetPopupMessageHttpGetIn">
+    <wsdl:part name="ProductCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetPopupMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetDeviceOrderHistoryHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetDeviceOrderHistoryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDeviceOrderHistory"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompleteDeviceOrderHistoryHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompleteDeviceOrderHistoryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDeviceOrderHistory"/>
+  </wsdl:message>
+  <wsdl:message name="EscalateDNCSHttpGetIn">
+    <wsdl:part name="onlineOrdersFulfillmentDetailsID" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="EscalateDNCSHttpGetOut">
+    <wsdl:part name="Body" element="tns:EscalateDNCSResult"/>
+  </wsdl:message>
+  <wsdl:message name="ResubmitPIMSHttpGetIn">
+    <wsdl:part name="onlineOrdersFulfillmentDetailsID" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="ResubmitPIMSHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResubmitPIMSResult"/>
+  </wsdl:message>
+  <wsdl:message name="GetPopupMessageHttpPostIn">
+    <wsdl:part name="ProductCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetPopupMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetDeviceOrderHistoryHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetDeviceOrderHistoryHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDeviceOrderHistory"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompleteDeviceOrderHistoryHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompleteDeviceOrderHistoryHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDeviceOrderHistory"/>
+  </wsdl:message>
+  <wsdl:message name="EscalateDNCSHttpPostIn">
+    <wsdl:part name="onlineOrdersFulfillmentDetailsID" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="EscalateDNCSHttpPostOut">
+    <wsdl:part name="Body" element="tns:EscalateDNCSResult"/>
+  </wsdl:message>
+  <wsdl:message name="ResubmitPIMSHttpPostIn">
+    <wsdl:part name="onlineOrdersFulfillmentDetailsID" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="ResubmitPIMSHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResubmitPIMSResult"/>
+  </wsdl:message>
+  <wsdl:portType name="OrderSoap">
+    <wsdl:operation name="ModifyOrder">
+      <wsdl:input message="tns:ModifyOrderSoapIn"/>
+      <wsdl:output message="tns:ModifyOrderSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAvailability">
+      <wsdl:input message="tns:GetCustomerAvailabilitySoapIn"/>
+      <wsdl:output message="tns:GetCustomerAvailabilitySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="OrderSearch">
+      <wsdl:input message="tns:OrderSearchSoapIn"/>
+      <wsdl:output message="tns:OrderSearchSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetPopupMessage">
+      <wsdl:input message="tns:GetPopupMessageSoapIn"/>
+      <wsdl:output message="tns:GetPopupMessageSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <wsdl:input message="tns:UnsubscribeSoapIn"/>
+      <wsdl:output message="tns:UnsubscribeSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="CancelOrder">
+      <wsdl:input message="tns:CancelOrderSoapIn"/>
+      <wsdl:output message="tns:CancelOrderSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <wsdl:input message="tns:SubscribeSoapIn"/>
+      <wsdl:output message="tns:SubscribeSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceOrderHistory">
+      <wsdl:input message="tns:GetDeviceOrderHistorySoapIn"/>
+      <wsdl:output message="tns:GetDeviceOrderHistorySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompleteDeviceOrderHistory">
+      <wsdl:input message="tns:GetCompleteDeviceOrderHistorySoapIn"/>
+      <wsdl:output message="tns:GetCompleteDeviceOrderHistorySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitOrder">
+      <wsdl:input message="tns:SubmitOrderSoapIn"/>
+      <wsdl:output message="tns:SubmitOrderSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="EscalateDNCS">
+      <wsdl:input message="tns:EscalateDNCSSoapIn"/>
+      <wsdl:output message="tns:EscalateDNCSSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderProvisioningStatus">
+      <wsdl:input message="tns:UpdateOrderProvisioningStatusSoapIn"/>
+      <wsdl:output message="tns:UpdateOrderProvisioningStatusSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <wsdl:input message="tns:GetOrderDetailsSoapIn"/>
+      <wsdl:output message="tns:GetOrderDetailsSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Peek">
+      <wsdl:input message="tns:PeekSoapIn"/>
+      <wsdl:output message="tns:PeekSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderForModification">
+      <wsdl:input message="tns:GetOrderForModificationSoapIn"/>
+      <wsdl:output message="tns:GetOrderForModificationSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductForGroup">
+      <wsdl:input message="tns:GetProductForGroupSoapIn"/>
+      <wsdl:output message="tns:GetProductForGroupSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketAvailability">
+      <wsdl:input message="tns:GetMarketAvailabilitySoapIn"/>
+      <wsdl:output message="tns:GetMarketAvailabilitySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Echo">
+      <wsdl:input message="tns:EchoSoapIn"/>
+      <wsdl:output message="tns:EchoSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmitPIMS">
+      <wsdl:input message="tns:ResubmitPIMSSoapIn"/>
+      <wsdl:output message="tns:ResubmitPIMSSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OrderHttpGet">
+    <wsdl:operation name="GetPopupMessage">
+      <wsdl:input message="tns:GetPopupMessageHttpGetIn"/>
+      <wsdl:output message="tns:GetPopupMessageHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceOrderHistory">
+      <wsdl:input message="tns:GetDeviceOrderHistoryHttpGetIn"/>
+      <wsdl:output message="tns:GetDeviceOrderHistoryHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompleteDeviceOrderHistory">
+      <wsdl:input message="tns:GetCompleteDeviceOrderHistoryHttpGetIn"/>
+      <wsdl:output message="tns:GetCompleteDeviceOrderHistoryHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="EscalateDNCS">
+      <wsdl:input message="tns:EscalateDNCSHttpGetIn"/>
+      <wsdl:output message="tns:EscalateDNCSHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmitPIMS">
+      <wsdl:input message="tns:ResubmitPIMSHttpGetIn"/>
+      <wsdl:output message="tns:ResubmitPIMSHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OrderHttpPost">
+    <wsdl:operation name="GetPopupMessage">
+      <wsdl:input message="tns:GetPopupMessageHttpPostIn"/>
+      <wsdl:output message="tns:GetPopupMessageHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceOrderHistory">
+      <wsdl:input message="tns:GetDeviceOrderHistoryHttpPostIn"/>
+      <wsdl:output message="tns:GetDeviceOrderHistoryHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompleteDeviceOrderHistory">
+      <wsdl:input message="tns:GetCompleteDeviceOrderHistoryHttpPostIn"/>
+      <wsdl:output message="tns:GetCompleteDeviceOrderHistoryHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="EscalateDNCS">
+      <wsdl:input message="tns:EscalateDNCSHttpPostIn"/>
+      <wsdl:output message="tns:EscalateDNCSHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmitPIMS">
+      <wsdl:input message="tns:ResubmitPIMSHttpPostIn"/>
+      <wsdl:output message="tns:ResubmitPIMSHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderSoap" type="tns:OrderSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ModifyOrder">
+      <soap:operation soapAction="http://comcastonline.com/ModifyOrder" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:ModifyOrderrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:ModifyOrderresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAvailability">
+      <soap:operation soapAction="http://comcastonline.com/GetCustomerAvailability" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetCustomerAvailabilityrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetCustomerAvailabilityresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderSearch">
+      <soap:operation soapAction="http://comcastonline.com/OrderSearch" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:OrderSearchrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:OrderSearchresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPopupMessage">
+      <soap:operation soapAction="http://comcastonline.com/GetPopupMessage" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetPopupMessagerequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetPopupMessageresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <soap:operation soapAction="http://comcastonline.com/Unsubscribe" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:UnsubscriberequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:UnsubscriberesponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelOrder">
+      <soap:operation soapAction="http://comcastonline.com/CancelOrder" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:CancelOrderrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:CancelOrderresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <soap:operation soapAction="http://comcastonline.com/Subscribe" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:SubscriberequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:SubscriberesponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceOrderHistory">
+      <soap:operation soapAction="http://comcastonline.com/GetDeviceOrderHistory" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetDeviceOrderHistoryrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetDeviceOrderHistoryresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompleteDeviceOrderHistory">
+      <soap:operation soapAction="http://comcastonline.com/GetCompleteDeviceOrderHistory" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetCompleteDeviceOrderHistoryrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetCompleteDeviceOrderHistoryresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitOrder">
+      <soap:operation soapAction="http://comcastonline.com/SubmitOrder" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:SubmitOrderrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:SubmitOrderDuplicateOrderInfo" part="DuplicateOrderInfo" use="literal"/>
+        <soap:header message="tns:SubmitOrderresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EscalateDNCS">
+      <soap:operation soapAction="http://comcastonline.com/EscalateDNCS" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:EscalateDNCSrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:EscalateDNCSresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderProvisioningStatus">
+      <soap:operation soapAction="http://comcastonline.com/UpdateOrderProvisioningStatus" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:UpdateOrderProvisioningStatusrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:UpdateOrderProvisioningStatusresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <soap:operation soapAction="http://comcastonline.com/GetOrderDetails" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetOrderDetailsrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetOrderDetailsresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Peek">
+      <soap:operation soapAction="http://comcastonline.com/Peek" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderForModification">
+      <soap:operation soapAction="http://comcastonline.com/GetOrderForModification" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetOrderForModificationrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetOrderForModificationresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductForGroup">
+      <soap:operation soapAction="http://comcastonline.com/GetProductForGroup" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetProductForGrouprequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetProductForGroupresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMarketAvailability">
+      <soap:operation soapAction="http://comcastonline.com/GetMarketAvailability" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetMarketAvailabilityrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:GetMarketAvailabilityresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Echo">
+      <soap:operation soapAction="http://comcastonline.com/Echo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:EchorequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:EchoresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmitPIMS">
+      <soap:operation soapAction="http://comcastonline.com/ResubmitPIMS" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+        <soap:header message="tns:ResubmitPIMSrequestHeader" part="requestHeader" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+        <soap:header message="tns:ResubmitPIMSresponseHeader" part="responseHeader" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderHttpGet" type="tns:OrderHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="GetPopupMessage">
+      <http:operation location="/GetPopupMessage"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceOrderHistory">
+      <http:operation location="/GetDeviceOrderHistory"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompleteDeviceOrderHistory">
+      <http:operation location="/GetCompleteDeviceOrderHistory"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EscalateDNCS">
+      <http:operation location="/EscalateDNCS"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmitPIMS">
+      <http:operation location="/ResubmitPIMS"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderHttpPost" type="tns:OrderHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetPopupMessage">
+      <http:operation location="/GetPopupMessage"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceOrderHistory">
+      <http:operation location="/GetDeviceOrderHistory"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompleteDeviceOrderHistory">
+      <http:operation location="/GetCompleteDeviceOrderHistory"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EscalateDNCS">
+      <http:operation location="/EscalateDNCS"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResubmitPIMS">
+      <http:operation location="/ResubmitPIMS"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Order">
+    <wsdl:documentation>SIKOMS: Order Management</wsdl:documentation>
+    <wsdl:port name="OrderSoap" binding="tns:OrderSoap">
+      <soap:address location="http://toolsqa.comcastonline.com/sikoms/11.04/Order.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="OrderHttpGet" binding="tns:OrderHttpGet">
+      <http:address location="http://toolsqa.comcastonline.com/sikoms/11.04/Order.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="OrderHttpPost" binding="tns:OrderHttpPost">
+      <http:address location="http://toolsqa.comcastonline.com/sikoms/11.04/Order.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:endpoint>http://indtoolsqa.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://comcastonline.com/CancelOrder" name="CancelOrder" bindingOperationName="CancelOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>2012-10-23T14:50:31-04:00</com:timestamp>
+         <com:sourceSystemId>1</com:sourceSystemId>
+         <com:sourceSystemUserId>1</com:sourceSystemUserId>
+         <com:sourceServerId>1</com:sourceServerId>
+         <com:trackingId>1</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:CancelOrder>
+         <!--Optional:-->
+         <com:Request>
+            <com:OrderID>40740</com:OrderID>
+         </com:Request>
+      </com:CancelOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>OP</con:username><con:password>mzU1kxQjHRT1gj5Om=Hu</con:password><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/CancelOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/Echo" name="Echo" bindingOperationName="Echo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:Echo>
+         <com:Request>
+            <!--Optional:-->
+            <com:StringToEcho>?</com:StringToEcho>
+         </com:Request>
+      </com:Echo>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/Echo"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/EscalateDNCS" name="EscalateDNCS" bindingOperationName="EscalateDNCS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:EscalateDNCS>
+         <com:onlineOrdersFulfillmentDetailsID>?</com:onlineOrdersFulfillmentDetailsID>
+      </com:EscalateDNCS>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+8o| 8o| 
+8o| 8o| 
+         8o| 8o| 8o| 8o| 8o| 8o| 8o| 
+         8o| 8o| 8o| 8o| 8o| 8o| 8o| 8o| 
+         8o| 8o| 8o| 8o| 8o| 8o| 8o|     8o| 
+         8o| 8o| 8o| 8o| 8o| 8o| 8o|         8o| 
+              8o|               8o| 
+              8o|               8o| ]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/EscalateDNCS"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/GetCompleteDeviceOrderHistory" name="GetCompleteDeviceOrderHistory" bindingOperationName="GetCompleteDeviceOrderHistory" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:GetCompleteDeviceOrderHistory>
+         <com:AccountNumber>?</com:AccountNumber>
+      </com:GetCompleteDeviceOrderHistory>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/GetCompleteDeviceOrderHistory"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/GetCustomerAvailability" name="GetCustomerAvailability" bindingOperationName="GetCustomerAvailability" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:GetCustomerAvailability>
+         <!--Optional:-->
+         <com:request>
+            <!--Optional:-->
+            <com:FTA>?</com:FTA>
+            <!--Optional:-->
+            <com:Flags>
+               <!--Zero or more repetitions:-->
+               <com:GetCustomerAvailabilityRequestFlags>?</com:GetCustomerAvailabilityRequestFlags>
+            </com:Flags>
+            <!--Optional:-->
+            <com:ForceFulfillmentCodes>
+               <!--Zero or more repetitions:-->
+               <com:string>?</com:string>
+            </com:ForceFulfillmentCodes>
+            <!--Optional:-->
+            <com:AccountNumber>?</com:AccountNumber>
+            <!--Optional:-->
+            <com:MoverOldAddress>
+               <!--Optional:-->
+               <com:Address1>?</com:Address1>
+               <!--Optional:-->
+               <com:Address2>?</com:Address2>
+               <!--Optional:-->
+               <com:City>?</com:City>
+               <!--Optional:-->
+               <com:State>?</com:State>
+               <!--Optional:-->
+               <com:Zip>?</com:Zip>
+            </com:MoverOldAddress>
+            <!--Optional:-->
+            <com:MoverOldBillingCorp>?</com:MoverOldBillingCorp>
+         </com:request>
+      </com:GetCustomerAvailability>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/GetCustomerAvailability"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/GetDeviceOrderHistory" name="GetDeviceOrderHistory" bindingOperationName="GetDeviceOrderHistory" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:GetDeviceOrderHistory>
+         <com:AccountNumber>?</com:AccountNumber>
+      </com:GetDeviceOrderHistory>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/GetDeviceOrderHistory"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/GetMarketAvailability" name="GetMarketAvailability" bindingOperationName="GetMarketAvailability" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:GetMarketAvailability>
+         <!--Optional:-->
+         <com:request>
+            <!--Optional:-->
+            <com:CorpSysprin>?</com:CorpSysprin>
+            <!--Optional:-->
+            <com:FTA>?</com:FTA>
+            <!--Optional:-->
+            <com:HeadEndVendor>?</com:HeadEndVendor>
+         </com:request>
+      </com:GetMarketAvailability>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/GetMarketAvailability"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/GetOrderDetails" name="GetOrderDetails" bindingOperationName="GetOrderDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>2012-10-23T14:50:31-04:00</com:timestamp>
+         <com:sourceSystemId>1</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>1</com:sourceSystemUserId>
+         <com:sourceServerId>1</com:sourceServerId>
+         <com:trackingId>1</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:GetOrderDetails>
+         <!--Optional:-->
+         <com:Request>
+            <com:OrderID>4295</com:OrderID>
+         </com:Request>
+      </com:GetOrderDetails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>BFC</con:username><con:password>h-8E2P!fN+n40aI$/D9oBt=7!J1r3g</con:password></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/GetOrderDetails"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/GetOrderForModification" name="GetOrderForModification" bindingOperationName="GetOrderForModification" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:GetOrderForModification>
+         <!--Optional:-->
+         <com:Request>
+            <com:OrderID>?</com:OrderID>
+         </com:Request>
+      </com:GetOrderForModification>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/GetOrderForModification"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/GetPopupMessage" name="GetPopupMessage" bindingOperationName="GetPopupMessage" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:GetPopupMessage>
+         <com:ProductCode>?</com:ProductCode>
+      </com:GetPopupMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/GetPopupMessage"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/GetProductForGroup" name="GetProductForGroup" bindingOperationName="GetProductForGroup" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:GetProductForGroup>
+         <!--Optional:-->
+         <com:request>
+            <!--Optional:-->
+            <com:AccountNumber>?</com:AccountNumber>
+            <!--Optional:-->
+            <com:FTA>?</com:FTA>
+            <!--Optional:-->
+            <com:ProductGroupCode>?</com:ProductGroupCode>
+            <!--Optional:-->
+            <com:CustomerDevices>
+               <!--Zero or more repetitions:-->
+               <com:CustomerDevice>
+                  <!--Optional:-->
+                  <com:ManufacturerCode>?</com:ManufacturerCode>
+                  <!--Optional:-->
+                  <com:ModelCode>?</com:ModelCode>
+                  <!--Optional:-->
+                  <com:SerialNumber>?</com:SerialNumber>
+                  <!--Optional:-->
+                  <com:CMACAddress>?</com:CMACAddress>
+                  <!--Optional:-->
+                  <com:MTAMACAddress>?</com:MTAMACAddress>
+                  <!--Optional:-->
+                  <com:DeviceType>?</com:DeviceType>
+                  <!--Optional:-->
+                  <com:HealthStatus>
+                     <!--Optional:-->
+                     <com:HealthValue>?</com:HealthValue>
+                     <com:IsOK>?</com:IsOK>
+                  </com:HealthStatus>
+               </com:CustomerDevice>
+            </com:CustomerDevices>
+         </com:request>
+      </com:GetProductForGroup>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/GetProductForGroup"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/ModifyOrder" name="ModifyOrder" bindingOperationName="ModifyOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:ModifyOrder>
+         <!--Optional:-->
+         <com:Request>
+            <com:XSS>?</com:XSS>
+            <!--Optional:-->
+            <com:RequestedDeliveryDate>?</com:RequestedDeliveryDate>
+            <!--Optional:-->
+            <com:ExternalOrderData/>
+            <!--Optional:-->
+            <com:ShipmentPriority>Standard</com:ShipmentPriority>
+            <com:CustomerInformation>
+               <com:AccountNumber>?</com:AccountNumber>
+               <!--Optional:-->
+               <com:FTA>?</com:FTA>
+               <com:ContactInformation>
+                  <!--Optional:-->
+                  <com:Prefix>?</com:Prefix>
+                  <!--Optional:-->
+                  <com:FirstName>?</com:FirstName>
+                  <!--Optional:-->
+                  <com:LastName>?</com:LastName>
+                  <!--Optional:-->
+                  <com:Suffix>?</com:Suffix>
+                  <!--Optional:-->
+                  <com:Phone>?</com:Phone>
+                  <!--Optional:-->
+                  <com:Email>?</com:Email>
+               </com:ContactInformation>
+            </com:CustomerInformation>
+            <!--Optional:-->
+            <com:ShippingAddress>
+               <!--Optional:-->
+               <com:Address1>?</com:Address1>
+               <!--Optional:-->
+               <com:Address2>?</com:Address2>
+               <!--Optional:-->
+               <com:City>?</com:City>
+               <!--Optional:-->
+               <com:State>?</com:State>
+               <!--Optional:-->
+               <com:Zip>?</com:Zip>
+            </com:ShippingAddress>
+            <!--Optional:-->
+            <com:IsAlternateAddress>false</com:IsAlternateAddress>
+            <com:Products>
+               <!--Zero or more repetitions:-->
+               <com:Product>
+                  <!--Optional:-->
+                  <com:Ownership>?</com:Ownership>
+                  <!--Optional:-->
+                  <com:ProductCode>?</com:ProductCode>
+               </com:Product>
+            </com:Products>
+            <!--Optional:-->
+            <com:DNCSIPAddress>?</com:DNCSIPAddress>
+            <!--Optional:-->
+            <com:HeadEndVendor>?</com:HeadEndVendor>
+            <!--Optional:-->
+            <com:E911_acceptance>false</com:E911_acceptance>
+            <!--Optional:-->
+            <com:ReferenceInfo>
+               <!--Optional:-->
+               <com:OriginatingAffiliateId>?</com:OriginatingAffiliateId>
+               <!--Optional:-->
+               <com:ReferenceOrderId>?</com:ReferenceOrderId>
+               <!--Optional:-->
+               <com:SalesPerson>?</com:SalesPerson>
+               <!--Optional:-->
+               <com:AgentID>?</com:AgentID>
+               <!--Optional:-->
+               <com:WorkOrderID>?</com:WorkOrderID>
+            </com:ReferenceInfo>
+            <!--Optional:-->
+            <com:ServiceBlackoutCheckOverride>false</com:ServiceBlackoutCheckOverride>
+            <!--Optional:-->
+            <com:DuplicateOverride>false</com:DuplicateOverride>
+            <!--Optional:-->
+            <com:MoverOldAddress>
+               <!--Optional:-->
+               <com:Address1>?</com:Address1>
+               <!--Optional:-->
+               <com:Address2>?</com:Address2>
+               <!--Optional:-->
+               <com:City>?</com:City>
+               <!--Optional:-->
+               <com:State>?</com:State>
+               <!--Optional:-->
+               <com:Zip>?</com:Zip>
+            </com:MoverOldAddress>
+            <!--Optional:-->
+            <com:MoverOldBillingCorp>?</com:MoverOldBillingCorp>
+            <!--Optional:-->
+            <com:CustomerDevices>
+               <!--Zero or more repetitions:-->
+               <com:CustomerDevice>
+                  <!--Optional:-->
+                  <com:ManufacturerCode>?</com:ManufacturerCode>
+                  <!--Optional:-->
+                  <com:ModelCode>?</com:ModelCode>
+                  <!--Optional:-->
+                  <com:SerialNumber>?</com:SerialNumber>
+                  <!--Optional:-->
+                  <com:CMACAddress>?</com:CMACAddress>
+                  <!--Optional:-->
+                  <com:MTAMACAddress>?</com:MTAMACAddress>
+                  <!--Optional:-->
+                  <com:DeviceType>?</com:DeviceType>
+                  <!--Optional:-->
+                  <com:HealthStatus>
+                     <!--Optional:-->
+                     <com:HealthValue>?</com:HealthValue>
+                     <com:IsOK>?</com:IsOK>
+                  </com:HealthStatus>
+               </com:CustomerDevice>
+            </com:CustomerDevices>
+            <com:OrderID>?</com:OrderID>
+         </com:Request>
+      </com:ModifyOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/ModifyOrder"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/OrderSearch" name="OrderSearch" bindingOperationName="OrderSearch" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:OrderSearch>
+         <!--Optional:-->
+         <com:Request>
+            <com:StartDate>?</com:StartDate>
+            <com:EndDate>?</com:EndDate>
+            <!--Optional:-->
+            <com:AccountNumber>?</com:AccountNumber>
+            <!--Optional:-->
+            <com:Customer>
+               <!--Optional:-->
+               <com:Prefix>?</com:Prefix>
+               <!--Optional:-->
+               <com:FirstName>?</com:FirstName>
+               <!--Optional:-->
+               <com:LastName>?</com:LastName>
+               <!--Optional:-->
+               <com:Suffix>?</com:Suffix>
+               <!--Optional:-->
+               <com:Phone>?</com:Phone>
+               <!--Optional:-->
+               <com:Email>?</com:Email>
+            </com:Customer>
+            <!--Optional:-->
+            <com:Address>
+               <!--Optional:-->
+               <com:Address1>?</com:Address1>
+               <!--Optional:-->
+               <com:Address2>?</com:Address2>
+               <!--Optional:-->
+               <com:City>?</com:City>
+               <!--Optional:-->
+               <com:State>?</com:State>
+               <!--Optional:-->
+               <com:Zip>?</com:Zip>
+            </com:Address>
+            <!--Optional:-->
+            <com:FulfillmentCodes>
+               <!--Zero or more repetitions:-->
+               <com:string>?</com:string>
+            </com:FulfillmentCodes>
+            <com:AffiliateID>?</com:AffiliateID>
+            <!--Optional:-->
+            <com:MACAddress>?</com:MACAddress>
+            <!--Optional:-->
+            <com:SerialNumber>?</com:SerialNumber>
+            <!--Optional:-->
+            <com:UnitID>?</com:UnitID>
+            <!--Optional:-->
+            <com:ProductCodes>
+               <!--Zero or more repetitions:-->
+               <com:string>?</com:string>
+            </com:ProductCodes>
+            <com:FulfillmentCenterID>?</com:FulfillmentCenterID>
+            <!--Optional:-->
+            <com:CorpSysPrins>
+               <!--Zero or more repetitions:-->
+               <com:string>?</com:string>
+            </com:CorpSysPrins>
+            <!--Optional:-->
+            <com:SortExpression>?</com:SortExpression>
+            <!--Optional:-->
+            <com:WorkOrderID>?</com:WorkOrderID>
+            <com:SortDirection>?</com:SortDirection>
+            <!--Optional:-->
+            <com:ListSearch>
+               <com:ListSearchItemsType>?</com:ListSearchItemsType>
+               <!--Optional:-->
+               <com:ListSearchItems>
+                  <!--Zero or more repetitions:-->
+                  <com:string>?</com:string>
+               </com:ListSearchItems>
+            </com:ListSearch>
+         </com:Request>
+      </com:OrderSearch>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/OrderSearch"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/Peek" name="Peek" bindingOperationName="Peek" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:Peek>
+         <!--Optional:-->
+         <com:o>
+            <com:OrderID>?</com:OrderID>
+            <!--Optional:-->
+            <com:Affiliate>
+               <com:ID>?</com:ID>
+               <!--Optional:-->
+               <com:Name>?</com:Name>
+            </com:Affiliate>
+            <!--Optional:-->
+            <com:AffiliateSalesPerson>?</com:AffiliateSalesPerson>
+            <!--Optional:-->
+            <com:CustomerAccountExecutive>
+               <!--Optional:-->
+               <com:Prefix>?</com:Prefix>
+               <!--Optional:-->
+               <com:FirstName>?</com:FirstName>
+               <!--Optional:-->
+               <com:LastName>?</com:LastName>
+               <!--Optional:-->
+               <com:Suffix>?</com:Suffix>
+               <!--Optional:-->
+               <com:Phone>?</com:Phone>
+               <!--Optional:-->
+               <com:Email>?</com:Email>
+               <!--Optional:-->
+               <com:UserID>?</com:UserID>
+            </com:CustomerAccountExecutive>
+            <!--Optional:-->
+            <com:ShippingAddress>
+               <!--Optional:-->
+               <com:Address1>?</com:Address1>
+               <!--Optional:-->
+               <com:Address2>?</com:Address2>
+               <!--Optional:-->
+               <com:City>?</com:City>
+               <!--Optional:-->
+               <com:State>?</com:State>
+               <!--Optional:-->
+               <com:Zip>?</com:Zip>
+            </com:ShippingAddress>
+            <com:OrderDate>?</com:OrderDate>
+            <com:RequestedDeliveryDate>?</com:RequestedDeliveryDate>
+            <com:LastUpdated>?</com:LastUpdated>
+            <!--Optional:-->
+            <com:Status>
+               <com:ID>?</com:ID>
+               <!--Optional:-->
+               <com:Name>?</com:Name>
+            </com:Status>
+            <!--Optional:-->
+            <com:Shipments>
+               <!--Zero or more repetitions:-->
+               <com:OrderShipment>
+                  <com:Carrier>?</com:Carrier>
+                  <com:Date>?</com:Date>
+                  <com:Method>?</com:Method>
+                  <!--Optional:-->
+                  <com:DeliveredDate>?</com:DeliveredDate>
+                  <!--Optional:-->
+                  <com:SiteName>?</com:SiteName>
+                  <!--Optional:-->
+                  <com:Packages>
+                     <!--Zero or more repetitions:-->
+                     <com:Package>
+                        <com:Cost>?</com:Cost>
+                        <!--Optional:-->
+                        <com:TrackingNumber>?</com:TrackingNumber>
+                        <!--Optional:-->
+                        <com:ReturnTrackingNumber>?</com:ReturnTrackingNumber>
+                        <com:Weight>?</com:Weight>
+                     </com:Package>
+                  </com:Packages>
+                  <!--Optional:-->
+                  <com:FinishedGoods>
+                     <!--Zero or more repetitions:-->
+                     <com:FinishedGoodOrdered>
+                        <!--Optional:-->
+                        <com:FulfillmentCode>?</com:FulfillmentCode>
+                        <!--Optional:-->
+                        <com:ReturnAddress>
+                           <!--Optional:-->
+                           <com:Address1>?</com:Address1>
+                           <!--Optional:-->
+                           <com:Address2>?</com:Address2>
+                           <!--Optional:-->
+                           <com:City>?</com:City>
+                           <!--Optional:-->
+                           <com:State>?</com:State>
+                           <!--Optional:-->
+                           <com:Zip>?</com:Zip>
+                        </com:ReturnAddress>
+                        <!--Optional:-->
+                        <com:ServiceCenterAddress>
+                           <!--Optional:-->
+                           <com:Address1>?</com:Address1>
+                           <!--Optional:-->
+                           <com:Address2>?</com:Address2>
+                           <!--Optional:-->
+                           <com:City>?</com:City>
+                           <!--Optional:-->
+                           <com:State>?</com:State>
+                           <!--Optional:-->
+                           <com:Zip>?</com:Zip>
+                        </com:ServiceCenterAddress>
+                        <!--Optional:-->
+                        <com:DeviceDetails>
+                           <!--Zero or more repetitions:-->
+                           <com:DeviceDetail>
+                              <!--Optional:-->
+                              <com:Name>?</com:Name>
+                              <!--Optional:-->
+                              <com:Make>?</com:Make>
+                              <!--Optional:-->
+                              <com:Model>?</com:Model>
+                              <!--Optional:-->
+                              <com:SerialNumber>?</com:SerialNumber>
+                              <!--Optional:-->
+                              <com:SerialNumber2>?</com:SerialNumber2>
+                              <!--Optional:-->
+                              <com:MACAddress>?</com:MACAddress>
+                              <!--Optional:-->
+                              <com:CMACAddress>?</com:CMACAddress>
+                              <!--Optional:-->
+                              <com:EMACAddress>?</com:EMACAddress>
+                              <!--Optional:-->
+                              <com:MTAMACAddress>?</com:MTAMACAddress>
+                              <!--Optional:-->
+                              <com:MasterSubsidiaryLock>?</com:MasterSubsidiaryLock>
+                              <!--Optional:-->
+                              <com:USBMACAddress>?</com:USBMACAddress>
+                              <!--Optional:-->
+                              <com:UnitID>?</com:UnitID>
+                              <!--Optional:-->
+                              <com:UnitID2>?</com:UnitID2>
+                              <com:Condition>?</com:Condition>
+                              <!--Optional:-->
+                              <com:DeviceType>?</com:DeviceType>
+                              <com:IsMTADevice>?</com:IsMTADevice>
+                              <!--Optional:-->
+                              <com:MACAddress2>?</com:MACAddress2>
+                              <!--Optional:-->
+                              <com:Make2>?</com:Make2>
+                              <!--Optional:-->
+                              <com:Model2>?</com:Model2>
+                              <!--Optional:-->
+                              <com:RFMACAddress>?</com:RFMACAddress>
+                              <com:FDID>?</com:FDID>
+                              <!--Optional:-->
+                              <com:Outlet>
+                                 <!--Optional:-->
+                                 <com:Id>?</com:Id>
+                                 <!--Optional:-->
+                                 <com:Location>?</com:Location>
+                              </com:Outlet>
+                              <!--Optional:-->
+                              <com:PhoneNumbers>
+                                 <!--Zero or more repetitions:-->
+                                 <com:string>?</com:string>
+                              </com:PhoneNumbers>
+                              <com:FulfillmentDate>?</com:FulfillmentDate>
+                              <com:ProvisionedDate>?</com:ProvisionedDate>
+                              <!--Optional:-->
+                              <com:Status>
+                                 <com:ID>?</com:ID>
+                                 <!--Optional:-->
+                                 <com:Name>?</com:Name>
+                              </com:Status>
+                              <!--Optional:-->
+                              <com:ProvisionedBy>?</com:ProvisionedBy>
+                              <!--Optional:-->
+                              <com:ActivatedBy>?</com:ActivatedBy>
+                              <com:DNCSDownloaded>?</com:DNCSDownloaded>
+                              <com:ATDownloaded>?</com:ATDownloaded>
+                              <!--Optional:-->
+                              <com:DNCSIPAddress>?</com:DNCSIPAddress>
+                              <!--Optional:-->
+                              <com:KitCode>?</com:KitCode>
+                           </com:DeviceDetail>
+                        </com:DeviceDetails>
+                        <!--Optional:-->
+                        <com:FulfillmentCenter>?</com:FulfillmentCenter>
+                        <!--Optional:-->
+                        <com:Ownership>
+                           <com:ID>?</com:ID>
+                           <!--Optional:-->
+                           <com:Name>?</com:Name>
+                           <com:CustomerOwned>?</com:CustomerOwned>
+                        </com:Ownership>
+                        <!--Optional:-->
+                        <com:ShipmentPriority>?</com:ShipmentPriority>
+                     </com:FinishedGoodOrdered>
+                  </com:FinishedGoods>
+               </com:OrderShipment>
+            </com:Shipments>
+            <!--Optional:-->
+            <com:UnshippedFinishedGoods>
+               <!--Zero or more repetitions:-->
+               <com:FinishedGoodOrdered>
+                  <!--Optional:-->
+                  <com:FulfillmentCode>?</com:FulfillmentCode>
+                  <!--Optional:-->
+                  <com:ReturnAddress>
+                     <!--Optional:-->
+                     <com:Address1>?</com:Address1>
+                     <!--Optional:-->
+                     <com:Address2>?</com:Address2>
+                     <!--Optional:-->
+                     <com:City>?</com:City>
+                     <!--Optional:-->
+                     <com:State>?</com:State>
+                     <!--Optional:-->
+                     <com:Zip>?</com:Zip>
+                  </com:ReturnAddress>
+                  <!--Optional:-->
+                  <com:ServiceCenterAddress>
+                     <!--Optional:-->
+                     <com:Address1>?</com:Address1>
+                     <!--Optional:-->
+                     <com:Address2>?</com:Address2>
+                     <!--Optional:-->
+                     <com:City>?</com:City>
+                     <!--Optional:-->
+                     <com:State>?</com:State>
+                     <!--Optional:-->
+                     <com:Zip>?</com:Zip>
+                  </com:ServiceCenterAddress>
+                  <!--Optional:-->
+                  <com:DeviceDetails>
+                     <!--Zero or more repetitions:-->
+                     <com:DeviceDetail>
+                        <!--Optional:-->
+                        <com:Name>?</com:Name>
+                        <!--Optional:-->
+                        <com:Make>?</com:Make>
+                        <!--Optional:-->
+                        <com:Model>?</com:Model>
+                        <!--Optional:-->
+                        <com:SerialNumber>?</com:SerialNumber>
+                        <!--Optional:-->
+                        <com:SerialNumber2>?</com:SerialNumber2>
+                        <!--Optional:-->
+                        <com:MACAddress>?</com:MACAddress>
+                        <!--Optional:-->
+                        <com:CMACAddress>?</com:CMACAddress>
+                        <!--Optional:-->
+                        <com:EMACAddress>?</com:EMACAddress>
+                        <!--Optional:-->
+                        <com:MTAMACAddress>?</com:MTAMACAddress>
+                        <!--Optional:-->
+                        <com:MasterSubsidiaryLock>?</com:MasterSubsidiaryLock>
+                        <!--Optional:-->
+                        <com:USBMACAddress>?</com:USBMACAddress>
+                        <!--Optional:-->
+                        <com:UnitID>?</com:UnitID>
+                        <!--Optional:-->
+                        <com:UnitID2>?</com:UnitID2>
+                        <com:Condition>?</com:Condition>
+                        <!--Optional:-->
+                        <com:DeviceType>?</com:DeviceType>
+                        <com:IsMTADevice>?</com:IsMTADevice>
+                        <!--Optional:-->
+                        <com:MACAddress2>?</com:MACAddress2>
+                        <!--Optional:-->
+                        <com:Make2>?</com:Make2>
+                        <!--Optional:-->
+                        <com:Model2>?</com:Model2>
+                        <!--Optional:-->
+                        <com:RFMACAddress>?</com:RFMACAddress>
+                        <com:FDID>?</com:FDID>
+                        <!--Optional:-->
+                        <com:Outlet>
+                           <!--Optional:-->
+                           <com:Id>?</com:Id>
+                           <!--Optional:-->
+                           <com:Location>?</com:Location>
+                        </com:Outlet>
+                        <!--Optional:-->
+                        <com:PhoneNumbers>
+                           <!--Zero or more repetitions:-->
+                           <com:string>?</com:string>
+                        </com:PhoneNumbers>
+                        <com:FulfillmentDate>?</com:FulfillmentDate>
+                        <com:ProvisionedDate>?</com:ProvisionedDate>
+                        <!--Optional:-->
+                        <com:Status>
+                           <com:ID>?</com:ID>
+                           <!--Optional:-->
+                           <com:Name>?</com:Name>
+                        </com:Status>
+                        <!--Optional:-->
+                        <com:ProvisionedBy>?</com:ProvisionedBy>
+                        <!--Optional:-->
+                        <com:ActivatedBy>?</com:ActivatedBy>
+                        <com:DNCSDownloaded>?</com:DNCSDownloaded>
+                        <com:ATDownloaded>?</com:ATDownloaded>
+                        <!--Optional:-->
+                        <com:DNCSIPAddress>?</com:DNCSIPAddress>
+                        <!--Optional:-->
+                        <com:KitCode>?</com:KitCode>
+                     </com:DeviceDetail>
+                  </com:DeviceDetails>
+                  <!--Optional:-->
+                  <com:FulfillmentCenter>?</com:FulfillmentCenter>
+                  <!--Optional:-->
+                  <com:Ownership>
+                     <com:ID>?</com:ID>
+                     <!--Optional:-->
+                     <com:Name>?</com:Name>
+                     <com:CustomerOwned>?</com:CustomerOwned>
+                  </com:Ownership>
+                  <!--Optional:-->
+                  <com:ShipmentPriority>?</com:ShipmentPriority>
+               </com:FinishedGoodOrdered>
+            </com:UnshippedFinishedGoods>
+            <!--Optional:-->
+            <com:AdditionalOrderData>
+               <!--Optional:-->
+               <com:Values>
+                  <!--Zero or more repetitions:-->
+                  <com:HashValue>
+                     <!--Optional:-->
+                     <com:Key>?</com:Key>
+                     <!--Optional:-->
+                     <com:Value>?</com:Value>
+                  </com:HashValue>
+               </com:Values>
+            </com:AdditionalOrderData>
+            <!--Optional:-->
+            <com:CustomerInformation>
+               <com:AccountNumber>?</com:AccountNumber>
+               <!--Optional:-->
+               <com:FTA>?</com:FTA>
+               <com:ContactInformation>
+                  <!--Optional:-->
+                  <com:Prefix>?</com:Prefix>
+                  <!--Optional:-->
+                  <com:FirstName>?</com:FirstName>
+                  <!--Optional:-->
+                  <com:LastName>?</com:LastName>
+                  <!--Optional:-->
+                  <com:Suffix>?</com:Suffix>
+                  <!--Optional:-->
+                  <com:Phone>?</com:Phone>
+                  <!--Optional:-->
+                  <com:Email>?</com:Email>
+               </com:ContactInformation>
+            </com:CustomerInformation>
+         </com:o>
+      </com:Peek>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/Peek"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/ResubmitPIMS" name="ResubmitPIMS" bindingOperationName="ResubmitPIMS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:ResubmitPIMS>
+         <com:onlineOrdersFulfillmentDetailsID>?</com:onlineOrdersFulfillmentDetailsID>
+      </com:ResubmitPIMS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/ResubmitPIMS"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/SubmitOrder" name="SubmitOrder" bindingOperationName="SubmitOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:SubmitOrder>
+         <com:Request>
+            <com:XSS>?</com:XSS>
+            <!--Optional:-->
+            <com:RequestedDeliveryDate>?</com:RequestedDeliveryDate>
+            <!--Optional:-->
+            <com:ExternalOrderData/>
+            <!--Optional:-->
+            <com:ShipmentPriority>Standard</com:ShipmentPriority>
+            <com:CustomerInformation>
+               <com:AccountNumber>?</com:AccountNumber>
+               <!--Optional:-->
+               <com:FTA>?</com:FTA>
+               <com:ContactInformation>
+                  <!--Optional:-->
+                  <com:Prefix>?</com:Prefix>
+                  <!--Optional:-->
+                  <com:FirstName>?</com:FirstName>
+                  <!--Optional:-->
+                  <com:LastName>?</com:LastName>
+                  <!--Optional:-->
+                  <com:Suffix>?</com:Suffix>
+                  <!--Optional:-->
+                  <com:Phone>?</com:Phone>
+                  <!--Optional:-->
+                  <com:Email>?</com:Email>
+               </com:ContactInformation>
+            </com:CustomerInformation>
+            <!--Optional:-->
+            <com:ShippingAddress>
+               <!--Optional:-->
+               <com:Address1>?</com:Address1>
+               <!--Optional:-->
+               <com:Address2>?</com:Address2>
+               <!--Optional:-->
+               <com:City>?</com:City>
+               <!--Optional:-->
+               <com:State>?</com:State>
+               <!--Optional:-->
+               <com:Zip>?</com:Zip>
+            </com:ShippingAddress>
+            <!--Optional:-->
+            <com:IsAlternateAddress>false</com:IsAlternateAddress>
+            <com:Products>
+               <!--Zero or more repetitions:-->
+               <com:Product>
+                  <!--Optional:-->
+                  <com:Ownership>?</com:Ownership>
+                  <!--Optional:-->
+                  <com:ProductCode>?</com:ProductCode>
+               </com:Product>
+            </com:Products>
+            <!--Optional:-->
+            <com:DNCSIPAddress>?</com:DNCSIPAddress>
+            <!--Optional:-->
+            <com:HeadEndVendor>?</com:HeadEndVendor>
+            <!--Optional:-->
+            <com:E911_acceptance>false</com:E911_acceptance>
+            <!--Optional:-->
+            <com:ReferenceInfo>
+               <!--Optional:-->
+               <com:OriginatingAffiliateId>?</com:OriginatingAffiliateId>
+               <!--Optional:-->
+               <com:ReferenceOrderId>?</com:ReferenceOrderId>
+               <!--Optional:-->
+               <com:SalesPerson>?</com:SalesPerson>
+               <!--Optional:-->
+               <com:AgentID>?</com:AgentID>
+               <!--Optional:-->
+               <com:WorkOrderID>?</com:WorkOrderID>
+            </com:ReferenceInfo>
+            <!--Optional:-->
+            <com:ServiceBlackoutCheckOverride>false</com:ServiceBlackoutCheckOverride>
+            <!--Optional:-->
+            <com:DuplicateOverride>false</com:DuplicateOverride>
+            <!--Optional:-->
+            <com:MoverOldAddress>
+               <!--Optional:-->
+               <com:Address1>?</com:Address1>
+               <!--Optional:-->
+               <com:Address2>?</com:Address2>
+               <!--Optional:-->
+               <com:City>?</com:City>
+               <!--Optional:-->
+               <com:State>?</com:State>
+               <!--Optional:-->
+               <com:Zip>?</com:Zip>
+            </com:MoverOldAddress>
+            <!--Optional:-->
+            <com:MoverOldBillingCorp>?</com:MoverOldBillingCorp>
+            <!--Optional:-->
+            <com:CustomerDevices>
+               <!--Zero or more repetitions:-->
+               <com:CustomerDevice>
+                  <!--Optional:-->
+                  <com:ManufacturerCode>?</com:ManufacturerCode>
+                  <!--Optional:-->
+                  <com:ModelCode>?</com:ModelCode>
+                  <!--Optional:-->
+                  <com:SerialNumber>?</com:SerialNumber>
+                  <!--Optional:-->
+                  <com:CMACAddress>?</com:CMACAddress>
+                  <!--Optional:-->
+                  <com:MTAMACAddress>?</com:MTAMACAddress>
+                  <!--Optional:-->
+                  <com:DeviceType>?</com:DeviceType>
+                  <!--Optional:-->
+                  <com:HealthStatus>
+                     <!--Optional:-->
+                     <com:HealthValue>?</com:HealthValue>
+                     <com:IsOK>?</com:IsOK>
+                  </com:HealthStatus>
+               </com:CustomerDevice>
+            </com:CustomerDevices>
+         </com:Request>
+      </com:SubmitOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/SubmitOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/Subscribe" name="Subscribe" bindingOperationName="Subscribe" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:Subscribe>
+         <!--Optional:-->
+         <com:Request>
+            <!--Optional:-->
+            <com:AccountNumber>?</com:AccountNumber>
+            <com:NotificationType>?</com:NotificationType>
+            <com:SelfSubmittedOrders>?</com:SelfSubmittedOrders>
+         </com:Request>
+      </com:Subscribe>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/Subscribe"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/Unsubscribe" name="Unsubscribe" bindingOperationName="Unsubscribe" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:Unsubscribe>
+         <!--Optional:-->
+         <com:Request>
+            <!--Optional:-->
+            <com:AccountNumber>?</com:AccountNumber>
+            <com:NotificationType>?</com:NotificationType>
+         </com:Request>
+      </com:Unsubscribe>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/Unsubscribe"/></con:call></con:operation><con:operation isOneWay="false" action="http://comcastonline.com/UpdateOrderProvisioningStatus" name="UpdateOrderProvisioningStatus" bindingOperationName="UpdateOrderProvisioningStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://indtoolsint.cable.comcast.com/sikoms/11.04/Order.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://comcastonline.com/">
+   <soapenv:Header>
+      <com:requestHeader>
+         <com:timestamp>?</com:timestamp>
+         <com:sourceSystemId>?</com:sourceSystemId>
+         <!--Optional:-->
+         <com:sourceSystemUserId>?</com:sourceSystemUserId>
+         <com:sourceServerId>?</com:sourceServerId>
+         <com:trackingId>?</com:trackingId>
+      </com:requestHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <com:UpdateOrderProvisioningStatus>
+         <!--Optional:-->
+         <com:Request>
+            <com:OrderID>?</com:OrderID>
+            <com:Status>?</com:Status>
+            <!--Optional:-->
+            <com:Details>?</com:Details>
+         </com:Request>
+      </com:UpdateOrderProvisioningStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://comcastonline.com/UpdateOrderProvisioningStatus"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

@@ -1,0 +1,1902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="DTAOM.IVRCOM" resourceRoot="" soapui-version="3.6.1" abortOnError="false" runType="SEQUENTIAL" activeEnvironment="Default" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ivrcomBind" type="wsdl" bindingName="{http://conceptwave.com/dta/service}ivrcomBind" soapVersion="1_1" anonymous="optional" definition="file:/D:/DTA/DTAOM-releases/rc_10.06/SVN/config/resources/ivrcomInter.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/D:/DTA/DTAOM-releases/rc_10.06/SVN/config/resources/ivrcomInter.wsdl"><con:part><con:url>file:/D:/DTA/DTAOM-releases/rc_10.06/SVN/config/resources/ivrcomInter.wsdl</con:url><con:content><![CDATA[<definitions name="dtaService" targetNamespace="http://conceptwave.com/dta/service" xmlns:tns="http://conceptwave.com/dta/service" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:dtaService="http://conceptwave.com/dta/service" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:s0="http://docs.oasisopen.org/wss/2004/01/oasis200401wsswssecurityutility1.0.xsd" xmlns:s1="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsingPolicy s1:Required="true"/>
+  <wsp:Policy s0:Id="Auth.xml">
+    <wssp:Identity xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken TokenType="http://docs.oasisopen.org/wss/2004/01/oasis200401wssusernametokenprofile1.0#UsernameToken">
+          <wssp:UsePassword Type="http://docs.oasisopen.org/wss/2004/01/oasis200401wssusernametokenprofile1.0#PasswordText"/>
+        </wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Identity>
+  </wsp:Policy>
+  <types>
+    <!--DTA TYPES-->
+    <schema elementFormDefault="qualified" targetNamespace="http://conceptwave.com/dta/types" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:dtatypes="http://conceptwave.com/dta/types">
+      <annotation>
+        <documentation>DTA Types</documentation>
+        <appinfo>
+          <metadata>DTA OM</metadata>
+          <created>Wed May 21 14:33:41 EDT 2008</created>
+          <updated>Thu May 13 16:58:08 EDT 2010</updated>
+        </appinfo>
+      </annotation>
+      <!--Data types and elements-->
+      <simpleType name="accountStatus">
+        <annotation>
+          <documentation>Account Status</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <length value="3"/>
+          <enumeration value="DIS">
+            <annotation>
+              <documentation>DISCONNECTED</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="OPT">
+            <annotation>
+              <documentation>OPTED OUT</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="accountNumber">
+        <annotation>
+          <documentation>accountNumber</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="activationChannel">
+        <annotation>
+          <documentation>Activation Channel</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="4"/>
+          <enumeration value="IVR">
+            <annotation>
+              <documentation>IVR</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="COM">
+            <annotation>
+              <documentation>COM</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="BAU">
+            <annotation>
+              <documentation>BAU</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="AUTO">
+            <annotation>
+              <documentation>Auto-activation</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="N/A">
+            <annotation>
+              <documentation>Not Available</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="FRC">
+            <annotation>
+              <documentation>Front Counter</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="CAE">
+            <annotation>
+              <documentation>CAE</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="activityCode">
+        <annotation>
+          <documentation>Activity Code</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="10"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="activityDescription">
+        <annotation>
+          <documentation>Activity Description</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="additionalDevPrice">
+        <annotation>
+          <documentation>Additional Device Price</documentation>
+        </annotation>
+        <restriction base="xsd:decimal">
+          <totalDigits value="4"/>
+          <fractionDigits value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="addressState">
+        <annotation>
+          <documentation>Address State</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="addressStreet">
+        <annotation>
+          <documentation>Address Street</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="50"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="addressStreet2">
+        <annotation>
+          <documentation>Address Street 2</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="50"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="agent">
+        <annotation>
+          <documentation>Agent</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="4"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="carrier">
+        <annotation>
+          <documentation>Carrier</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="city">
+        <annotation>
+          <documentation>City</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="corpId">
+        <annotation>
+          <documentation>corpId</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="description">
+        <annotation>
+          <documentation>Description</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="64"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="deviceLocation">
+        <annotation>
+          <documentation>Device Location</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="deviceMake">
+        <annotation>
+          <documentation>Device Make</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="deviceModel">
+        <annotation>
+          <documentation>Device Model</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="devicePriceAttr">
+        <annotation>
+          <documentation>Device Price Attr</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <length value="3"/>
+          <enumeration value="FRE">
+            <annotation>
+              <documentation>Free</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="PRM">
+            <annotation>
+              <documentation>Promo</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="REG">
+            <annotation>
+              <documentation>Regular</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="deviceSerialNumber">
+        <annotation>
+          <documentation>Device Serial Number</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="deviceType">
+        <annotation>
+          <documentation>Device Type</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="3"/>
+          <enumeration value="DCT">
+            <annotation>
+              <documentation>DCT</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="DTA">
+            <annotation>
+              <documentation>DTA</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="devices">
+        <annotation>
+          <documentation>Devices</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="4000"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="division">
+        <annotation>
+          <documentation>Division</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="64"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="dncsIpAddress">
+        <annotation>
+          <documentation>DNCS IP Address</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="15"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="email">
+        <annotation>
+          <documentation>Email</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="128"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="errorCode">
+        <annotation>
+          <documentation>Error Code</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="64"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="errorList">
+        <annotation>
+          <documentation>Error List</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="128"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="errorSource">
+        <annotation>
+          <documentation>Error Source</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="25"/>
+          <enumeration value="IVR">
+            <annotation>
+              <documentation>IVR</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="COM">
+            <annotation>
+              <documentation>COM</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="BAU">
+            <annotation>
+              <documentation>BAU</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="DTA">
+            <annotation>
+              <documentation>DTA OM Internal</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="INV">
+            <annotation>
+              <documentation>Inventory</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="CNT">
+            <annotation>
+              <documentation>Contact</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="SIK">
+            <annotation>
+              <documentation>SIK</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="OMS_NEW">
+            <annotation>
+              <documentation>OMS New</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="OMS_ADD">
+            <annotation>
+              <documentation>OMS Add</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="OMS_ACT">
+            <annotation>
+              <documentation>OMS Activate</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ACC">
+            <annotation>
+              <documentation>Account</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="SRV">
+            <annotation>
+              <documentation>Service</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="LOC">
+            <annotation>
+              <documentation>Location</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="errorText">
+        <annotation>
+          <documentation>Error Text</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="1024"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="firstName">
+        <annotation>
+          <documentation>First Name</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="freeQnty">
+        <annotation>
+          <documentation>Free Quantity</documentation>
+        </annotation>
+        <restriction base="xsd:int"></restriction>
+      </simpleType>
+      <simpleType name="FTA">
+        <annotation>
+          <documentation>FTA</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="4"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="HeadendVendor">
+        <annotation>
+          <documentation>Head End Vendor</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="isAccountDisconnect">
+        <annotation>
+          <documentation>Is Account Disconnect</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <enumeration value="Y">
+            <annotation>
+              <documentation>Yes</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="N">
+            <annotation>
+              <documentation>No</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="lastName">
+        <annotation>
+          <documentation>Last Name</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="30"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="LegacyLocId">
+        <annotation>
+          <documentation>Legacy Location Id</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="14"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="locData">
+        <annotation>
+          <documentation>Location Data</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="64"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="macAddress">
+        <annotation>
+          <documentation>MAC Address</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="17"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="market">
+        <annotation>
+          <documentation>Market</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="maxDCT">
+        <annotation>
+          <documentation>Max DCT</documentation>
+        </annotation>
+        <restriction base="xsd:int"></restriction>
+      </simpleType>
+      <simpleType name="maxDTA">
+        <annotation>
+          <documentation>Max DTA</documentation>
+        </annotation>
+        <restriction base="xsd:int"></restriction>
+      </simpleType>
+      <simpleType name="note">
+        <annotation>
+          <documentation>Note</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="1024"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="offerCode">
+        <annotation>
+          <documentation>Offer Code</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="offerXML">
+        <annotation>
+          <documentation>Offer XML</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="600"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="orderChannel">
+        <annotation>
+          <documentation>Order Channel</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="3"/>
+          <enumeration value="IVR">
+            <annotation>
+              <documentation>IVR</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="COM">
+            <annotation>
+              <documentation>COM</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="BAU">
+            <annotation>
+              <documentation>BAU</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="FRC">
+            <annotation>
+              <documentation>FRC</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="CAE">
+            <annotation>
+              <documentation>CAE</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="orderItemStatus">
+        <annotation>
+          <documentation>Order Item Status</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="3"/>
+          <enumeration value="CRE">
+            <annotation>
+              <documentation>Created</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="SHI">
+            <annotation>
+              <documentation>Shipped</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ADD">
+            <annotation>
+              <documentation>Added</documentation>
+              <appinfo>
+                <active>false</active>
+              </appinfo>
+            </annotation>
+          </enumeration>
+          <enumeration value="CON">
+            <annotation>
+              <documentation>Confirmed</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ACR">
+            <annotation>
+              <documentation>Activate Requested</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ADB">
+            <annotation>
+              <documentation>Added to Billing</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ACT">
+            <annotation>
+              <documentation>Activated</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="orderStatus">
+        <annotation>
+          <documentation>Order Status</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="3"/>
+          <enumeration value="CRE">
+            <annotation>
+              <documentation>CREATED</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="SUB">
+            <annotation>
+              <documentation>SUBMITTED</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="SHP">
+            <annotation>
+              <documentation>SHIPPED</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="CLS">
+            <annotation>
+              <documentation>CLOSED</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="CAN">
+            <annotation>
+              <documentation>CANCELED</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="ERR">
+            <annotation>
+              <documentation>ERROR</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="orderType">
+        <annotation>
+          <documentation>Order Type</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="15"/>
+          <enumeration value="DTAOM">
+            <annotation>
+              <documentation>DTAOM</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="Virtual">
+            <annotation>
+              <documentation>Virtual</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="outletId">
+        <annotation>
+          <documentation>Outlet Id</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="price">
+        <annotation>
+          <documentation>Price</documentation>
+        </annotation>
+        <restriction base="xsd:double"></restriction>
+      </simpleType>
+      <simpleType name="promoPeriod">
+        <annotation>
+          <documentation>Promo Period</documentation>
+        </annotation>
+        <restriction base="xsd:int"></restriction>
+      </simpleType>
+      <simpleType name="quantity">
+        <annotation>
+          <documentation>Quantity</documentation>
+        </annotation>
+        <restriction base="xsd:int"></restriction>
+      </simpleType>
+      <simpleType name="rateCode">
+        <annotation>
+          <documentation>Rate Code</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="rateCodeType">
+        <annotation>
+          <documentation>Rate Code Type</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+          <enumeration value="PKG_DCT">
+            <annotation>
+              <documentation>PKG_DCT</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="RATE_DCT">
+            <annotation>
+              <documentation>RATE_DCT</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="RATE_DTA">
+            <annotation>
+              <documentation>RATE_DTA</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="DISC_DTA">
+            <annotation>
+              <documentation>DISC_DTA</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="DISC_DCT">
+            <annotation>
+              <documentation>DISC_DCT</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="TC_DTA">
+            <annotation>
+              <documentation>TC_DTA</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="TC_DCT">
+            <annotation>
+              <documentation>TC_DCT</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="DTA_PTC">
+            <annotation>
+              <documentation>DTA_PTC</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="DCT_PTC">
+            <annotation>
+              <documentation>DCT_PTC</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="PKG_DTA">
+            <annotation>
+              <documentation>PKG_DTA</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="EXTN">
+            <annotation>
+              <documentation>EXTN</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="RATE_SRC">
+            <annotation>
+              <documentation>RATE_SRC</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="RATE_TRK">
+            <annotation>
+              <documentation>RATE_TRK</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="TC_SRC">
+            <annotation>
+              <documentation>TC_SRC</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="PKG_TBL">
+            <annotation>
+              <documentation>PKG_TBL</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="SP_DTA">
+            <annotation>
+              <documentation>SP_DTA</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="PRI_SHP">
+            <annotation>
+              <documentation>PRI_SHP</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="RATE_SRC_IVR">
+            <annotation>
+              <documentation>RATE_SRC_IVR</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="RATE_SRC_COM">
+            <annotation>
+              <documentation>RATE_SRC_COM</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="TC_SRC_IVR">
+            <annotation>
+              <documentation>TC_SRC_IVR</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="TC_SRC_COM">
+            <annotation>
+              <documentation>TC_SRC_COM</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="rateCodes">
+        <annotation>
+          <documentation>Rate Codes</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="256"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="ratePackage">
+        <annotation>
+          <documentation>Rate Package</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <length value="1"/>
+          <enumeration value="R">
+            <annotation>
+              <documentation>Rate</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="P">
+            <annotation>
+              <documentation>Package</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="rebootStatus">
+        <annotation>
+          <documentation>Reboot Status</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="4"/>
+          <enumeration value="QDR">
+            <annotation>
+              <documentation>queryDNCS Requested</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="RDY">
+            <annotation>
+              <documentation>Device Ready</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="RBR">
+            <annotation>
+              <documentation>reBootSTB Requested</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="RBT">
+            <annotation>
+              <documentation>Device Rebooted</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="FAIL">
+            <annotation>
+              <documentation>Reboot Failed</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="region">
+        <annotation>
+          <documentation>Region</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="64"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="serviceType">
+        <annotation>
+          <documentation>Service Type</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="2"/>
+          <enumeration value="A">
+            <annotation>
+              <documentation>Analog</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="D">
+            <annotation>
+              <documentation>Digital</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="B">
+            <annotation>
+              <documentation>Bulk</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="S">
+            <annotation>
+              <documentation>Subsequent</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="E">
+            <annotation>
+              <documentation>Economy</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="F">
+            <annotation>
+              <documentation>Family</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="B1">
+            <annotation>
+              <documentation>B1</documentation>
+            </annotation>
+          </enumeration>
+          <enumeration value="B2">
+            <annotation>
+              <documentation>B2</documentation>
+            </annotation>
+          </enumeration>
+        </restriction>
+      </simpleType>
+      <simpleType name="SIKorderId">
+        <annotation>
+          <documentation>SIK Order Id</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="spRateCodes">
+        <annotation>
+          <documentation>Special Rate Codes</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="2048"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="phoneNumber">
+        <annotation>
+          <documentation>Telephone Number</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="12"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="trackingNo">
+        <annotation>
+          <documentation>Tracking Number</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="18"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="transnum">
+        <annotation>
+          <documentation>TRANSNUM</documentation>
+        </annotation>
+        <restriction base="xsd:unsignedInt"></restriction>
+      </simpleType>
+      <simpleType name="uniqueId">
+        <annotation>
+          <documentation>uniqueId</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <length value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="unitAddress">
+        <annotation>
+          <documentation>Unit  Address</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="16"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="workOrderId">
+        <annotation>
+          <documentation>Work Order Id</documentation>
+        </annotation>
+        <restriction base="dtatypes:SIKorderId"></restriction>
+      </simpleType>
+      <simpleType name="workOrderIdList">
+        <annotation>
+          <documentation>work order ID list</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="256"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="workOrderSchedule">
+        <annotation>
+          <documentation>Work Order Schedule</documentation>
+        </annotation>
+        <restriction base="xsd:string"></restriction>
+      </simpleType>
+      <simpleType name="workOrderStatus">
+        <annotation>
+          <documentation>Work Order Status</documentation>
+        </annotation>
+        <restriction base="xsd:string"></restriction>
+      </simpleType>
+      <simpleType name="xmlString">
+        <annotation>
+          <documentation>XML String</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="1024"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="zip">
+        <annotation>
+          <documentation>ZIP Code</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <maxLength value="9"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="zip2">
+        <annotation>
+          <documentation>ZIP Code 2</documentation>
+        </annotation>
+        <restriction base="xsd:string">
+          <length fixed="true" value="4"/>
+        </restriction>
+      </simpleType>
+      <!--Structures-->
+      <complexType name="address">
+        <annotation>
+          <documentation>Address</documentation>
+        </annotation>
+        <sequence>
+          <element name="street1" minOccurs="1" maxOccurs="1" type="dtatypes:addressStreet"/>
+          <element name="street2" minOccurs="0" maxOccurs="1" type="dtatypes:addressStreet"/>
+          <element name="city" minOccurs="1" maxOccurs="1" type="dtatypes:city"/>
+          <element name="state" minOccurs="1" maxOccurs="1" type="dtatypes:addressState"/>
+          <element name="zip" minOccurs="1" maxOccurs="1" type="dtatypes:zip"/>
+          <element name="zip4" minOccurs="0" maxOccurs="1" type="dtatypes:zip"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <!--COMCAST ESP COMMON TYPES-->
+    <schema elementFormDefault="qualified" targetNamespace="http://xml.comcast.com/types" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:commonTypes="http://xml.comcast.com/types">
+      <annotation>
+        <documentation>Comcast Common Types</documentation>
+        <appinfo>
+          <metadata>DTA OM</metadata>
+          <created>Wed May 21 14:33:41 EDT 2008</created>
+          <updated>Thu May 13 16:58:08 EDT 2010</updated>
+        </appinfo>
+      </annotation>
+      <!--Data types and elements-->
+      <!--Structures-->
+      <complexType name="ExceptionType">
+        <annotation>
+          <documentation>ExceptionType</documentation>
+        </annotation>
+        <sequence>
+          <element name="messages" minOccurs="1" maxOccurs="1" type="commonTypes:MessagesType"/>
+        </sequence>
+      </complexType>
+      <complexType name="MessagesType">
+        <annotation>
+          <documentation>MessagesType</documentation>
+        </annotation>
+        <sequence>
+          <element name="message" minOccurs="0" maxOccurs="unbounded" type="commonTypes:MessageType"/>
+        </sequence>
+      </complexType>
+      <complexType name="MessageType">
+        <annotation>
+          <documentation>MessageType</documentation>
+        </annotation>
+        <sequence>
+          <element name="code" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+          <element name="text" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <element name="requestHeader" type="commonTypes:RequestHeaderType"/>
+      <complexType name="RequestHeaderType">
+        <annotation>
+          <documentation>RequestHeaderType</documentation>
+        </annotation>
+        <sequence>
+          <element name="timestamp" minOccurs="1" maxOccurs="1" type="xsd:dateTime"/>
+          <element name="sourceSystemId" minOccurs="1" maxOccurs="1" type="xsd:token"/>
+          <element name="sourceSystemUserId" minOccurs="0" maxOccurs="1" type="xsd:token"/>
+          <element name="sourceServerId" minOccurs="1" maxOccurs="1" type="xsd:token"/>
+          <element name="trackingId" minOccurs="1" maxOccurs="1" type="xsd:token"/>
+          <element name="messageId" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+          <element name="tasLogTransaction" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+          <element name="tasLoggingLevel" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <element name="responseHeader" type="commonTypes:ResponseHeaderType"/>
+      <complexType name="ResponseHeaderType">
+        <annotation>
+          <documentation>ResponseHeaderType</documentation>
+        </annotation>
+        <sequence>
+          <element name="timestamp" minOccurs="1" maxOccurs="1" type="xsd:dateTime"/>
+          <element name="trackingId" minOccurs="1" maxOccurs="1" type="xsd:token"/>
+        </sequence>
+      </complexType>
+      <element name="serviceFault" type="commonTypes:ExceptionType"/>
+    </schema>
+    <!--DTA SERVICE - IVR/COM INTERFACE-->
+    <schema elementFormDefault="qualified" targetNamespace="http://conceptwave.com/dta/service" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:dtatypes="http://conceptwave.com/dta/types" xmlns:commonTypes="http://xml.comcast.com/types" xmlns:invTypes="http://xml.comcast.com/inventory/types">
+      <import namespace="http://conceptwave.com/dta/types"/>
+      <import namespace="http://xml.comcast.com/types"/>
+      <annotation>
+        <documentation>DTA Service</documentation>
+        <appinfo>
+          <metadata>DTA OM</metadata>
+          <created>Wed May 21 14:33:41 EDT 2008</created>
+          <updated>Thu May 13 16:58:08 EDT 2010</updated>
+        </appinfo>
+      </annotation>
+      <!--Data types and elements-->
+      <!--Structures-->
+      <element name="addDeviceRequest">
+        <complexType>
+          <annotation>
+            <documentation>addDeviceRequest</documentation>
+          </annotation>
+          <complexContent>
+            <extension base="commonTypes:RequestHeaderType">
+              <sequence>
+                <element name="uniqueId" minOccurs="0" maxOccurs="1" type="dtatypes:uniqueId"/>
+                <element name="accountNumber" minOccurs="0" maxOccurs="1" type="dtatypes:accountNumber"/>
+                <element name="device" minOccurs="1" maxOccurs="unbounded" type="dtaService:device"/>
+              </sequence>
+            </extension>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="addDeviceResponse">
+        <complexType>
+          <annotation>
+            <documentation>addDeviceResponse</documentation>
+          </annotation>
+          <sequence>
+            <element name="status" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="changeActivationChannelRequest">
+        <complexType>
+          <annotation>
+            <documentation>changeActivationChannelRequest</documentation>
+          </annotation>
+          <complexContent>
+            <extension base="commonTypes:RequestHeaderType">
+              <sequence>
+                <element name="accountNumber" minOccurs="0" maxOccurs="1" type="dtatypes:accountNumber"/>
+                <element name="channel" minOccurs="0" maxOccurs="1" type="dtatypes:activationChannel"/>
+                <element name="serialNumber" minOccurs="0" maxOccurs="unbounded" type="dtatypes:deviceSerialNumber"/>
+                <element name="uniqueId" minOccurs="0" maxOccurs="1" type="dtatypes:uniqueId"/>
+                <element name="orderId" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+              </sequence>
+            </extension>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="changeActivationChannelResponse">
+        <complexType>
+          <annotation>
+            <documentation>changeActivationChannelResponse</documentation>
+          </annotation>
+          <sequence>
+            <element name="status" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+          </sequence>
+        </complexType>
+      </element>
+      <complexType name="device">
+        <annotation>
+          <documentation>device</documentation>
+        </annotation>
+        <sequence>
+          <element name="deviceType" minOccurs="1" maxOccurs="1" type="dtatypes:deviceType"/>
+          <element name="deviceSerialNumber" minOccurs="1" maxOccurs="1" type="dtatypes:deviceSerialNumber"/>
+          <element name="deviceMake" minOccurs="0" maxOccurs="1" type="dtatypes:deviceMake"/>
+          <element name="deviceModel" minOccurs="0" maxOccurs="1" type="dtatypes:deviceModel"/>
+          <element name="status" minOccurs="1" maxOccurs="1" type="dtatypes:orderItemStatus"/>
+          <element name="shipDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+          <element name="trackingNumber" minOccurs="0" maxOccurs="1" type="dtatypes:trackingNo"/>
+          <element name="carrier" minOccurs="0" maxOccurs="1" type="dtatypes:carrier"/>
+          <element name="macAddress" minOccurs="0" maxOccurs="1" type="dtatypes:macAddress"/>
+          <element name="outlet" minOccurs="0" maxOccurs="1" type="dtatypes:deviceLocation"/>
+          <element name="activationChannel" minOccurs="0" maxOccurs="1" type="dtatypes:activationChannel"/>
+        </sequence>
+      </complexType>
+      <element name="getOfferRequest">
+        <complexType>
+          <annotation>
+            <documentation>getOfferRequest</documentation>
+          </annotation>
+          <complexContent>
+            <extension base="commonTypes:RequestHeaderType">
+              <sequence>
+                <element name="uniqueId" minOccurs="0" maxOccurs="1" type="dtatypes:uniqueId"/>
+                <element name="accountNumber" minOccurs="0" maxOccurs="1" type="dtatypes:accountNumber"/>
+              </sequence>
+            </extension>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="getOfferResponse">
+        <complexType>
+          <annotation>
+            <documentation>getOfferResponse</documentation>
+          </annotation>
+          <sequence>
+            <element name="accountNumber" minOccurs="1" maxOccurs="1" type="dtatypes:accountNumber"/>
+            <element name="uniqueId" minOccurs="0" maxOccurs="1" type="dtatypes:uniqueId"/>
+            <element minOccurs="1" maxOccurs="1" ref="dtaService:offer"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getOrderRequest">
+        <complexType>
+          <annotation>
+            <documentation>getOrderRequest</documentation>
+          </annotation>
+          <complexContent>
+            <extension base="commonTypes:RequestHeaderType">
+              <sequence>
+                <element name="uniqueId" minOccurs="0" maxOccurs="1" type="dtatypes:uniqueId"/>
+                <element name="accountNumber" minOccurs="0" maxOccurs="1" type="dtatypes:accountNumber"/>
+                <element name="frontCounterActivation" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+              </sequence>
+            </extension>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="getOrderResponse">
+        <complexType>
+          <annotation>
+            <documentation>getOrderResponse</documentation>
+          </annotation>
+          <sequence>
+            <element minOccurs="1" maxOccurs="unbounded" ref="dtaService:orderDetails"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="offer">
+        <complexType>
+          <annotation>
+            <documentation>offer</documentation>
+          </annotation>
+          <sequence>
+            <element name="maxDCT" minOccurs="1" maxOccurs="1" type="dtatypes:maxDCT"/>
+            <element name="maxDevices" minOccurs="1" maxOccurs="1" type="dtatypes:maxDTA"/>
+            <element name="promoPeriod" minOccurs="1" maxOccurs="1" type="dtatypes:promoPeriod"/>
+            <element name="freeQnty" minOccurs="1" maxOccurs="1" type="dtatypes:freeQnty"/>
+            <element name="additionalDTAPrice" minOccurs="1" maxOccurs="1" type="dtatypes:additionalDevPrice"/>
+            <element name="serviceLevel" minOccurs="1" maxOccurs="1" type="dtatypes:serviceType"/>
+            <element name="digitalSignalOnly" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+            <element name="channelMap" minOccurs="0" maxOccurs="1" type="dtatypes:serviceType"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="orderDetails">
+        <complexType>
+          <annotation>
+            <documentation>orderDetails</documentation>
+          </annotation>
+          <sequence>
+            <element name="orderId" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+            <element name="orderType" minOccurs="1" maxOccurs="1" type="dtatypes:orderType"/>
+            <element name="accountNumber" minOccurs="1" maxOccurs="1" type="dtatypes:accountNumber"/>
+            <element name="uniqueId" minOccurs="1" maxOccurs="1" type="dtatypes:uniqueId"/>
+            <element name="serviceLevel" minOccurs="1" maxOccurs="1" type="dtatypes:serviceType"/>
+            <element minOccurs="0" maxOccurs="1" ref="dtaService:offer"/>
+            <element name="headEndVendor" minOccurs="0" maxOccurs="1" type="dtatypes:HeadendVendor"/>
+            <element name="creationDate" minOccurs="1" maxOccurs="1" type="xsd:dateTime"/>
+            <element name="status" minOccurs="1" maxOccurs="1" type="dtatypes:orderStatus"/>
+            <element name="activationChannel" minOccurs="0" maxOccurs="1" type="dtatypes:activationChannel"/>
+            <element name="activationDate" minOccurs="0" maxOccurs="1" type="xsd:dateTime"/>
+            <element name="firstName" minOccurs="0" maxOccurs="1" type="dtatypes:firstName"/>
+            <element name="lastName" minOccurs="0" maxOccurs="1" type="dtatypes:lastName"/>
+            <element name="address" minOccurs="1" maxOccurs="1" type="dtatypes:address"/>
+            <element name="device" minOccurs="1" maxOccurs="unbounded" type="dtaService:device"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="serviceFault" type="commonTypes:ExceptionType"/>
+      <element name="submitRequest">
+        <complexType>
+          <annotation>
+            <documentation>submitRequest</documentation>
+          </annotation>
+          <complexContent>
+            <extension base="commonTypes:RequestHeaderType">
+              <sequence>
+                <element name="uniqueId" minOccurs="0" maxOccurs="1" type="dtatypes:uniqueId"/>
+                <element name="accountNumber" minOccurs="0" maxOccurs="1" type="dtatypes:accountNumber"/>
+                <element name="DCT" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                <element name="DTA" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                <element name="firstName" minOccurs="1" maxOccurs="1" type="dtatypes:firstName"/>
+                <element name="lastName" minOccurs="1" maxOccurs="1" type="dtatypes:lastName"/>
+                <element name="address" minOccurs="1" maxOccurs="1" type="dtatypes:address"/>
+                <element name="email" minOccurs="0" maxOccurs="1" type="dtatypes:email"/>
+                <element name="sendEmailUpdate" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+                <element name="optOut" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+                <element name="legacyLocationID" minOccurs="0" maxOccurs="1" type="dtatypes:LegacyLocId"/>
+              </sequence>
+            </extension>
+          </complexContent>
+        </complexType>
+      </element>
+      <element name="submitResponse">
+        <complexType>
+          <annotation>
+            <documentation>submitResponse</documentation>
+          </annotation>
+          <sequence>
+            <element name="orderId" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="getOfferRequest">
+    <part name="getOfferRequest" element="dtaService:getOfferRequest"/>
+  </message>
+  <message name="getOfferResponse">
+    <part name="getOfferResponse" element="dtaService:getOfferResponse"/>
+  </message>
+  <message name="serviceFault">
+    <part name="serviceFault" element="dtaService:serviceFault"/>
+  </message>
+  <message name="submitRequest">
+    <part name="submitRequest" element="dtaService:submitRequest"/>
+  </message>
+  <message name="submitResponse">
+    <part name="submitResponse" element="dtaService:submitResponse"/>
+  </message>
+  <message name="getOrderRequest">
+    <part name="getOrderRequest" element="dtaService:getOrderRequest"/>
+  </message>
+  <message name="getOrderResponse">
+    <part name="getOrderResponse" element="dtaService:getOrderResponse"/>
+  </message>
+  <message name="addDeviceRequest">
+    <part name="addDeviceRequest" element="dtaService:addDeviceRequest"/>
+  </message>
+  <message name="addDeviceResponse">
+    <part name="addDeviceResponse" element="dtaService:addDeviceResponse"/>
+  </message>
+  <message name="changeActivationChannelRequest">
+    <part name="changeActivationChannelRequest" element="dtaService:changeActivationChannelRequest"/>
+  </message>
+  <message name="changeActivationChannelResponse">
+    <part name="changeActivationChannelResponse" element="dtaService:changeActivationChannelResponse"/>
+  </message>
+  <portType name="ivrcomInter">
+    <operation name="getOffer">
+      <input message="dtaService:getOfferRequest"/>
+      <output message="dtaService:getOfferResponse"/>
+      <fault name="serviceFault" message="dtaService:serviceFault"/>
+    </operation>
+    <operation name="submit">
+      <input message="dtaService:submitRequest"/>
+      <output message="dtaService:submitResponse"/>
+      <fault name="serviceFault" message="dtaService:serviceFault"/>
+    </operation>
+    <operation name="getOrder">
+      <input message="dtaService:getOrderRequest"/>
+      <output message="dtaService:getOrderResponse"/>
+      <fault name="serviceFault" message="dtaService:serviceFault"/>
+    </operation>
+    <operation name="addDevice">
+      <input message="dtaService:addDeviceRequest"/>
+      <output message="dtaService:addDeviceResponse"/>
+      <fault name="serviceFault" message="dtaService:serviceFault"/>
+    </operation>
+    <operation name="changeActivationChannel">
+      <input message="dtaService:changeActivationChannelRequest"/>
+      <output message="dtaService:changeActivationChannelResponse"/>
+      <fault name="serviceFault" message="dtaService:serviceFault"/>
+    </operation>
+  </portType>
+  <binding name="ivrcomBind" type="tns:ivrcomInter">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="getOffer">
+      <soap:operation soapAction="getOffer"/>
+      <input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#Auth.xml"/>
+        </wsp:Policy>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="serviceFault">
+        <soap:body use="literal"/>
+      </fault>
+    </operation>
+    <operation name="submit">
+      <soap:operation soapAction="submit"/>
+      <input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#Auth.xml"/>
+        </wsp:Policy>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="serviceFault">
+        <soap:body use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getOrder">
+      <soap:operation soapAction="getOrder"/>
+      <input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#Auth.xml"/>
+        </wsp:Policy>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="serviceFault">
+        <soap:body use="literal"/>
+      </fault>
+    </operation>
+    <operation name="addDevice">
+      <soap:operation soapAction="addDevice"/>
+      <input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#Auth.xml"/>
+        </wsp:Policy>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="serviceFault">
+        <soap:body use="literal"/>
+      </fault>
+    </operation>
+    <operation name="changeActivationChannel">
+      <soap:operation soapAction="changeActivationChannel"/>
+      <input>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#Auth.xml"/>
+        </wsp:Policy>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="serviceFault">
+        <soap:body use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="dtaService">
+    <port name="comivrPort" binding="tns:ivrcomBind">
+      <soap:address location="https://pacdcdtaominta1:17002/cwf/services/ivrcomInter"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://hostname:port/cwf/services/ivrcomInter</con:endpoint><con:endpoint>http://pacdcdtaomdeva1:17001/cwf/services/ivrcomInter</con:endpoint><con:endpoint>http://172.16.2.194:7001/cwf/services/ivrcomInter</con:endpoint><con:endpoint>http://pacdcdtaomtsta1:17001/cwf/services/ivrcomInter</con:endpoint><con:endpoint>http://172.16.2.194:7001/cwf/services/ivrcomInter</con:endpoint><con:endpoint>https://esp-int.cable.comcast.com/ContactService/10.04</con:endpoint><con:endpoint>http://localhost:7001/cwf/services/ivrcomInter</con:endpoint><con:endpoint>https://pacdcdtaominta1:17002/cwf/services/ivrcomInter</con:endpoint><con:endpoint>http://10.252.168.55:7201/cwf/services/ivrcomInter</con:endpoint><con:endpoint>http://10.252.168.55:7201/cwf/services/postShipInter</con:endpoint><con:endpoint>http://10.252.168.55:7201/cwf/services/grandslamInter</con:endpoint></con:endpoints><con:operation isOneWay="false" action="addDevice" name="addDevice" bindingOperationName="addDevice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.252.168.55:7201/cwf/services/ivrcomInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service" xmlns:typ="http://xml.comcast.com/8/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:addDeviceRequest>
+         <typ:timestamp>0001-01-01T00:00:00</typ:timestamp>
+         <typ:sourceSystemId>COM</typ:sourceSystemId>
+         <!--Optional:-->
+         <typ:sourceSystemUserId>DTAOMUser</typ:sourceSystemUserId>
+         <typ:sourceServerId>DTAOM</typ:sourceServerId>
+         <typ:trackingId>Hemant Test</typ:trackingId>
+         <!--Optional:-->
+         <ser:uniqueId>?</ser:uniqueId>
+         <!--Optional:-->
+         <ser:accountNumber>9999348594701</ser:accountNumber>
+         <!--1 or more repetitions:-->
+         <ser:device>
+            <ser:deviceType>DCT</ser:deviceType>
+            <ser:deviceSerialNumber>M90850FPJ698</ser:deviceSerialNumber>
+            <!--Optional:-->
+            <ser:deviceMake>MOTO</ser:deviceMake>
+            <!--Optional:-->
+            <ser:deviceModel>DCH70</ser:deviceModel>
+            <ser:status>SHP</ser:status>
+            <!--Optional:-->
+            <ser:shipDate>?</ser:shipDate>
+            <!--Optional:-->
+            <ser:trackingNumber>?</ser:trackingNumber>
+            <!--Optional:-->
+            <ser:carrier>?</ser:carrier>
+            <!--Optional:-->
+            <ser:macAddress>?</ser:macAddress>
+            <!--Optional:-->
+            <ser:outlet>?</ser:outlet>
+            <!--Optional:-->
+            <ser:activationChannel>COM</ser:activationChannel>
+         </ser:device>
+      </ser:addDeviceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://conceptwave.com/dta/service/ivrcomInter/addDeviceRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Activate Device"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.252.168.55:7201/cwf/services/ivrcomInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service" xmlns:typ="http://xml.comcast.com/8/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:addDeviceRequest>
+         <typ:timestamp>0001-01-01T00:00:00</typ:timestamp>
+         <typ:sourceSystemId>IVR</typ:sourceSystemId>
+         <!--Optional:-->
+         <typ:sourceSystemUserId>DTAOMUser</typ:sourceSystemUserId>
+         <typ:sourceServerId>DTAOM</typ:sourceServerId>
+         <typ:trackingId>Vipin Test</typ:trackingId>
+         <!--Optional:-->
+         <ser:uniqueId>?</ser:uniqueId>
+         <!--Optional:-->
+         <ser:accountNumber>9999328400201</ser:accountNumber>
+         <!--1 or more repetitions:-->
+         <ser:device>
+            <ser:deviceType>HDDTA</ser:deviceType>
+            <ser:deviceSerialNumber>PAAV00303722</ser:deviceSerialNumber>
+            <!--Optional:-->
+            <ser:deviceMake>PA</ser:deviceMake>
+            <!--Optional:-->
+            <ser:deviceModel>PACEHDUDTA</ser:deviceModel>
+            <ser:status>SHP</ser:status>
+            <!--Optional:-->
+            <ser:shipDate>?</ser:shipDate>
+            <!--Optional:-->
+            <ser:trackingNumber>?</ser:trackingNumber>
+            <!--Optional:-->
+            <ser:carrier>?</ser:carrier>
+            <!--Optional:-->
+            <ser:macAddress>?</ser:macAddress>
+            <!--Optional:-->
+            <ser:outlet>?</ser:outlet>
+            <!--Optional:-->
+            <ser:activationChannel>IVR</ser:activationChannel>
+         </ser:device>
+      </ser:addDeviceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="addDevice"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="changeActivationChannel" name="changeActivationChannel" bindingOperationName="changeActivationChannel" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="changeActivationChannel"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.252.168.55:7201/cwf/services/ivrcomInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service">
+   <soapenv:Header>
+      <!--<typ:requestHeader>
+         <timestamp>2009-01-26T11:40:00-05:00</timestamp>
+         <sourceServerId>DTA OM</sourceServerId>
+         <typ:sourceSystemUserId>DTAOMUser</typ:sourceSystemUserId>
+         <typ:sourceSystemId>COM</typ:sourceSystemId>
+         <typ:trackingId>Manesh Test</typ:trackingId>
+      </typ:requestHeader>-->
+      <wsse:Security soapenv:actor="" soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <wsse:UsernameToken>
+            <wsse:Username>ivr_com</wsse:Username>
+            <!--INT-->
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ivr_com</wsse:Password>
+            <!--STG         <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">dt#964zx</wsse:Password>-->
+            <!--PROD          <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">dt#23!mv</wsse:Password>-->
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:changeActivationChannelRequest>
+         <!--Optional:-->
+         <ser:accountNumber>8210100200035431</ser:accountNumber>
+         <!--Optional:-->
+         <ser:channel>IVR</ser:channel>
+         <!--Zero or more repetitions:-->
+         <ser:serialNumber>CS0536996141</ser:serialNumber>
+      </ser:changeActivationChannelRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://conceptwave.com/dta/service/ivrcomInter/changeActivationChannelRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getOffer" name="getOffer" bindingOperationName="getOffer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="getOffer"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.252.168.55:7201/cwf/services/ivrcomInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service" xmlns:typ="http://xml.comcast.com/types">
+   <soapenv:Header>
+      <!--<typ:requestHeader>
+         <timestamp>2009-01-26T11:40:00-05:00</timestamp>
+         <sourceServerId>DTA OM</sourceServerId>
+         <typ:sourceSystemUserId>DTAOMUser</typ:sourceSystemUserId>
+         <typ:sourceSystemId>COM</typ:sourceSystemId>
+         <typ:trackingId>Manesh Test</typ:trackingId>
+      </typ:requestHeader>-->
+      <wsse:Security soapenv:actor="" soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <wsse:UsernameToken>
+            <wsse:Username>ivr_com</wsse:Username>
+            <!--INT-->
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ivr_com</wsse:Password>
+            <!--STG         <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">dt#964zx</wsse:Password>-->
+            <!--PROD          <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">dt#23!mv</wsse:Password>-->
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:getOfferRequest>
+         <typ:timestamp>?</typ:timestamp>
+         <typ:sourceSystemId>IVR</typ:sourceSystemId>
+         <!--Optional:-->
+         <typ:sourceSystemUserId>?</typ:sourceSystemUserId>
+         <typ:sourceServerId>?</typ:sourceServerId>
+         <typ:trackingId>?</typ:trackingId>
+         <!--Optional:-->
+         <typ:messageId>?</typ:messageId>
+         <!--Optional:-->
+         <typ:tasLogTransaction>?</typ:tasLogTransaction>
+         <!--Optional:-->
+         <typ:tasLoggingLevel>?</typ:tasLoggingLevel>
+         <!--Optional:-->
+         <ser:uniqueId>?</ser:uniqueId>
+         <!--Optional:-->
+         <ser:accountNumber>9999329117001</ser:accountNumber>
+      </ser:getOfferRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://conceptwave.com/dta/service/ivrcomInter/getOfferRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.16.2.194:7001/cwf/services/ivrcomInter</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getOffer"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getOrder" name="getOrder" bindingOperationName="getOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="getOrder"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.252.168.55:7201/cwf/services/ivrcomInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service" xmlns:typ="http://xml.comcast.com/8/types">
+   <soapenv:Header>
+      <typ:requestHeader>
+         <timestamp>2009-01-26T11:40:00-05:00</timestamp> 
+         <sourceServerId>DTA OM</sourceServerId> 
+         <typ:sourceSystemUserId>DTAOMUser</typ:sourceSystemUserId>
+         <typ:sourceSystemId>IVR</typ:sourceSystemId>
+         <typ:trackingId>Hemant Test</typ:trackingId>
+     </typ:requestHeader>
+     <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" soapenv:actor="" soapenv:mustUnderstand="1">
+        <wsse:UsernameToken>
+           <wsse:Username>ivr_com</wsse:Username> 
+      <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ivr_com</wsse:Password> 
+        </wsse:UsernameToken>
+     </wsse:Security>
+   </soapenv:Header>
+
+   <soapenv:Body>
+      <ser:getOrderRequest>
+         <ser:uniqueId></ser:uniqueId>
+         <!--Optional:-->
+         <ser:accountNumber>9999329116201</ser:accountNumber>
+	<typ:sourceSystemId>IVR</typ:sourceSystemId>
+      </ser:getOrderRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://conceptwave.com/dta/service/ivrcomInter/getOrderRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="PSN_HDDTA"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.252.168.55:7201/cwf/services/postShipInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service" xmlns:typ="http://xml.comcast.com/types">
+   <soapenv:Header>
+<!--      <typ:requestHeader>
+         <timestamp>2009-01-26T11:40:00-05:00</timestamp>
+         <sourceServerId>DTA OM</sourceServerId>
+         <typ:sourceSystemUserId>DTAOMUser</typ:sourceSystemUserId>
+         <typ:sourceSystemId>COM</typ:sourceSystemId>
+         <typ:trackingId>Manesh Test</typ:trackingId>
+      </typ:requestHeader>
+ -->
+      <wsse:Security soapenv:actor="" soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <wsse:UsernameToken>
+            <wsse:Username>ivr_com</wsse:Username>
+<!--INT-->
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ivr_com</wsse:Password>
+<!--STG         <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">dt#964zx</wsse:Password>-->
+<!--PROD          <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">dt#23!mv</wsse:Password>-->
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <postShippingNotificationRequest xmlns = "http://conceptwave.com/dta/service">
+  <timestamp xmlns = "http://xml.comcast.com/types">0001-01-01T00:00:00</timestamp>
+  <accountNumber xmlns = "http://conceptwave.com/dta/service">9999328399201</accountNumber>
+  <sikOrderId xmlns = "http://conceptwave.com/dta/service">812</sikOrderId>
+  <device xmlns = "http://conceptwave.com/dta/service">
+    <deviceType>DTA</deviceType>
+    <deviceSerialNumber>PAAV00276312</deviceSerialNumber>
+    <deviceMake>PA</deviceMake>
+    <deviceModel>PACEHDUDTA</deviceModel>
+    <status>SHI</status>
+    <shipDate>2012-31-01</shipDate>
+    <trackingNumber>1BCW10290313420012</trackingNumber>
+    <carrier>UPS</carrier>
+    <macAddress>12:BE:20:07:3B:7B</macAddress>
+    <outlet>1</outlet>
+    <item
+      xsi:type = "q1:CustomerPremisesEquipmentItem"
+      xmlns:q1 = "http://xml.comcast.com/inventory/types">
+      <q1:type xmlns:q1 = "http://xml.comcast.com/inventory/types">
+        <q1:code>HDUDTA</q1:code>
+      </q1:type>
+      <q1:assignedToCustomer xmlns:q1 = "http://xml.comcast.com/inventory/types">
+        <q1:accountId>
+          <q1:id>9999328399201</q1:id>
+        </q1:accountId>
+      </q1:assignedToCustomer>
+      <q1:market xmlns:q1 = "http://xml.comcast.com/inventory/types">
+        <q1:legacyId>
+          <q1:id>99993</q1:id>
+        </q1:legacyId>
+      </q1:market>
+      <q1:configuration
+        xsi:type = "q1:CustomerPremisesEquipmentItemConfiguration"
+        xmlns:q1 = "http://xml.comcast.com/inventory/types">
+        <q1:model>
+          <q1:manufacturer>
+            <q1:code>PA</q1:code>
+          </q1:manufacturer>
+          <q1:code>PACEHDUDTA</q1:code>
+        </q1:model>
+      </q1:configuration>
+      <q1:components xmlns:q1 = "http://xml.comcast.com/inventory/types">
+        <q1:component>
+          <q1:type>UNIT_ADDRESS</q1:type>
+          <q1:address>1900537347923077</q1:address>
+        </q1:component>
+        <q1:component>
+          <q1:type>DEVICE_MAC_ADDRESS</q1:type>
+          <q1:address>12:BE:20:07:3B:7B</q1:address>
+        </q1:component>
+      </q1:components>
+      <q1:serialNumber xmlns:q1 = "http://xml.comcast.com/inventory/types">PAAV00276312</q1:serialNumber>
+      <q1:purchaseDate xmlns:q1 = "http://xml.comcast.com/inventory/types">2012-31-01T10:18:35</q1:purchaseDate>
+      <q1:receiptDate xmlns:q1 = "http://xml.comcast.com/inventory/types">2012-31-01T10:32:12</q1:receiptDate>
+      <q1:shipDate xmlns:q1 = "http://xml.comcast.com/inventory/types">2012-31-01T10:32:12</q1:shipDate>
+      <q1:subscriberOwned xmlns:q1 = "http://xml.comcast.com/inventory/types">false</q1:subscriberOwned>
+    </item>
+  </device>
+</postShippingNotificationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getOrder"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.252.168.55:7201/cwf/services/grandslamInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service" xmlns:typ="http://xml.comcast.com/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <getChannelMapRequest>
+         <timestamp>2009-01-26T11:40:00-05:00</timestamp>
+         <sourceSystemId>DTA OM</sourceSystemId>
+         <sourceSystemUserId>DTA OM</sourceSystemUserId>
+         <sourceServerId>DTA OM</sourceServerId>
+         <trackingId>12121</trackingId>
+         <accountNumber>9925329354701</accountNumber>
+         <queryServicesSummaryResponse>
+            <queryServicesSummaryReturn>
+               <outletCollection>
+                  <lastOutletWithDevice/>
+                  <firstOutletAvailableForVideo/>
+                  <outlets/>
+                  <lastUsedOutlet/>
+                  <availableForVideoOutletCodes/>
+               </outletCollection>
+               <account>
+                  <Name/>
+                  <Address/>
+                  <House/>
+                  <AccountItems/>
+                  <BillingRegion/>
+                  <services/>
+                  <PaymentMethod>
+                     <House/>
+                     <PaymentInstrument>
+                        <BankAccount/>
+                        <CreditCard>
+                           <House/>
+                        </CreditCard>
+                     </PaymentInstrument>
+                     <Name/>
+                  </PaymentMethod>
+                  <accountNumber>9925329354701</accountNumber>
+               </account>
+               <services>
+                  <service>
+                     <PriceRequest/>
+                     <DataReference/>
+                     <LineOfBusiness>
+                        <lineOfBusiness>VIDEO</lineOfBusiness>
+                     </LineOfBusiness>
+                     <rateCode>4U</rateCode>
+                     <parentPackageCode>4U</parentPackageCode>
+                     <packageFlag>false</packageFlag>
+                  </service>
+                  <service>
+                     <PriceRequest/>
+                     <DataReference/>
+                     <LineOfBusiness>
+                        <lineOfBusiness>VIDEO</lineOfBusiness>
+                     </LineOfBusiness>
+                     <rateCode>E7</rateCode>
+                     <parentPackageCode>E7</parentPackageCode>
+                     <packageFlag>false</packageFlag>
+                  </service>
+               </services>
+            </queryServicesSummaryReturn>
+         </queryServicesSummaryResponse>
+      </getChannelMapRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="submit" name="submit" bindingOperationName="submit" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="DDP - submitOrder"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.252.168.55:7201/cwf/services/ivrcomInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service" xmlns:typ="http://xml.comcast.com/types">
+   <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-17362384" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsse:Username>ivr_com</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ivr_com</wsse:Password>
+            <wsse:Nonce>HHuxSOUnlSbdyK62ga/LhQ==</wsse:Nonce>
+            <wsu:Created>2012-06-28T15:36:30.441Z</wsu:Created>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:submitRequest>
+         <typ:timestamp>2012-06-28T15:36:30.441Z</typ:timestamp>
+         <typ:sourceSystemId>IVR</typ:sourceSystemId>
+         <!--Optional:-->
+         <typ:sourceSystemUserId>DTAOM</typ:sourceSystemUserId>
+         <typ:sourceServerId>IVR</typ:sourceServerId>
+         <typ:trackingId>?</typ:trackingId>
+         <!--Optional:-->
+         <ser:uniqueId>?</ser:uniqueId>
+         <!--Optional:-->
+         <ser:accountNumber>9999328398601</ser:accountNumber>
+         <ser:DCT>0</ser:DCT>
+         <ser:DTA>1</ser:DTA>
+         <ser:firstName>TC</ser:firstName>
+         <ser:lastName>001</ser:lastName>
+         <ser:address>
+            <street1>7549 WILLOW RD</street1>
+            <!--Optional:-->
+            <street2/>
+            <city>ENGLEWOOD</city>
+            <state>CO</state>
+            <zip>80112</zip>
+            <!--Optional:-->
+            <zip4>0000</zip4>
+         </ser:address>
+         <!--Optional:-->
+         <ser:email>Vipin.Singh3@cognizant.com</ser:email>
+         <!--Optional:-->
+         <ser:sendEmailUpdate>1</ser:sendEmailUpdate>
+         <!--Optional:-->
+         <ser:optOut>false</ser:optOut>
+         <!--Optional:-->
+         <ser:legacyLocationID/>
+      </ser:submitRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://conceptwave.com/dta/service/ivrcomInter/submitRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://hostname:port/cwf/services/ivrcomInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service" xmlns:typ="http://xml.comcast.com/types" xmlns:typ1="http://conceptwave.com/dta/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:submitRequest>
+         <typ:timestamp>?</typ:timestamp>
+         <typ:sourceSystemId>?</typ:sourceSystemId>
+         <!--Optional:-->
+         <typ:sourceSystemUserId>?</typ:sourceSystemUserId>
+         <typ:sourceServerId>?</typ:sourceServerId>
+         <typ:trackingId>?</typ:trackingId>
+         <!--Optional:-->
+         <typ:messageId>?</typ:messageId>
+         <!--Optional:-->
+         <typ:tasLogTransaction>?</typ:tasLogTransaction>
+         <!--Optional:-->
+         <typ:tasLoggingLevel>?</typ:tasLoggingLevel>
+         <!--Optional:-->
+         <ser:uniqueId>?</ser:uniqueId>
+         <!--Optional:-->
+         <ser:accountNumber>?</ser:accountNumber>
+         <ser:DCT>?</ser:DCT>
+         <ser:DTA>?</ser:DTA>
+         <ser:firstName>?</ser:firstName>
+         <ser:lastName>?</ser:lastName>
+         <ser:address>
+            <typ1:street1>?</typ1:street1>
+            <!--Optional:-->
+            <typ1:street2>?</typ1:street2>
+            <typ1:city>?</typ1:city>
+            <typ1:state>?</typ1:state>
+            <typ1:zip>?</typ1:zip>
+            <!--Optional:-->
+            <typ1:zip4>?</typ1:zip4>
+         </ser:address>
+         <!--Optional:-->
+         <ser:email>?</ser:email>
+         <!--Optional:-->
+         <ser:sendEmailUpdate>?</ser:sendEmailUpdate>
+         <!--Optional:-->
+         <ser:optOut>?</ser:optOut>
+         <!--Optional:-->
+         <ser:legacyLocationID>?</ser:legacyLocationID>
+      </ser:submitRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="submit"/><con:wsrmConfig version="1.2"/></con:call><con:call name="CSG - submitOrder"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.252.168.55:7201/cwf/services/ivrcomInter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://conceptwave.com/dta/service" xmlns:typ="http://xml.comcast.com/types">
+   <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-17362384" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsse:Username>amarin7924c</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText"/>
+            <wsse:Nonce>HHuxSOUnlSbdyK62ga/LhQ==</wsse:Nonce>
+            <wsu:Created>2012-06-20T06:36:30.441Z</wsu:Created>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:submitRequest>
+         <typ:timestamp>?</typ:timestamp>
+         <typ:sourceSystemId>IVR</typ:sourceSystemId>
+         <!--Optional:-->
+         <typ:sourceSystemUserId>?</typ:sourceSystemUserId>
+         <typ:sourceServerId>?</typ:sourceServerId>
+         <typ:trackingId>?</typ:trackingId>
+         <!--Optional:-->
+         <ser:uniqueId>?</ser:uniqueId>
+         <!--Optional:-->
+         <ser:accountNumber>8210100200035639</ser:accountNumber>
+         <ser:DCT>0</ser:DCT>
+         <ser:DTA>1</ser:DTA>
+         <ser:firstName>TC</ser:firstName>
+         <ser:lastName>TEST 006</ser:lastName>
+         <ser:address>
+            <street1>7549 WILLOW RD</street1>
+            <!--Optional:-->
+            <street2/>
+            <city>ENGLEWOOD</city>
+            <state>CO</state>
+            <zip>80112</zip>
+            <!--Optional:-->
+            <zip4>0000</zip4>
+         </ser:address>
+         <!--Optional:-->
+         <ser:email>Vipin.Singh3@cognizant.com</ser:email>
+         <!--Optional:-->
+         <ser:sendEmailUpdate>1</ser:sendEmailUpdate>
+         <!--Optional:-->
+         <ser:optOut>false</ser:optOut>
+         <!--Optional:-->
+         <ser:legacyLocationID>80112000034781</ser:legacyLocationID>
+      </ser:submitRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="submit"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>
