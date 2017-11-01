@@ -1,0 +1,338 @@
+getnavcontact
+globalnavcontext
+
+Eksy3vm1
+
+19103
+
+http://supportnow.com
+
+e-fil:: 801575880130617
+
+---------------------------------
+
+Viji@1991
+cable\vraju001c
+
+https://www.tutorialspoint.com/mobile_testing/mobile_testing_emulator_simulator.htm
+
+http://www.geekinterview.com/talk/7966-code-coverage-measure.html
+
+http://www.abis.be/resources/coursetests/e0767test.pdf
+
+https://www.ibm.com/developerworks/rational/library/content/RationalEdge/sep04/bell/
+
+http://flylib.com/books/en/1.475.1.85/1/
+
+---------------------------------------
+
+vara: 514092
+
+ctrl chift F to find scenarios in VB
+
+---------------------------
+
+2154390117
+2672601080
+
+_d6UqsPCIS6WTD003lSpzuiBq73GPEJPpMrM99n5KI
+
+9886735247324c5639
+988674385557425236
+9885f64b3836444947
+015d29953a57f00f
+0316038a60c63f01
+9967544b
+1337
+312a18d840e78c9aeb063048a64ae84a85f588e5
+
+c1eef6a315a0b9c22bab1d2eb79179ad3833caec
+Install-Package Newtonsoft.Json -version 6.0.1
+41002d2df2cd9221
+SM N910H
+
+INC000019628323
+
+2010 IRISH HILL RD
+7275
+MAGNOLIA
+
+391021
+---------------------------
+
+https://www.indiabix.com/c-sharp-programming/collection-classes/
+
+-----------------------
+
+https://rally1.rallydev.com/login/accounts/index.html#/keys
+
+https://github.com/nmusaelian-rally/rally-dot-net-rest-apps/blob/master/GetRecycleBinEntry.cs
+
+
+-----------------------------
+
+HTC_D626x
+CC57SYM00545
+4.4.4
+cc1c90a172ef75babe16 6e0f0c5cae6578452eec
+
+------------------------------
+
+[?8/?14/?2017 12:47 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+Hi Yamini
+[?8/?14/?2017 12:47 PM] B, Yamini (Cognizant): 
+yeah Pradeep
+[?8/?14/?2017 12:47 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+US1160079	SU:New Component API integration to BSEE	 
+have you tested this story
+[?8/?14/?2017 12:48 PM] B, Yamini (Cognizant): 
+yes Tested on friday.but now its not wrking
+Now its not making expected service calls at the back end
+[?8/?14/?2017 12:51 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+oh ok
+We saved this conversation. You'll see it soon in the Conversations tab in Skype for Business and in the Conversation History folder in Outlook.
+[?8/?14/?2017 1:48 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+US1158705	GIG Landing Page: Promotion  Container 3 by 1	 
+was this tested by Baratheon team or LAnnister
+[?8/?14/?2017 1:49 PM] B, Yamini (Cognizant): 
+Baratheon only
+[?8/?14/?2017 1:49 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+ok.. will ping you after few mins.. let me know what validations have to be done
+[?8/?14/?2017 1:50 PM] B, Yamini (Cognizant): 
+sure..i only validated that
+[?8/?14/?2017 1:50 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+ok thanks
+We saved this conversation. You'll see it soon in the Conversations tab in Skype for Business and in the Conversation History folder in Outlook.
+[?8/?14/?2017 2:54 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+Yamini, are you using the VM
+[?8/?14/?2017 2:54 PM] B, Yamini (Cognizant): 
+yeah I was..Now u can take
+[?8/?14/?2017 2:54 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+ok
+We saved this conversation. You'll see it soon in the Conversations tab in Skype for Business and in the Conversation History folder in Outlook.
+[?8/?16/?2017 10:55 AM] Ramakrishna Bhat, Pradeep (Cognizant): 
+Hi Yamini GM
+[?8/?16/?2017 10:55 AM] B, Yamini (Cognizant): 
+Hi Pradeep GM
+[?8/?16/?2017 10:56 AM] Ramakrishna Bhat, Pradeep (Cognizant): 
+US1160510	SU:Code big endpoint for New Component API	
+US1150066	SU:Mock View Modal For BSEE Updates	
+US1158689	GIG Landing Page: Promotion  Container 2 by 1	
+US1158705	GIG Landing Page: Promotion  Container 3 by 1	
+US1161663	SU:Checkavailability and Phonenumber integration to  New Component API	
+US1164354	SU: VES items	 
+[?8/?16/?2017 11:01 AM] Ramakrishna Bhat, Pradeep (Cognizant): 
+http://business.int.comcast.com/healthcheck/?DCTarget=CH2 
+[?8/?16/?2017 11:08 AM] Ramakrishna Bhat, Pradeep (Cognizant): 
+CSG addres is not working in INT
+110 DRDDP98692BUS RD	MAGNOLIA, DE 19962	
+111 DRDDP98692BUS RD	MAGNOLIA, DE 19962	
+112 DRDDP98692BUS RD	MAGNOLIA, DE 19962	
+113 DRDDP98692BUS RD	MAGNOLIA, DE 19962	
+114 DRDDP98692BUS RD	MAGNOLIA, DE 19962	
+115 DRDDP98692BUS RD	MAGNOLIA, DE 19962	
+116 DRDDP98692BUS RD	MAGNOLIA, DE 19962	
+117 DRDDP98692BUS RD	MAGNOLIA, DE 19962	
+118 DRDDP98692BUS RD	MAGNOLIA, DE 19962	
+119 DRDDP98692BUS RD	MAGNOLIA, DE 19962	 
+try any of these
+[?8/?16/?2017 11:17 AM] Ramakrishna Bhat, Pradeep (Cognizant): 
+please send your observations in a email
+[?8/?16/?2017 11:24 AM] B, Yamini (Cognizant): 
+ok
+[?8/?16/?2017 11:45 AM] B, Yamini (Cognizant): 
+can u ping me INT SA Logs Url.
+[?8/?16/?2017 11:45 AM] Ramakrishna Bhat, Pradeep (Cognizant): 
+http://reports.int.comcast.com/Reports/Pages/Report.aspx?ItemPath=%2fService+Awareness+Reports+-+INT%2fService+Calls+By+Visitor+Session  
+pbr001c\June2017$$
+[?8/?16/?2017 11:46 AM] B, Yamini (Cognizant): 
+ok
+[?8/?16/?2017 11:46 AM] Ramakrishna Bhat, Pradeep (Cognizant): 
+in case you need FCT, khushboo has it open in her machine
+[?8/?16/?2017 11:47 AM] B, Yamini (Cognizant): 
+ok
+[?8/?16/?2017 1:38 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+Hi Yamini
+any issues in INT so far
+[?8/?16/?2017 1:38 PM] B, Yamini (Cognizant): 
+yeah Pradeep
+yes..1 Us completely blocked..its not working
+[?8/?16/?2017 1:39 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+oh ok
+which one
+[?8/?16/?2017 1:39 PM] B, Yamini (Cognizant): 
+US1161663	SU:Checkavailability and Phonenumber integration to  New Component API	 
+[?8/?16/?2017 1:39 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+ok
+[?8/?16/?2017 1:40 PM] B, Yamini (Cognizant): 
+I'll send consolidated observation
+[?8/?16/?2017 1:42 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+sure 
+so you are continuing with others
+[?8/?16/?2017 1:43 PM] B, Yamini (Cognizant): 
+yes..
+[?8/?16/?2017 1:43 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+ok
+[?8/?16/?2017 3:24 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+Yamini what is the status on the other 3 stories
+[?8/?16/?2017 3:25 PM] B, Yamini (Cognizant): 
+totally -4
+2 had validated but found some issues
+other2 related to GIG.
+[?8/?16/?2017 3:27 PM] B, Yamini (Cognizant): 
+Nandini created 1 GIG sitecore page . but observing few issues even there. Asked her. She told me that she will give after 30 mins since shes busy with some other work. Once shes clarify me . then have to create one more sitecore page for other GIG US
+[?8/?16/?2017 3:28 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+ok..
+you will be able to work on the tasks given by Binoy ?
+[?8/?16/?2017 3:28 PM] B, Yamini (Cognizant): 
+yes
+[?8/?16/?2017 3:28 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+ok
+[?8/?16/?2017 3:35 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+anything you can pass in INT
+or both stories will be blocked
+[?8/?16/?2017 3:36 PM] B, Yamini (Cognizant): 
+both will be blocked
+[?8/?16/?2017 6:03 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+US1158689	GIG Landing Page: Promotion  Container 2 by 1	 
+is this done
+[?8/?16/?2017 6:03 PM] B, Yamini (Cognizant): 
+workiing on
+[?8/?16/?2017 6:03 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+ok
+[?8/?16/?2017 6:17 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+can you send your observations?
+[?8/?16/?2017 6:17 PM] B, Yamini (Cognizant): 
+ok
+do u want now.still GIG is not completed?
+[?8/?16/?2017 6:18 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+send together
+how long would it take
+[?8/?16/?2017 6:18 PM] B, Yamini (Cognizant): 
+it will take 15 mins
+[?8/?16/?2017 6:19 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
+ok
+
+ios_webkit_debug_proxy
+
+-------------------------------------
+
+http://octopus.cable.comcast.com/
+
+BSEE or BusinessHelpSupport
+
+-CI/CD tool
+-Status of build
+*green-success
+*red-failed
+*black-cancelled
+*orange-discard
+*green with yellow-passed due to human intervention.
+-Pushing code from Dev 9 to QA9.
+-Analyze failures on run smoke or regression acceptance tests
+-finding results EBZCITS-WC-8P
+-After fixing the scripts and check in into server, we can deploy code from dev9 to qa9.
+
+
+-------------------------
+
+cable\trajen002c
+ Ram%379104
+Ram^379104
+
+cable\vdonap001c
+Orange39$
+
+
+psr
+
+http://pacdcdevcmsdb1.cable.comcast.com/Reports/Pages/Report.aspx?ItemPath=%2fService+Awareness+QA%2fService+Calls+By+Visitor+Session 
+newaccount18@JFKBLVD.comcastbiz.net
+
+
+https://rally1.rallydev.com/#/43595503011d/iterationstatus
+
+[?5/?23/?2017 12:24 PM] Rajendran, Thulasiram (Cognizant): 
+www.browserstack.com
+
+thulasiram_rajendran@cable.comcast.com
+Tester123
+
+https://login-qa4.comcast.net/login
+
+100 s 12th St, 2, 23219
+
+http://internal.qa-4.comcast.com/BSEEAutomation/
+
+_d6UqsPCIS6WTD003lSpzuiBq73GPEJPpMrM99n5KI
+
+FCT tool:
+
+http://admin.qa.xfinity.com/configAdmin/config-admin
+
+SA Logs:
+
+http://reports.qa.xfinity.com/Reports/Pages/Report.aspx?ItemPath=%2fService+Awareness+Reports+-QA%2fService+Calls+By+Visitor+Session 
+Eksy3v
+
+
+http://reports.stg.xfinity.com/Reports/Pages/Report.aspx?ItemPath=%2fService+Awareness+Reports+-STG%2fService+Calls+By+Visitor+Session 
+
+
+
+-----------------------------
+
+504b3dba-8ebd-48c3-964c-642140d995c0
+
+http://reports.qa.xfinity.com/Reports/Pages/Report.aspx?ItemPath=%2fService+Awareness+Reports+-QA%2fService+Calls+By+Visitor+Session
+
+------------------------------
+
+Global value:1440
+Application Id 2
+
+https://msdn.microsoft.com/en-us/library/system.exception(v=vs.110).aspx
+
+----------------------------
+
+HTC_D626x
+CC57SYM00545
+4.4.4
+cc1c90a172ef75babe16 6e0f0c5cae6578452eec
+
+-------------------------
+
+https://comcast.invisionapp.com/d/login?redir=%2Fd%2F#/console/11615416/
+
+--------------------------
+
+http://www.softwaretestinghelp.com/testng-framework-selenium-tutorial-12/
+
+------------------
+
+varalakshmi_Donaparthi@cable.comcast.com
+Orange37$
+sorry it was different..
+i for got
+if not try Orange39$
+
+
+------------------
+
+outlookhttps://book.ponniyinselvan.in/part-1/chapter-23.html
+
+Devomobiron Secrets
+
+--------------
+
+10.21.120.47
+9486141812
+601356
+
+REQ000009151791
+
+
+
+
+
+Install-Package Microsoft.TeamFoundation.Client -Version 15.112.1
