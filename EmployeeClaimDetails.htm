@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title>
+    <!--[if gte IE 8]>
+	 <link href="../css/StyleSheet_nj.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+    <!--[if lte IE 8]>
+    <link href="../css/StyleSheet_nj_ie8.css" rel="stylesheet" type="text/css" />
+	   
+    <![endif]-->
+    <!--[if IE 8]>
+    <link href="../css/StyleSheet_nj_ie8.css" rel="stylesheet" type="text/css" />
+	   
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <link rel="stylesheet" type="text/css" href="../css/StyleSheet_nj.css" />
+    <!--<![endif]-->
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            var offset = 220;
+            var duration = 500;
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > offset) {
+                    jQuery('.back-to-top').fadeIn(duration);
+                } else {
+                    jQuery('.back-to-top').fadeOut(duration);
+                }
+            });
+
+            jQuery('.back-to-top').click(function (event) {
+                event.preventDefault();
+                jQuery('html, body').animate({ scrollTop: 0 }, duration);
+                return false;
+            })
+        });
+		</script>
+        <script type="text/javascript">
+            function DocNav() {
+                document.getElementById("a_DocLink").click();
+            }
+        </script>
+</head>
+<body>
+    <form name="form1" method="post" action="./EmployeeClaimDetails.aspx?ClaimId=1106432&amp;case_id=3332064" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="5io1wWzrMmk5PRYjYq0xJcARJT1ZVHWSB6C3Nxtu9QiD37XVkJwEIPVeUilPKnIH5k+/u+ayC7H+qRNYgIyQzUHBcHbOfuqt8W6wpqzo/CjyuW4xrs7bUIhDaaiU6L36Q7QzGA0yI+/kVSr5pO/KegyWl7VOuyZBofcyZNfyEroehTKaUYLj1fTmnbDalEjfg2+VjsTPwE38FxXhcHYx6POi1yHdq6zo6hDhECTEJUPEB9SKTWt/Ju0bLSuj/ud03Sg5qZBWxFQCHmdqgF+7FKLZy+A/sEl/MrzDxEfDOvq8RXu6W/2sZLZBoXGDZMf0HeNf6mwqzQVp76LtMG9YhAgoGNetqUlPAOKjUqCyk38bx/XJJDN8dOVjSHCU5dMtugfgWTBDlYBXLfaDe/KLYRNy4nhD6e5TVrnj8BfTFXNEN/9lFdzKgJkK1tR/8OgFGHxY0KD0bE5TL+2H6QIkrErOC+8g0BDERo6agFzXwHHwl7wjRWF5GT1rqq1DSQpy1gxoWeMnuqNtc6eMod0oeSdk0Bf3ShKeBvyqB6M+MxAjEYB4ECi+GoQa11zKI5oRyKTo9Zeozau+7PpctS/5g0j3UFqIN04r+53shJVChX9hG9C12ARs3+F+5owTd9+fn2r/n8J20VnE+9P5pZTWHdR56YvNdDZgX154vidcQwpVky0JOm0Ldoya7rxuzbspsx+9D/j3tJXtxB1USEvH1rbQXmnlyUfJLzAyaWowwXvZ9ZLmxLytRRiyPmQ89SmrwtlJLOPVQmzHlaROT5qopRAbha1jBzjJZRakGz1hruA+pxLhDTsQuhxPq7O5YiOloBNfuydk9EQD+HboxqWYz1Me2avbRxdexVJ0Bz4nJSfEGzQhDm6BMw497qoPXOfkxF+XpCZ4fh9DNGzNDMkfrXB8zMGERiHVjS3R60H5Z3QP1Ic3LHcb9kWOeFotcq3iSLSazjTErx/lAPxBw2Qc+HVMXAI1J3taijHLoSaYMecXT1RW7fPYLUdI4sYce2wo0ZSLuebsUKM8kYvonyGfwWm4B0NyF00j5Q7vLYdghJ9/gINrQunDmGMnFqW1qEd4vkDpMpYGaE1mEzn0CaFVs9mUxh4li7ydPIwr1RWMpmlkInq81TseJRGTIxSqwOlAyJeHKG0EGJWOiw9Cdi330sF3KRtunIvUSZmlIzQV8Gwmn+WomhYGhUId3D0abNdFS3/GFCoMYgni1qkeyAzMEttUVN37dGBJSAwl1F5rmGO3KWDfspZ1xWHerK+XpmafQ8ZeyNHlhKWRmhBkll4fvmuxIOyRH3QLb+NiJKBq/SwcMBoLyzJKeYj6zhez7iPY03SaymbtFOhFsY8TKtrl+u827WjOvmqg1h/TP2C32RDMFumGKBYS3fPcIVRFVWsrf444hrn6rjH9rM17tgbjKrG3CwndmJ8lutxBn7jgWB28ojupgixa5JFGUeIrup5TBMvpN+N/h+3FVn18Dode780fZZu3ZE7ikwaFb4C6QnVFg3kbSC8IqKX8BKrIij6b6gpqCR1qTJJfd5d/ToZ4LQnHXvWdwciPlLHbqBHYwIMe25W4d/hj/mmXx49gj5j6tGJoTJ/HS+/MDBqaR9Z2Fi6pQ01Q9kPfMdhp6GLvoJZ1cnMbpkniU3okTLAqpDGVmo3HtvFQT267O8qQNcGv11hC8J3zMpI+Jz2QN4F6th9t4ZYzCToqeNskc0SJvuKw2yBkCbN9YO1dPg/TzrqHKYscfNajXZ/QIIRJJoJx5CCoeZFxzNfqikSzfYSVkm8XH08yd8Q/TJiTR5j4iv1NB03R69RQ3cSvBNVQNJ/gNgAKz7LAJ0GFgQ5Z8nhoAeNq3sCcJ2VXlGiu4ETfHC6cN/OQ/MVCBqqGSy5s9AAt1fxD/ycHND+cIxPeHw2ksKoAz5Ao4diUZvJ+R+a14nj7B+qyO/xhBP90GDQSNPyAYZM+ySPgk66JK/umsW9vHoG9f4H+sQP1+KU+0LbUiWIkIGb2UGkNa/5b7ZVT0xR19nVPT+ATGxiSP/V7cp86ZtcTHzxSiAyxvAD6ktgO67n4DvVxSRGSmVT8H8QEPNxUzXpmqkqjJ7IbsHLaSHKFw5ZFF5pg+3K6N/YXOv9WInwI4XJoqcqxkT7AQRuXMQRigGV4pgS3dWikazLSP9zJdUVzEJp3W62fy+CaWZ/O70mO20Ty86mk4FYj1F7FbHZ3ZKO5542D/f1lpWlyv61nBDhn92JCbccsKR5hZUhw+JxkuKmMOufBXbU/o1HuDKMzS7urhx8WBJrv9ir0L13GDRfyf9ngc4ZFkjbGzo4gFQycm8mHFBtqZRelHZqTqJ27VV24P7cwD0oAG03AHCrA7GjkBBZJi0CMk+bL9dzIhM7l2w==" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1A72C9DC" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/o7nD5x+dgyxpkbtGc15StOyfFXXGdJDIBj5zTZrDZ4gjQcr+/itC0zqwoby5/e5rbAbBxYfVTcCzK15a4bh4PmVpoJG4odEcZHDeDRYW1JqkMUXSvizpfemAYbRfa169wi5EKamwpw6wpnBJIPYvpc/TZ0vDXzwm7lXOa7hoyyYdYFSDe4CySbnkuQZKs+0iXp7FagGQmeUiZ9T5ASt4jxQjYWi0Da/mSXlJtD7v7L4xa2oBEeiMyLbZ/2s3vQo/BUZJeSjQGlPJUSOpVHsebVFkG61wrjg4uvdSFWMsD9z/LqXeKSEspqzYDzHdEmOdKzYbPctHnOxu7gVNe+WzE+2EBcEeASGDD8OZWphVi8/OJbL3NU1QZ0PtJfmV4P0DPuQbi/9eOsKt2VkihKoh58Vw+GkBcfzywqmEYkqLs3ZnpSFfqaQ4NpU+zqkNXq5lbEqTTfzWEr7E2UiP0CWjuXegMGEoFW5AZnFFlhtt7lkyYxcRjz8HW0Ocul9CKbl" />
+</div>
+    <br />
+    <br />
+    <div style="background-color: #ffffff" id="fixed-thumb-size-demo" class="default-skin">
+        <table style="width: 100%;">
+            <tr>
+                <td colspan="3" class="td_subHead td_hr" style="font-size: 20px; color: #0f5583;">
+                    Claim Details <a name="top"></a>
+                </td>
+            </tr>
+            <tr>
+                <td width="18%" class="td_subHead">
+                </td>
+                <td class="td_subHead">
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td width="18%" class="td_subHead" colspan="3" align="center">
+                    <table style="width: 60%; font-size: medium;">
+                        <tr>
+                            <td colspan="2" align="left" class="td_hr" style="font-size: large">
+                                Detail Sheet for Claim [<span id="lblUrl">1097575</span>]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="font-size: large">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" style="width: 30%">
+                                Name of Patient
+                            </td>
+                            <td align="left">
+                                :
+                                <span id="lblPatientName">YAMINI B</span>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" style="width: 30%">
+                                Date of Admission
+                            </td>
+                            <td align="left">
+                                :
+                                <span id="lblDOA">15 Jun 2016</span>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" style="width: 30%">
+                                Date of Discharge
+                            </td>
+                            <td align="left">
+                                :
+                                <span id="lblDOD">22 Jun 2016</span>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" style="width: 30%">
+                                Diagnosis
+                            </td>
+                            <td align="left">
+                                :
+                                <span id="lblDiagnosis"></span>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" style="width: 30%">
+                                Underwritten By
+                            </td>
+                            <td align="left">
+                                :
+                                <span id="lblUnderwrittenBy">THE NEW INDIA ASSURANCE CO. LTD.</span>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" style="width: 30%">
+                                Hospital Name
+                            </td>
+                            <td align="left">
+                                :
+                                <span id="lblHospName">JMJ Hospital - Bangalore</span>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%" align="left" style="width: 30%">
+                                &nbsp;
+                                
+                            </td>
+                            <td align="left">
+                                &nbsp; <a id="a_DocLink"></a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div>
+	<table cellspacing="0" border="0" id="gvClaimInf" style="width:100%;border-collapse:collapse;">
+		<tr class="grid_border" align="left" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;">
+			<th align="left" scope="col">Steps Involved/Activity </th><th align="left" scope="col">Status </th><th align="left" scope="col" style="width:12%;">Closure Date/Expected Closure Date</th><th align="left" scope="col" style="width:8%;">Total Amount </th><th align="left" scope="col" style="width:12%;">Approved Amount (Subject to Insurance Co. clearance)</th><th align="center" scope="col">Details</th>
+		</tr><tr class="grid_border" align="left" valign="middle" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;font-weight:normal;height:40px;">
+			<td align="left" style="width:14%;">Receipt of claims at UHCI</td><td style="width:12%;">Received</td><td>28 Jul 2016</td><td>7,460</td><td>0</td><td align="center" style="width:20%;">
+                                    <a id="gvClaimInf_ctl02_a_quickLink">
+                                        <span id="gvClaimInf_ctl02_lblClick">N/A</span></a>
+                                    
+                                    <input type="hidden" name="gvClaimInf$ctl02$hdn_claimId" id="gvClaimInf_ctl02_hdn_claimId" value="1106432" />
+                                    <input type="hidden" name="gvClaimInf$ctl02$hdntyp" id="gvClaimInf_ctl02_hdntyp" value="N/A" />
+                                </td>
+		</tr><tr class="grid_border" align="left" valign="middle" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;font-weight:normal;height:40px;">
+			<td align="left" style="width:14%;">Processing at UHCI</td><td style="width:12%;">In-Process</td><td>31 Jul 2016</td><td>7,460</td><td>0</td><td align="center" style="width:20%;">
+                                    <a id="gvClaimInf_ctl03_a_quickLink">
+                                        <span id="gvClaimInf_ctl03_lblClick">N/A</span></a>
+                                    
+                                    <input type="hidden" name="gvClaimInf$ctl03$hdn_claimId" id="gvClaimInf_ctl03_hdn_claimId" value="1106432" />
+                                    <input type="hidden" name="gvClaimInf$ctl03$hdntyp" id="gvClaimInf_ctl03_hdntyp" value="N/A" />
+                                </td>
+		</tr><tr class="grid_border" align="left" valign="middle" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;font-weight:normal;height:40px;">
+			<td align="left" style="width:14%;">Document Recovery</td><td style="width:12%;">Might not be Required</td><td>&nbsp;</td><td>7,460</td><td>0</td><td align="center" style="width:20%;">
+                                    <a id="gvClaimInf_ctl04_a_quickLink">
+                                        <span id="gvClaimInf_ctl04_lblClick">N/A</span></a>
+                                    
+                                    <input type="hidden" name="gvClaimInf$ctl04$hdn_claimId" id="gvClaimInf_ctl04_hdn_claimId" value="1106432" />
+                                    <input type="hidden" name="gvClaimInf$ctl04$hdntyp" id="gvClaimInf_ctl04_hdntyp" value="N/A" />
+                                </td>
+		</tr><tr class="grid_border" align="left" valign="middle" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;font-weight:normal;height:40px;">
+			<td align="left" style="width:14%;">Settlement by Insurer</td><td style="width:12%;">Yet to be started</td><td>&nbsp;</td><td>7,460</td><td>0</td><td align="center" style="width:20%;">
+                                    <a id="gvClaimInf_ctl05_a_quickLink">
+                                        <span id="gvClaimInf_ctl05_lblClick">N/A</span></a>
+                                    
+                                    <input type="hidden" name="gvClaimInf$ctl05$hdn_claimId" id="gvClaimInf_ctl05_hdn_claimId" value="1106432" />
+                                    <input type="hidden" name="gvClaimInf$ctl05$hdntyp" id="gvClaimInf_ctl05_hdntyp" value="N/A" />
+                                </td>
+		</tr><tr class="grid_border" align="left" valign="middle" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;font-weight:normal;height:40px;">
+			<td align="left" style="width:14%;">Insurer Query</td><td style="width:12%;">Might not be Applicable</td><td>&nbsp;</td><td>7,460</td><td>0</td><td align="center" style="width:20%;">
+                                    <a id="gvClaimInf_ctl06_a_quickLink">
+                                        <span id="gvClaimInf_ctl06_lblClick">N/A</span></a>
+                                    
+                                    <input type="hidden" name="gvClaimInf$ctl06$hdn_claimId" id="gvClaimInf_ctl06_hdn_claimId" value="1106432" />
+                                    <input type="hidden" name="gvClaimInf$ctl06$hdntyp" id="gvClaimInf_ctl06_hdntyp" value="N/A" />
+                                </td>
+		</tr><tr class="grid_border" align="left" valign="middle" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;font-weight:normal;height:40px;">
+			<td align="left" style="width:14%;">Pending with client</td><td style="width:12%;">Yet to be started</td><td>&nbsp;</td><td>7,460</td><td>0</td><td align="center" style="width:20%;">
+                                    <a id="gvClaimInf_ctl07_a_quickLink">
+                                        <span id="gvClaimInf_ctl07_lblClick">N/A</span></a>
+                                    
+                                    <input type="hidden" name="gvClaimInf$ctl07$hdn_claimId" id="gvClaimInf_ctl07_hdn_claimId" value="1106432" />
+                                    <input type="hidden" name="gvClaimInf$ctl07$hdntyp" id="gvClaimInf_ctl07_hdntyp" value="N/A" />
+                                </td>
+		</tr><tr class="grid_border" align="left" valign="middle" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;font-weight:normal;height:40px;">
+			<td align="left" style="width:14%;">Issuance of cheque/ cheque dispatch</td><td style="width:12%;">Yet to be started</td><td>&nbsp;</td><td>7,460</td><td>0</td><td align="center" style="width:20%;">
+                                    <a id="gvClaimInf_ctl08_a_quickLink">
+                                        <span id="gvClaimInf_ctl08_lblClick">N/A</span></a>
+                                    
+                                    <input type="hidden" name="gvClaimInf$ctl08$hdn_claimId" id="gvClaimInf_ctl08_hdn_claimId" value="1106432" />
+                                    <input type="hidden" name="gvClaimInf$ctl08$hdntyp" id="gvClaimInf_ctl08_hdntyp" value="N/A" />
+                                </td>
+		</tr>
+	</table>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td id="td1" colspan="3" style="font-size: 20px; color: #0f5583;">
+                    <span id="lblDocView">Uploaded Documents</span>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="div1">
+                        <div id="div2">
+                            <div>
+	<table cellspacing="0" border="0" id="gvDocViews" style="width:100%;border-collapse:collapse;">
+		<tr class="grid_border" align="left" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;">
+			<th align="left" scope="col">View Document</th><th align="left" scope="col">Uploaded Dt</th>
+		</tr><tr class="grid_border" align="left" valign="middle" style="color:#646464;font-family:Georgia,Arial,Helvetica,Verdana,sans-serif;font-size:12px;font-weight:normal;height:40px;">
+			<td>
+                                                <a id="gvDocViews_ctl02_grdHypFormatpath" href="../UploadDoc/3332064/All%20Document_01.tif" target="_blank">All Document</a>
+                                        </td><td>01/08/2016</td>
+		</tr>
+	</table>
+</div>
+                            
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td id="td_payHead" colspan="3" style="font-size: 20px; color: #0f5583;">
+                    <span id="lblPPayDetails"></span>
+                    <a id="A1"></a>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="div_pay_box">
+                        <div id="div_pay_innerbox">
+                            <div>
+
+</div>
+                            
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="td_disHead" colspan="3" style="font-size: 20px; color: #0f5583;">
+                    <span id="lblDisHead"></span>
+                    <a id="DisAllow"></a>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="3">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="div_dis_box">
+                        <div id="div_dis_innerbox">
+                            <div>
+
+</div>
+                            <table width="100%">
+                                <tr>
+                                    <td align="right">
+                                        <a href="#top">
+                                            
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="td_drHead" colspan="3" style="font-size: 20px; color: #0f5583;">
+                    <span id="lblDrHead"></span>
+                    <a id="DocRecov"></a>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="3" class="td_subHead td_hr ">
+                    <span id="lblDrPeriod" style="color:#0F5583;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="div_dr_box">
+                        <div id="div_dr_innerbox">
+                            <div>
+
+</div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        
+                        <table width="100%">
+                            <tr>
+                                <td align="right">
+                                    <a href="#top">
+                                        
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+             
+            <tr>
+                <td colspan="3">
+                    &nbsp;
+                    <span id="lblErr"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="hidden" name="hdn_grpId" id="hdn_grpId" value="0" />
+                    <input type="hidden" name="hdn_gradeID" id="hdn_gradeID" value="0" />
+                    <input type="hidden" name="hdn_topUpCover" id="hdn_topUpCover" value="0" />
+                    <input type="hidden" name="hdn_empno" id="hdn_empno" value="0" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <br />
+    </form>
+</body>
+</html>
