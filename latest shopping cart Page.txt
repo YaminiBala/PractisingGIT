@@ -1,0 +1,1848 @@
+using Comcast.Business.Functional.Tests.Utils;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Support.PageObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Drawing;
+using System.Threading;
+using TechTalk.SpecFlow;
+//using Comcast.TestAutomation.Browser;
+
+namespace Comcast.Business.Functional.Tests.PageClasses
+{
+    public class ShoppingCart : MasterPage
+    {
+        //private IWebElement browser1;
+        //private Validations validation;
+
+
+        public ShoppingCart(IWebDriver browser, Report report, Validations validations)
+            : base(browser, report, validations)
+        {
+        }
+
+
+        [FindsBy(How = How.CssSelector, Using = "div.page-header.buyflow-header")]
+        IWebElement pageHeader { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.utility-nav")]
+        IWebElement utilityNav { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.page-banner")]
+        IWebElement buyflowHeader { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.logo")]
+        IWebElement comcastBusinessLogo { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "a.back-link")]
+        IWebElement backToShopLink { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "li.nav-step._current-step")]
+        IWebElement progressNav { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "ol.progress-nav")]
+        IWebElement progressNavBar { get; set; }
+
+        [FindsBy(How = How.Id, Using = "shopping-cart")]
+        IWebElement myOrderSummarySection { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "h2.heading.heading-light.h2")]
+        IWebElement myOrderSummaryHeader { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "button.order-summary-btn[data-role='open-toggle']")]
+        IWebElement myOrderSummaryShowBtn { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "button.order-summary-btn[data-role='close-toggle']")]
+        IWebElement myOrderSummaryCloseBtn { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer-trigger.cart-row--drawer[aria-expanded='false']")]
+        IWebElement lobAccordionclosed { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer-trigger.cart-row--drawer[aria-expanded='true']")]
+        IWebElement lobAccordionopen { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-summary-dropdown")]
+        IWebElement myOrderSummarydetails { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Package']")]
+        IWebElement PackageAccordion { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Package'] > div > div > div > h3")]
+        IWebElement PackageAccordionName { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Package'] > div > div > div > h3 > Span.order-summary-heading-price")]
+        IWebElement PackageAccordionTotalPrice { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Package'] > div.drawer-content.accordion > div > button[data-component='overlay-open remove-from-cart']")]
+        IWebElement PackageRemoveLnk { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Package'] > div.drawer-content.accordion")]
+        IWebElement PackageAccordionContent { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Package'] > div.drawer-content.accordion > table > tbody > tr > td.order-summary-item")]
+        IWebElement PackageName { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Package'] > div.drawer-content.accordion > table > tbody > tr > td.order-summary-price")]
+        IWebElement PackagePrice { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Internet']")]
+        IWebElement InternetLobAccordion { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Internet'] > div > div > div > h3")]
+        IWebElement InternetAccordionName { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Internet'] > div > div > div > h3 > Span.order-summary-heading-price")]
+        IWebElement InternetAccordionTotalPrice { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Internet'] > div.drawer-content.accordion")]
+        IWebElement InternetLobAccordionContent { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Internet'] > div.drawer-content.accordion > div > button[data-component='overlay-open remove-from-cart']")]
+        IWebElement InternetOfferRemoveLnk { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Internet'] > div.drawer-content.accordion > div > button[data-page-name='CustomizeInternet']")]
+        IWebElement InternetOptionsEditLnk { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Internet'] > div.drawer-content.accordion > table.order-summary-table")]
+        IWebElement InternetLobLineItems { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Voice']")]
+        IWebElement VoiceLobAccordion { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Voice'] > div > div > div > h3")]
+        IWebElement VoiceAccordionName { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Voice']> div > div > div > h3 > Span.order-summary-heading-price")]
+        IWebElement VoiceAccordionTotalPrice { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Voice'] > div.drawer-content.accordion")]
+        IWebElement VoiceLobAccordionContent { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Voice'] > div.drawer-content.accordion > div > button[data-component='overlay-open remove-from-cart']")]
+        IWebElement VoiceOfferRemoveLnk { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Voice'] > div.drawer-content.accordion > div > button[data-page-name='CustomizeVoice']")]
+        IWebElement VoiceOptionsEditLnk { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Voice'] > div.drawer-content.accordion > table.order-summary-table")]
+        IWebElement VoiceLobLineItems { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Video']")]
+        IWebElement VideoLobAccordion { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Video'] > div > div > div > h3")]
+        IWebElement VideoAccordionName { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Video'] > div > div > div > h3 > Span.order-summary-heading-price")]
+        IWebElement VideoAccordionTotalPrice { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Video'] > div.drawer-content.accordion")]
+        IWebElement VideoLobAccordionContent { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Video'] > div.drawer-content.accordion > div > button[data-component='overlay-open remove-from-cart']")]
+        IWebElement VideoeOfferRemoveLnk { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Video'] > div.drawer-content.accordion > div > button[data-page-name='CustomizeVideo']")]
+        IWebElement VideoOptionsEditLnk { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='Video'] > div.drawer-content.accordion > table.order-summary-table")]
+        IWebElement VideoLobLineItems { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='OneTimeCharges']")]
+        IWebElement OneTimeChargesAccordion { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer._active[data-sel-cart-category='OneTimeCharges']")]
+        IWebElement OneTimeChargesAccordionOpen { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='OneTimeCharges'] > div > div > div > h3")]
+        IWebElement OneTimeChargesAccordionName { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='OneTimeCharges'] > div > div > div > h3 > Span.order-summary-heading-price")]
+        IWebElement OneTimeChargesAccordionTotalPrice { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='OneTimeCharges'] > div.drawer-content.accordion")]
+        IWebElement OneTimeChargesAccordionContent { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer[data-sel-cart-category='OneTimeCharges'] > div.drawer-content.accordion > table.order-summary-table")]
+        IWebElement OneTimeChargesLineItems { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-summary-totals")]
+        IWebElement OrderSummaryTotalSection { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-summary-totals > table > tbody > tr:nth-child(1) > td.order-summary-item")]
+        IWebElement FirstBillEstimatedTotalLabel { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-summary-totals > table > tbody > tr:nth-child(1) > td.order-summary-price")]
+        IWebElement FirstBillEstimatedTotal { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-summary-totals > table > tbody > tr:nth-child(2) > td.order-summary-item")]
+        IWebElement MonthlyTotalLabel { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-summary-totals > table > tbody > tr:nth-child(2) > td.order-summary-price")]
+        IWebElement MonthlyTotal { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-summary-content")]
+        IWebElement myOrderSummaryContent { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = ".order-summary-open")]
+        IWebElement myOrderSummaryOpen { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-total")]
+        IWebElement monthlyTotal { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer-content.accordion>table.order-summary-table>tbody>tr:nth-child(1)>td:nth-child(1)")]
+        IWebElement offerName { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "h3.order-summary-accordion-toggle")]
+        IWebElement lobName { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.drawer-content.accordion>table.order-summary-table>tbody>tr:nth-child(1)>td:nth-child(2)")]
+        IWebElement offerPrice { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-summary-content")]
+        IWebElement OrderSummary { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#shopping-cart > div.order-summary > div.order-summary-dropdown > div > div > table:nth-child(2)")]
+        IWebElement monthlyChargesSection { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "div.drawer._active>div.drawer-content.accordion>table")]
+        IWebElement lobDetailsSection { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#shopping-cart > div.order-summary > div.order-summary-dropdown > div > div > table:nth-child(3)")]
+        IWebElement oneTimeChargesSection { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.disclaimer-text")]
+        IWebElement monthlyChargesDisclaimerText { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#shopping-cart > div > div.order-summary-dropdown > div > div > table:nth-child(1) > thead > tr > th.order-summary-heading > h3 > button")]
+        IWebElement removeButtonShoppingCart { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.header-navigation-cart >div>div>div>table>tbody")]
+        IWebElement miniCartSummaryDetailsSection { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div#shopping-cart.shopping-cart-container.mini-order-summary-content > div.order-summary > div.order-summary-dropdown > div > div.drawer._active > div.drawer-content.accordion > table > tbody")]
+        IWebElement newminiCartSummaryDetailsSection { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.utility-nav--mobile >div>div>div>table>tbody")]
+        IWebElement miniCartSummaryDetailsSectionMobile { get; set; }
+
+
+        //Save Cart Form
+
+
+        [FindsBy(How = How.Id, Using = "save-cart-form")]
+        IWebElement saveCartForm { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.order-summary-save > a")]
+        IWebElement saveForLaterlinkShoppingCart { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.save-cart.main-section > h2")]
+        IWebElement saveYourOrderHeader { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.save-cart.main-section > p")]
+        IWebElement saveYourOrderDescription { get; set; }
+
+        [FindsBy(How = How.Id, Using = "back-button")]
+        IWebElement backbuttonSaveCartForm { get; set; }
+
+        [FindsBy(How = How.Id, Using = "next-button")]
+        IWebElement saveMyOrderbuttonSaveCartForm { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#save-cart-form > div.form-section > fieldset")]
+        IWebElement tellUSAboutYouSection { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.form-section.more-time")]
+        IWebElement doYouHaveTime { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.banner-content")]
+        IWebElement successHeader { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div > label > span.icon-checkbox-image")]
+        IWebElement marketingEmails { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.header-navigation-cart > span > button > span.offer-count")]
+        IWebElement shoppingCartOfferCount { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.component-main > div > div > div:nth-child(1) > div.grid-component")]
+        IWebElement nextSteps { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#save-cart-form > div.drawer._active > div.drawer-content > div.form-section.experience")]
+        IWebElement surveyExperience { get; set; }
+
+
+
+        //Overlay
+        // [FindsBy(How = How.CssSelector, Using = "div.overlay-container > div.overlay")]
+        [FindsBy(How = How.CssSelector, Using = "div.overlay > div.overlay-inner")]
+        IWebElement overlay { get; set; }
+
+        //[FindsBy(How = How.Id, Using = "overlayTitle")]
+        [FindsBy(How = How.CssSelector, Using = "div.overlay-header >h2")]
+        IWebElement overlayTitle { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "div.overlay-header > button > span.button-icon-shape")]
+        IWebElement overlayCloseBtn { get; set; }
+
+        [FindsBy(How = How.Id, Using = "overlayDescription")]
+        IWebElement overlayContent { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#overlayDescription > div > div > button.button.button-small.button-color-secondary")]
+        IWebElement cancelBtnOnOverlay { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#overlayDescription > div > div > button.button.button-small.button-color-primary")]
+        IWebElement submitBtnOnOverlay { get; set; }
+
+
+
+        [FindsBy(How = How.CssSelector, Using = "div.page-footer")]
+        IWebElement footer { get; set; }
+
+
+        protected override void waitForPageLoad()
+        {
+            try
+            {
+                new WebDriverWait(browser, TimeSpan.FromSeconds(120));
+            }
+            catch (Exception exception)
+            {
+                report.reportException("waitforpageload", exception);
+            }
+        }
+
+        public bool isOrderSummarySectionPresent()
+        {
+            try
+            {
+                if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                {
+                    if (!myOrderSummaryHeader.Displayed == true)
+                        browser.FindElement(By.CssSelector("div[class*='order-summary-details']")).Click();
+                }
+
+                if (isElementPresent(myOrderSummarySection, "My Order Summary Section") && isElementPresent(myOrderSummaryHeader, "myOrderSummaryHeader"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isOrderSummaryBtnPresent", exception);
+            }
+            return false;
+        }
+
+        public bool IsCategorySectionIsDisplayedWithLOBTotalPrice(String shoppingCartCategory)
+        {
+            try
+            {
+                if (shoppingCartCategory.Equals("Package", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(PackageAccordion, "PackageAccordion") && isElementPresent(PackageAccordionName, "PackageAccordionName")
+                        && isElementPresent(PackageAccordionTotalPrice, "PackageAccordionTotalPrice"))// && PackageAccordionTotalPrice.Equals(PackagePrice))
+                        return true;
+                }
+                else if (shoppingCartCategory.Equals("Internet", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(InternetLobAccordion, "InternetLobAccordion") && isElementPresent(InternetAccordionName, "InternetAccordionName")
+                         && isElementPresent(InternetAccordionTotalPrice, "InternetAccordionTotalPrice"))
+                        return true;
+                }
+                else if (shoppingCartCategory.Equals("Voice", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(VoiceLobAccordion, "VoiceLobAccordion") && isElementPresent(VoiceAccordionName, "VoiceAccordionName")
+                       && isElementPresent(VoiceAccordionTotalPrice, "VoiceAccordionTotalPrice"))
+                        return true;
+                }
+                else if (shoppingCartCategory.Equals("Video", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(VideoLobAccordion, "VideoLobAccordion") && isElementPresent(VideoAccordionName, "VideoAccordionName")
+                      && isElementPresent(VideoAccordionTotalPrice, "VideoAccordionTotalPrice"))
+                        return true;
+                }
+                else if (shoppingCartCategory.Equals("OneTimeCharges", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(OneTimeChargesAccordion, "OneTimeChargesAccordion") && isElementPresent(OneTimeChargesAccordionName, "OneTimeChargesAccordionName")
+                     && isElementPresent(OneTimeChargesAccordionTotalPrice, "OneTimeChargesAccordionTotalPrice"))
+                        return true;
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("IsCategorySectionIsDisplayedWithLOBTotalPrice", exception);
+            }
+            return false;
+        }
+
+        public bool isOrderSummaryBtnPresent()
+        {
+            try
+            {
+                if (isElementPresent(myOrderSummaryShowBtn, "My Order Summary show Button"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isOrderSummaryBtnPresent", exception);
+            }
+            return false;
+        }
+        public bool IsMonthlyTotalAndEstimatedFirstBillWithPriceUnderOrderSummarySectione()
+        {
+            try
+            {
+                if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                {
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, 0);"));
+                    if (!myOrderSummaryHeader.Displayed == true)
+                        browser.FindElement(By.CssSelector("div[class*='order-summary-details']")).Click();
+                }
+
+                if (isElementPresent(FirstBillEstimatedTotalLabel, "FirstBillEstimatedTotalLabel") && isElementPresent(FirstBillEstimatedTotal, "FirstBillEstimatedTotal")
+                    && isElementPresent(MonthlyTotalLabel, "MonthlyTotalLabel") && isElementPresent(MonthlyTotal, "MonthlyTotal"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("IsMonthlyTotalAndEstimatedFirstBillWithPriceUnderOrderSummarySectione", exception);
+            }
+            return false;
+        }
+
+        public bool isMonthlyChargesDisclaimerTextPresentUnderOrderSummarySection()
+        {
+            String discContent = ProductsPage.disclaimerContent;
+            try
+            {
+                waitForElementLoad(monthlyChargesDisclaimerText, 4);
+                if (isElementPresent(monthlyChargesDisclaimerText, "monthlyChargesDisclaimerText"))
+                    if (!discContent.Equals(null) && monthlyChargesDisclaimerText.Text.Contains(discContent))
+                    {
+                        if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                        {
+                            if (myOrderSummaryHeader.Displayed == true)
+                                browser.FindElement(By.CssSelector("button.button-anchor.order-summary-btn-close")).Click();
+                        }
+                    }
+                return true;
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isMonthlyChargesDisclaimerTextPresentUnderOrderSummarySection", exception);
+            }
+            return false;
+        }
+
+        public bool IsRemoveLinkDisplayedUnderShoppingCartSummarySection(string shoppingCartSection)
+        {
+            try
+            {
+                if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                {
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, 0);"));
+                    if (!myOrderSummaryHeader.Displayed == true)
+                        browser.FindElement(By.CssSelector("div[class*='order-summary-details']")).Click();
+                }
+
+                if (shoppingCartSection.Equals("Package", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(PackageRemoveLnk, "PackageRemoveLnk"))
+                        return true;
+                }
+                else if (shoppingCartSection.Equals("Internet", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(InternetOfferRemoveLnk, "InternetOfferRemoveLnk"))
+                        return true;
+                }
+                else if (shoppingCartSection.Equals("Voice", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(VoiceOfferRemoveLnk, "VoiceOfferRemoveLnk"))
+                        return true;
+                }
+                else if (shoppingCartSection.Equals("Video", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(VideoeOfferRemoveLnk, "VideoeOfferRemoveLnk"))
+                        return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                report.reportException("IsRemoveLinkDisplayedUnderShoppingCartSummarySection", ex);
+            }
+            return false;
+        }
+
+        public bool ClickRemoveLinkUnderShoppingCartSummarySection(string shoppingCartSection)
+        {
+            try
+            {
+                if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                {
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, 0);"));
+                    if (!myOrderSummaryHeader.Displayed == true)
+                        browser.FindElement(By.CssSelector("div[class*='order-summary-details']")).Click();
+                }
+
+                if (shoppingCartSection.Equals("Package", StringComparison.OrdinalIgnoreCase))
+                {
+                    PackageRemoveLnk.Click();
+                    WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
+                    wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.overlay > div.overlay-inner")));
+                    return true;
+                }
+                else if (shoppingCartSection.Equals("Internet", StringComparison.OrdinalIgnoreCase))
+                {
+                    InternetOfferRemoveLnk.Click();
+                    WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
+                    wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.overlay > div.overlay-inner")));
+                    return true;
+                }
+                else if (shoppingCartSection.Equals("Voice", StringComparison.OrdinalIgnoreCase))
+                {
+                    VoiceOfferRemoveLnk.Click();
+                    WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
+                    wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.overlay > div.overlay-inner")));
+                    return true;
+                }
+                else if (shoppingCartSection.Equals("Video", StringComparison.OrdinalIgnoreCase))
+                {
+                    VideoeOfferRemoveLnk.Click();
+                    WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
+                    wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.overlay > div.overlay-inner")));
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                report.reportException("ClickRemoveLinkUnderShoppingCartSummarySection", ex);
+            }
+            return false;
+        }
+        public bool IsEditLinkDisplayedUnderShoppingCartSummarySection(string shoppingCartSection)
+        {
+            try
+            {
+                if (shoppingCartSection.Equals("Internet", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(InternetOptionsEditLnk, "InternetOptionsEditLnk"))
+                        return true;
+                }
+                else if (shoppingCartSection.Equals("Voice", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(VoiceOptionsEditLnk, "VoiceOptionsEditLnk"))
+                        return true;
+                }
+                else if (shoppingCartSection.Equals("Video", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (isElementPresent(VideoOptionsEditLnk, "VideoOptionsEditLnk"))
+                        return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                report.reportException("IsEditLinkDisplayedUnderShoppingCartSummarySection", ex);
+            }
+            return false;
+        }
+
+
+        public bool ClickEditLinkUnderShoppingCartSummarySection(string shoppingCartSection)
+        {
+            try
+            {
+                if (shoppingCartSection.Equals("Internet", StringComparison.OrdinalIgnoreCase))
+                {
+                    InternetOptionsEditLnk.Click();
+                    return true;
+                }
+                else if (shoppingCartSection.Equals("Voice", StringComparison.OrdinalIgnoreCase))
+                {
+                    VoiceOptionsEditLnk.Click();
+                    return true;
+                }
+                else if (shoppingCartSection.Equals("Video", StringComparison.OrdinalIgnoreCase))
+                {
+                    VideoOptionsEditLnk.Click();
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                report.reportException("ClickEditLinkUnderShoppingCartSummarySection", ex);
+            }
+            return false;
+        }
+
+        //public bool clickRemoveButtonBelowOfferName()
+        //{
+        //    try
+        //    {
+        //        if (isElementPresent(offerRemoveLnk, "offerRemoveLnk"))
+        //            offerRemoveLnk.Click();
+        //            return true;
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        report.reportException("offerRemoveLnk", exception);
+        //    }
+        //    return false;
+        //}
+
+
+        public bool seeOverlayToConfirmCancellation()
+        {
+            try
+            {
+                waitForElementLoad(overlay, 6);
+                if (isElementPresent(overlay, "overlay") && overlayTitle.Text.Contains("remove"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("seeOverlayToConfirmCancellation", exception);
+            }
+            return false;
+        }
+
+
+        public bool clickButtonInOverlay(String buttonAction)
+        {
+            try
+            {
+                if (buttonAction.ToLower().Contains("cancel"))
+                {
+                    cancelBtnOnOverlay.Click();
+                }
+                else if (buttonAction.ToLower().Contains("yes"))
+                {
+                    submitBtnOnOverlay.Click();
+                    waitForApplicationToProcess();
+                }
+                return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("clickButtonInOverlay", exception);
+            }
+            return false;
+        }
+
+
+        public bool isShoppingCartSectionExpanded(string shoppingCartSection)
+        {
+            try
+            {
+                if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                {
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, 0);"));
+                    if (!myOrderSummaryHeader.Displayed == true)
+                        browser.FindElement(By.CssSelector("div[class*='order-summary-details']")).Click();
+                }
+
+                if (shoppingCartSection.IndexOf("package", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+
+                    if (PackageAccordion.GetAttribute("class").Contains("active") && isElementPresent(PackageAccordionContent, "PackageAccordionContent"))
+                        return true;
+                }
+                else if (shoppingCartSection.IndexOf("Internet", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    ShortSleep();
+                    if (InternetLobAccordion.GetAttribute("class").Contains("active") && isElementPresent(InternetLobAccordionContent, "InternetLobAccordionContent"))
+                        return true;
+                }
+                else if (shoppingCartSection.IndexOf("Voice", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    if (VoiceLobAccordion.GetAttribute("class").Contains("active") && isElementPresent(VoiceLobAccordionContent, "VoiceLobAccordionContent"))
+                        return true;
+                }
+                else if (shoppingCartSection.IndexOf("Video", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    if (VideoLobAccordion.GetAttribute("class").Contains("active") && isElementPresent(VideoLobAccordionContent, "VideoLobAccordionContent"))
+                        return true;
+                }
+                else if (shoppingCartSection.IndexOf("OneTimeCharges", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    if (OneTimeChargesAccordion.GetAttribute("class").Contains("active") && isElementPresent(OneTimeChargesAccordionContent, "OneTimeChargesAccordionContent"))
+                        return true;
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isShoppingCartSectionExpanded", exception);
+            }
+            return false;
+        }
+
+
+
+        public bool isMyOrderSummaryExpanded()
+        {
+            try
+            {
+                if (isElementPresent(myOrderSummarydetails, "My Order summary details") && isElementPresent(monthlyTotal, "Monthly Total with price")
+                       && isElementPresent(myOrderSummaryCloseBtn, "myOrderSummaryCloseBtn") && isElementPresent(myOrderSummaryShowBtn, "My Order Summary show button") == false)
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isMyOrderSummaryExpanded", exception);
+            }
+            return false;
+        }
+        public bool isOfferNameDisplayedWithPrice(string selectedOfferName, Decimal selectedOfferPrice)
+        {
+            try
+            {
+                if (isElementPresent(offerName, "Offer Name") && isElementPresent(offerPrice, "Offer Price"))
+                {
+                    //if(offerName.Text.IndexOf(selectedOfferName,StringComparison.OrdinalIgnoreCase) >= 0 && Convert.ToDecimal(offerPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim()) == selectedOfferPrice)
+                    return true;
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isOfferNameDisplayedWithPrice", exception);
+            }
+            return false;
+        }
+
+        public bool IsLineItemDisplayedWithPriceUnderShoppingCartSection(string selectedLineItem, string selectedLineItemPrice, string shoppingCartSection)
+        {
+            try
+            {
+                if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                {
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, 0);"));
+                    if (!myOrderSummaryHeader.Displayed == true)
+                        browser.FindElement(By.CssSelector("div[class*='order-summary-details']")).Click();
+                }
+
+                IWebElement lineItemName = null;
+                IWebElement lineItemPrice = null;
+                if (shoppingCartSection.IndexOf("Package", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    if (isElementPresent(PackageName, "Offer Name") && isElementPresent(PackagePrice, "Offer Price"))
+                        return true;
+                }
+                else if (shoppingCartSection.IndexOf("Internet", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    LongSleep();
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, {0});", InternetLobLineItems.Location.Y - 250));
+                    IList<IWebElement> internetLineItems = InternetLobLineItems.FindElements(By.TagName("tr"));
+                    IWebElement lineItem = getMatchingWebElement(internetLineItems, selectedLineItem);
+                    lineItemName = lineItem.FindElement(By.CssSelector("td.order-summary-item"));
+                    lineItemPrice = lineItem.FindElement(By.CssSelector("td.order-summary-price"));
+                }
+                else if (shoppingCartSection.IndexOf("Voice", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, {0});", VoiceLobLineItems.Location.Y - 250));
+                    IList<IWebElement> internetLineItems = VoiceLobLineItems.FindElements(By.TagName("tr"));
+                    IWebElement lineItem = getMatchingWebElement(internetLineItems, selectedLineItem);
+                    lineItemName = lineItem.FindElement(By.CssSelector("td.order-summary-item"));
+                    lineItemPrice = lineItem.FindElement(By.CssSelector("td.order-summary-price"));
+                }
+                else if (shoppingCartSection.IndexOf("Video", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, {0});", VideoLobLineItems.Location.Y - 250));
+                    IList<IWebElement> internetLineItems = VideoLobLineItems.FindElements(By.TagName("tr"));
+                    IWebElement lineItem = getMatchingWebElement(internetLineItems, selectedLineItem);
+                    lineItemName = lineItem.FindElement(By.CssSelector("td.order-summary-item"));
+                    lineItemPrice = lineItem.FindElement(By.CssSelector("td.order-summary-price"));
+
+                }
+                else if (shoppingCartSection.IndexOf("OnetimeCharges", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, {0});", OneTimeChargesLineItems.Location.Y - 250));
+                    IList<IWebElement> internetLineItems = OneTimeChargesLineItems.FindElements(By.TagName("tr"));
+                    IWebElement lineItem = getMatchingWebElement(internetLineItems, selectedLineItem);
+                    lineItemName = lineItem.FindElement(By.CssSelector("td.order-summary-item"));
+                    lineItemPrice = lineItem.FindElement(By.CssSelector("td.order-summary-price"));
+                }
+
+                if (isElementPresent(lineItemName, "lineItemName") && isElementPresent(lineItemPrice, "lineItemPrice"))
+                {
+                    if (selectedLineItemPrice.IndexOf("Included", StringComparison.OrdinalIgnoreCase) < 0)
+                    {
+                        if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                        {
+                            LongSleep();
+                            if (myOrderSummaryHeader.Displayed == true)
+                                browser.FindElement(By.CssSelector("div.order-summary-footer-toggle > button[class*='order-summary-btn-close']")).Click();
+                        }
+                        return true;
+                    }
+                    else if (selectedLineItemPrice.IndexOf("Included", StringComparison.OrdinalIgnoreCase) >= 0 && lineItemPrice.Text.IndexOf(selectedLineItemPrice, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                        {
+                            if (myOrderSummaryHeader.Displayed == true)
+                                browser.FindElement(By.CssSelector("div.order-summary-footer-toggle > button[class*='order-summary-btn-close']")).Click();
+                            Thread.Sleep(2000);
+                        }
+                        return true;
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isOfferNameDisplayedWithPriceUnderLob", exception);
+            }
+            return false;
+        }
+
+        public bool isMonthlyChargesSectionPresent()
+        {
+            try
+            {
+                IWebElement monthlyChargesSectionHeader = monthlyChargesSection.FindElement(By.CssSelector("th.order-summary-head"));
+                if (isElementPresent(monthlyChargesSection, "Monthly Charges Section") && isElementPresent(monthlyChargesSectionHeader, "Monthly Charges Header"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isMonthlyChargesSectionPresent", exception);
+            }
+            return false;
+        }
+        public bool isOneTimeChargesSectionPresent()
+        {
+            try
+            {
+                IWebElement oneTimeChargesSectionHeader = oneTimeChargesSection.FindElement(By.CssSelector("th.order-summary-head"));
+
+                if (isElementPresent(oneTimeChargesSection, "One Time Charges Section") && isElementPresent(oneTimeChargesSectionHeader, "One Time Charges Header"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isOneTimeChargesSectionPresent", exception);
+            }
+            return false;
+        }
+        public IWebElement getMatchingWebElement(IList<IWebElement> listValues, string searchSection)
+        {
+            try
+            {
+                foreach (IWebElement listValue in listValues)
+                {
+
+                    if (listValue.Text.IndexOf(searchSection, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                        return listValue;
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("getMatchingWebElement", exception);
+            }
+            return null;
+        }
+        public bool isMyOrderSummaryCollapsed()
+        {
+            try
+            {
+                if (isElementPresent(myOrderSummarydetails, "My order summary details") == false && isElementPresent(monthlyTotal, "Monthly Total with price")
+                        && isElementPresent(myOrderSummaryShowBtn, "My Order Summary Show button") && isElementPresent(myOrderSummaryCloseBtn, "My Order Summary Close button") == false)
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isMyOrderSummaryCollapsed", exception);
+            }
+            return false;
+        }
+
+
+
+
+
+
+
+
+        public bool clickonShoppingCartSectionHeader(string shoppingCartSection)
+        {
+            try
+            {
+                if (shoppingCartSection.IndexOf("package", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    IWebElement packageAccordionHeader = PackageAccordion.FindElement(By.TagName("h3"));
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, {0});", packageAccordionHeader.Location.Y - 150));
+                    packageAccordionHeader.Click();
+                    ShortSleep();
+                    return true;
+                }
+                else if (shoppingCartSection.IndexOf("Internet", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    ShortSleep();
+                    IWebElement internetLobAccordionHeader = InternetLobAccordion.FindElement(By.TagName("h3"));
+                    internetLobAccordionHeader.Click();
+                    ShortSleep();
+                    return true;
+                }
+                else if (shoppingCartSection.IndexOf("Voice", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    IWebElement voiceAccordionHeader = VoiceLobAccordion.FindElement(By.TagName("h3"));
+                    voiceAccordionHeader.Click();
+                    ShortSleep();
+                    return true;
+                }
+                else if (shoppingCartSection.IndexOf("Video", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    IWebElement videoAccordionHeader = VideoLobAccordion.FindElement(By.TagName("h3"));
+                    videoAccordionHeader.Click();
+                    ShortSleep();
+                    return true;
+                }
+                else if (shoppingCartSection.IndexOf("OneTimeCharges", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    ShortSleep();
+                    IWebElement oneTimeChargesAccordionHeader = OneTimeChargesAccordion.FindElement(By.TagName("h3"));
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, {0});", oneTimeChargesAccordionHeader.Location.Y - 150));
+                    oneTimeChargesAccordionHeader.Click();
+                    ShortSleep();
+                    return true;
+                }
+            }
+
+            catch (Exception exception)
+            {
+                report.reportException("clickonShoppingCartSectionHeader", exception);
+            }
+            return false;
+        }
+        public bool clickOnMyOrderSummaryHeaderToExpand()
+        {
+            try
+            {
+
+                myOrderSummaryHeader.Click();
+                Thread.Sleep(1000);
+                waitForElementLoad(myOrderSummaryOpen, 120);
+                //Thread.Sleep(3000);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("clickOnMyOrderSummaryHeaderToExpand", exception);
+            }
+            return false;
+        }
+        public bool clickOnMyOrderSummaryHeaderToCollapse()
+        {
+            try
+            {
+                waitForElementLoad(myOrderSummaryHeader, 3);
+                myOrderSummaryHeader.Click();
+                waitForElementToBeInvisible(myOrderSummarydetails, 3);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("clickOnMyOrderSummaryHeaderToCollapse", exception);
+            }
+            return false;
+        }
+        public bool isOrderSummarySectionPinnedToTheTopOfThePage()
+        {
+            try
+            {
+                //IWebElement orderSummarySection = browser.FindElement(By.Id("shopping-cart"));
+                if (pageHeader.GetAttribute("class").IndexOf("pinned", StringComparison.OrdinalIgnoreCase) >= 0
+                    && utilityNav.GetCssValue("visibility").Equals("hidden"))
+                    //&& isElementPresent(buyflowHeader, "buyflowHeader")
+                    //&& isElementPresent(myOrderSummarySection, "myOrderSummarySection"))
+                    //if (myOrderSummarySection.GetAttribute("style").Equals("top: -76px;") || myOrderSummarySection.GetAttribute("style").Equals("top: -75px;") || myOrderSummarySection.GetAttribute("style").Equals("top: -85px;"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isOrderSummarySectionPinnedToTheTopOfThePage", exception);
+            }
+            return false;
+        }
+        public bool isOrderSummarySectionisNotPinnedToTheTopOfThePage()
+        {
+            try
+            {
+                if (myOrderSummarySection.GetAttribute("style").Equals("top: 0px;"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isOrderSummarySectionisNotPinnedToTheTopOfThePage", exception);
+            }
+            return false;
+        }
+        public bool isMyOrderSummaryContentIsLongerThanThePage()
+        {
+            try
+            {
+                browser.Manage().Window.Size = new Size(900, 500);
+                Thread.Sleep(200);
+                myOrderSummaryHeader.Click();
+                long browserInnerHeight = (long)((IJavaScriptExecutor)browser).ExecuteScript("return window.innerHeight;");
+                long pageHeaderHeight = pageHeader.Size.Height; //my order summary section + buyflow header
+
+                if (pageHeaderHeight >= browserInnerHeight)
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isMyOrderSummaryContentIsLongerThanThePage", exception);
+            }
+            return false;
+        }
+        public bool isScrollingOptionPresentUnderMyOrderSummarySection()
+        {
+            //try
+            //{
+            //    long myOrderSummaryHeight = myOrderSummarydetails.Size.Height;
+
+            ////    IList<IWebElement> orderSummaryTables = myOrderSummarydetails.FindElements(By.CssSelector("table.order-summary-table"));
+            ////    IWebElement oneTimeChargesSection = getOrderSummaryTable(orderSummaryTables, "One Time");
+            ////    IWebElement oneTimeChargesSectionHeader = oneTimeChargesSection.FindElement(By.CssSelector("th.order-summary-head"));
+
+            ////    ICoordinates coordinate = ((ILocatable)oneTimeChargesSectionHeader).LocationOnScreenOnceScrolledIntoView;
+
+
+            ////    offerName.Click();
+
+            //    IJavaScriptExecutor js = (IJavaScriptExecutor)browser;
+            //    js.ExecuteScript("$(\"#order-summary-content\").animate({ scrollTo: \"100px\" })");
+            //    return true;
+            //}
+            //catch (Exception exception)
+            //{
+            //    report.reportException("isFooterPresent", exception);
+            //}
+            return false;
+        }
+        public bool isIncludedLineItemDisplayedUnderMonthlyChargeSection(string includedOption)
+        {
+            try
+            {
+                if (includedOption.IndexOf("HD", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    includedOption = "HD";
+                    IList<IWebElement> monthlyChargeLineItems = monthlyChargesSection.FindElements(By.TagName("tr"));
+                    IWebElement includedLineItem = getMatchingWebElement(monthlyChargeLineItems, includedOption);
+                    IWebElement includedLineItemText = includedLineItem.FindElement(By.XPath(".//td[1]"));
+                    IWebElement includedLineItemPrice = includedLineItem.FindElement(By.XPath(".//td[2]"));
+                    Double actualIncludedHDOptionPrice = Convert.ToDouble(includedLineItemPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+                    if (includedLineItemText.Text.IndexOf(includedOption, StringComparison.OrdinalIgnoreCase) >= 0 && !includedLineItemPrice.Text.Contains("Included")
+                        && actualIncludedHDOptionPrice == 5.00)
+                        return true;
+                }
+                else
+                {
+                    if (includedOption.IndexOf("Starter", StringComparison.OrdinalIgnoreCase) >= 0)
+                        includedOption = "Starter";
+                    else if (includedOption.IndexOf("Email", StringComparison.OrdinalIgnoreCase) >= 0)
+                        includedOption = "Email";
+                    else if (includedOption.IndexOf("Norton", StringComparison.OrdinalIgnoreCase) >= 0)
+                        includedOption = "Norton";
+                    else if (includedOption.IndexOf("DTA", StringComparison.OrdinalIgnoreCase) >= 0)
+                        includedOption = "DTA";
+                    else if (includedOption.IndexOf("Digital", StringComparison.OrdinalIgnoreCase) >= 0)
+                        includedOption = "Digital";
+                    IList<IWebElement> monthlyChargeLineItems = monthlyChargesSection.FindElements(By.TagName("tr"));
+                    IWebElement includedLineItem = getMatchingWebElement(monthlyChargeLineItems, includedOption);
+                    IWebElement includedLineItemText = includedLineItem.FindElement(By.XPath(".//td[1]"));
+                    IWebElement includedLineItemPrice = includedLineItem.FindElement(By.XPath(".//td[2]"));
+
+                    if (includedLineItemText.Text.IndexOf(includedOption, StringComparison.OrdinalIgnoreCase) >= 0 && (includedLineItemPrice.Text).Contains("Included"))
+                        return true;
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isIncludedLineItemDisplayedUnderMonthlyChargeSection", exception);
+            }
+            return false;
+        }
+        public bool isSelectedOptionDispalyedWithPriceUnderMonthlyChargesSection(string selectedOption, Decimal selectedOptionPrice)
+        {
+            try
+            {
+                Thread.Sleep(1000);//needed due to previous step not waiting until it the cart is open and refreshed. Should refactor.
+                IList<IWebElement> monthlyChargeLineItems = monthlyChargesSection.FindElements(By.TagName("tr"));
+                IWebElement selectedOptionLineItem = getMatchingWebElement(monthlyChargeLineItems, selectedOption);
+                IWebElement selectedOptionLineItemText = selectedOptionLineItem.FindElement(By.XPath(".//td[1]"));
+                IWebElement selectedOptionLineItemPrice = selectedOptionLineItem.FindElement(By.XPath(".//td[2]"));
+
+                //((IJavaScriptExecutor)browser).ExecuteScript("arguments[0].scrollIntoView(false);", selectedOptionLineItemText);
+                Decimal actualSelectedOptionPrice = Convert.ToDecimal(selectedOptionLineItemPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+
+                if (selectedOptionLineItemText.Text.IndexOf(selectedOption, StringComparison.OrdinalIgnoreCase) >= 0 && actualSelectedOptionPrice == selectedOptionPrice)
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isSelectedOptionDispalyedWithPriceUnderMonthlyChargesSection", exception);
+            }
+            return false;
+        }
+
+        public bool isSelectedOptionDispalyedWithPriceUnderparticularLobSection(string selectedOption, Decimal selectedOptionPrice, string lobsection)
+        {
+            try
+            {
+                Thread.Sleep(1000);//needed due to previous step not waiting until it the cart is open and refreshed. Should refactor.
+                IList<IWebElement> monthlyChargeLineItems = lobDetailsSection.FindElements(By.TagName("tr"));
+                IWebElement selectedOptionLineItem = getMatchingWebElement(monthlyChargeLineItems, selectedOption);
+                IWebElement selectedOptionLineItemText = selectedOptionLineItem.FindElement(By.XPath(".//td[1]"));
+                IWebElement selectedOptionLineItemPrice = selectedOptionLineItem.FindElement(By.XPath(".//td[2]"));
+
+                //((IJavaScriptExecutor)browser).ExecuteScript("arguments[0].scrollIntoView(false);", selectedOptionLineItemText);
+                Decimal actualSelectedOptionPrice = Convert.ToDecimal(selectedOptionLineItemPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+
+                if (selectedOptionLineItemText.Text.IndexOf(selectedOption, StringComparison.OrdinalIgnoreCase) >= 0 && actualSelectedOptionPrice == selectedOptionPrice)
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isSelectedOptionDispalyedWithPriceUnderMonthlyChargesSection", exception);
+            }
+            return false;
+        }
+
+        public bool isMonthlyTotalUpdatedwithSelectedOptionPrice()
+        {
+            try
+            {
+                IList<IWebElement> monthlyChargeLineItems = monthlyChargesSection.FindElements(By.TagName("td"));
+
+                Decimal monthlyChargeLineItemsTotalPrice = getMonthlyChargeLineItemsTotalPrice(monthlyChargeLineItems);
+                Decimal actualOfferPrice = Convert.ToDecimal(offerPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+
+                Decimal caluclatedMonthlyTotal = actualOfferPrice + monthlyChargeLineItemsTotalPrice;
+                Decimal actualMonthlyTotal = Convert.ToDecimal(monthlyTotal.Text.Split('$').Last());
+                if (caluclatedMonthlyTotal == actualMonthlyTotal)
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isMonthlyTotalUpdatedwithSelectedOptionPrice", exception);
+            }
+            return false;
+        }
+        public bool waitForMonthlyTotalToChange()
+        {
+            try
+            {
+                //IList<IWebElement> monthlyChargeLineItems = monthlyChargesSection.FindElements(By.TagName("td"));
+
+                //Decimal monthlyChargeLineItemsTotalPrice = getMonthlyChargeLineItemsTotalPrice(monthlyChargeLineItems);
+                //Decimal actualOfferPrice = Convert.ToDecimal(offerPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+
+                //Decimal caluclatedMonthlyTotal = actualOfferPrice + monthlyChargeLineItemsTotalPrice;
+                Decimal initialMonthlyTotal = Convert.ToDecimal(monthlyTotal.Text.Split('$').Last());
+                int count = 50;
+                for (int i = 1; i <= count; i++)
+                {
+                    Decimal currentMonthlyTotal = Convert.ToDecimal(monthlyTotal.Text.Split('$').Last());
+                    if (initialMonthlyTotal != currentMonthlyTotal)
+                        return true;
+                    Thread.Sleep(100);
+                }
+            }
+            catch (Exception)
+            {
+                return true;
+                //report.reportException("waitForMonthlyTotalToChange", exception);
+                //There is a split second where the monthly total element is reloaded and it is not attached to the page. In that instance if we are checking we will get an exception.
+                //However if that has happened that also means that we can proceed with our execution. So for now we will suppress the exception and continue. We may wan to refactor this later.
+            }
+            return false;
+        }
+        private Decimal getMonthlyChargeLineItemsTotalPrice(IList<IWebElement> monthlyChargeLineItems)
+        {
+            try
+            {
+                Decimal monthlyChargeLineItemsTotalPrice = 0;
+                for (int i = 1; i < monthlyChargeLineItems.Count; i += 2)
+                {
+                    string monthlyChargeLineItemPrice = monthlyChargeLineItems.ElementAt(i).Text;
+                    if (monthlyChargeLineItemPrice != "Included")
+                    {
+                        Decimal monthlyChargeLineItemPricevalue = Convert.ToDecimal(monthlyChargeLineItemPrice.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+                        Decimal x = monthlyChargeLineItemsTotalPrice + monthlyChargeLineItemPricevalue;
+                        monthlyChargeLineItemsTotalPrice = x;
+                    }
+                }
+                return monthlyChargeLineItemsTotalPrice;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("getMonthlyChargeLineItemsTotalPrice", exception);
+            }
+            return 0;
+        }
+        public bool isLineItemRemovedFromShoppingCartSectionInShoppingCartSummary(string selectedLineItem, string shoppingCartSection)
+        {
+            try
+            {
+                IWebElement lineItem = null;
+                if (shoppingCartSection.IndexOf("Internet", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    IList<IWebElement> internetLineItems = InternetLobLineItems.FindElements(By.TagName("tr"));
+                    lineItem = getMatchingWebElement(internetLineItems, selectedLineItem);
+
+                }
+                else if (shoppingCartSection.IndexOf("Voice", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    IList<IWebElement> internetLineItems = VoiceLobLineItems.FindElements(By.TagName("tr"));
+                    lineItem = getMatchingWebElement(internetLineItems, selectedLineItem);
+
+                }
+                else if (shoppingCartSection.IndexOf("Video", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    IList<IWebElement> internetLineItems = VideoLobLineItems.FindElements(By.TagName("tr"));
+                    lineItem = getMatchingWebElement(internetLineItems, selectedLineItem);
+
+
+                }
+                else if (shoppingCartSection.IndexOf("OnetimeCharges", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    IList<IWebElement> internetLineItems = OneTimeChargesLineItems.FindElements(By.TagName("tr"));
+                    lineItem = getMatchingWebElement(internetLineItems, selectedLineItem);
+
+                }
+
+                if (lineItem == null)
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isLineItemRemovedFromShoppingCartSectionInShoppingCartSummary", exception);
+            }
+            return false;
+        }
+        public bool isInstallationOptionDispalyedWithPriceUnderOneTimeChargesSection(string installationOption, decimal installationOptionPrice)
+        {
+            try
+            {
+                IList<IWebElement> oneTimeChargeLineItems = OneTimeChargesAccordionOpen.FindElements(By.TagName("tr"));
+                IWebElement selectedOptionLineItem = getMatchingWebElement(oneTimeChargeLineItems, installationOption);
+                IWebElement selectedOptionLineItemText = selectedOptionLineItem.FindElement(By.XPath(".//td[1]"));
+                IWebElement selectedOptionLineItemPrice = selectedOptionLineItem.FindElement(By.XPath(".//td[2]"));
+
+                Decimal actualSelectedOptionPrice = Convert.ToDecimal(selectedOptionLineItemPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+
+                if (selectedOptionLineItemText.Text.IndexOf(installationOption, StringComparison.OrdinalIgnoreCase) >= 0 && isElementPresent(selectedOptionLineItemPrice, "selectedOptionLineItemPrice")
+                    && actualSelectedOptionPrice > 0)
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isInstallationOptionDispalyedWithPriceUnderOneTimeChargesSection", exception);
+            }
+            return false;
+        }
+
+        public bool isItemNameDispalyedWithItemPrice(string itemName, decimal itemPrice)
+        {
+            try
+            {
+                if (!isElementDisplayed(buyflowHeader))
+                {
+                    IList<IWebElement> miniCartSummaryLineItems=null;
+                    if (testSettings.isMobileExecution || testSettings.isDesktopMobileVersion)
+                    {
+                        miniCartSummaryLineItems = miniCartSummaryDetailsSectionMobile.FindElements(By.TagName("tr"));
+                    }
+                    else
+                    {
+                            if (isElementPresent(miniCartSummaryDetailsSection))
+                            miniCartSummaryLineItems = miniCartSummaryDetailsSection.FindElements(By.TagName("tr"));
+
+                        else if (isElementPresent(newminiCartSummaryDetailsSection))
+                            miniCartSummaryLineItems = newminiCartSummaryDetailsSection.FindElements(By.TagName("tr"));
+
+                    }
+
+                    
+                    IWebElement selectedOptionLineItem = getMatchingWebElement(miniCartSummaryLineItems, itemName);                    
+                    IList<IWebElement> selectedOptionLineItems = selectedOptionLineItem.FindElements(By.TagName("td"));
+                        IWebElement selectedOptionLineItemText = selectedOptionLineItems[0];
+                        IWebElement selectedOptionLineItemPrice = selectedOptionLineItems[1];
+                    Decimal actualSelectedOptionPrice = Convert.ToDecimal(selectedOptionLineItemPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+
+                        if (selectedOptionLineItemText.Text.IndexOf(itemName, StringComparison.OrdinalIgnoreCase) >= 0 && isElementPresent(selectedOptionLineItemPrice, "selectedOptionLineItemPrice")
+                            && actualSelectedOptionPrice >= 0)
+                            return true;
+                    }
+                    return true;
+                }
+            
+            catch (Exception exception)
+            {
+                report.reportException("isInstallationOptionDispalyedWithPriceUnderOneTimeChargesSection", exception);
+            }
+            return false;
+        }
+        public bool isEquipmentsDisplayedInShoppingCart(Table shoppingCartEquipments)
+        {
+            try
+            {
+                int allShoppingCartEquipments = 0;
+                int shoppingCartHDEquipments = 0;
+                int shoppingCartDTAEquipments = 0;
+                int shoppingCartSTBEquipments = 0;
+                int expectedShoppingCartEquipments = 0;
+                IList<IWebElement> monthlyChargeLineItems = monthlyChargesSection.FindElements(By.TagName("tr"));
+                IList<IWebElement> selectedHDEquipments = getMatchingEquipments(monthlyChargeLineItems, "HD");
+                IList<IWebElement> selectedDTAEquipments = getMatchingEquipments(monthlyChargeLineItems, "DTA");
+                IList<IWebElement> selectedSTBEquipments = getMatchingEquipments(monthlyChargeLineItems, "STB");
+                for (int i = 0; i < shoppingCartEquipments.RowCount; i++)
+                {
+                    if (shoppingCartEquipments.Rows[i][0].IndexOf("HD", StringComparison.OrdinalIgnoreCase) >= 0 && selectedHDEquipments.Count.Equals(Convert.ToInt16(shoppingCartEquipments.Rows[i][1])))
+                    {
+                        expectedShoppingCartEquipments = expectedShoppingCartEquipments + Convert.ToInt16(shoppingCartEquipments.Rows[i][1]);
+                        foreach (IWebElement selectedHDEquipment in selectedHDEquipments)
+                        {
+                            IWebElement selectedOptionLineItemText = selectedHDEquipment.FindElement(By.XPath(".//td[1]"));
+                            IWebElement selectedOptionLineItemPrice = selectedHDEquipment.FindElement(By.XPath(".//td[2]"));
+                            Double actualSelectedOptionPrice = Convert.ToDouble(selectedOptionLineItemPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+                            if (isElementPresent(selectedOptionLineItemText, "selectedOptionLineItemText") && isElementPresent(selectedOptionLineItemPrice, "selectedOptionLineItemPrice")
+                                && (actualSelectedOptionPrice.Equals(5) || actualSelectedOptionPrice.Equals(14.95)))
+                                shoppingCartHDEquipments++;
+                        }
+                        if (shoppingCartHDEquipments.Equals(Convert.ToInt16(shoppingCartEquipments.Rows[i][1])))
+                        {
+                            report.reportDoneEvent("Shopping Cart displays", "Expected " + shoppingCartHDEquipments + " HD Equipments ");
+                            allShoppingCartEquipments = allShoppingCartEquipments + shoppingCartHDEquipments;
+                        }
+                    }
+                    else if (shoppingCartEquipments.Rows[i][0].IndexOf("STB", StringComparison.OrdinalIgnoreCase) >= 0 && selectedSTBEquipments.Count.Equals(Convert.ToInt16(shoppingCartEquipments.Rows[i][1])))
+                    {
+                        expectedShoppingCartEquipments = expectedShoppingCartEquipments + Convert.ToInt16(shoppingCartEquipments.Rows[i][1]);
+                        foreach (IWebElement selectedSTBEquipment in selectedSTBEquipments)
+                        {
+                            IWebElement selectedOptionLineItemText = selectedSTBEquipment.FindElement(By.XPath(".//td[1]"));
+                            IWebElement selectedOptionLineItemPrice = selectedSTBEquipment.FindElement(By.XPath(".//td[2]"));
+                            Double actualSelectedOptionPrice = Convert.ToDouble(selectedOptionLineItemPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+                            if (isElementPresent(selectedOptionLineItemText, "selectedOptionLineItemText") && isElementPresent(selectedOptionLineItemPrice, "selectedOptionLineItemPrice")
+                                && actualSelectedOptionPrice.Equals(9.95))
+                                shoppingCartSTBEquipments++;
+                        }
+                        if (shoppingCartSTBEquipments.Equals(Convert.ToInt16(shoppingCartEquipments.Rows[i][1])))
+                        {
+                            report.reportDoneEvent("Shopping Cart displays", "Expected " + shoppingCartSTBEquipments + " Dig STB Equipments ");
+                            allShoppingCartEquipments = allShoppingCartEquipments + shoppingCartSTBEquipments;
+                        }
+                    }
+                    else if (shoppingCartEquipments.Rows[i][0].IndexOf("DTA", StringComparison.OrdinalIgnoreCase) >= 0 && selectedDTAEquipments.Count.Equals(Convert.ToInt16(shoppingCartEquipments.Rows[i][1])))
+                    {
+                        expectedShoppingCartEquipments = expectedShoppingCartEquipments + Convert.ToInt16(shoppingCartEquipments.Rows[i][1]);
+                        foreach (IWebElement selectedDTAEquipment in selectedDTAEquipments)
+                        {
+                            IWebElement selectedOptionLineItemText = selectedDTAEquipment.FindElement(By.XPath(".//td[1]"));
+                            IWebElement selectedOptionLineItemPrice = selectedDTAEquipment.FindElement(By.XPath(".//td[2]"));
+                            Double actualSelectedOptionPrice = Convert.ToDouble(selectedOptionLineItemPrice.Text.Split(new string[] { "$" }, StringSplitOptions.None)[1].Split('/')[0].Trim());
+                            if (isElementPresent(selectedOptionLineItemText, "selectedOptionLineItemText") && isElementPresent(selectedOptionLineItemPrice, "selectedOptionLineItemPrice")
+                                && actualSelectedOptionPrice.Equals(9.95))
+                                shoppingCartDTAEquipments++;
+                        }
+                        if (shoppingCartDTAEquipments.Equals(Convert.ToInt16(shoppingCartEquipments.Rows[i][1])))
+                        {
+                            report.reportDoneEvent("Shopping Cart displays", "Expected " + shoppingCartDTAEquipments + " DTA Equipments ");
+                            allShoppingCartEquipments = allShoppingCartEquipments + shoppingCartDTAEquipments;
+                        }
+                    }
+                }
+
+                if (allShoppingCartEquipments.Equals(expectedShoppingCartEquipments))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isEquipmentsDisplayedInShoppingCart", exception);
+            }
+            return false;
+        }
+
+        private IList<IWebElement> getMatchingEquipments(IList<IWebElement> monthlyChargeLineItems, string equipmentType)
+        {
+            try
+            {
+                IList<IWebElement> matchingEquipments = new List<IWebElement>();
+                foreach (IWebElement monthlyChargeLineItem in monthlyChargeLineItems)
+                {
+
+                    if (monthlyChargeLineItem.Text.IndexOf(equipmentType, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                        matchingEquipments.Add(monthlyChargeLineItem);
+                }
+                return matchingEquipments;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("getMatchingEquipments", exception);
+            }
+            return null;
+        }
+
+
+        public bool isSaveForLaterLinkDisplayed(string link)
+        {
+            try
+            {
+                if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                {
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, 0);"));
+                    if (!myOrderSummaryHeader.Displayed == true)
+                        browser.FindElement(By.CssSelector("div[class*='order-summary-details']")).Click();
+                }
+
+                if (link.Contains("not"))
+                {
+                    if (!isElementPresent(saveForLaterlinkShoppingCart, "Save For Later link displayed"))
+                        return true;
+                }
+                else
+                {
+                    if (isElementPresent(saveForLaterlinkShoppingCart, "Save For Later link displayed"))
+                        return true;
+                }
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("iSaveForLaterLinkDisplayed", exception);
+            }
+            return false;
+        }
+
+        public bool clickSaveForLaterLink()
+        {
+            try
+            {
+                if (testSettings.isDesktopMobileVersion || testSettings.isMobileExecution)
+                {
+                    ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, 0);"));
+                    if (!myOrderSummaryHeader.Displayed == true)
+                        browser.FindElement(By.CssSelector("div[class*='order-summary-details']")).Click();
+                }
+
+                (new WebDriverWait(browser, TimeSpan.FromSeconds(60))).Until(ExpectedConditions.ElementExists(By.CssSelector("div.order-summary-save > a")));
+                ((IJavaScriptExecutor)browser).ExecuteScript(string.Format("window.scrollTo(0, {0});", saveForLaterlinkShoppingCart.Location.Y - 150));
+                saveForLaterlinkShoppingCart.Click();
+                Thread.Sleep(1000);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("clickSaveForLaterLink", exception);
+            }
+            return false;
+        }
+
+        public bool isSaveYourOrderSectionDisplayed()
+        {
+            try
+            {
+                if (isElementPresent(saveYourOrderHeader, "Save Your Order Header") &&
+                    isElementPresent(saveYourOrderDescription, "Save Your Order Description"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isSaveYourOrderSectionDisplayed", exception);
+            }
+            return false;
+        }
+
+        public bool isSaveYourOrderTitleDisplayed()
+        {
+            try
+            {
+                if (isElementPresent(saveYourOrderHeader, "Save Your Order Header"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isSaveYourOrderTitleDisplayed", exception);
+            }
+            return false;
+        }
+
+        public bool isFieldsDisplayedUnderTellUsAboutYouSection(Table formFields)
+        {
+            try
+            {
+                IList<IWebElement> tellUsAboutYou = tellUSAboutYouSection.FindElements(By.CssSelector("div > label"));
+                for (int i = 0; i < formFields.RowCount; i++)
+                {
+                    foreach (IWebElement tellUsAbout in tellUsAboutYou)
+                    {
+                        tellUsAbout.GetAttribute("class").Equals(formFields.Rows[i][0]);
+                        return true;
+                    }
+                }
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isFieldsDisplayedUnderTellUsAboutYouSection", exception);
+            }
+            return false;
+        }
+
+
+        public bool isDoYouHaveTimeHeaderDisplayed()
+        {
+            try
+            {
+                IWebElement doYouHaveTimeHeader = doYouHaveTime.FindElement(By.CssSelector("h2"));
+
+                if (isElementPresent(doYouHaveTimeHeader, "Do You Have Time Header"))
+                    return true;
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isDoYouHaveTimeHeaderDisplayed", exception);
+            }
+            return false;
+        }
+
+
+        public bool isRadioButtonUnderQuestionDisplayed(string input)
+        {
+            try
+            {
+
+                if (input.Equals("Yes", StringComparison.OrdinalIgnoreCase))
+                {
+                    IWebElement doYouHaveTimeYes = doYouHaveTime.FindElement(By.Id("MoreTimeYes"));
+                    if (isElementPresent(doYouHaveTimeYes, "Yes radio button"))
+                        return true;
+                }
+
+                else
+                {
+                    if (input.Equals("No", StringComparison.OrdinalIgnoreCase))
+                    {
+                        IWebElement doYouHaveTimeNo = doYouHaveTime.FindElement(By.Id("MoreTimeNo"));
+                        if (isElementPresent(doYouHaveTimeNo, "No radio button"))
+                            return true;
+                    }
+
+                }
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isRadioButtonUnderQuestionDisplayed", exception);
+            }
+            return false;
+        }
+
+
+        public bool isRadioButtonUnderQuestionSelected(string input)
+        {
+            try
+            {
+
+                if (input.Equals("Yes", StringComparison.OrdinalIgnoreCase))
+                {
+                    IWebElement doYouHaveTimeYes = doYouHaveTime.FindElement(By.CssSelector("label[for='MoreTimeYes'] > span.icon-radio-image"));
+                    if (isElementPresent(doYouHaveTimeYes, "Yes radio button"))
+                        doYouHaveTimeYes.Click();
+                    Thread.Sleep(1000);
+                    return true;
+                }
+
+                else
+                {
+                    if (input.Equals("No", StringComparison.OrdinalIgnoreCase))
+                    {
+                        IWebElement doYouHaveTimeNo = doYouHaveTime.FindElement(By.CssSelector("label[for='MoreTimeNo'] > span.icon-radio-image"));
+                        if (isElementPresent(doYouHaveTimeNo, "No radio button"))
+                            doYouHaveTimeNo.Click();
+                        Thread.Sleep(1000);
+                        return true;
+                    }
+
+                }
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isRadioButtonUnderQuestionSelected", exception);
+            }
+            return false;
+        }
+
+
+        public bool isQuestionFormIsDisplayed(string input)
+        {
+            try
+            {
+
+                if (input.Equals("displayed", StringComparison.OrdinalIgnoreCase))
+                {
+                    IWebElement doYouHaveTimeYes = doYouHaveTime.FindElement(By.Id("MoreTimeYes"));
+                    if (isElementPresent(doYouHaveTimeYes, "Yes radio button"))
+                    {
+                        IWebElement userExperience = browser.FindElement(By.CssSelector("div.form-section.experience"));
+                        IWebElement leavingReason = browser.FindElement(By.CssSelector("div.drawer._active > div.drawer-content > div:nth-child(2)"));
+                        if (isElementPresent(userExperience, "userExperience")
+                            && isElementPresent(leavingReason, "leavingReason"))
+                            return true;
+                    }
+                }
+
+                else
+                {
+                    IWebElement doYouHaveTimeNo = doYouHaveTime.FindElement(By.Id("MoreTimeNo"));
+                    if (isElementPresent(doYouHaveTimeNo, "No radio button"))
+                        return true;
+                }
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isQuestionFormIsDisplayed", exception);
+            }
+            return false;
+        }
+
+
+        public bool isOptionsDisplayed(string input)
+        {
+            try
+            {
+
+                IWebElement doYouHaveTimeYes = doYouHaveTime.FindElement(By.Id("MoreTimeYes"));
+                if (isElementPresent(doYouHaveTimeYes, "Yes radio button"))
+                {
+                    if (input.IndexOf("how", StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        IWebElement userExperience = browser.FindElement(By.CssSelector("div.form-section.experience"));
+                        isElementPresent(userExperience, "userExperience");
+                        return true;
+                    }
+                    else
+                    {
+                        IWebElement leavingReason = browser.FindElement(By.CssSelector("div.drawer._active > div.drawer-content > div:nth-child(2)"));
+                        isElementPresent(leavingReason, "leavingReason");
+                        return true;
+                    }
+                }
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isOptionsDisplayed", exception);
+            }
+            return false;
+        }
+
+
+        public bool isRadioButtonSelected(string input)
+        {
+            try
+            {
+                IList<IWebElement> surveyExperienceOptions = surveyExperience.FindElements(By.CssSelector("label"));
+
+                foreach (IWebElement surveyExperienceOption in surveyExperienceOptions)
+                {
+                    IWebElement surveyExperienceValue = surveyExperienceOption.FindElement(By.CssSelector("input"));
+                    if (surveyExperienceValue.GetAttribute("value").Equals(input))
+                    {
+                        IWebElement surveyExperienceSelect = surveyExperienceOption.FindElement(By.CssSelector("span"));
+                        surveyExperienceSelect.Click();
+                        return true;
+                    }
+                }
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isRadioButtonSelected", exception);
+            }
+            return false;
+        }
+
+
+        public bool isRadioButtonPreSelected(string input)
+        {
+            try
+            {
+                IList<IWebElement> surveyExperienceOptions = surveyExperience.FindElements(By.CssSelector("label"));
+
+                foreach (IWebElement surveyExperienceOption in surveyExperienceOptions)
+                {
+                    IWebElement surveyExperienceValue = surveyExperienceOption.FindElement(By.CssSelector("input"));
+                    if (surveyExperienceValue.GetAttribute("value").Equals(input))
+                    {
+                        //IWebElement surveyExperienceSelect = surveyExperienceOption.FindElement(By.CssSelector("span"));
+                        if (surveyExperienceValue.Selected)
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isRadioButtonPreSelected", exception);
+            }
+            return false;
+        }
+
+
+        public bool isTextEntered(string text)
+        {
+            try
+            {
+                IWebElement doYouHaveTimeYes = doYouHaveTime.FindElement(By.Id("MoreTimeYes"));
+                if (isElementPresent(doYouHaveTimeYes, "Yes radio button"))
+                {
+                    IWebElement leavingReason = browser.FindElement(By.CssSelector("#save-cart-form > div.drawer._active > div.drawer-content > div:nth-child(2)"));
+                    IWebElement leavingReasonHeader = leavingReason.FindElement(By.CssSelector("h2"));
+                    IWebElement leavingReasonDesc = leavingReason.FindElement(By.CssSelector("p"));
+                    IWebElement leavingReasonTextArea = leavingReason.FindElement(By.CssSelector("textarea"));
+                    if (isElementPresent(leavingReason, "leavingReason")
+                        && isElementPresent(leavingReasonHeader, "leavingReasonHeader")
+                        && isElementPresent(leavingReasonDesc, "leavingReasonDesc")
+                        && isElementPresent(leavingReasonTextArea, "leavingReasonTextArea"))
+                        leavingReasonTextArea.SendKeys(text);
+                    return true;
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isTextEntered", exception);
+            }
+            return false;
+        }
+
+
+        public bool isMarketingEmailsSelected()
+        {
+            try
+            {
+                Thread.Sleep(100);
+                //((IJavaScriptExecutor)browser).ExecuteScript("arguments[0].scrollIntoView(true);", marketingEmails);
+                if (isElementPresent(marketingEmails, "marketingEmails"))
+                    if (!marketingEmails.Selected)
+                    {
+                        marketingEmails.Click();
+                        return true;
+                    }
+
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isMarketingEmailsSelected", exception);
+            }
+            return false;
+        }
+
+        public bool isButtonsInSaveCartFormDisplayed(string button)
+        {
+            try
+            {
+                if (button.Contains("Back"))
+                {
+                    if (isElementPresent(backbuttonSaveCartForm, "Back button"))
+                        return true;
+                }
+                else
+                {
+                    if (button.Contains("Save"))
+                    {
+                        if (isElementPresent(saveMyOrderbuttonSaveCartForm, "Save My Order button"))
+                            return true;
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isButtonsInSaveCartFormDisplayed", exception);
+            }
+            return false;
+        }
+
+
+        public bool isSaveCartSuccessPageDisplayed()
+        {
+            try
+            {
+                waitForApplicationToProcess();
+                if (isElementPresent(successHeader, "successHeader")
+                && isElementPresent(shoppingCartOfferCount, "shoppingCartOfferCount")
+                && isElementPresent(nextSteps, "nextSteps"))
+                    return true;
+            }
+            catch (Exception exception)
+            {
+                report.reportException("isSaveCartSuccessPageDisplayed", exception);
+            }
+            return false;
+        }
+
+        public LeadGenSuccessPage clickOnSaveButton(string button)
+        {
+            try
+            {
+                //if (button.Contains("Back"))
+                //{
+                //    ((IJavaScriptExecutor)browser).ExecuteScript("arguments[0].scrollIntoView(true);", backbuttonSaveCartForm);
+                //    backbuttonSaveCartForm.Click();
+                //    waitForApplicationToProcess();
+                //    return new Confirmation(browser, report, validations);
+                //}
+                if (button.Contains("Save"))
+                {
+                    ((IJavaScriptExecutor)browser).ExecuteScript("arguments[0].scrollIntoView(true);", saveMyOrderbuttonSaveCartForm);
+                    saveMyOrderbuttonSaveCartForm.Click();
+                    waitForApplicationToProcess();
+                    Thread.Sleep(2000);
+                    return new LeadGenSuccessPage(browser, report, validations);
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("clickOnSaveButton", exception);
+            }
+            return null;
+        }
+
+        public bool clickOnButton(string button)
+        {
+            try
+            {
+                if (button.Contains("Back"))
+                {
+                    //((IJavaScriptExecutor)browser).ExecuteScript("arguments[0].scrollIntoView(true);", backbuttonSaveCartForm);
+                    backbuttonSaveCartForm.Click();
+                    return true;
+                }
+                else if (button.Contains("Save"))
+                {
+                    //((IJavaScriptExecutor)browser).ExecuteScript("arguments[0].scrollIntoView(true);", saveMyOrderbuttonSaveCartForm);
+                    saveMyOrderbuttonSaveCartForm.Click();
+                    return true;
+                }
+            }
+            catch (Exception exception)
+            {
+                report.reportException("clickOnButton", exception);
+            }
+            return false;
+        }
+
+
+
+    }
+}

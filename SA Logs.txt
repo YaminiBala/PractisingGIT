@@ -1,0 +1,31 @@
+5) When we enter invalid customer service address Ex.6003 and submitting localization overlay. Expecting it should land on leadgen page but its keep on loading and throwing timed out error
+6)When we click on ok button in Relocalization_Remove overLay, its not navigating to offer page,its still loading and throwing timed out error
+7)After entering address from /gateway/addoffertocart?offerid= add to cart page, its navigating to derail page
+
+sa logs
+134a8cd7-6af5-4ef1-b302-2b290c48ceeb
+imsvmhelp@yopmail.com-74b7104a-9838-4242-93eb-2b030fe64e4c
+imstest88@yopmail.com-32808ba1-8d7a-4888-b369-ce00d874e6c3
+bciplanworks@yopmail.com-28f7e6e0-bea6-4ade-bfc8-52782514fb04
+newtest8@yopmail.com-9e77e270-dea4-4e43-992e-baf1e4416bcd
+noncable_new1@yopmail.com-79773c41-b735-48f3-a895-f2e767f82a6a
+venkateshwarulu_muttham@cable.comcast.com-Not able to Login,directing to another Login page
+ethernetcust002@yopmail.com-31d2c59e-8879-4e59-ab1f-e0b7560683ef
+pri_newtest_7272016@yopmail.com-3766e639-6f8e-4996-8fad-2d686119bc46
+newdpuser@DPCOMBIZDEV.comcastbiz.net-Not able to Login,directing to another Login page
+ims_voicemail@yopmail.com-eac5d77e-0890-4572-91e9-c269877b84ef-Issues with checkServicestatus which is showingin red color and Voicemail details are not visible at the front end.Both back end calls are failing
+invi_test25@yopmail.com-12dafb07-0979-496f-839b-624878d2aed0-Issuesin service status
+
+raghav102@yopmail.com-dfd61e39-393d-4c0f-a53e-f53f80356a74
+cmstest@yopmail.com-Not able to Login,directing to another Login page
+new_primary_1@yopmail.com-8aac3f10-9fb9-40a3-8339-67a9971d1e98
+billing@DPCOMBIZDEV.comcastbiz.net-5fbf4f80-9ee6-4dbb-b1ed-6f82666cfb94
+test@yopmail.com-f33a1fcf-8217-4e35-8797-7e6f15e4bc52
+noncable582018@yopmail.com-5b72e3ae-f9ef-4e94-94da-01dd48d1ef5a
+
+jandhyala_vidyakaruna@comcast.com-Old Header and Footer
+imsvmhelp@yopmail.com-65e19fee-77bc-4974-8509-5e2f034f802e
+prifordtoupdate0630@yopmail.com -c2c15973-f603-4667-9274-78ccc9f65e36
+rjames7200@yopmail.com-8f230973-9e1a-4223-98ce-6b4c79154bda
+ims_bpm@yopmail.com-8e4d0370-5bc0-4cc1-8d51-c62aeea83ce5
+secuserphonly11@yopmail.com-488b66a4-b20d-44f4-b7ff-4eb6e6123bc2
