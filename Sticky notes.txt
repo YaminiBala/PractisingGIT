@@ -92,7 +92,7 @@ Now its not making expected service calls at the back end
 oh ok
 We saved this conversation. You'll see it soon in the Conversations tab in Skype for Business and in the Conversation History folder in Outlook.
 [?8/?14/?2017 1:48 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
-US1158705	GIG Landing Page: Promotion  Container 3 by 1	 
+US1158705	GIG Landing Page: PromotionÂ Â Container 3 by 1	 
 was this tested by Baratheon team or LAnnister
 [?8/?14/?2017 1:49 PM] B, Yamini (Cognizant): 
 Baratheon only
@@ -117,9 +117,9 @@ Hi Pradeep GM
 [?8/?16/?2017 10:56 AM] Ramakrishna Bhat, Pradeep (Cognizant): 
 US1160510	SU:Code big endpoint for New Component API	
 US1150066	SU:Mock View Modal For BSEE Updates	
-US1158689	GIG Landing Page: Promotion  Container 2 by 1	
-US1158705	GIG Landing Page: Promotion  Container 3 by 1	
-US1161663	SU:Checkavailability and Phonenumber integration to  New Component API	
+US1158689	GIG Landing Page: PromotionÂ Â Container 2 by 1	
+US1158705	GIG Landing Page: PromotionÂ Â Container 3 by 1	
+US1161663	SU:Checkavailability and Phonenumber integration toÂ Â New Component API	
 US1164354	SU: VES items	 
 [?8/?16/?2017 11:01 AM] Ramakrishna Bhat, Pradeep (Cognizant): 
 http://business.int.comcast.com/healthcheck/?DCTarget=CH2 
@@ -161,7 +161,7 @@ yes..1 Us completely blocked..its not working
 oh ok
 which one
 [?8/?16/?2017 1:39 PM] B, Yamini (Cognizant): 
-US1161663	SU:Checkavailability and Phonenumber integration to  New Component API	 
+US1161663	SU:Checkavailability and Phonenumber integration toÂ Â New Component API	 
 [?8/?16/?2017 1:39 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
 ok
 [?8/?16/?2017 1:40 PM] B, Yamini (Cognizant): 
@@ -194,7 +194,7 @@ or both stories will be blocked
 [?8/?16/?2017 3:36 PM] B, Yamini (Cognizant): 
 both will be blocked
 [?8/?16/?2017 6:03 PM] Ramakrishna Bhat, Pradeep (Cognizant): 
-US1158689	GIG Landing Page: Promotion  Container 2 by 1	 
+US1158689	GIG Landing Page: PromotionÂ Â Container 2 by 1	 
 is this done
 [?8/?16/?2017 6:03 PM] B, Yamini (Cognizant): 
 workiing on
@@ -236,12 +236,15 @@ BSEE or BusinessHelpSupport
 
 -------------------------
 
-cable\trajen002c
+
+
+trajen002c
  Ram%379104
 Ram^379104
 
 cable\vdonap001c
 Orange39$
+Orange43$
 
 
 psr
